@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.prospec.prospecservice">
+
+    <!-- เพื่อให้เข้าถึงมือถือ ในการโทรออก -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- เชื่อมต่อ อินเตอร์เน็ต -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- ชื่อ class กับตั้งค่าให้ล็อกหน้าจอ ไม่ให้หมุนได้ -->
+        <!-- หน้าลงทะเบียน -->
+        <activity
+            android:name=".MenuActivity"
+            android:screenOrientation="portrait" />
+        <!-- หน้าส่ง e-mail -->
+        <activity
+            android:name=".EmailActivity"
+            android:screenOrientation="portrait" />
+        <!-- หน้าเบอร์โทรติดต่อ -->
+        <activity
+            android:name=".CallActivity"
+            android:screenOrientation="portrait" />
+        <!-- หน้าเมนูตัวเลือกรายการ -->
+        <activity
+            android:name=".MenuAssetActivity"
+            android:screenOrientation="portrait" />
+        <!-- หน้าเมนูข้อความ -->
+        <activity
+            android:name=".MessageActivity"
+            android:screenOrientation="portrait" />
+        <!-- หน้ากรอกข้อความ -->
+        <activity android:name=".CustomDialogActivity" />
+        <activity android:name=".SignInActivity"></activity>
+    </application>
+
+</manifest>

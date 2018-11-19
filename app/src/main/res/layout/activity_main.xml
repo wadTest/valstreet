@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--Content เลื่อนลง-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <!--From-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="50dp">
+
+            <!--Image User-->
+            <ImageView
+                android:id="@+id/imageUser"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/user" />
+
+            <!--name Register ผู้ใช้ระบบ-->
+            <TextView
+                android:id="@+id/textMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Register ผู้ใช้ระบบ"
+                android:textAlignment="center"
+                android:textColor="#494545"
+                android:textSize="@dimen/size_from"
+                android:textStyle="bold" />
+
+            <!--From ชื่อผู้ใช้งาน-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--ชื่อผู้ใช้งาน-->
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="ชื่อผู้ใช้งาน"
+                    android:textSize="@dimen/size_main"
+                    android:textStyle="bold" />
+
+                <!--ช่องเอาไว้ เลือกคำนำหน้า -->
+                <EditText
+                    android:id="@+id/editTextNamna"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="16dp"
+                    android:textAlignment="center"
+                    android:hint="คำนำหน้า"
+                    android:inputType="text"
+                    android:textColorHint="@color/edit_textok" />
+
+                <!--กรอกชื่อผู้ใช้งาน-->
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="16dp"
+                    android:ems="20"
+                    android:textAlignment="center"
+                    android:hint="@string/user_name"
+                    android:inputType="text"
+                    android:textColorHint="@color/edit_textok" />
+            </LinearLayout>
+
+            <!--From นามสกุล-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--นามสกุล-->
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/user_skun"
+                    android:textSize="@dimen/size_main"
+                    android:textStyle="bold" />
+
+                <!--กรอกนามสกุลผู้ใช้งาน-->
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:ems="20"
+                    android:hint="@string/skun"
+                    android:textAlignment="center"
+                    android:inputType="text"
+                    android:textColorHint="@color/edit_textok" />
+            </LinearLayout>
+
+            <!--From เบอร์โทร-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--เบอร์โทร-->
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/user_call"
+                    android:textSize="@dimen/size_main"
+                    android:textStyle="bold" />
+
+                <!--กรอกเบอร์โทร-->
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:ems="20"
+                    android:textAlignment="center"
+                    android:hint="@string/skun"
+                    android:inputType="text"
+                    android:textColorHint="@color/edit_textok" />
+            </LinearLayout>
+
+            <!--From e-mail-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <!--e-mail-->
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/user_email"
+                    android:textSize="@dimen/size_main"
+                    android:textStyle="bold" />
+
+                <!--กรอก e-mail-->
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:ems="20"
+                    android:hint="@string/edit_text"
+                    android:textAlignment="center"
+                    android:inputType="text"
+                    android:textColorHint="@color/edit_textok" />
+            </LinearLayout>
+
+            <!--ปุ่มบันทึก-->
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/Save"
+                android:textSize="22sp"
+                android:layout_marginLeft="16dp"/>
+
+            <!--ปุ่มบันทึก-->
+            <TextView
+                android:id="@+id/textSignin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_gravity="center"
+                android:text="@string/Next"
+                android:textSize="20sp"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+
+

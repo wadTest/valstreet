@@ -1,0 +1,52 @@
+<resources>
+    <!--หน้า activity_main-->
+    <string name="app_name">ProspecService</string>
+    <string name="edit_text">กรอกข้อมูล</string>
+    <string name="user_name">ชื่อผู้ใช้งาน</string>
+    <string name="skun">นามสกุล</string>
+    <string name="user_skun">นามสกุล</string>
+    <string name="user_call">เบอร์โทร</string>
+    <string name="user_email">e-mail</string>
+    <string name="Remember_Me">Remember Me</string>
+    <string name="Prapet">ประเภท</string>
+    <string name="Save">Save</string>
+    <string name="Next">ลงทะเบียนที่นี้</string>
+
+    <!--หน้า activity_call-->
+    <string name="n_tel_02_559_0678">สำนักงานใหญ่  Tel.02-559-0678</string>
+    <string name="n_tel_05_324_0216">สาขา เชียงใหม่  Tel.05-324-0216</string>
+    <string name="n_tel_05_371_8391">สาขา เชียงราย  Tel.05-371-8391</string>
+    <string name="n_tel_05_422_2879">สาขา ลำปาง  Tel.05-422-2879</string>
+    <string name="n_tel_05_521_1243">สาขา พิษณุโลก  Tel.05-521-1243</string>
+    <string name="n_tel_03_524_3242">สาขา อยุธยา  Tel.03-524-3242</string>
+    <string name="n_tel_03_232_1934">สาขา ราชบุรี  Tel.03-232-1934</string>
+    <string name="n_tel_05_672_1980">สาขา เพชรบูรณ์  Tel.05-672-1980</string>
+    <string name="n_tel_05_571_4806">สาขา กำแพงเพรช  Tel.05-571-4806</string>
+    <string name="n_tel_03_667_0695">สาขา สระบุรี  Tel.03-667-0695</string>
+    <string name="n_tel_05_453_1220">สาขา แพร่  Tel.05-453-1220</string>
+    <string name="n_tel_07_532_2331">สาขา นครศรีธรรมราช  Tel.07-532-2331</string>
+    <string name="n_tel_03_260_2286">สาขา ประจวบคีรีขันธ์  Tel.03-260-2286</string>
+
+    <!--หน้า activity_signin-->
+    <string name="name_customer">ชื่อ</string>
+    <string name="user_skun_customer">นามสกุล</string>
+    <string name="number">เลขที่โฉลด</string>
+    <string name="tambon">ตำบล</string>
+    <string name="Amper">อำเภอ</string>
+    <string name="jangW">จังหวัด</string>
+    <string name="sinc">ชื่อเจ้าหน้าที่สินเชื่อ</string>
+    <string name="name_bank">ชื่อสถาบันการกู้</string>
+    <string name="name_skun1">นามสกุล</string>
+    <string name="name_phon1">เบอร์โทร</string>
+    <string name="name_email1">E-mail</string>
+    <string name="name_sangkud1">สังกัดสถาบัน</string>
+    <string name="name_sangkudSaka1">สังกัดสาขา</string>
+    <string name="name_samnuk1">ที่อยู่สำนักงาน</string>
+    <string name="name_number1">เลขที่</string>
+    <string name="tanon1">ถนน</string>
+    <string name="tambon1">ตำบล</string>
+    <string name="amper1">อำเภอ</string>
+    <string name="jangW1">จังหวัด</string>
+
+
+</resources>
