@@ -24,7 +24,7 @@ public class MyAlert {
         builder.setTitle(titleString);
         builder.setMessage(messageString);
         builder.setIcon(R.drawable.alert);
-        builder.setPositiveButton("Ok,", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 //                เมื่อไหร่ก็ตามเมื่อคลิกปุ่ม ให้ที่แจ้งเตือนนั้นหายไป

@@ -3,8 +3,14 @@ package com.prospec.prospecservice;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +33,10 @@ public class SignInActivity extends AppCompatActivity {
     private Button buttonSignUp, buttonSignUp1;
     //    ทำหน้าที่มนการรับค่าที่เกิดจากการกรอก (เปลี่ยนเป็นสติงก่อน และทำการรับผล)
     private String editT1, editT2, editT3, editT4, editT5, editT6, editT7, editT8, editT9, editT10,
-            editT11, editT12, editT13, editT14, editT15, editT16, editT17, editT18, editT19, editT20, editT21;
+            editT11, editT12, editT13, editT14, editT15, editT16, editT17, editT18, editT19, editT20, editT21, pathImage, nameImage;
+    //    ประกาศตัวแปรเกี่ยวกับรูปภาพ
+    private Uri uri;
+    private String tag = "ProsecImage";
 
 
     @Override
@@ -111,8 +120,8 @@ public class SignInActivity extends AppCompatActivity {
                     myAlert1.myDialog();
                 }
 
-        }//onClick
-    });
+            }//onClick
+        });
 
 //        Image Controller
         imageName.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +132,7 @@ public class SignInActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 //                image/* คือสิ่งที่สามรถเปิดรูปภาพได้ เช่น ต้องการเปิดด้วย แกลอรี่ โฟโต ฯลฯ
                 intent.setType("image/*");
-                startActivityForResult(Intent.createChooser(intent,"โปรดเลือกแอพ ที่จะทำการเปิด"),1);
+                startActivityForResult(Intent.createChooser(intent, "โปรดเลือกแอพ ที่จะทำการเปิด"), 1);
             }
         });
 
@@ -160,9 +169,54 @@ public class SignInActivity extends AppCompatActivity {
     public void onRadioButtonClicked(View view) {
     }//    ปีกกาปิดของคำสั่ง redio Group
 
-
+    //  เกี่ยวกับรูปภาพ
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+//        เมื่อไหร่ก็ตามที่ทำงานสำเร็จ จะส่งค่าไปโชว์
+        if (resultCode == RESULT_OK) {
+            uri = data.getData();
+            showImage(uri);
+
+//            สร้าง Method จะเอาค่าของตัว uri ไปทำการค้าหา
+//            เอาไว้ดู path ของรูปภาพ
+            pathImage = findPathImage(uri);
+            nameImage = pathImage.substring(pathImage.lastIndexOf("/"));
+            Log.d(tag, "path==>" + pathImage);
+            Log.d(tag, "name==>" + nameImage);
+        }//if
+    }
+
+    //    เกี่ยวกับ Path
+    private String findPathImage(Uri uri) {
+
+        String result = null;//มีค่าเริ่มต้นเท่ากับความว่างเปล่า
+        String[] strings = new String[]{MediaStore.Images.Media.DATA};
+        Cursor cursor = getContentResolver().query(uri, strings, null, null, null);
+
+//        เมื่อไหร่ก็ตามมีข้อมูล ไม่เท่ากับความว่างเปล่า
+        if (cursor !=null) {
+//            จะทำการ จะประมวลผลจากบนลงล่าง
+            cursor.moveToFirst();
+            int i = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            result = cursor.getString(i);
+        } else {
+            result = uri.getPath();
+        }
+
+        return result;
+    }
+
+    private void showImage(Uri uri) {
+        try {
+
+            Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri));
+            imageName.setImageBitmap(bitmap);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }//Main Class
