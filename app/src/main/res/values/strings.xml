@@ -49,4 +49,15 @@
     <string name="jangW1">จังหวัด</string>
 
 
+    <string name="land">ที่ดินดินเปล่า จำนวน...แปลง</string>
+    <string name="number_land1">แปลงที่ 1</string>
+    <string name="edit_praped">ประเภทเอกสารสิทธิ์</string>
+    <string name="edit_number1">เลขที่</string>
+    <string name="edit_ntee">เนื้อที่</string>
+    <string name="number_land2">แปลงที่ 2</string>
+    <string name="number_land3">แปลงที่ 3</string>
+    <string name="number_land4">แปลงที่ 4</string>
+    <string name="number_land5">แปลงที่ 5</string>
+
+
 </resources>

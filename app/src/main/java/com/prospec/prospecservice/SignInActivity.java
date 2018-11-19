@@ -179,34 +179,34 @@ public class SignInActivity extends AppCompatActivity {
             uri = data.getData();
             showImage(uri);
 
-//            สร้าง Method จะเอาค่าของตัว uri ไปทำการค้าหา
-//            เอาไว้ดู path ของรูปภาพ
-            pathImage = findPathImage(uri);
-            nameImage = pathImage.substring(pathImage.lastIndexOf("/"));
-            Log.d(tag, "path==>" + pathImage);
-            Log.d(tag, "name==>" + nameImage);
+////            สร้าง Method จะเอาค่าของตัว uri ไปทำการค้าหา
+////            เอาไว้ดู path ของรูปภาพ
+//            pathImage = findPathImage(uri);
+//            nameImage = pathImage.substring(pathImage.lastIndexOf("/"));
+//            Log.d(tag, "path==>" + pathImage);
+//            Log.d(tag, "name==>" + nameImage);
         }//if
     }
 
-    //    เกี่ยวกับ Path
-    private String findPathImage(Uri uri) {
-
-        String result = null;//มีค่าเริ่มต้นเท่ากับความว่างเปล่า
-        String[] strings = new String[]{MediaStore.Images.Media.DATA};
-        Cursor cursor = getContentResolver().query(uri, strings, null, null, null);
-
-//        เมื่อไหร่ก็ตามมีข้อมูล ไม่เท่ากับความว่างเปล่า
-        if (cursor !=null) {
-//            จะทำการ จะประมวลผลจากบนลงล่าง
-            cursor.moveToFirst();
-            int i = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-            result = cursor.getString(i);
-        } else {
-            result = uri.getPath();
-        }
-
-        return result;
-    }
+//    //    เกี่ยวกับ Path
+//    private String findPathImage(Uri uri) {
+//
+//        String result = null;//มีค่าเริ่มต้นเท่ากับความว่างเปล่า
+//        String[] strings = new String[]{MediaStore.Images.Media.DATA};
+//        Cursor cursor = getContentResolver().query(uri, strings, null, null, null);
+//
+////        เมื่อไหร่ก็ตามมีข้อมูล ไม่เท่ากับความว่างเปล่า
+//        if (cursor !=null) {
+////            จะทำการ จะประมวลผลจากบนลงล่าง
+//            cursor.moveToFirst();
+//            int i = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+//            result = cursor.getString(i);
+//        } else {
+//            result = uri.getPath();
+//        }
+//
+//        return result;
+//    }
 
     private void showImage(Uri uri) {
         try {

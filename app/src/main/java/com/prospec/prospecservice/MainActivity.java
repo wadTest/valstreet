@@ -33,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
         Button buttonSave = (Button) findViewById(R.id.buttonSave);
         TextView textSignin = (TextView) findViewById(R.id.textSignin);
 
+        //    Get Event From Click Menu
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent textSigninIntent = new Intent(MainActivity.this, MenuActivity.class);
+                MainActivity.this.startActivity(textSigninIntent);
+            }
+        });
+
     //    Get Event From Click Sign in
         textSignin.setOnClickListener(new View.OnClickListener() {
             @Override
