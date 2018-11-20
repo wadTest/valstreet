@@ -66,7 +66,7 @@ public class LandActivity extends AppCompatActivity {
 //        linear3.setVisibility(b ? View.GONE : View.VISIBLE);
 //        linear4.setVisibility(b ? View.GONE : View.VISIBLE);
 //        linear5.setVisibility(b ? View.GONE : View.VISIBLE);
-          linearNo.setVisibility(b ? View.GONE : View.VISIBLE);
+        linearNo.setVisibility(b ? View.GONE : View.VISIBLE);
     }
 
     public void onRadioButtonLand(View view) {

@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:onClick="onRadioButtonLand"
+                    android:onClick="onRadioButtonLand1"
                     android:text="3"
                     android:textSize="@dimen/size_main" />
 
@@ -72,7 +72,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:onClick="onRadioButtonLand"
+                    android:onClick="onRadioButtonLand1"
                     android:text="4"
                     android:textSize="@dimen/size_main" />
 
@@ -295,7 +295,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- 2 แปลง-->
+                    <!-- 3 แปลง-->
                     <TextView
                         android:id="@+id/textView4"
                         android:layout_width="wrap_content"

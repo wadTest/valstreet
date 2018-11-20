@@ -65,6 +65,8 @@
     <string name="building">สิ่งปลูกสร้างในที่ดิน จำนวน...แปลง</string>
     <string name="number_landB1">หลังที่ 1</string>
     <string name="number_landB2">หลังที่ 2</string>
+    <string name="phone">กรอกเบอร์โทร</string>
+    <string name="name_email">กรอก e-mail</string>
 
 
 </resources>
