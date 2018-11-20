@@ -45,9 +45,18 @@
             android:name=".MessageActivity"
             android:screenOrientation="portrait" />
         <!-- หน้ากรอกข้อความ -->
-        <activity android:name=".CustomDialogActivity" />
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".LandActivity"></activity>
+        <activity
+            android:name=".CustomDialogActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignInActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LandActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".LandBuildingActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

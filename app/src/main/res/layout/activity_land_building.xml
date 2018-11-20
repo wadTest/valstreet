@@ -10,7 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="5dp">
+        android:padding="12dp">
 
         <!--Content-->
         <LinearLayout
@@ -31,7 +31,7 @@
                 android:textStyle="bold" />
 
             <RadioGroup
-                android:id="@+id/rg_Land_Main"
+                android:id="@+id/rg_tipo_cliente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -45,56 +45,64 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onRadioButtonLand"
-                    android:text="1"
-                    android:textSize="@dimen/size_main" />
+                    android:text="1 แปลง"
+                    android:textSize="@dimen/size_from" />
 
 
                 <RadioButton
                     android:id="@+id/rb_land2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="20dp"
                     android:onClick="onRadioButtonLand"
-                    android:text="2"
-                    android:textSize="@dimen/size_main" />
+                    android:text="2 แปลง"
+                    android:textSize="@dimen/size_from" />
 
                 <RadioButton
                     android:id="@+id/rb_land3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="20dp"
                     android:onClick="onRadioButtonLand"
-                    android:text="3"
-                    android:textSize="@dimen/size_main" />
+                    android:text="3 แปลง"
+                    android:textSize="@dimen/size_from" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_tipo_cliente1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:checkedButton="@+id/rb_land1"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/rb_land4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
                     android:onClick="onRadioButtonLand"
-                    android:text="4"
-                    android:textSize="@dimen/size_main" />
+                    android:text="4 แปลง"
+                    android:textSize="@dimen/size_from" />
 
                 <RadioButton
                     android:id="@+id/rb_land5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="20dp"
                     android:onClick="onRadioButtonLand"
-                    android:text="5"
-                    android:textSize="@dimen/size_main" />
+                    android:text="5 แปลง"
+                    android:textSize="@dimen/size_from" />
 
                 <RadioButton
                     android:id="@+id/rb_land6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="20dp"
                     android:onClick="onRadioButtonLand"
                     android:text="ไม่ทราบ"
-                    android:textSize="@dimen/size_main" />
+                    android:textSize="@dimen/size_from" />
             </RadioGroup>
-
 
             <!--1 แปลง-->
             <LinearLayout
@@ -128,7 +136,6 @@
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="10dp"
                         android:hint="@string/edit_praped"
-                        android:textSize="@dimen/size_main"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
@@ -152,7 +159,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="10dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
@@ -217,7 +224,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
@@ -271,7 +278,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
@@ -337,7 +344,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
@@ -391,19 +398,19 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
                 </LinearLayout>
 
-                <!--From ที่ดิิน 3 แปลง-->
+                <!--From ที่ดิิน 2 แปลง-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- 3 แปลง-->
+                    <!-- 2 แปลง-->
                     <TextView
                         android:id="@+id/textVie6"
                         android:layout_width="wrap_content"
@@ -445,7 +452,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
@@ -510,19 +517,19 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
                 </LinearLayout>
 
-                <!--From ที่ดิิน 4 แปลง-->
+                <!--From ที่ดิิน 2 แปลง-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- 4 แปลง-->
+                    <!-- 2 แปลง-->
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
@@ -564,19 +571,19 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
                 </LinearLayout>
 
-                <!--From ที่ดิิน 4 แปลง-->
+                <!--From ที่ดิิน 3 แปลง-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- 4 แปลง-->
+                    <!-- 3 แปลง-->
                     <TextView
                         android:id="@+id/textVie9"
                         android:layout_width="wrap_content"
@@ -618,7 +625,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
@@ -672,7 +679,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
@@ -738,19 +745,19 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
                 </LinearLayout>
 
-                <!--From ที่ดิิน 2 แปลง-->
+                <!--From ที่ดิิน 4 แปลง-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- 2 แปลง-->
+                    <!-- 4 แปลง-->
                     <TextView
                         android:id="@+id/textView34"
                         android:layout_width="wrap_content"
@@ -792,19 +799,19 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
                 </LinearLayout>
 
-                <!--From ที่ดิิน 3 แปลง-->
+                <!--From ที่ดิิน 4 แปลง-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- 3 แปลง-->
+                    <!-- 4 แปลง-->
                     <TextView
                         android:id="@+id/textView12"
                         android:layout_width="wrap_content"
@@ -846,7 +853,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
@@ -900,7 +907,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
@@ -954,24 +961,301 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:hint="@string/edit_ntee"
+                        android:hint="@string/edit_ntee1"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
                 </LinearLayout>
             </LinearLayout>//ขอบเขตของ 5 แปลง
 
-        <!--1 แปลง-->
-        <LinearLayout
-            android:id="@+id/linearNo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
 
-        </LinearLayout>//สิ้นสุด ไม่ทราบ
 
+
+            <!--Content-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="30dp">
+
+                <!--สิ่งปลูกสร้างในที่ดิน จำนวน...แปลง-->
+                <TextView
+                    android:id="@+id/textB1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/building"
+                    android:textSize="@dimen/size_main"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/rg_building"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="@dimen/margin_bottom"
+                    android:checkedButton="@+id/rb_land_building1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_land_building1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonLandBuilding"
+                        android:text="1 หลัง"
+                        android:textSize="@dimen/size_from" />
+
+
+                    <RadioButton
+                        android:id="@+id/rb_land_building2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:onClick="onRadioButtonLandBuilding"
+                        android:text="2 หลัง"
+                        android:textSize="@dimen/size_from" />
+
+                    <RadioButton
+                        android:id="@+id/rb_land_building3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:onClick="onRadioButtonLandBuilding"
+                        android:text="3 หลัง"
+                        android:textSize="@dimen/size_from" />
+                </RadioGroup>
+
+                <RadioGroup
+                    android:id="@+id/rg_building1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/margin_bottom"
+                    android:checkedButton="@+id/rb_land1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_land_building4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonLandBuilding"
+                        android:text="4 หลัง"
+                        android:textSize="@dimen/size_from" />
+
+                    <RadioButton
+                        android:id="@+id/rb_land_building5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:onClick="onRadioButtonLandBuilding"
+                        android:text="5 หลัง"
+                        android:textSize="@dimen/size_from" />
+
+                    <RadioButton
+                        android:id="@+id/rb_land_building6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:onClick="onRadioButtonLandBuilding"
+                        android:text="ไม่ทราบ"
+                        android:textSize="@dimen/size_from" />
+                </RadioGroup>
+
+                <!--1 หลัง-->
+                <LinearLayout
+                    android:id="@+id/linearB1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--From สิ่งปลูกสร้าง-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!--1 หลัง-->
+                        <TextView
+                            android:id="@+id/textB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/number_landB1"
+                            android:textSize="@dimen/size_main"
+                            android:textStyle="bold" />
+
+                        <!--กรอก ประเภทเอกสารสิทธิ์-->
+                        <EditText
+                            android:id="@+id/editTextB1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="@string/edit_praped"
+                            android:inputType="text"
+                            android:textAlignment="center"
+                            android:textColorHint="@color/edit_textok" />
+
+                        <!--กรอก เลขที่-->
+                        <EditText
+                            android:id="@+id/editTextB2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="@string/edit_number1"
+                            android:inputType="text"
+                            android:textAlignment="center"
+                            android:textColorHint="@color/edit_textok" />
+
+                        <!--กรอก เนื้อที่-->
+                        <EditText
+                            android:id="@+id/editTextB3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="@string/edit_ntee1"
+                            android:inputType="text"
+                            android:textAlignment="center"
+                            android:textColorHint="@color/edit_textok" />
+                    </LinearLayout>
+                </LinearLayout>//ขอบเขตของ 1 หลัง
+
+
+
+
+
+                <!--1 หลัง-->
+                <LinearLayout
+                    android:id="@+id/linearB2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--From สิ่งปลูกสร้าง-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!--1 หลัง-->
+                        <TextView
+                            android:id="@+id/textB2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/number_landB1"
+                            android:textSize="@dimen/size_main"
+                            android:textStyle="bold" />
+
+                        <!--กรอก ประเภทเอกสารสิทธิ์-->
+                        <EditText
+                            android:id="@+id/editTextB4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="@string/edit_praped"
+                            android:inputType="text"
+                            android:textAlignment="center"
+                            android:textColorHint="@color/edit_textok" />
+
+                        <!--กรอก เลขที่-->
+                        <EditText
+                            android:id="@+id/editTextB5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="@string/edit_number1"
+                            android:inputType="text"
+                            android:textAlignment="center"
+                            android:textColorHint="@color/edit_textok" />
+
+                        <!--กรอก เนื้อที่-->
+                        <EditText
+                            android:id="@+id/editTextB6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="@string/edit_ntee1"
+                            android:inputType="text"
+                            android:textAlignment="center"
+                            android:textColorHint="@color/edit_textok" />
+                    </LinearLayout>
+
+                    <!--2 หลัง-->
+                    <LinearLayout
+                        android:id="@+id/linearB3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!--From สิ่งปลูกสร้าง-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <!--2 หลัง-->
+                            <TextView
+                                android:id="@+id/textB3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/number_landB2"
+                                android:textSize="@dimen/size_main"
+                                android:textStyle="bold" />
+
+                            <!--กรอก ประเภทเอกสารสิทธิ์-->
+                            <EditText
+                                android:id="@+id/editTextB7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginTop="5dp"
+                                android:hint="@string/edit_praped"
+                                android:inputType="text"
+                                android:textAlignment="center"
+                                android:textColorHint="@color/edit_textok" />
+
+                            <!--กรอก เลขที่-->
+                            <EditText
+                                android:id="@+id/editTextB8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginTop="5dp"
+                                android:hint="@string/edit_number1"
+                                android:inputType="text"
+                                android:textAlignment="center"
+                                android:textColorHint="@color/edit_textok" />
+
+                            <!--กรอก เนื้อที่-->
+                            <EditText
+                                android:id="@+id/editTextB9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginTop="5dp"
+                                android:hint="@string/edit_ntee1"
+                                android:inputType="text"
+                                android:textAlignment="center"
+                                android:textColorHint="@color/edit_textok" />
+                        </LinearLayout>
+                </LinearLayout>//ขอบเขตของ 2 หลัง
+
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
-

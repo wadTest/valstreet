@@ -167,7 +167,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     public void onRadioButtonClicked(View view) {
-    }//    ปีกกาปิดของคำสั่ง redio Group
+    }//    ปีกกาปิดของคำสั่ง radio Group
 
     //  เกี่ยวกับรูปภาพ
     @Override

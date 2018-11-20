@@ -49,6 +49,7 @@
     <string name="jangW1">จังหวัด</string>
 
 
+      <!-- หน้า activity_land-->
     <string name="land">ที่ดินดินเปล่า จำนวน...แปลง</string>
     <string name="number_land1">แปลงที่ 1</string>
     <string name="edit_praped">ประเภทเอกสารสิทธิ์</string>
@@ -58,6 +59,12 @@
     <string name="number_land3">แปลงที่ 3</string>
     <string name="number_land4">แปลงที่ 4</string>
     <string name="number_land5">แปลงที่ 5</string>
+
+    <!--หน้า activity_land_building-->
+    <string name="edit_ntee1">เนื้อที่ดิน(ตรว.)</string>
+    <string name="building">สิ่งปลูกสร้างในที่ดิน จำนวน...แปลง</string>
+    <string name="number_landB1">หลังที่ 1</string>
+    <string name="number_landB2">หลังที่ 2</string>
 
 
 </resources>
