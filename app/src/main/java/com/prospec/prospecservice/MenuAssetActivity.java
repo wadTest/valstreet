@@ -36,12 +36,20 @@ public class MenuAssetActivity extends AppCompatActivity {
             }
         });
 
-
         //Get Event From Click Land and Building
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MenuAssetActivity.this, BuildingActivity.class));
+
+            }
+        });
+
+        //Get Event From Click Room
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuAssetActivity.this, RoomActivity.class));
 
             }
         });

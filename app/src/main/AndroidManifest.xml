@@ -48,14 +48,17 @@
         <activity
             android:name=".SignInActivity"
             android:screenOrientation="portrait" />
-        <!--หน้าที่ดิน-->
+        <!-- หน้าที่ดิน -->
         <activity
             android:name=".LandBuildingActivity"
             android:screenOrientation="portrait" />
-        <!--หน้าที่ดิน+อาคาร-->
-        <activity android:name=".BuildingActivity"
+        <!-- หน้าที่ดิน+อาคาร -->
+        <activity
+            android:name=".BuildingActivity"
             android:screenOrientation="portrait" />
-
+        <!--หน้าห้องชุด-->
+        <activity android:name=".RoomActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

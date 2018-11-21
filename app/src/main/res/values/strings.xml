@@ -63,12 +63,19 @@
     <string name="number_land5">แปลงที่ 5</string>
 
     <!--หน้า Acitivity_building-->
-    <string name="land_buil">สิ่งปลูกสร้างในที่ดิน</string>
+    <string name="land_buil">สิ่งปลูกสร้างในที่ดิน จำนวน...หลัง</string>
     <string name="edit_prapedB">ประเภท</string>
     <string name="edit_stus">โครงสร้าง</string>
     <string name="edit_numF">จำนวนชั้น</string>
     <string name="edit_numT">เนื้อที่(ตรม.)</string>
     <string name="edit_age">อายุ</string>
+
+    <!--หน้าactivity_room-->
+    <string name="room">ห้องชุด จำนวน...ห้อง</string>
+    <string name="edit_numR">เลชที่ห้องชุด</string>
+    <string name="edit_numFo">ชั้นที่</string>
+    <string name="edit_nteeT">เนื้อที่รวม(ตรม.)</string>
+    <string name="edit_nameH">ชื่ออาคารชุด</string>
 
 
 </resources>
