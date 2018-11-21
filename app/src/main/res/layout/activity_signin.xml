@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#e9e7ce"
+    android:orientation="vertical"
+    tools:context=".SignInActivity">
 
     <!--Content เลื่อนลง-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="10dp">
 
         <!--Content-->
         <LinearLayout
@@ -43,7 +45,9 @@
                     android:layout_height="wrap_content"
                     android:onClick="onRadioButtonClicked"
                     android:text="ผู้ส่งงาน"
-                    android:textSize="@dimen/size_from" />
+                    android:textColor="@color/colorBack"
+                    android:textSize="@dimen/size_from"
+                    android:textStyle="bold" />
 
                 <RadioButton
                     android:id="@+id/rb_particular"
@@ -52,7 +56,9 @@
                     android:layout_marginLeft="20dp"
                     android:onClick="onRadioButtonClicked"
                     android:text="ลูกค้า"
-                    android:textSize="@dimen/size_from" />
+                    android:textColor="@color/colorBack"
+                    android:textSize="@dimen/size_from"
+                    android:textStyle="bold" />
             </RadioGroup>
 
             <!--ช่องไว้ให้กรอกสำรับ ผ๔้ส่งงาน-->
@@ -78,6 +84,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:text="@string/name_customer"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -87,7 +94,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -109,6 +115,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/name_skun1"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -118,7 +125,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -140,6 +146,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/name_phon1"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -149,7 +156,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -171,6 +177,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/name_email1"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -180,7 +187,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -202,6 +208,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/name_sangkud1"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -211,7 +218,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -233,6 +239,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/name_sangkudSaka1"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -242,7 +249,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -258,7 +264,8 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="7dp"
                     android:text="@string/name_samnuk1"
-                    android:textSize="@dimen/size_main"
+                    android:textColor="@color/colorBack"
+                    android:textSize="@dimen/size_from"
                     android:textStyle="bold" />
 
                 <!--From สังกัดสาขา-->
@@ -275,6 +282,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/name_number1"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -284,7 +292,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="5"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -299,6 +306,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/tanon1"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -308,7 +316,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -330,6 +337,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/tambon1"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -339,7 +347,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -361,6 +368,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/amper1"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -370,7 +378,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -392,6 +399,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/jangW1"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -401,7 +409,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -412,13 +419,14 @@
                 <Button
                     android:id="@+id/buttonSignUp1"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/background_button"
+                    android:text="ลงทะเบียน"
+                    android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_from"
-                    android:text="ลงทะเบียน"/>
+                    android:textStyle="bold" />
             </LinearLayout> <!--วงเล็บเปิด Radio Group-->
-
-
 
 
             <!--ตั้งแต่ตรงนี้คือ ช่องให้กรอกข้อง ลูกค้า-->
@@ -442,19 +450,19 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:text="@string/name_customer"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
                     <!--ช่องเอาไว้ เลือกคำนำหน้า -->
                     <AutoCompleteTextView
-                        android:id="@+id/editTextNamna"
+                        android:id="@+id/editTextNamna1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:layout_marginLeft="16dp"
-                        android:textAlignment="center"
                         android:hint="คำนำหน้า"
                         android:inputType="text"
+                        android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
 
                     <!--กรอกชื่อผู้ใช้งาน-->
@@ -463,7 +471,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -485,6 +492,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/user_skun_customer"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -493,9 +501,7 @@
                         android:id="@+id/editText13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -517,6 +523,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/user_call"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -525,9 +532,7 @@
                         android:id="@+id/editText14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -549,6 +554,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/user_email"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -557,9 +563,7 @@
                         android:id="@+id/editText15"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -581,6 +585,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/number"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -589,9 +594,7 @@
                         android:id="@+id/editText16"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -613,6 +616,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/jangW"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -645,6 +649,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:text="@string/Amper"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -662,7 +667,6 @@
                 </LinearLayout>
 
 
-
                 <!--From ตำบล-->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -677,6 +681,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/tambon"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -685,9 +690,7 @@
                         android:id="@+id/editText17"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -709,6 +712,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/sinc"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -717,9 +721,7 @@
                         android:id="@+id/editText20"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -742,6 +744,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
                         android:text="@string/name_bank"
+                        android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
@@ -750,9 +753,7 @@
                         android:id="@+id/editTextBank"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
                         android:ems="20"
                         android:hint="@string/edit_text"
                         android:inputType="text"
@@ -763,10 +764,13 @@
                 <Button
                     android:id="@+id/buttonSignUp"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/background_button"
+                    android:text="ลงทะเบียน"
+                    android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_from"
-                    android:text="ลงทะเบียน"/>
+                    android:textStyle="bold" />
 
 
             </LinearLayout>

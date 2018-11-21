@@ -3,8 +3,8 @@
     xmlns:Tools="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="50dp">
+            android:paddingBottom="30dp">
 
             <!--Image User-->
             <ImageView
@@ -47,7 +47,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <!--ชื่อผู้ใช้งาน-->
@@ -59,7 +59,7 @@
                     android:layout_marginTop="20dp"
                     android:text="ชื่อผู้ใช้งาน"
                     android:textColor="@color/colorBack"
-                    android:textSize="@dimen/size_main"
+                    android:textSize="@dimen/size_from"
                     android:textStyle="bold" />
 
                 <!--ช่องเอาไว้ เลือกคำนำหน้า -->
@@ -72,7 +72,7 @@
                     android:hint="คำนำหน้า"
                     android:inputType="text"
                     android:textAlignment="center"
-                    android:textColorHint="@color/edit_textok" />
+                    android:textColorHint="@color/edit_textok_g" />
 
                 <!--กรอกชื่อผู้ใช้งาน-->
                 <EditText
@@ -85,7 +85,7 @@
                     android:hint="@string/user_name"
                     android:inputType="text"
                     android:textAlignment="center"
-                    android:textColorHint="@color/edit_textok" />
+                    android:textColorHint="@color/edit_textok_g" />
             </LinearLayout>
 
             <!--From นามสกุล-->
@@ -103,7 +103,7 @@
                     android:layout_marginTop="10dp"
                     android:text="@string/user_skun"
                     android:textColor="@color/colorBack"
-                    android:textSize="@dimen/size_main"
+                    android:textSize="@dimen/size_from"
                     android:textStyle="bold" />
 
                 <!--กรอกนามสกุลผู้ใช้งาน-->
@@ -118,7 +118,7 @@
                     android:hint="@string/skun"
                     android:inputType="text"
                     android:textAlignment="center"
-                    android:textColorHint="@color/edit_textok" />
+                    android:textColorHint="@color/edit_textok_g" />
             </LinearLayout>
 
             <!--From เบอร์โทร-->
@@ -136,7 +136,7 @@
                     android:layout_marginTop="10dp"
                     android:text="@string/user_call"
                     android:textColor="@color/colorBack"
-                    android:textSize="@dimen/size_main"
+                    android:textSize="@dimen/size_from"
                     android:textStyle="bold" />
 
                 <!--กรอกเบอร์โทร-->
@@ -151,7 +151,7 @@
                     android:hint="@string/phone"
                     android:inputType="number"
                     android:textAlignment="center"
-                    android:textColorHint="@color/edit_textok" />
+                    android:textColorHint="@color/edit_textok_g" />
             </LinearLayout>
 
             <!--From e-mail-->
@@ -169,7 +169,7 @@
                     android:layout_marginTop="10dp"
                     android:text="@string/user_email"
                     android:textColor="@color/colorBack"
-                    android:textSize="@dimen/size_main"
+                    android:textSize="@dimen/size_from"
                     android:textStyle="bold" />
 
                 <!--กรอก e-mail-->
@@ -184,7 +184,7 @@
                     android:hint="@string/name_email"
                     android:inputType="text"
                     android:textAlignment="center"
-                    android:textColorHint="@color/edit_textok" />
+                    android:textColorHint="@color/edit_textok_g" />
             </LinearLayout>
 
             <!--ปุ่มบันทึก-->
@@ -199,9 +199,9 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentRight="false"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_marginRight="10dp"
                     android:background="@drawable/background_button"
                     android:text="@string/Save"
                     android:textColor="@color/colorBack"
@@ -213,9 +213,9 @@
                     android:layout_width="160dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_marginRight="10dp"
                     android:background="@drawable/background_button"
                     android:text="@string/BNext"
                     android:textColor="@color/colorBack"

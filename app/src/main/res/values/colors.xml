@@ -3,7 +3,8 @@
     <color name="colorPrimary">#ff6d00</color>
     <color name="colorPrimaryDark">#ff3d00</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="edit_textok">#ed1f1f</color>
+    <color name="edit_textok">#f53e3e</color>
+    <color name="edit_textok_g">#ede5e5</color>
     <color name="colorBack">#120000</color>
     <color name="colorView">#a6a6a6</color>
 

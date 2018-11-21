@@ -32,7 +32,7 @@ public class SignInActivity extends AppCompatActivity {
     private View contenedorCorporativo;
 
     private EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8, editText9, editText10, editText11,
-            editText12, editText13, editText14, editText15, editText16, editText17, editText18, editText19, editText20, editText21;
+            editText12, editText13, editText14, editText15, editText16, editText17, editText20;
     private ImageView imageName;
     private Button buttonSignUp, buttonSignUp1;
     //    ทำหน้าที่มนการรับค่าที่เกิดจากการกรอก (เปลี่ยนเป็นสติงก่อน และทำการรับผล)
@@ -112,10 +112,7 @@ public class SignInActivity extends AppCompatActivity {
                 editT15 = editText15.getText().toString().trim();
                 editT16 = editText16.getText().toString().trim();
                 editT17 = editText17.getText().toString().trim();
-                editT18 = editText18.getText().toString().trim();
-                editT19 = editText19.getText().toString().trim();
                 editT20 = editText20.getText().toString().trim();
-                editT21 = editText21.getText().toString().trim();
 
 //                Check Space เมื่อไไหร่ก้ตาม ถ้า editT1..มัน equals กับความว่างเปล่า blool จะเป็น True (|| ไบร์ย  t or t =t , t or f = t, f or t = t, f or f =f)
                 if (editT12.equals("") || editT13.equals("") || editT14.equals("") || editT15.equals("") || editT16.equals("") || editT17.equals("") ||
@@ -228,7 +225,7 @@ public class SignInActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, CATEGORIES);
         AutoCompleteTextView nameTV = (AutoCompleteTextView)
-                findViewById(R.id.editTextNamna);
+                findViewById(R.id.editTextNamna1);
 
         nameTV.setAdapter(adapter);
     }
