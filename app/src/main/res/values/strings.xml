@@ -10,7 +10,10 @@
     <string name="Remember_Me">Remember Me</string>
     <string name="Prapet">ประเภท</string>
     <string name="Save">Login</string>
-    <string name="Next">ลงทะเบียนที่นี้</string>
+    <string name="BNext">Next</string>
+    <string name="name_email">กรอก E-mail</string>
+    <string name="phone">กรอกเบอร์โทร</string>
+    <string name="Next">สมัครสมาชิกที่นี่</string>
 
     <!--หน้า activity_call-->
     <string name="n_tel_02_559_0678">สำนักงานใหญ่  Tel.02-559-0678</string>
@@ -58,9 +61,7 @@
     <string name="number_land3">แปลงที่ 3</string>
     <string name="number_land4">แปลงที่ 4</string>
     <string name="number_land5">แปลงที่ 5</string>
-    <string name="BNext">Next</string>
-    <string name="name_email">กรอก E-mail</string>
-    <string name="phone">กรอกเบอร์โทร</string>
+
 
 
 </resources>

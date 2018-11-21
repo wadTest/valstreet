@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:Tools="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:Tools="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-<!--Content เลื่อนลง-->
+    <!--Content เลื่อนลง-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,14 +39,15 @@
                 android:layout_marginTop="10dp"
                 android:text="ลงชื่อ ผู้ใช้ระบบ"
                 android:textAlignment="center"
-                android:textColor="#494545"
-                android:textSize="@dimen/size_from"
+                android:textColor="@color/colorBack"
+                android:textSize="@dimen/size_from_main"
                 android:textStyle="bold" />
 
             <!--From ชื่อผู้ใช้งาน-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <!--ชื่อผู้ใช้งาน-->
@@ -56,6 +58,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
                     android:text="ชื่อผู้ใช้งาน"
+                    android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main"
                     android:textStyle="bold" />
 
@@ -64,11 +67,11 @@
                     android:id="@+id/editTextNamna"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="16dp"
-                    android:textAlignment="center"
+                    android:layout_marginTop="20dp"
                     android:hint="คำนำหน้า"
                     android:inputType="text"
+                    android:textAlignment="center"
                     android:textColorHint="@color/edit_textok" />
 
                 <!--กรอกชื่อผู้ใช้งาน-->
@@ -79,9 +82,9 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="16dp"
                     android:ems="20"
-                    android:textAlignment="center"
                     android:hint="@string/user_name"
                     android:inputType="text"
+                    android:textAlignment="center"
                     android:textColorHint="@color/edit_textok" />
             </LinearLayout>
 
@@ -99,6 +102,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/user_skun"
+                    android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main"
                     android:textStyle="bold" />
 
@@ -112,8 +116,8 @@
                     android:layout_marginRight="16dp"
                     android:ems="20"
                     android:hint="@string/skun"
-                    android:textAlignment="center"
                     android:inputType="text"
+                    android:textAlignment="center"
                     android:textColorHint="@color/edit_textok" />
             </LinearLayout>
 
@@ -131,6 +135,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/user_call"
+                    android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main"
                     android:textStyle="bold" />
 
@@ -143,9 +148,9 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="16dp"
                     android:ems="20"
-                    android:textAlignment="center"
                     android:hint="@string/phone"
                     android:inputType="number"
+                    android:textAlignment="center"
                     android:textColorHint="@color/edit_textok" />
             </LinearLayout>
 
@@ -163,6 +168,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/user_email"
+                    android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main"
                     android:textStyle="bold" />
 
@@ -176,44 +182,56 @@
                     android:layout_marginRight="16dp"
                     android:ems="20"
                     android:hint="@string/name_email"
-                    android:textAlignment="center"
                     android:inputType="text"
+                    android:textAlignment="center"
                     android:textColorHint="@color/edit_textok" />
             </LinearLayout>
 
             <!--ปุ่มบันทึก-->
-            <Button
-                android:id="@+id/buttonSave"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="16dp"
-                android:text="@string/Save"
-                android:textSize="22sp"
-                android:layout_marginLeft="16dp"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!--ปุ่มบันทึก-->
+                <Button
+                    android:id="@+id/buttonSave"
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="false"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/background_button"
+                    android:text="@string/Save"
+                    android:textColor="@color/colorBack"
+                    android:textSize="22sp" />
 
-            <!--ปุ่ม ถัดไป-->
-            <Button
-                android:id="@+id/buttonNext"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="16dp"
-                android:text="@string/BNext"
-                android:textSize="22sp"
-                android:layout_marginLeft="16dp"/>
+                <!--ปุ่ม ถัดไป-->
+                <Button
+                    android:id="@+id/buttonNext"
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/background_button"
+                    android:text="@string/BNext"
+                    android:textColor="@color/colorBack"
+                    android:textSize="22sp" />
+            </RelativeLayout>
 
-            <!--ปุ่มบันทึก-->
             <TextView
                 android:id="@+id/textSignin"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="16dp"
-                android:layout_gravity="center"
                 android:text="@string/Next"
-                android:textSize="20sp"
-                android:layout_marginLeft="16dp"/>
+                android:textSize="20sp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

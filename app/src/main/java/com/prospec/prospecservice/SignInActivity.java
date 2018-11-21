@@ -48,9 +48,8 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
- //      Province Spinner จังหวัด
+        //      Province Spinner จังหวัด
         provinceSpinner();
-
 
 
 //        Bind Widget
@@ -233,6 +232,7 @@ public class SignInActivity extends AppCompatActivity {
 
         nameTV.setAdapter(adapter);
     }
+
     private static final String[] CATEGORIES = new String[]{"นาย", "นาง", "นางสาว"};
 
     //  77 จังหวัด
@@ -259,7 +259,6 @@ public class SignInActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
     //  อำเภอของ 77จังหวัด
@@ -394,4 +393,4 @@ public class SignInActivity extends AppCompatActivity {
             "ธนาคารไทยธนาคาร จำกัด มหาชน",
             "ธนาคาร อาร์ เอช บี จำกัด"};
 
-}//Main Class
+    }//Main Class
