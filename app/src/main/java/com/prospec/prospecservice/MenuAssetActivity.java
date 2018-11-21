@@ -23,7 +23,7 @@ public class MenuAssetActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuAssetActivity.this, LandActivity.class));
+                startActivity(new Intent(MenuAssetActivity.this, LandBuildingActivity.class));
 
             }
         });

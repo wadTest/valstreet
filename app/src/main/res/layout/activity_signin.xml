@@ -445,6 +445,18 @@
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
+                    <!--ช่องเอาไว้ เลือกคำนำหน้า -->
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNamna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="16dp"
+                        android:textAlignment="center"
+                        android:hint="คำนำหน้า"
+                        android:inputType="text"
+                        android:textColorHint="@color/edit_textok" />
+
                     <!--กรอกชื่อผู้ใช้งาน-->
                     <EditText
                         android:id="@+id/editText12"
@@ -587,26 +599,26 @@
                         android:textColorHint="@color/edit_textok" />
                 </LinearLayout>
 
-                <!--From ตำบล-->
+                <!--From จังหวัด-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <!--ตำบล-->
+                    <!--จังหวัด-->
                     <TextView
-                        android:id="@+id/textView17"
+                        android:id="@+id/textView19"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
-                        android:text="@string/tambon"
+                        android:text="@string/jangW"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
-                    <!--กรอก ตำบล-->
-                    <EditText
-                        android:id="@+id/editText17"
+                    <!--กรอก จังหวัด-->
+                    <Spinner
+                        android:id="@+id/spinnerProvince"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
@@ -631,46 +643,46 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
+                        android:layout_marginTop="10dp"
                         android:text="@string/Amper"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
                     <!--กรอก อำเภอ-->
-                    <EditText
-                        android:id="@+id/editText18"
+                    <Spinner
+                        android:id="@+id/spinnerAmper"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginTop="3dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginRight="16dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
                         android:inputType="text"
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
                 </LinearLayout>
 
-                <!--From จังหวัด-->
+
+
+                <!--From ตำบล-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <!--จังหวัด-->
+                    <!--ตำบล-->
                     <TextView
-                        android:id="@+id/textView19"
+                        android:id="@+id/textView17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="3dp"
-                        android:text="@string/jangW"
+                        android:text="@string/tambon"
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
-                    <!--กรอก จังหวัด-->
+                    <!--กรอก ตำบล-->
                     <EditText
-                        android:id="@+id/editText19"
+                        android:id="@+id/editText17"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
@@ -734,8 +746,8 @@
                         android:textStyle="bold" />
 
                     <!--กรอก ชื่อสถาบันการก-->
-                    <EditText
-                        android:id="@+id/editText21"
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextBank"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"

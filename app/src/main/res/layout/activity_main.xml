@@ -192,6 +192,17 @@
                 android:textSize="22sp"
                 android:layout_marginLeft="16dp"/>
 
+            <!--ปุ่ม ถัดไป-->
+            <Button
+                android:id="@+id/buttonNext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/BNext"
+                android:textSize="22sp"
+                android:layout_marginLeft="16dp"/>
+
             <!--ปุ่มบันทึก-->
             <TextView
                 android:id="@+id/textSignin"
@@ -206,6 +217,13 @@
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
+
+
+
+
+
+
+
 
 
 

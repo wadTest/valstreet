@@ -46,15 +46,10 @@
             android:screenOrientation="portrait" />
         <!-- หน้ากรอกข้อความ -->
         <activity
-            android:name=".CustomDialogActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".SignInActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".LandActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".LandBuildingActivity"
+            android:name=".LandBuildingActivity"
             android:screenOrientation="portrait" />
 
     </application>

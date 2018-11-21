@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     //       Explicit ประกาศตัวแปร
     private EditText editTextNamna, editText1, editText2, editText3, editText4;
-    private Button buttonSave;
+    private Button buttonSave, buttonNext;
     private TextView textSignin;
     private String editT, editT1, editT2, editT3, editT4;
 
@@ -53,18 +53,18 @@ public class MainActivity extends AppCompatActivity {
             }//onClick
         });//End buttonSave
 
-////        (กดบันทึก กดลงทะเบียน)
-//        Button buttonSave = (Button) findViewById(R.id.buttonSave);
+//        Next to MenuActivity
+      buttonNext = (Button) findViewById(R.id.buttonNext);
 
 
-//        //    Get Event From Click Menu
-//        buttonSave.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent textSigninIntent = new Intent(MainActivity.this, MenuActivity.class);
-//                MainActivity.this.startActivity(textSigninIntent);
-//            }
-//        });
+      //    Get Event From Click Menu
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent textSigninIntent = new Intent(MainActivity.this, MenuActivity.class);
+                MainActivity.this.startActivity(textSigninIntent);
+            }
+        });
 
 //        Get Event การรับกิจกรรมจาก ตัวแปร (กดเพื่อลงทะเบียน)
         TextView textSignin = (TextView) findViewById(R.id.textSignin);
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         });//End textSign in
 
 
-//        ข้อความขึ้นอัตโนมัติ
+//        ข้อความขึ้นอัตโนมัติ คำนำหน้า
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, CATEGORIES);
         AutoCompleteTextView nameTV = (AutoCompleteTextView)
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         nameTV.setAdapter(adapter);
     }
 
-    private static final String[] CATEGORIES = new String[]{"นาย", "นาง", "นางสาว"};
+    private static final String[] CATEGORIES = new String[]{ "นาย", "นาง", "นางสาว"};
    }//Class Main
 
 
