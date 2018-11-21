@@ -18,7 +18,7 @@ public class BuildingActivity extends AppCompatActivity {
         //        Bind Widget
         linear1 = findViewById(R.id.linear1);
         linear2 = findViewById(R.id.linear2);
-        linear3 = findViewById(R.id.linear4);
+        linear3 = findViewById(R.id.linear3);
         linear4 = findViewById(R.id.linear4);
 
 //        การเปิด ปิด สลับกัน ของRadio Button , เมื่อกด ปุ่มใดปุ่มนึงใน Group
