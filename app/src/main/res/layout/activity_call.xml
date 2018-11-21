@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e9e7ce"
     android:orientation="vertical"
     tools:context=".CallActivity">
 
@@ -11,7 +12,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp">
+        android:padding="5dp">
 
         <!--From-->
         <LinearLayout
@@ -23,6 +24,7 @@
             <Button
                 android:id="@+id/button1"
                 android:layout_width="320dp"
+                android:background="@drawable/backgroup_call"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_02_559_0678"
@@ -33,6 +35,8 @@
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_liner"
                 android:text="@string/n_tel_05_324_0216"
                 android:textSize="@dimen/size_main" />
 
@@ -40,6 +44,8 @@
                 android:id="@+id/button3"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/backgroup_call"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_05_371_8391"
                 android:textSize="@dimen/size_main" />
@@ -47,6 +53,8 @@
             <Button
                 android:id="@+id/button4"
                 android:layout_width="320dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_liner"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_05_422_2879"
@@ -54,6 +62,8 @@
 
             <Button
                 android:id="@+id/button5"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/backgroup_call"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -63,6 +73,8 @@
             <Button
                 android:id="@+id/button6"
                 android:layout_width="320dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_liner"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_03_524_3242"
@@ -70,6 +82,8 @@
 
             <Button
                 android:id="@+id/button7"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/backgroup_call"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -79,6 +93,8 @@
             <Button
                 android:id="@+id/button8"
                 android:layout_width="320dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_liner"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_05_672_1980"
@@ -86,6 +102,8 @@
 
             <Button
                 android:id="@+id/button9"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/backgroup_call"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -95,6 +113,8 @@
             <Button
                 android:id="@+id/button10"
                 android:layout_width="320dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_liner"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_03_667_0695"
@@ -104,6 +124,8 @@
                 android:id="@+id/button11"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/backgroup_call"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_05_453_1220"
                 android:textSize="@dimen/size_main" />
@@ -111,6 +133,8 @@
             <Button
                 android:id="@+id/button12"
                 android:layout_width="350dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_liner"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_07_532_2331"
@@ -119,6 +143,8 @@
             <Button
                 android:id="@+id/button13"
                 android:layout_width="350dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/backgroup_call"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_03_260_2286"

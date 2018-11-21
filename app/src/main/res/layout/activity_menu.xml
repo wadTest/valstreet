@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f1f0ad"
+    android:background="#e9e7ce"
     android:orientation="vertical"
     tools:context=".MenuActivity">
 
@@ -24,13 +24,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"></LinearLayout>
+                android:orientation="horizontal"/>
 
             <!--Logo โฆษณา-->
             <ImageView
                 android:id="@+id/imageLogo"
                 android:layout_width="match_parent"
-                android:layout_height="210dp" />
+                android:layout_height="265dp"/>
 
             <!--Main หลักของ image โฆษณา-->
             <LinearLayout
@@ -42,6 +42,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
+                    android:background="@drawable/background_liner"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -74,6 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_marginLeft="8dp"
+                    android:background="@drawable/background_liner"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -105,6 +107,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_marginLeft="8dp"
+                    android:background="@drawable/background_liner"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -145,6 +148,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
+                    android:background="@drawable/background_liner"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -176,6 +180,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
+                    android:background="@drawable/background_liner"
                     android:layout_marginLeft="8dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -209,6 +214,7 @@
                     android:layout_height="140dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="10dp"
+                    android:background="@drawable/background_liner"
                     android:layout_weight="1"
                     android:orientation="vertical">
 

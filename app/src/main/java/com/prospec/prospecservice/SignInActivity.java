@@ -219,15 +219,6 @@ public class SignInActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-        //        ข้อความขึ้นอัตโนมัติ คำนำหน้า
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, CATEGORIES);
-        AutoCompleteTextView nameTV = (AutoCompleteTextView)
-                findViewById(R.id.editTextNamna1);
-
-        nameTV.setAdapter(adapter);
     }
 
     private static final String[] CATEGORIES = new String[]{"นาย", "นาง", "นางสาว"};
@@ -350,14 +341,22 @@ public class SignInActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, rowStrings);
         spinner.setAdapter(stringArrayAdapter);
 
-
-        //        ข้อความขึ้นอัตโนมัติ รายชื่อธนาคาร
+        //        ข้อความขึ้นอัตโนมัติ คำนำหน้า
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, CATEGORIES1);
+                android.R.layout.simple_dropdown_item_1line, CATEGORIES);
         AutoCompleteTextView nameTV = (AutoCompleteTextView)
-                findViewById(R.id.editTextBank);
+                findViewById(R.id.editTextNamna1);
 
         nameTV.setAdapter(adapter);
+
+
+        //        ข้อความขึ้นอัตโนมัติ รายชื่อธนาคาร
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, CATEGORIES1);
+        AutoCompleteTextView nameTV1 = (AutoCompleteTextView)
+                findViewById(R.id.editTextBank);
+
+        nameTV1.setAdapter(adapter1);
     }
     private static final String[] CATEGORIES1 = new String[]{
            " ธนาคารพัฒนาวิสาหกิจขนาดกลางและขนาดย่อมแห่งประเทศไทย",

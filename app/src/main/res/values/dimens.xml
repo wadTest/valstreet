@@ -2,6 +2,7 @@
 <resources>
     <dimen name="size_main">18sp</dimen>
     <dimen name="size_from">20sp</dimen>
-    <dimen name="margin_bottom">10dp</dimen>
-    <dimen name="size_from_main">24dp</dimen>
+    <dimen name="margin_bottom">10sp</dimen>
+    <dimen name="size_from_main">24sp</dimen>
+    <dimen name="size_from_main1">30sp</dimen>
 </resources>

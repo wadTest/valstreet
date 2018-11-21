@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#e9e7ce"
     android:layout_height="match_parent"
     tools:context=".MessageActivity">
 
@@ -19,7 +20,31 @@
             android:layout_height="120dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:background="@drawable/user" />
+            android:background="@drawable/logo_prospec" />
+
+        <!--Prospec Appraisal-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Prospec Appraisal"
+            android:textAlignment="center"
+            android:textColor="@color/colorBack"
+            android:textSize="@dimen/size_from_main1"
+            android:textStyle="bold" />
+
+        <!--บริษัท โปรสเปค แอพเพรซัล จำกัด-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="บริษัท โปรสเปค แอพเพรซัล จำกัด"
+            android:textAlignment="center"
+            android:textColor="@color/colorBack"
+            android:textSize="@dimen/size_from"
+            android:textStyle="bold" />
 
         <!--ปุ่ม ส่งข้อความแบบย่อ-->
         <Button
@@ -27,9 +52,9 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="60dp"
             android:layout_marginRight="16dp"
-            android:background="#dcfd64"
+            android:background="@drawable/backgroup_b1"
             android:text="ส่งข้อความแบบย่อ"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -42,7 +67,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="16dp"
-            android:background="#94fadf"
+            android:background="@drawable/backgroup_b1"
             android:text="ส่งข้อความละเอียด"
             android:textSize="30sp"
             android:textStyle="bold" />

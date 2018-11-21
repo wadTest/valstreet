@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#e9e7ce"
     android:padding="16dp"
     tools:context=".EmailActivity">
 
@@ -45,10 +46,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start|top"
+        android:textAlignment="center"
+        android:hint="กรอกข้อมูล"
         android:lines="10" />
 
     <Button
         android:id="@+id/button_send"
+        android:background="@drawable/background_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="send" />

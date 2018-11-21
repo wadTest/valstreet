@@ -195,7 +195,7 @@
                 <!--ปุ่มบันทึก-->
                 <Button
                     android:id="@+id/buttonSave"
-                    android:layout_width="160dp"
+                    android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentRight="false"
@@ -210,7 +210,7 @@
                 <!--ปุ่ม ถัดไป-->
                 <Button
                     android:id="@+id/buttonNext"
-                    android:layout_width="160dp"
+                    android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:layout_marginLeft="10dp"
