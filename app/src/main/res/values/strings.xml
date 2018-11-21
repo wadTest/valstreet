@@ -51,7 +51,7 @@
     <string name="amper1">อำเภอ</string>
     <string name="jangW1">จังหวัด</string>
 
-      <!-- หน้า activity_land_building-->
+    <!-- หน้า activity_land_building-->
     <string name="land">ที่ดินดินเปล่า จำนวน...แปลง</string>
     <string name="number_land1">แปลงที่ 1</string>
     <string name="edit_praped">ประเภทเอกสารสิทธิ์</string>
@@ -62,6 +62,13 @@
     <string name="number_land4">แปลงที่ 4</string>
     <string name="number_land5">แปลงที่ 5</string>
 
+    <!--หน้า Acitivity_building-->
+    <string name="land_buil">สิ่งปลูกสร้างในที่ดิน</string>
+    <string name="edit_prapedB">ประเภท</string>
+    <string name="edit_stus">โครงสร้าง</string>
+    <string name="edit_numF">จำนวนชั้น</string>
+    <string name="edit_numT">เนื้อที่(ตรม.)</string>
+    <string name="edit_age">อายุ</string>
 
 
 </resources>

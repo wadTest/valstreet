@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="#efecec"
     android:layout_height="match_parent"
     tools:context=".CustomDialogActivity">
 
@@ -13,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="25dp"
         android:text="โปรกกรอก รายละเอียดสินทรัพย์ที่จะประเมิน พร้อมที่ตั้งทรัพย์สิน"
         android:textAlignment="center"
         android:textColor="#050000"

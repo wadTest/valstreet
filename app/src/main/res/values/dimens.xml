@@ -4,5 +4,6 @@
     <dimen name="size_from">20sp</dimen>
     <dimen name="margin_bottom">10sp</dimen>
     <dimen name="size_from_main">24sp</dimen>
+    <dimen name="size_from_b">28sp</dimen>
     <dimen name="size_from_main1">30sp</dimen>
 </resources>

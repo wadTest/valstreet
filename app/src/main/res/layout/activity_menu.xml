@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e9e7ce"
+    android:background="#efecec"
     android:orientation="vertical"
     tools:context=".MenuActivity">
 
@@ -30,7 +30,7 @@
             <ImageView
                 android:id="@+id/imageLogo"
                 android:layout_width="match_parent"
-                android:layout_height="265dp"/>
+                android:layout_height="270dp"/>
 
             <!--Main หลักของ image โฆษณา-->
             <LinearLayout

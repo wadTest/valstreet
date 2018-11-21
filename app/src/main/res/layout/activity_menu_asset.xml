@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e9e7ce"
+    android:background="#efecec"
     tools:context=".MenuAssetActivity">
 
 
@@ -47,55 +47,55 @@
             android:textSize="@dimen/size_from"
             android:textStyle="bold" />
 
-        <!--หัวข้อ ทรัพย์สินเ็น-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:text="ทรัพย์สินเป็น"
-            android:textAlignment="center"
-            android:textColor="#050000"
-            android:textSize="@dimen/size_from_main"
-            android:textStyle="bold" />
+        <!--&lt;!&ndash;หัวข้อ ทรัพย์สินเ็น&ndash;&gt;-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginTop="50dp"-->
+            <!--android:text="ทรัพย์สินเป็น"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="#050000"-->
+            <!--android:textSize="@dimen/size_from_main"-->
+            <!--android:textStyle="bold" />-->
 
         <!--ปุ่ม ที่ดิน-->
         <Button
             android:id="@+id/button1"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="16dp"
-            android:background="#cc82e9"
+            android:background="@drawable/background_button"
             android:text="ที่ดิน"
-            android:textSize="@dimen/size_from_main"
+            android:textSize="@dimen/size_from_b"
             android:textStyle="bold" />
 
         <!--ปุ่ม ที่ดินพร้อมสิ่งปลูกสร้าง-->
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="16dp"
-            android:background="#59b2ce"
+            android:background="@drawable/background_button"
             android:text="ที่ดินพร้อมสิ่งปลูกสร้าง"
-            android:textSize="@dimen/size_from_main"
+            android:textSize="@dimen/size_from_b"
             android:textStyle="bold" />
 
         <!--ปุ่ม ห้องชุด-->
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="16dp"
-            android:background="#f2a358"
+            android:background="@drawable/background_button"
             android:text="ห้องชุด"
-            android:textSize="@dimen/size_from_main"
+            android:textSize="@dimen/size_from_b"
             android:textStyle="bold" />
     </LinearLayout>
 

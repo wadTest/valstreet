@@ -25,7 +25,6 @@ public class MessageActivity extends AppCompatActivity {
         button2 = (Button) findViewById(R.id.button2);
 
 
-
 //        //Get Event From Click Text
 //        button1.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -43,8 +42,6 @@ public class MessageActivity extends AppCompatActivity {
 
             }
         });
-
-
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,5 +71,6 @@ public class MessageActivity extends AppCompatActivity {
                 alertDialogAndroid.show();
             }
         });
+
     }
 }
