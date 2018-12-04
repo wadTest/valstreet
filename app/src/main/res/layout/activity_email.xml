@@ -20,6 +20,7 @@
         android:id="@+id/edit_text_to"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="prospec@prospec.co.th"
         android:inputType="textEmailAddress" />
 
     <TextView
@@ -47,7 +48,6 @@
         android:layout_height="wrap_content"
         android:gravity="start|top"
         android:textAlignment="center"
-        android:hint="กรอกข้อมูล"
         android:lines="10" />
 
     <Button

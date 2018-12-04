@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#efecec"
     android:orientation="vertical"
-    tools:context=".CallActivity">
+    tools:context=".LineActivity">
 
     <!--Content เลื่อนลง-->
     <ScrollView
@@ -24,7 +24,7 @@
             <Button
                 android:id="@+id/button1"
                 android:layout_width="320dp"
-                android:background="@drawable/backgroup_call"
+                android:background="@drawable/background_button"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_02_559_0678"
@@ -45,7 +45,7 @@
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/backgroup_call"
+                android:background="@drawable/background_button"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_05_371_8391"
                 android:textSize="@dimen/size_main" />
@@ -63,7 +63,7 @@
             <Button
                 android:id="@+id/button5"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/backgroup_call"
+                android:background="@drawable/background_button"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -83,7 +83,7 @@
             <Button
                 android:id="@+id/button7"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/backgroup_call"
+                android:background="@drawable/background_button"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -103,7 +103,7 @@
             <Button
                 android:id="@+id/button9"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/backgroup_call"
+                android:background="@drawable/background_button"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -125,7 +125,7 @@
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/backgroup_call"
+                android:background="@drawable/background_button"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_05_453_1220"
                 android:textSize="@dimen/size_main" />
@@ -144,7 +144,7 @@
                 android:id="@+id/button13"
                 android:layout_width="320dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/backgroup_call"
+                android:background="@drawable/background_button"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/n_tel_03_260_2286"

@@ -26,16 +26,55 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"/>
 
-            <!--Logo โฆษณา-->
-            <ImageView
-                android:id="@+id/imageLogo"
-                android:layout_width="match_parent"
-                android:layout_height="270dp"/>
+
+            <ViewFlipper
+            android:id="@+id/imageShow"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp" />
+
+
+            <!--Image Banner-->
+            <!--<ImageView-->
+                <!--android:id="@+id/imageLogo"-->
+                <!--android:layout_width="120dp"-->
+                <!--android:layout_height="120dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:background="@drawable/logo_prospec" />-->
+
+            <!--&lt;!&ndash;Prospec Appraisal&ndash;&gt;-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="Prospec Appraisal"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textColor="@color/colorBack"-->
+                <!--android:textSize="@dimen/size_from_main1"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--&lt;!&ndash;บริษัท โปรสเปค แอพเพรซัล จำกัด&ndash;&gt;-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:text="บริษัท โปรสเปค แอพเพรซัล จำกัด"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textColor="@color/colorBack"-->
+                <!--android:textSize="@dimen/size_from"-->
+                <!--android:textStyle="bold" />-->
+
+
 
             <!--Main หลักของ image โฆษณา-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 1 -->
@@ -225,7 +264,7 @@
                         android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_date"
+                        android:src="@drawable/ic_messenger"
                         tools:ignore="ContentDescription" />
 
                     <!--ปุ่ม นัดตรวจงวดงาน-->

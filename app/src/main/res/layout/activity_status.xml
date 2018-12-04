@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#efecec"
+tools:context=".StatusActivity">
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<com.asksira.webviewsuite.WebViewSuite-->
+        <!--android:id="@+id/webViewSuite"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:enableHorizontalScrollBar="false"-->
+        <!--app:enableJavaScript="false"-->
+        <!--app:enableVerticalScrollBar="false"-->
+        <!--app:inflationDelay="100"-->
+        <!--app:overrideEmailLink="true"-->
+        <!--app:overridePdfLink="true"-->
+        <!--app:overrideTelLink="true"-->
+        <!--app:showZoomControl="false"-->
+        <!--app:url="https://www.google.co.th/"-->
+        <!--app:webViewProgressBarStyle="linear" />-->
+
+<!--</android.support.design.widget.CoordinatorLayout>-->
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#efecec"-->
+    <!--tools:context=".StatusActivity">-->
+
+    <!--&lt;!&ndash;Content เลื่อนลง&ndash;&gt;-->
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:padding="10dp">-->
+
+        <!--&lt;!&ndash;Content&ndash;&gt;-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical"-->
+            <!--android:paddingBottom="16dp">-->
+
+            <!--&lt;!&ndash; สถานะงาน&ndash;&gt;-->
+            <!--<TextView-->
+                <!--android:id="@+id/textView"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="@string/status"-->
+                <!--android:textColor="@color/colorBack"-->
+                <!--android:textSize="@dimen/size_from_main"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--&lt;!&ndash;กรอก นามสกุล&ndash;&gt;-->
+            <!--<EditText-->
+                <!--android:id="@+id/editName"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="3dp"-->
+                <!--android:ems="20"-->
+                <!--android:hint="กรอกชื่อ"-->
+                <!--android:inputType="text"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textColorHint="@color/edit_textok" />-->
+
+            <!--&lt;!&ndash;กรอก นามสกุล&ndash;&gt;-->
+            <!--<EditText-->
+                <!--android:id="@+id/editLast"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="3dp"-->
+                <!--android:ems="20"-->
+                <!--android:hint="กรอกนาสกุล"-->
+                <!--android:inputType="text"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textColorHint="@color/edit_textok" />-->
+
+            <!--&lt;!&ndash;กรอก ธนาคาร&ndash;&gt;-->
+            <!--<AutoCompleteTextView-->
+                <!--android:id="@+id/editBank"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="3dp"-->
+                <!--android:ems="20"-->
+                <!--android:hint="กรอกธนาคาร"-->
+                <!--android:inputType="text"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textColorHint="@color/edit_textok" />-->
+        <!--</LinearLayout>-->
+
+
+
+    <!--</ScrollView>-->
+<!--</LinearLayout>-->

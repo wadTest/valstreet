@@ -37,14 +37,13 @@ public class EmailActivity extends AppCompatActivity {
 //ข้อความที่กรอกจะถูกถาม และส่งไป
     private void sendMail() {
         String recipientList = mEditTextTo.getText().toString().trim();
-        String[] recipients = recipientList.split(",");
         String subject = mEditTextSubject.getText().toString().trim();
         String message = mEditTextMessage.getText().toString();
         if (message.equals(String.valueOf(""))) {
             mEditTextMessage.setError("โปรดกรอกข้อมูลในช่องว่าง!");
         } else {
             Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"prospec@prospec.co.th"});
             intent.putExtra(Intent.EXTRA_SUBJECT, subject);
             intent.putExtra(Intent.EXTRA_TEXT, message);
             intent.setType("message/rfc822");

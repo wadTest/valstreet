@@ -56,7 +56,7 @@ public class MessageActivity extends AppCompatActivity {
                         .setCancelable(false)
                         .setPositiveButton("Send", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialogBox, int id) {
-                                // ToDo get user input here
+                                // สิ่งที่ต้องทำเพื่อให้ได้ข้อมูลของผู้ใช้ที่นี่
                             }
                         })
 

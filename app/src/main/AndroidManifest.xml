@@ -56,8 +56,21 @@
         <activity
             android:name=".BuildingActivity"
             android:screenOrientation="portrait" />
-        <!--หน้าห้องชุด-->
-        <activity android:name=".RoomActivity"
+        <!-- หน้าห้องชุด -->
+        <activity
+            android:name=".RoomActivity"
+            android:screenOrientation="portrait" />
+        <!-- หน้าแสดงสถานะ -->
+        <activity
+            android:name=".StatusActivity"
+            android:screenOrientation="portrait" />
+        <!-- หน้าลงทะเบียน -->
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".StatusJobActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".LineActivity"
             android:screenOrientation="portrait" />
     </application>
 

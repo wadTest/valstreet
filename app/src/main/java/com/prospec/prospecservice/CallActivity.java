@@ -36,7 +36,6 @@ public class CallActivity extends AppCompatActivity {
         button12 = (Button) findViewById(R.id.button12);
         button13 = (Button) findViewById(R.id.button13);
 
-
 //        เมื่อกดปุ่มนี้ จะโทรไปยังเบอร์สำนักงานใหญ่
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,4 +180,4 @@ public class CallActivity extends AppCompatActivity {
         });
 
     }//Method
-    }//Class Main
+}//Class Main

@@ -16,19 +16,19 @@
     <string name="Next">สมัครสมาชิกที่นี่</string>
 
     <!--หน้า activity_call-->
-    <string name="n_tel_02_559_0678">สำนักงานใหญ่  Tel.02-559-0678</string>
-    <string name="n_tel_05_324_0216">สาขา เชียงใหม่  Tel.05-324-0216</string>
-    <string name="n_tel_05_371_8391">สาขา เชียงราย  Tel.05-371-8391</string>
-    <string name="n_tel_05_422_2879">สาขา ลำปาง  Tel.05-422-2879</string>
-    <string name="n_tel_05_521_1243">สาขา พิษณุโลก  Tel.05-521-1243</string>
-    <string name="n_tel_03_524_3242">สาขา อยุธยา  Tel.03-524-3242</string>
-    <string name="n_tel_03_232_1934">สาขา ราชบุรี  Tel.03-232-1934</string>
-    <string name="n_tel_05_672_1980">สาขา เพชรบูรณ์  Tel.05-672-1980</string>
-    <string name="n_tel_05_571_4806">สาขา กำแพงเพรช  Tel.05-571-4806</string>
-    <string name="n_tel_03_667_0695">สาขา สระบุรี  Tel.03-667-0695</string>
-    <string name="n_tel_05_453_1220">สาขา แพร่  Tel.05-453-1220</string>
-    <string name="n_tel_07_532_2331">สาขา นครศรีธรรมราช  Tel.07-532-2331</string>
-    <string name="n_tel_03_260_2286">สาขา ประจวบคีรีขันธ์  Tel.03-260-2286</string>
+    <string name="n_tel_02_559_0678">สำนักงานใหญ่</string>
+    <string name="n_tel_05_324_0216">สาขา เชียงใหม่</string>
+    <string name="n_tel_05_371_8391">สาขา เชียงราย</string>
+    <string name="n_tel_05_422_2879">สาขา ลำปาง</string>
+    <string name="n_tel_05_521_1243">สาขา พิษณุโลก</string>
+    <string name="n_tel_03_524_3242">สาขา อยุธยา</string>
+    <string name="n_tel_03_232_1934">สาขา ราชบุรี</string>
+    <string name="n_tel_05_672_1980">สาขา เพชรบูรณ์</string>
+    <string name="n_tel_05_571_4806">สาขา กำแพงเพรช</string>
+    <string name="n_tel_03_667_0695">สาขา สระบุรี</string>
+    <string name="n_tel_05_453_1220">สาขา แพร่</string>
+    <string name="n_tel_07_532_2331">สาขา นครศรีธรรมราช</string>
+    <string name="n_tel_03_260_2286">สาขา ประจวบคีรีขันธ์</string>
 
     <!--หน้า activity_signin-->
     <string name="name_customer">ชื่อ</string>
@@ -76,6 +76,12 @@
     <string name="edit_numFo">ชั้นที่</string>
     <string name="edit_nteeT">เนื้อที่รวม(ตรม.)</string>
     <string name="edit_nameH">ชื่ออาคารชุด</string>
+
+    <!--หน้า activity_satus-->
+    <string name="status">สถานะงาน</string>
+    <string name="name_password">Password</string>
+    <string name="user_email_login">E-mail</string>
+    <string name="user_password_login">Password</string>
 
 
 </resources>

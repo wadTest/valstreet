@@ -51,7 +51,6 @@ public class SignInActivity extends AppCompatActivity {
         //      Province Spinner จังหวัด
         provinceSpinner();
 
-
 //        Bind Widget
         editText1 = (EditText) findViewById(R.id.editText1);
         editText2 = (EditText) findViewById(R.id.editText2);
