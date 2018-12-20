@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#efecec"
-    android:padding="16dp"
+    android:padding="18dp"
     tools:context=".EmailActivity">
 
 
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:gravity="start|top"
         android:textAlignment="center"
-        android:lines="10" />
+        android:lines="15" />
 
     <Button
         android:id="@+id/button_send"

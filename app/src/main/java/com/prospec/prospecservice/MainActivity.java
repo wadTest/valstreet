@@ -10,83 +10,106 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import android.support.v7.app.AppCompatActivity;
+
+import com.prospec.prospecservice.utility.SynUser;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity {
 
     //       Explicit ประกาศตัวแปร
-    private EditText editTextNamna, editText1, editText2, editText3, editText4;
-    private Button buttonSave, buttonNext;
-    private TextView textSignin;
-    private String editT, editT1, editT2, editT3, editT4;
+    private EditText et_email, et_password;
+    private Button btn_login;
+    private TextView tv_register;
+//    truePassString คือ ตัวแปรที่ใช้เก็บค่า password ที่อ่านได้
+    private String uerString, passwordString, truePassString;
+    private boolean aBoolean = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        Get Event การรับกิจกรรมจาก ตัวแปร (ช่องกรอกข้อมูล)
-        editTextNamna = (EditText) findViewById(R.id.editTextNamna);
-        editText1 = (EditText) findViewById(R.id.editText1);
-        editText2 = (EditText) findViewById(R.id.editText2);
-        editText3 = (EditText) findViewById(R.id.editText3);
-        editText4 = (EditText) findViewById(R.id.editText4);
+//        Get Event การรับกิจกรรมจาก ตัวแปร (ช่องกรอกข้อมูล) ผูกความสัมพันธ์
+        et_email = (EditText) findViewById(R.id.et_email);
+        et_password = (EditText) findViewById(R.id.et_password);
+        btn_login = (Button) findViewById(R.id.btn_login);
+        tv_register = (TextView) findViewById(R.id.tv_register);
 
-        buttonSave = (Button) findViewById(R.id.buttonSave);
 
-        //        ปุ่มบันทึก
-        buttonSave.setOnClickListener(new View.OnClickListener() {
+        //      เมื่อยังไม่ได้ลงทะเบียน กดปุ่มนี้จะไปลงทะเบียน
+        tv_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SignInActivity.class));
+            }
+        });
+
+//       เมื่อกดปุ่มนี้จะขึ้นหน้าเมนู ของหน้าถัดไป
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-//        Get Value From Edit Text (trim คือ ลบเว้นวรรค หน้าหลัง)
-                editT = editTextNamna.getText().toString().trim();
-                editT1 = editText1.getText().toString().trim();
-                editT2 = editText2.getText().toString().trim();
-                editT3 = editText3.getText().toString().trim();
-                editT4 = editText4.getText().toString().trim();
+                uerString = et_email.getText().toString().trim();
+                passwordString = et_password.getText().toString().trim();
 
-//                Check Space เมื่อไไหร่ก้ตาม ถ้า editT1..มัน equals กับความว่างเปล่า blool จะเป็น True (|| ไบร์ย  t or t =t , t or f = t, f or t = t, f or f =f)
-                if (editT.equals("") || editT1.equals("") || editT2.equals("") || editT3.equals("") || editT4.equals("")) {
-                    //Have Space เมื่อกรอกจะเตือน
-                    MyAlert myAlert = new MyAlert(MainActivity.this, "มีพื้นที่ว่าง", "โปรดกรอกข้อมูลทั้งหมดในช่องว่าง");
+                if (uerString.equals("") || passwordString.equals("")) {
+                    MyAlert myAlert = new MyAlert(MainActivity.this, "มีช่องว่าง",
+                            "กรุณากรอกข้อมูลในช่องว่าง");
                     myAlert.myDialog();
+                } else {
+
+                    //No Space ดึงค่าจาก server
+                    checkUser();
                 }
             }//onClick
-        });//End buttonSave
+        });
+    }//Method
 
-//        Next to MenuActivity
-        buttonNext = (Button) findViewById(R.id.buttonNext);
+    private void checkUser() {
+        try {
+
+            SynUser synUser = new SynUser(MainActivity.this);
+            synUser.execute();
+//            อ่านค่ามันออกมา
+            String s = synUser.get();
+            JSONArray jsonArray = new JSONArray(s);
+//            วบ loop
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+//                ถ้า  user ที่ลูกค้ากรอก มีค่าเท่ากับสิ่งที่อ่านได้จากฐานข้อมูล
+                if (uerString.equals(jsonObject.getString("email"))) {
+//                    ให้เอาค่าของ aBoolean มีค่า = false
+                    aBoolean = false;
+                    truePassString = jsonObject.getString("encrypted_password");
+                }
+            }//for
 
 
-        //    Get Event From Click Menu
-        buttonNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent textSigninIntent = new Intent(MainActivity.this, MenuActivity.class);
-                MainActivity.this.startActivity(textSigninIntent);
+//            ดูค่าของ aBoolean ว่ามีค่า = true หรือเปล่า
+            if (aBoolean) {
+//                ถ้ามีค่า = true ในกรณีที่ใส่ user ผิด
+                MyAlert myAlert = new MyAlert(MainActivity.this, "ใส่อีเมล์ผิด",
+                        " กรุณาตรวจอีเมล์สอบอีกครั้ง");
+                myAlert.myDialog();
+            } else if (passwordString.equals(truePassString)) {
+
+                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                startActivity(intent);
+//                ไม่ให้ย้อยกลับมาหน้าเก่า กดปุ่มกลับก็จะออกจากหน้าจอเลย
+                finish();
+            } else {
+//                ถ้าเกิดว่าผิด
+                MyAlert myAlert = new MyAlert(MainActivity.this, "ใส่รหัสผ่านไม่ถูกต้อง",
+                        "กรุณาตรวจสอบรหัสผ่านอีกครั้ง");
+//                แล้วเอาค่าคงตัวมา  myDialog
+                        myAlert.myDialog();
             }
-        });//MenuActivity
-
-//        Get Event การรับกิจกรรมจาก ตัวแปร (กดเพื่อลงทะเบียน)
-        TextView textSignin = (TextView) findViewById(R.id.textSignin);
-        //    Get Event From Click Sign in
-        textSignin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent textSigninIntent = new Intent(MainActivity.this, SignInActivity.class);
-                MainActivity.this.startActivity(textSigninIntent);
-            }
-        });//End textSign in
-
-
-//        ข้อความขึ้นอัตโนมัติ คำนำหน้า
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, CATEGORIES);
-        AutoCompleteTextView nameTV = (AutoCompleteTextView)
-                findViewById(R.id.editTextNamna);
-
-        nameTV.setAdapter(adapter);
-    }
-
-    private static final String[] CATEGORIES = new String[]{ "นาย", "นาง", "นางสาว"};
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//Method
 }//Class Main
 

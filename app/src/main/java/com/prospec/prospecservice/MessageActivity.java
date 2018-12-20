@@ -14,6 +14,8 @@ import android.widget.EditText;
 public class MessageActivity extends AppCompatActivity {
 
     private Button button1, button2;
+    private EditText editText;
+    private String editTextMessage;
     final Context c = this;
 
     @Override
@@ -51,16 +53,23 @@ public class MessageActivity extends AppCompatActivity {
                 AlertDialog.Builder alertDialogBuilderUserInput = new AlertDialog.Builder(c);
                 alertDialogBuilderUserInput.setView(mView);
 
-                final EditText userInputDialogEditText = (EditText) mView.findViewById(R.id.editText);
+
                 alertDialogBuilderUserInput
                         .setCancelable(false)
-                        .setPositiveButton("Send", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("ส่งข้อความ", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialogBox, int id) {
+
+//                                editText = (EditText) findViewById(R.id.editText);
+//                                editTextMessage = editText.getText().toString().trim();
+//                                if (editTextMessage.equals((""))) {
+//                                }
+//                                editText.setError("โปรดกรอกข้อมูลในช่องว่าง!");
+
                                 // สิ่งที่ต้องทำเพื่อให้ได้ข้อมูลของผู้ใช้ที่นี่
                             }
                         })
 
-                        .setNegativeButton("Cancel",
+                        .setNegativeButton("ยกเลิก",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialogBox, int id) {
                                         dialogBox.cancel();
@@ -71,6 +80,6 @@ public class MessageActivity extends AppCompatActivity {
                 alertDialogAndroid.show();
             }
         });
-
     }
+
 }

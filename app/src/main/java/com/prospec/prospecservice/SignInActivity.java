@@ -1,14 +1,12 @@
 package com.prospec.prospecservice;
 
 
-import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -18,12 +16,13 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.security.acl.Group;
+import com.prospec.prospecservice.utility.AddUserToServer;
+
+import org.jibble.simpleftp.SimpleFTP;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -32,12 +31,12 @@ public class SignInActivity extends AppCompatActivity {
     private View contenedorCorporativo;
 
     private EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8, editText9, editText10, editText11,
-            editText12, editText13, editText14, editText15, editText16, editText17, editText20;
+            editText12, editText13, editText14, editText15, editText16, editText17, editText20, editTextPassword, editTextPassword1;
     private ImageView imageName;
-    private Button buttonSignUp, buttonSignUp1;
+    private Button buttonSignUp;
     //    ทำหน้าที่มนการรับค่าที่เกิดจากการกรอก (เปลี่ยนเป็นสติงก่อน และทำการรับผล)
     private String editT1, editT2, editT3, editT4, editT5, editT6, editT7, editT8, editT9, editT10,
-            editT11, editT12, editT13, editT14, editT15, editT16, editT17, editT18, editT19, editT20, editT21, pathImage, nameImage;
+            editT11, editT12, editT13, editT14, editT15, editT16, editT17, editT20, pathImage, nameImage, Password1, Password;
     //    ประกาศตัวแปรเกี่ยวกับรูปภาพ
     private Uri uri;
     private String tag = "ProsecImage";
@@ -70,12 +69,14 @@ public class SignInActivity extends AppCompatActivity {
         editText16 = (EditText) findViewById(R.id.editText16);
         editText17 = (EditText) findViewById(R.id.editText17);
         editText20 = (EditText) findViewById(R.id.editText20);
+        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        editTextPassword1 = (EditText) findViewById(R.id.editTextPassword1);
+
         buttonSignUp = (Button) findViewById(R.id.buttonSignUp);
-        buttonSignUp1 = (Button) findViewById(R.id.buttonSignUp1);
         imageName = (ImageView) findViewById(R.id.imageName);
 
 //        ปุ่มชองลูกค้า
-        buttonSignUp1.setOnClickListener(new View.OnClickListener() {
+        buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -91,20 +92,7 @@ public class SignInActivity extends AppCompatActivity {
                 editT9 = editText9.getText().toString().trim();
                 editT10 = editText10.getText().toString().trim();
                 editT11 = editText11.getText().toString().trim();
-
-//                Check Space เมื่อไไหร่ก้ตาม ถ้า editT1..มัน equals กับความว่างเปล่า blool จะเป็น True (|| ไบร์ย  t or t =t , t or f = t, f or t = t, f or f =f)
-                if (editT1.equals("") || editT2.equals("") || editT3.equals("") || editT4.equals("") || editT5.equals("") || editT6.equals("")
-                        || editT7.equals("") || editT8.equals("") || editT9.equals("") || editT10.equals("") || editT11.equals("")) {
-                }
-
-            }//onClick
-        });
-
-//        ปุ่มของผู้ส่งงาน
-        buttonSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+                Password1 = editTextPassword1.getText().toString().trim();
                 editT12 = editText12.getText().toString().trim();
                 editT13 = editText13.getText().toString().trim();
                 editT14 = editText14.getText().toString().trim();
@@ -112,15 +100,24 @@ public class SignInActivity extends AppCompatActivity {
                 editT16 = editText16.getText().toString().trim();
                 editT17 = editText17.getText().toString().trim();
                 editT20 = editText20.getText().toString().trim();
+                Password = editTextPassword.getText().toString().trim();
 
 //                Check Space เมื่อไไหร่ก้ตาม ถ้า editT1..มัน equals กับความว่างเปล่า blool จะเป็น True (|| ไบร์ย  t or t =t , t or f = t, f or t = t, f or f =f)
-                if (editT12.equals("") || editT13.equals("") || editT14.equals("") || editT15.equals("") || editT16.equals("") || editT17.equals("") ||
-                        editT18.equals("") || editT19.equals("") || editT20.equals("") || editT21.equals("")) {
-                    //Have Space เมื่อกรอกจะเตือน
-                    MyAlert myAlert1 = new MyAlert(SignInActivity.this, "มีพื้นที่ว่าง", "โปรดกรอกข้อมูลทั้งหมดในช่องว่าง");
-                    myAlert1.myDialog();
-                }
+                    if (editT12.equals("") || editT13.equals("") || editT14.equals("") || editT15.equals("") || editT16.equals("") || editT17.equals("") ||
+                        editT20.equals("") || Password1.equals("")) {
 
+                        //Have Space เมื่อไม่กรอกจะเตือน
+                        MyAlert myAlert1 = new MyAlert(SignInActivity.this, "มีพื้นที่ว่าง", "โปรดกรอกข้อมูลทั้งหมดในช่องว่าง");
+                        myAlert1.myDialog();
+
+                        if (editT1.equals("") || editT2.equals("") || editT3.equals("") || editT4.equals("") || editT5.equals("") || editT6.equals("")
+                                || editT7.equals("") || editT8.equals("") || editT9.equals("") || editT10.equals("") || editT11.equals("") || Password.equals("")){
+
+
+//                    upload ข้อมูลที่กรอกไปเก็บไว้ใน my sql
+                        uploadString();
+                    }
+                }//onClick  buttonSignUp1
             }//onClick
         });
 
@@ -128,13 +125,14 @@ public class SignInActivity extends AppCompatActivity {
         imageName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                ต้องการใช้ class จากภายนอก ต้อง
+//                ต้องการใช้ class จากภายนอก
 //                ACTION_GET_CONTENT ส่งสิ่งนี้ไปยังโปรแกรมอื่น ให้โปรแกรมอื่นทำงานจนเสร็จ พอทำงานเสร็จ จะทำการคืนผลลัพธ์กลับมา
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 //                image/* คือสิ่งที่สามรถเปิดรูปภาพได้ เช่น ต้องการเปิดด้วย แกลอรี่ โฟโต ฯลฯ
                 intent.setType("image/*");
+//                ให้โปรแกรมทำงานจนเสร็จแล้วส่งค่ากลับมาที่ Method
                 startActivityForResult(Intent.createChooser(intent, "โปรดเลือกแอพ ที่จะทำการเปิด"), 1);
-            }
+            }//onClick
         });
 
 
@@ -160,6 +158,29 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
+
+//    เกี่ยวกับการอัปโหลดขึ้น server (ปุ่มลงทะเบียนลูกคค้า)
+    private void uploadString() {
+
+        try {
+
+            AddUserToServer addUserToServer = new AddUserToServer(SignInActivity.this, editT1, editT2,
+                    editT3, editT4, editT5, editT6, editT7, editT8, editT9, editT10,
+                    editT11, editT12, editT13, editT14, editT15, editT16, editT17, editT20, Password1, Password);
+            addUserToServer.execute();
+
+//            เมื่อไหร่ก็ตามถ้ามีค่าเป็น true ให้ทำ finish โดยการกลับไปที่หน้าแรก
+            if (Boolean.parseBoolean(addUserToServer.get())) {
+                finish();
+//                แต่ถ้าไม่ใช่ ให้ แสดงข้อความ ไม่สามารถอัพโหลดได้ ขึ้นมาเป็นเวลา 4 วิ
+            } else {
+                Toast.makeText(SignInActivity.this, "ไม่สามารถอัพโหลดได้", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private void mostrarParticular(boolean b) {
 //       มองเห็นได้ --> แล้วไปที่ กรอกข้อมูลลูกค้า
         contenedorParticular.setVisibility(b ? View.VISIBLE : View.GONE);
@@ -169,6 +190,7 @@ public class SignInActivity extends AppCompatActivity {
 
     public void onRadioButtonClicked(View view) {
     }//    ปีกกาปิดของคำสั่ง radio Group
+
 
     //  เกี่ยวกับรูปภาพ
     @Override
@@ -357,9 +379,10 @@ public class SignInActivity extends AppCompatActivity {
 
         nameTV1.setAdapter(adapter1);
     }
+
     private static final String[] CATEGORIES1 = new String[]{
-           " ธนาคารพัฒนาวิสาหกิจขนาดกลางและขนาดย่อมแห่งประเทศไทย",
-           " ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร",
+            " ธนาคารพัฒนาวิสาหกิจขนาดกลางและขนาดย่อมแห่งประเทศไทย",
+            " ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร",
             "ธนาคารเพื่อการส่งออก และนำเข้าแห่งประเทศไทย",
             "ธนาคารออมสิน",
             "ธนาคารอาคารสงเคราะห์",
@@ -388,4 +411,4 @@ public class SignInActivity extends AppCompatActivity {
             "ธนาคารไทยธนาคาร จำกัด มหาชน",
             "ธนาคาร อาร์ เอช บี จำกัด"};
 
-    }//Main Class
+}//Main Class

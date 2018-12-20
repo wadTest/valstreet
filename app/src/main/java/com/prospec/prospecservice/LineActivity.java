@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,11 +14,21 @@ public class LineActivity extends AppCompatActivity {
     //   Explicit ประกาศตัวแปร
     private Button button1, button2, button3, button4, button5, button6,
             button7, button8, button9, button10, button11, button12, button13;
+    private Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_line);
+
+        //        ADD Toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("ติดต่อทาง@line");
+        toolbar.setSubtitle("เลือกเมนูในการติดต่อทางไลน์");
+        toolbar.setLogo(R.drawable.logo_prospec);
+
 
         //        Get Event การรับกิจกรรมจาก ตัวแปร กดปุ่ม 1-13
         button1 = (Button) findViewById(R.id.button1);

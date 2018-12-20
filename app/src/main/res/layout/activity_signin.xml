@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="30dp">
+            android:paddingBottom="15dp">
 
             <!--Image Logo-->
             <ImageView
@@ -74,7 +74,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
                     android:orientation="horizontal">
 
                     <!--ชื่อผู้ใช้งาน-->
@@ -449,17 +448,7 @@
                         android:textColorHint="@color/edit_textok" />
                 </LinearLayout>
 
-                <Button
-                    android:id="@+id/buttonSignUp1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/background_button"
-                    android:text="ลงทะเบียน"
-                    android:textColor="@color/colorBack"
-                    android:textSize="@dimen/size_from"
-                    android:textStyle="bold" />
-            </LinearLayout> <!--วงเล็บเปิด Radio Group-->
+        </LinearLayout><!--วงเล็บเปิด Radio Group-->
 
 
             <!--ตั้งแต่ตรงนี้คือ ช่องให้กรอกข้อง ลูกค้า-->
@@ -824,6 +813,7 @@
                         android:textAlignment="center"
                         android:textColorHint="@color/edit_textok" />
                 </LinearLayout>
+            </LinearLayout>
 
                 <Button
                     android:id="@+id/buttonSignUp"
@@ -836,8 +826,6 @@
                     android:textSize="@dimen/size_from"
                     android:textStyle="bold" />
 
-
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

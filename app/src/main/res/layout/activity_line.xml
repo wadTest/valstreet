@@ -8,11 +8,18 @@
     android:orientation="vertical"
     tools:context=".LineActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar"
+        android:background="@color/colorPrimary"
+        android:layout_height="58dp">
+    </android.support.v7.widget.Toolbar>
+
     <!--Content เลื่อนลง-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="5dp">
+        android:padding="10dp">
 
         <!--From-->
         <LinearLayout
@@ -24,9 +31,10 @@
             <Button
                 android:id="@+id/button1"
                 android:layout_width="320dp"
-                android:background="@drawable/background_button"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/background_button"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_02_559_0678"
                 android:textSize="@dimen/size_main" />
 
@@ -37,6 +45,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/background_liner"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_05_324_0216"
                 android:textSize="@dimen/size_main" />
 
@@ -44,79 +53,87 @@
                 android:id="@+id/button3"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/background_button"
-                android:layout_gravity="center"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_05_371_8391"
                 android:textSize="@dimen/size_main" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="320dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/background_liner"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_liner"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_05_422_2879"
                 android:textSize="@dimen/size_main" />
 
             <Button
                 android:id="@+id/button5"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/background_button"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_button"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_05_521_1243"
                 android:textSize="@dimen/size_main" />
 
             <Button
                 android:id="@+id/button6"
                 android:layout_width="320dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/background_liner"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_liner"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_03_524_3242"
                 android:textSize="@dimen/size_main" />
 
             <Button
                 android:id="@+id/button7"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/background_button"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_button"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_03_232_1934"
                 android:textSize="@dimen/size_main" />
 
             <Button
                 android:id="@+id/button8"
                 android:layout_width="320dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/background_liner"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_liner"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_05_672_1980"
                 android:textSize="@dimen/size_main" />
 
             <Button
                 android:id="@+id/button9"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/background_button"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_button"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_05_571_4806"
                 android:textSize="@dimen/size_main" />
 
             <Button
                 android:id="@+id/button10"
                 android:layout_width="320dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/background_liner"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_liner"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_03_667_0695"
                 android:textSize="@dimen/size_main" />
 
@@ -124,9 +141,10 @@
                 android:id="@+id/button11"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/background_button"
-                android:layout_gravity="center"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_05_453_1220"
                 android:textSize="@dimen/size_main" />
 
@@ -134,19 +152,21 @@
                 android:id="@+id/button12"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/background_liner"
-                android:layout_gravity="center"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_07_532_2331"
                 android:textSize="@dimen/size_main" />
 
             <Button
                 android:id="@+id/button13"
                 android:layout_width="320dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/background_button"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_button"
+                android:drawableRight="@android:drawable/sym_action_chat"
                 android:text="@string/n_tel_03_260_2286"
                 android:textSize="@dimen/size_main" />
 

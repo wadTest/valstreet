@@ -25,12 +25,12 @@
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="200dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="16dp"
-        android:background="#c5f591"
-        android:ems="100"
+        android:background="#d5e6f1"
+        android:ems="120"
         android:hint="กรอกข้อมูล"
         android:inputType="text"
         android:textAlignment="center" />

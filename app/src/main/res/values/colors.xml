@@ -6,6 +6,7 @@
     <color name="edit_textok">#f53e3e</color>
     <color name="edit_textok_g">#ede5e5</color>
     <color name="colorBack">#120000</color>
+    <color name="colorRed">#fa0b0b</color>
     <color name="colorView">#a6a6a6</color>
 
 </resources>

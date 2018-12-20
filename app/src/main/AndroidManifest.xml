@@ -11,7 +11,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/logoapp"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -68,10 +68,11 @@
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".StatusJobActivity"
-            android:screenOrientation="portrait" />
         <activity android:name=".LineActivity"
             android:screenOrientation="portrait" />
+
+
+
     </application>
 
 </manifest>

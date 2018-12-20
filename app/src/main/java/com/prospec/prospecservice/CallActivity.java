@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
@@ -15,11 +16,19 @@ public class CallActivity extends AppCompatActivity {
     //   Explicit ประกาศตัวแปร
     private Button button1, button2, button3, button4, button5, button6,
             button7, button8, button9, button10, button11, button12, button13;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call);
+
+        //        ADD Toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("ติดต่อสายตรง");
+        toolbar.setSubtitle("เลือกเมนูทางในการติดต่อ");
+        toolbar.setLogo(R.drawable.logo_prospec);
 
 //        Get Event การรับกิจกรรมจาก ตัวแปร กดปุ่ม 1-13
         button1 = (Button) findViewById(R.id.button1);
@@ -40,8 +49,8 @@ public class CallActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+//              โทรไปยังเบอร์
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:025590678"));
                 startActivity(intent);
             }
@@ -52,7 +61,7 @@ public class CallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:053240216"));
                 startActivity(intent);
             }
@@ -63,7 +72,7 @@ public class CallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:053718391"));
                 startActivity(intent);
             }
@@ -74,7 +83,7 @@ public class CallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:054222879"));
                 startActivity(intent);
             }
@@ -85,7 +94,7 @@ public class CallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:055211243"));
                 startActivity(intent);
             }
@@ -96,7 +105,7 @@ public class CallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:035243242"));
                 startActivity(intent);
             }
@@ -107,7 +116,7 @@ public class CallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:032321934"));
                 startActivity(intent);
             }
@@ -118,7 +127,7 @@ public class CallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:056721980"));
                 startActivity(intent);
             }
@@ -129,7 +138,7 @@ public class CallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:055714806"));
                 startActivity(intent);
             }
@@ -140,7 +149,7 @@ public class CallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:036670695"));
                 startActivity(intent);
             }
@@ -151,7 +160,7 @@ public class CallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:054531220"));
                 startActivity(intent);
             }
@@ -162,7 +171,7 @@ public class CallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:07-5322331"));
                 startActivity(intent);
             }
@@ -173,7 +182,7 @@ public class CallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //              โทรไปยังเบอร์
-                Intent intent = new Intent(Intent.ACTION_CALL);
+                Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:032602286"));
                 startActivity(intent);
             }

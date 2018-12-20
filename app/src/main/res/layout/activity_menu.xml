@@ -24,50 +24,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"/>
+                android:orientation="horizontal" />
 
 
             <ViewFlipper
             android:id="@+id/imageShow"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp" />
-
-
-            <!--Image Banner-->
-            <!--<ImageView-->
-                <!--android:id="@+id/imageLogo"-->
-                <!--android:layout_width="120dp"-->
-                <!--android:layout_height="120dp"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:layout_marginTop="20dp"-->
-                <!--android:background="@drawable/logo_prospec" />-->
-
-            <!--&lt;!&ndash;Prospec Appraisal&ndash;&gt;-->
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:text="Prospec Appraisal"-->
-                <!--android:textAlignment="center"-->
-                <!--android:textColor="@color/colorBack"-->
-                <!--android:textSize="@dimen/size_from_main1"-->
-                <!--android:textStyle="bold" />-->
-
-            <!--&lt;!&ndash;บริษัท โปรสเปค แอพเพรซัล จำกัด&ndash;&gt;-->
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:layout_marginTop="5dp"-->
-                <!--android:text="บริษัท โปรสเปค แอพเพรซัล จำกัด"-->
-                <!--android:textAlignment="center"-->
-                <!--android:textColor="@color/colorBack"-->
-                <!--android:textSize="@dimen/size_from"-->
-                <!--android:textStyle="bold" />-->
-
+            android:layout_height="300dp"
+            android:layout_gravity="center" />
 
 
             <!--Main หลักของ image โฆษณา-->
@@ -81,9 +45,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:background="@drawable/background_liner"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
+                    android:background="@drawable/background_liner"
                     android:orientation="vertical">
 
                     <!--Image ติดต่อสอบถาม-->
@@ -114,8 +78,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/background_liner"
                     android:layout_weight="1"
+                    android:background="@drawable/background_liner"
                     android:orientation="vertical">
 
                     <!--Image ติดต่อเราทาง @line-->
@@ -146,9 +110,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/background_liner"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
+                    android:background="@drawable/background_liner"
                     android:orientation="vertical">
 
                     <!--Image ติดต่อสายตรง-->
@@ -187,9 +151,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:background="@drawable/background_liner"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
+                    android:background="@drawable/background_liner"
                     android:orientation="vertical">
 
                     <!--Image สอบถามสถานะงาน-->
@@ -219,9 +183,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:background="@drawable/background_liner"
                     android:layout_marginLeft="8dp"
                     android:layout_weight="1"
+                    android:background="@drawable/background_liner"
                     android:orientation="vertical">
 
                     <!--Image ใช้บริการประเมิน-->
@@ -253,8 +217,8 @@
                     android:layout_height="140dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/background_liner"
                     android:layout_weight="1"
+                    android:background="@drawable/background_liner"
                     android:orientation="vertical">
 
                     <!--Image นัดตรวจงวดงาน-->
@@ -278,9 +242,10 @@
                         android:textColor="#ffff"
                         android:textSize="18sp"
                         android:textStyle="bold" />
+
+
                 </LinearLayout>
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
