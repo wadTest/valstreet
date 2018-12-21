@@ -1,831 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#efecec"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background_long"
     tools:context=".SignInActivity">
 
-    <!--Content เลื่อนลง-->
-    <ScrollView
+    <!--LinearLayout Main-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <!--Content-->
-        <LinearLayout
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="ลงทะเบียน"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingBottom="15dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
-            <!--Image Logo-->
-            <ImageView
-                android:id="@+id/imageName"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/user" />
-
-            <RadioGroup
-                android:id="@+id/rg_tipo_cliente"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="@dimen/margin_bottom"
-                android:checkedButton="@+id/rb_particular"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/rb_corporativo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
-                    android:text="ผู้ส่งงาน"
-                    android:textColor="@color/colorBack"
-                    android:textSize="@dimen/size_from"
-                    android:textStyle="bold" />
-
-                <RadioButton
-                    android:id="@+id/rb_particular"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:onClick="onRadioButtonClicked"
-                    android:text="ลูกค้า"
-                    android:textColor="@color/colorBack"
-                    android:textSize="@dimen/size_from"
-                    android:textStyle="bold" />
-            </RadioGroup>
-
-            <!--ช่องไว้ให้กรอกสำรับ ผ๔้ส่งงาน-->
-            <LinearLayout
-                android:id="@+id/ll_contenedor_corporativo"
+            <EditText
+                android:id="@+id/et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:visibility="gone"
-                android:orientation="vertical">
+                android:drawableRight="@drawable/ic_person"
+                android:hint="คำนำหน้า + ชื่อ"
+                android:inputType="textPersonName" />
 
-                <!--From ชื่อ-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+        </android.support.design.widget.TextInputLayout>
 
-                    <!--ชื่อผู้ใช้งาน-->
-                    <TextView
-                        android:id="@+id/textView1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/name_customer"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
-                    <!--กรอกชื่อผู้ใช้งาน-->
-                    <EditText
-                        android:id="@+id/editText1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From นามสกุล-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!--นามสกุล-->
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/name_skun1"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก นามสกุล-->
-                    <EditText
-                        android:id="@+id/editText2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From เบอร์โทร-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!--เบอร์โทร-->
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/name_phon1"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก เบอร์โทร-->
-                    <EditText
-                        android:id="@+id/editText3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="number"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From E-mail-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!--เบอร์โทร-->
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/name_email1"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก E-mail-->
-                    <EditText
-                        android:id="@+id/editText4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-
-                <!--From Password-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!--เบอร์โทร-->
-                    <TextView
-                        android:id="@+id/textViewPassword"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/name_password"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก E-mail-->
-                    <EditText
-                        android:id="@+id/editTextPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From สังกัดสถาบัน-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!--สังกัดสถาบัน-->
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/name_sangkud1"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก สังกัดสถาบัน-->
-                    <EditText
-                        android:id="@+id/editText5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From สังกัดสาขา-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!--สังกัดสาขา-->
-                    <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/name_sangkudSaka1"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก สังกัดสถาบัน-->
-                    <EditText
-                        android:id="@+id/editText6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-
-                <!--ที่อยู่สำนักงาน-->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="7dp"
-                    android:text="@string/name_samnuk1"
-                    android:textColor="@color/colorBack"
-                    android:textSize="@dimen/size_from"
-                    android:textStyle="bold" />
-
-                <!--From สังกัดสาขา-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <!--เลขที่-->
-                    <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/name_number1"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก เลขที่-->
-                    <EditText
-                        android:id="@+id/editText7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="5"
-                        android:hint="@string/edit_text"
-                        android:inputType="number"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-
-                    <!--ถนน-->
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/tanon1"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก ถนน-->
-                    <EditText
-                        android:id="@+id/editText8"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From ตำบล-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!--ตำบล-->
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/tambon1"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก ตำบล-->
-                    <EditText
-                        android:id="@+id/editText9"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From อำเภอ-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!--อำเภอ-->
-                    <TextView
-                        android:id="@+id/textView10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/amper1"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก อำเภอ-->
-                    <EditText
-                        android:id="@+id/editText10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From จังหวัด-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!--จังหวัด-->
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/jangW1"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก จังหวัด-->
-                    <EditText
-                        android:id="@+id/editText11"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-        </LinearLayout><!--วงเล็บเปิด Radio Group-->
-
-
-            <!--ตั้งแต่ตรงนี้คือ ช่องให้กรอกข้อง ลูกค้า-->
-            <LinearLayout
-                android:id="@+id/ll_contenedor_particular"
+            <EditText
+                android:id="@+id/et_last"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:drawableRight="@drawable/ic_person"
+                android:hint="นามสกุล"
+                android:inputType="textPersonName" />
 
-                <!--From ชื่อ-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+        </android.support.design.widget.TextInputLayout>
 
-                    <!--ชื่อผู้ใช้งาน-->
-                    <TextView
-                        android:id="@+id/textView12"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/name_customer"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
-                    <!--ช่องเอาไว้ เลือกคำนำหน้า -->
-                    <AutoCompleteTextView
-                        android:id="@+id/editTextNamna1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:hint="คำนำหน้า"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@android:drawable/stat_sys_phone_call_forward"
+                android:ems="10"
+                android:hint="หมายเลยโทรศัพท์"
+                android:inputType="number" />
 
-                    <!--กรอกชื่อผู้ใช้งาน-->
-                    <EditText
-                        android:id="@+id/editText12"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
+        </android.support.design.widget.TextInputLayout>
 
-                <!--From นามสกุล-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
-                    <!--นามสกุล-->
-                    <TextView
-                        android:id="@+id/textView13"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/user_skun_customer"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_email1"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
 
-                    <!--กรอกนามสกุลผู้ใช้งาน-->
-                    <EditText
-                        android:id="@+id/editText13"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
+        </android.support.design.widget.TextInputLayout>
 
-                <!--From เบอร์โทร-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
-                    <!--เบอร์โทร-->
-                    <TextView
-                        android:id="@+id/textView14"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/user_call"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_key"
+                android:hint="Password"
+                android:inputType="textPassword" />
 
-                    <!--กรอกเบอร์โทร-->
-                    <EditText
-                        android:id="@+id/editText14"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="number"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
+        </android.support.design.widget.TextInputLayout>
 
-                <!--From e-mail-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_button"
+            android:text="สมัครสมาชิก"
+            android:textColor="@android:color/white" />
 
-                    <!--e-mail-->
-                    <TextView
-                        android:id="@+id/textView15"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/user_email"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/Base.Widget.AppCompat.ProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:indeterminate="true"
+            android:visibility="invisible" />
 
-                    <!--กรอก e-mail-->
-                    <EditText
-                        android:id="@+id/editText15"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From Password-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <!--password-->
-                    <TextView
-                        android:id="@+id/textViewPassword1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/name_password"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก password-->
-                    <EditText
-                        android:id="@+id/editTextPassword1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From เลขที่โฉลด-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <!--เลขที่โฉลด-->
-                    <TextView
-                        android:id="@+id/textView16"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/number"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก เลขที่โฉลด-->
-                    <EditText
-                        android:id="@+id/editText16"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From จังหวัด-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <!--จังหวัด-->
-                    <TextView
-                        android:id="@+id/textView19"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/jangW"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก จังหวัด-->
-                    <Spinner
-                        android:id="@+id/spinnerProvince"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginRight="16dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From อำเภอ-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <!--อำเภอ-->
-                    <TextView
-                        android:id="@+id/textView18"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/Amper"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก อำเภอ-->
-                    <Spinner
-                        android:id="@+id/spinnerAmper"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="16dp"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-
-                <!--From ตำบล-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <!--ตำบล-->
-                    <TextView
-                        android:id="@+id/textView17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/tambon"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก ตำบล-->
-                    <EditText
-                        android:id="@+id/editText17"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-                <!--From ชื่อเจ้าหน้าที่สินเชื่อ-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <!--ชื่อเจ้าหน้าที่สินเชื่อ-->
-                    <TextView
-                        android:id="@+id/textView20"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/sinc"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก ชื่อเจ้าหน้าที่สินเชื่อ-->
-                    <EditText
-                        android:id="@+id/editText20"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-
-
-                <!--From ชื่อสถาบันการกู้-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <!--ื่อสถาบันการกู้-->
-                    <TextView
-                        android:id="@+id/textView21"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:text="@string/name_bank"
-                        android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_main"
-                        android:textStyle="bold" />
-
-                    <!--กรอก ชื่อสถาบันการก-->
-                    <AutoCompleteTextView
-                        android:id="@+id/editTextBank"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:ems="20"
-                        android:hint="@string/edit_text"
-                        android:inputType="text"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok" />
-                </LinearLayout>
-            </LinearLayout>
-
-                <Button
-                    android:id="@+id/buttonSignUp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/background_button"
-                    android:text="ลงทะเบียน"
-                    android:textColor="@color/colorBack"
-                    android:textSize="@dimen/size_from"
-                    android:textStyle="bold" />
-
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 </LinearLayout>

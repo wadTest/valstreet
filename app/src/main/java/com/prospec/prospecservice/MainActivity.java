@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 if (uerString.equals(jsonObject.getString("email"))) {
 //                    ให้เอาค่าของ aBoolean มีค่า = false
                     aBoolean = false;
-                    truePassString = jsonObject.getString("encrypted_password");
+                    truePassString = jsonObject.getString("password");
                 }
             }//for
 

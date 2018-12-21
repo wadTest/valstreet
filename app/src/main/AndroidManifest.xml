@@ -65,9 +65,6 @@
             android:name=".StatusActivity"
             android:screenOrientation="portrait" />
         <!-- หน้าลงทะเบียน -->
-        <activity
-            android:name=".LoginActivity"
-            android:screenOrientation="portrait" />
         <activity android:name=".LineActivity"
             android:screenOrientation="portrait" />
 
