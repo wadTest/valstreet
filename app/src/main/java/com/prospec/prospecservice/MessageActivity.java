@@ -10,13 +10,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import com.prospec.prospecservice.utility.AddUserToServer;
 
 public class MessageActivity extends AppCompatActivity {
 
     private Button button1, button2;
-    private EditText editText;
+
     private String editTextMessage;
     final Context c = this;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,7 @@ public class MessageActivity extends AppCompatActivity {
 
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
+
 
 
 //        //Get Event From Click Text

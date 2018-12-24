@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import android.support.v7.app.AppCompatActivity;
 
+import com.prospec.prospecservice.utility.MyAlert;
 import com.prospec.prospecservice.utility.SynUser;
 
 import org.json.JSONArray;

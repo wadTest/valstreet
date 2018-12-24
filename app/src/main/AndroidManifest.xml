@@ -67,8 +67,9 @@
         <!-- หน้าลงทะเบียน -->
         <activity android:name=".LineActivity"
             android:screenOrientation="portrait" />
-
-
+        <!-- หน้าเช็คสถานะงานของประเมิน -->
+        <activity android:name=".AssessmentActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 

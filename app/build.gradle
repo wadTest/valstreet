@@ -22,7 +22,6 @@ android {
         }
     }
 
-
 //    ประกาศ binary
     dependencies {
         implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -41,6 +40,8 @@ android {
         implementation 'com.android.support:design:27.1.1'
         androidTestImplementation 'com.android.support:support-annotations:27.0.0'
         androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+        useLibrary 'org.apache.http.legacy'
+        implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
 
     }
 }
