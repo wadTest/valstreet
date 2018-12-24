@@ -70,6 +70,9 @@
         <!-- หน้าเช็คสถานะงานของประเมิน -->
         <activity android:name=".AssessmentActivity"
             android:screenOrientation="portrait" />
+        <!-- หน้าส่งข้อความแบบย่อ -->
+        <activity android:name=".CustomDialogActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 
