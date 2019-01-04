@@ -11,8 +11,7 @@
     <!--เลื่อนลง-->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="ScrollViewCount,UselessParent">
+        android:layout_height="match_parent">
 
         <!--Main -->
         <LinearLayout
@@ -20,33 +19,58 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
-                <!--Main หลักรองลงมา-->
-            <LinearLayout
+            <!--Main หลักของ image โฆษณา-->
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal" />
+                android:orientation="horizontal">
 
+                <!--ปุ่ม Corporate member-->
+                <TextView
+                    android:id="@+id/textStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_name"
+                    android:text="Corporate member"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBack"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!--ชื่อที่ดิึงมาจากหน้าลงทะเบียน-->
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btn_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/colorPrimary"
+                    android:text="ออกจากระบบ"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
 
             <ViewFlipper
-            android:id="@+id/imageShow"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_gravity="center" />
+                android:id="@+id/imageShow"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center" />
 
-            <!--ปุ่ม ติดต่อสอบถาม-->
-            <TextView
-                android:id="@+id/textStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Corparate "
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="@color/colorBack"
-                android:textSize="18sp"
-                android:drawableRight="@drawable/ic_name"
-                android:textStyle="bold" />
 
             <!--Main หลักของ image โฆษณา-->
             <LinearLayout
@@ -256,8 +280,6 @@
                         android:textColor="#ffff"
                         android:textSize="18sp"
                         android:textStyle="bold" />
-
-
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

@@ -40,13 +40,6 @@ public class LandBuildingActivity extends AppCompatActivity {
     private String asset_id, land_id, asset_name, land_type, convert_id, province_th, amphur_th,
             tambon_th, road, alley, land_no, land_size, total_all, explanation, day, objective, company, price;
 
-
-//    //    ช่องให้กรอกที่เพิ่มมา 6-10บรรทัด
-//    private EditText editTextP1, editTextP2, editTextP3, editTextP4, editTextP5, editTextP6, editTextP7, editTextP8, editTextP9,
-//            editTextP10, editTextP11, editTextP12, editTextP13, editTextP14, editTextP15, editTextP16, editTextP17, editTextP18,
-//            editTextP19, editTextP20, editTextP21, editTextP22, editTextP23, editTextP24, editTextP25, editTextP26, editTextP27,
-//            editTextP28, editTextP29, editTextP30, editTextP31, editTextP32, editTextP33, editTextP34, editTextP35;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

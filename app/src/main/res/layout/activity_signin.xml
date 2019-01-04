@@ -37,23 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_name"
-                android:hint="คำนำหน้า + ชื่อ"
-                android:inputType="textPersonName" />
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-
-            <EditText
-                android:id="@+id/et_last"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_last_name"
-                android:hint="นามสกุล"
+                android:hint="ชื่อ - นามสกุล"
                 android:inputType="textPersonName" />
 
         </android.support.design.widget.TextInputLayout>
@@ -70,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_phone_signup"
                 android:ems="10"
-                android:hint="หมายเลยโทรศัพท์"
+                android:hint="หมายเลขโทรศัพท์"
                 android:inputType="number" />
 
         </android.support.design.widget.TextInputLayout>
@@ -107,12 +91,65 @@
 
         </android.support.design.widget.TextInputLayout>
 
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/et_co_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_password"
+                android:hint="Confirm password"
+                android:inputType="textPassword" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/gender_textview"
+                android:paddingRight="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="คุณคือ" />
+
+            <RadioGroup
+                android:id="@+id/gender_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/gender_textview"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_btn1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_lookka"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/radio_btn2"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content"
+                    android:text = "@string/songngan" />
+            </RadioGroup>
+        </RelativeLayout>
+
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background_button"
             android:text="สมัครสมาชิก"
+            android:textStyle="bold"
             android:textColor="@android:color/white" />
 
         <ProgressBar

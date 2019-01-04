@@ -1,8 +1,15 @@
 package com.prospec.prospecservice;
 
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -11,12 +18,27 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.prospec.prospecservice.utility.MyAlert;
+import com.prospec.prospecservice.utility.SharedPrefs;
 import com.prospec.prospecservice.utility.SynUser;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by Watsana on 1/11/2018.
+ * watsanawast@gmail.com
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText et_email, et_password;
     private Button btn_login;
     private TextView tv_register;
-//    truePassString คือ ตัวแปรที่ใช้เก็บค่า password ที่อ่านได้
+    //    truePassString คือ ตัวแปรที่ใช้เก็บค่า password ที่อ่านได้
     private String uerString, passwordString, truePassString;
     private boolean aBoolean = true;
 
@@ -38,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         et_password = (EditText) findViewById(R.id.et_password);
         btn_login = (Button) findViewById(R.id.btn_login);
         tv_register = (TextView) findViewById(R.id.tv_register);
-
 
         //      เมื่อยังไม่ได้ลงทะเบียน กดปุ่มนี้จะไปลงทะเบียน
         tv_register.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }//for
 
-
 //            ดูค่าของ aBoolean ว่ามีค่า = true หรือเปล่า
             if (aBoolean) {
 //                ถ้ามีค่า = true ในกรณีที่ใส่ user ผิด
@@ -97,6 +117,9 @@ public class MainActivity extends AppCompatActivity {
                 myAlert.myDialog();
             } else if (passwordString.equals(truePassString)) {
 
+
+
+                SharedPrefs.saveSharedSetting(MainActivity.this, "Logout", "false");
                 Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                 startActivity(intent);
 //                ไม่ให้ย้อยกลับมาหน้าเก่า กดปุ่มกลับก็จะออกจากหน้าจอเลย
@@ -106,11 +129,10 @@ public class MainActivity extends AppCompatActivity {
                 MyAlert myAlert = new MyAlert(MainActivity.this, "ใส่รหัสผ่านไม่ถูกต้อง",
                         "กรุณาตรวจสอบรหัสผ่านอีกครั้ง");
 //                แล้วเอาค่าคงตัวมา  myDialog
-                        myAlert.myDialog();
+                myAlert.myDialog();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }//Method
 }//Class Main
-

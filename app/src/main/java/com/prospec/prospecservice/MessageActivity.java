@@ -44,52 +44,5 @@ public class MessageActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
     }//Method
 }//Main Class
-
-
-
-
-
-
-//       button1.setOnClickListener(new View.OnClickListener() {
-//@Override
-//public void onClick(View view) {
-//        LayoutInflater layoutInflaterAndroid = LayoutInflater.from(c);
-//        View mView = layoutInflaterAndroid.inflate(R.layout.custom_dialog, null);
-//        AlertDialog.Builder alertDialogBuilderUserInput = new AlertDialog.Builder(c);
-//        alertDialogBuilderUserInput.setView(mView);
-//        alertDialogBuilderUserInput
-//        .setCancelable(false)
-//        .setPositiveButton("ส่งข้อความ", new DialogInterface.OnClickListener() {
-//public void onClick(DialogInterface dialogBox, int id) {
-//
-//        editTextString = editText.getText().toString().trim();
-//        if (editTextString.equals("")) {
-//        editText.setError("โปรดกรอกข้อมูลในช่องว่าง!");
-//        } else {
-//
-//        }
-//
-////                    upload ข้อมูลที่กรอกไปเก็บไว้ใน my sql
-//
-//
-//        // สิ่งที่ต้องทำเพื่อให้ได้ข้อมูลของผู้ใช้ที่นี่
-//        }
-//        })
-//
-//        .setNegativeButton("ยกเลิก",
-//        new DialogInterface.OnClickListener() {
-//public void onClick(DialogInterface dialogBox, int id) {
-//        dialogBox.cancel();
-//        }
-//        });
-//
-//        AlertDialog alertDialogAndroid = alertDialogBuilderUserInput.create();
-//        alertDialogAndroid.show();
-//        }
-//        });

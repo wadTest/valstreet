@@ -24,7 +24,7 @@
     <string name="n_tel_03_524_3242">สาขา อยุธยา</string>
     <string name="n_tel_03_232_1934">สาขา ราชบุรี</string>
     <string name="n_tel_05_672_1980">สาขา เพชรบูรณ์</string>
-    <string name="n_tel_05_571_4806">สาขา กำแพงเพรช</string>
+    <string name="n_tel_05_571_4806">สาขา กำแพงเพชร</string>
     <string name="n_tel_03_667_0695">สาขา สระบุรี</string>
     <string name="n_tel_05_453_1220">สาขา แพร่</string>
     <string name="n_tel_07_532_2331">สาขา นครศรีธรรมราช</string>
@@ -82,6 +82,8 @@
     <string name="name_password">Password</string>
     <string name="user_email_login">E-mail</string>
     <string name="user_password_login">Password</string>
+    <string name="hint_lookka">ลูกค้า</string>
+    <string name="songngan">ผู้ส่งงาน</string>
 
 
 </resources>

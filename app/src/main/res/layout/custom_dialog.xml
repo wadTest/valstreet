@@ -3,31 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="#efecec"
     android:layout_height="match_parent"
+    android:background="#efecec"
+    android:orientation="vertical"
     tools:context=".CustomDialogActivity">
 
     <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
         android:id="@+id/toolbar"
-        android:background="@color/colorPrimary"
-        android:layout_height="58dp">
-    </android.support.v7.widget.Toolbar>
-
-
-    <!--&lt;!&ndash;หัวข้อ บรรยาย&ndash;&gt;-->
-    <!--<TextView-->
-        <!--android:id="@+id/textView"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:layout_marginTop="25dp"-->
-        <!--android:text="รายละเอียดสินทรัพย์ที่จะประเมิน พร้อมที่ตั้งทรัพย์สิน"-->
-        <!--android:textAlignment="center"-->
-        <!--android:textColor="#050000"-->
-        <!--android:textSize="18sp"-->
-        <!--android:textStyle="bold" />-->
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@color/colorPrimary"></android.support.v7.widget.Toolbar>
 
     <!--กรอกชื่อผู้ใช้งาน-->
     <EditText
@@ -44,32 +29,30 @@
         android:textAlignment="center" />
 
     <ProgressBar
-        style="@style/Base.Widget.AppCompat.ProgressBar"
         android:id="@+id/progress"
-        android:visibility="gone"
-        android:layout_marginTop="10dp"
+        style="@style/Base.Widget.AppCompat.ProgressBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:indeterminate="true" />
+        android:layout_marginTop="10dp"
+        android:indeterminate="true"
+        android:visibility="gone" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/buttonMessage"
-        android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20sp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/colorBack"
-        android:text="บันทึกข้อมูล"
-        android:layout_alignParentBottom="true"
-        android:textStyle="bold"
-        android:background="@drawable/background_button"
-        android:layout_marginRight="10dp"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/buttonMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20sp"
+            android:background="@drawable/background_button"
+            android:text="บันทึกข้อมูล"
+            android:textColor="@color/colorBack"
+            android:textStyle="bold" />
     </RelativeLayout>
-
-
-    </LinearLayout>
+</LinearLayout>

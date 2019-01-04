@@ -46,6 +46,18 @@
             android:textSize="@dimen/size_from"
             android:textStyle="bold" />
 
+        <!--ส่งงานประเมิน-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="ส่งงานประเมิน"
+            android:textAlignment="center"
+            android:textColor="@color/colorBack"
+            android:textSize="@dimen/size_from"
+            android:textStyle="bold" />
+
         <!--ปุ่ม ส่งข้อความแบบย่อ-->
         <Button
             android:id="@+id/button1"
@@ -72,5 +84,4 @@
             android:textSize="30sp"
             android:textStyle="bold" />
     </LinearLayout>
-
 </LinearLayout>

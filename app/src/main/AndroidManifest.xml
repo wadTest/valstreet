@@ -9,6 +9,13 @@
     <!-- อนุญาตให้เปิดรุปภาพใน sd card -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <!--&lt;!&ndash;เชื่อมต่อมสัญญาณอินเตอร์ทุกแบบ&ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.INTERNET"></uses-permission>-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>-->
+    <!--<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>-->
+    <!--<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"></uses-permission>-->
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logoapp"
@@ -16,7 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".utility.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,6 +31,9 @@
             </intent-filter>
         </activity>
         <!-- ชื่อ class กับตั้งค่าให้ล็อกหน้าจอ ไม่ให้หมุนได้ -->
+        <!--หน้าแรก หน้าล็อกอิน-->
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait" />
         <!-- หน้าลงทะเบียน -->
         <activity
             android:name=".MenuActivity"
@@ -73,6 +83,11 @@
         <!-- หน้าส่งข้อความแบบย่อ -->
         <activity android:name=".CustomDialogActivity"
             android:screenOrientation="portrait" />
+        <!-- หน้าสถานะสินเชื่อ -->
+        <activity android:name=".status.LoanOfficerActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".test"/>
 
     </application>
 
