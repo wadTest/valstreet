@@ -21,6 +21,7 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
+//class ที่ดินเปล่า
 public class LandBuildingActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร

@@ -14,8 +14,10 @@ import android.widget.Toast;
 import com.prospec.prospecservice.utility.Add_Message;
 import com.prospec.prospecservice.utility.MyAlert;
 
+//class รายละเอียดสินทรัพย์
 public class CustomDialogActivity extends AppCompatActivity {
 
+//    ประกาศตัวแปร
     private EditText editText;
     private Button buttonMessage;
     private String editTextString;

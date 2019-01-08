@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--เพชรบูรณ์-->
+    <item
+        android:id="@+id/Phetchabun2"
+        android:title="ติดต่อสายตรง โทรศัพท์มือถือ                            " />
+
+    <item
+        android:id="@+id/Phetchabun1"
+        android:title="ติดต่อสายตรง สำนักงาน" />
+
+</menu>

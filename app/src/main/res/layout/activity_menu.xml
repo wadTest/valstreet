@@ -33,6 +33,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_gravity="center"
                     android:layout_marginLeft="2dp"
+                    android:visibility="gone"
                     android:layout_marginTop="10dp"
                     android:drawableRight="@drawable/ic_name"
                     android:text="Corporate member"
@@ -40,6 +41,24 @@
                     android:textColor="@color/colorBack"
                     android:textSize="18sp"
                     android:textStyle="bold" />
+
+                <!--ปุ่ม Corporate member-->
+                <!--ถูกซ้อนไว้อยู่-->
+                <TextView
+                    android:id="@+id/Status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:drawableRight="@drawable/ic_name"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="10dp"
+                    android:text="รายละเอียดงาน เจ้าหน้าที่สินเชื่อ "
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBack"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
 
                 <!--ชื่อที่ดิึงมาจากหน้าลงทะเบียน-->
                 <TextView
@@ -68,7 +87,7 @@
             <ViewFlipper
                 android:id="@+id/imageShow"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="280dp"
                 android:layout_gravity="center" />
 
 

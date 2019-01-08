@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.PopupMenu;
 
+//class ติดต่อสายตรง
 public class CallActivity extends AppCompatActivity {
 
     //   Explicit ประกาศตัวแปร

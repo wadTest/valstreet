@@ -22,18 +22,20 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.prospec.prospecservice.status.LoanOfficerActivity;
 import com.prospec.prospecservice.utility.AddUserToServer;
 import com.prospec.prospecservice.utility.SharedPrefs;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
+//class หน้าเมนูหลัก
 public class MenuActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
     private ImageView imageView1, imageView2, imageView3, imageView4, imageView5, imageView6;
     ViewFlipper imageShow;
-    private TextView textStatus, tv_name;
+    private TextView textStatus, Status, tv_name;
     private Button btn_logout;
 
     // คลาสที่ Android มีมาให้เพื่อเซฟและอ่านข้อมูล โดยข้อมูลจะเก็บเป็นแบบ key-value สามารถใช้ SharedPreferences
@@ -75,12 +77,11 @@ public class MenuActivity extends AppCompatActivity {
         imageView5 = (ImageView) findViewById(R.id.imageView5);
         imageView6 = (ImageView) findViewById(R.id.imageView6);
         textStatus = (TextView) findViewById(R.id.textStatus);
+        Status = (TextView) findViewById(R.id.Status);
         tv_name = (TextView) findViewById(R.id.tv_name);
         btn_logout = (Button) findViewById(R.id.btn_logout);
 
-
-
-
+//        ปุ่มออกจากระบบ
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,11 +111,20 @@ public class MenuActivity extends AppCompatActivity {
 
 
 
-        //Get Event From Click สถานะประเมิน
+        //Get Event From Click status corporate
         textStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MenuActivity.this, AssessmentActivity.class));
+
+            }
+        });
+
+        //Get Event From Click status เจ้าหน้าที่สินเชื่อ
+        Status.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuActivity.this, LoanOfficerActivity.class));
 
             }
         });

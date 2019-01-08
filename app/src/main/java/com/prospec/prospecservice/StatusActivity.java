@@ -34,7 +34,6 @@ public class StatusActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(StatusActivity.this, LoanOfficerActivity.class));
-
             }
         });
 

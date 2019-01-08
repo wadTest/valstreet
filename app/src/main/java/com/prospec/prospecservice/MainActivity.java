@@ -35,11 +35,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Watsana on 1/11/2018.
- * watsanawast@gmail.com
- */
-
+//class login
 public class MainActivity extends AppCompatActivity {
 
     //       Explicit ประกาศตัวแปร

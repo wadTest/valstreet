@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.RadioGroup;
 
+//class ห้องชุด
 public class RoomActivity extends AppCompatActivity {
 
     //  Explicit  ประกาศตัวแปร

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--สาขาเชียงใหม่-->
+    <item
+        android:id="@+id/headquarters2"
+        android:title="ติดต่อสายตรง โทรศัพท์มือถือ                            " />
+
+    <item
+        android:id="@+id/headquarters1"
+        android:title="ติดต่อสายตรง สำนักงาน" />
+
+</menu>
