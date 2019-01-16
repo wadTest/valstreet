@@ -52,10 +52,11 @@ public class MenuActivity extends AppCompatActivity {
         int images[] = {R.drawable.photo1, R.drawable.photo2, R.drawable.photo3,
                 R.drawable.photo4, R.drawable.photo5, R.drawable.photo6, R.drawable.photo7};
 
+//        วนลูป เมื่อรันถึงรูปสุดท้ายแล้วกลับมารันรูปแรกใหม่
         for (int image : images) {
             flipperImages(image);
         }
-    }
+    }//Method
 
     public void flipperImages(int image) {
         ImageView imageView = new ImageView(this);
@@ -108,7 +109,6 @@ public class MenuActivity extends AppCompatActivity {
             startActivity(introIntent);
             finish();
         } //ถ้าไม่มีกิจกรรมหลักไม่ทำอะไรเลย
-
 
 
         //Get Event From Click status corporate
@@ -182,12 +182,13 @@ public class MenuActivity extends AppCompatActivity {
 
             }
         });
+    }// End CekSession
 
-    }
-
+//    intent ไปยัง Message Facebook
     public static Intent openMessage(Context context) {
         try {
             context.getPackageManager()
+//                   รับข้อมูลแพ็คเกจ และส่ง URL ด้วย Intent
                     .getPackageInfo("com.facebook.prospec", 0);
             return new Intent(Intent.ACTION_VIEW,
                     Uri.parse("https://www.messenger.com/t/prospecappraisal"));
@@ -197,5 +198,5 @@ public class MenuActivity extends AppCompatActivity {
                     Uri.parse("https://www.messenger.com/t/prospecappraisal"));
         }
 
-    }
+    }//End openMessage
 }//Class Main

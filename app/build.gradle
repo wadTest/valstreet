@@ -10,8 +10,8 @@ android {
             applicationId "com.prospec.prospecservice"
             minSdkVersion 15
             targetSdkVersion 27
-            versionCode 5
-            versionName "1.0.5"
+            versionCode 6
+            versionName "1.0.6"
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
         buildTypes {
@@ -44,4 +44,8 @@ android {
         implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
 
     }
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
 }

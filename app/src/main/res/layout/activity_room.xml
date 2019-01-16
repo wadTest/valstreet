@@ -19,7 +19,6 @@
         android:layout_height="match_parent"
         android:padding="8dp">
 
-
         <!--Content-->
         <LinearLayout
             android:layout_width="match_parent"

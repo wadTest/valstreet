@@ -114,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
             } else if (passwordString.equals(truePassString)) {
 
 
-
                 SharedPrefs.saveSharedSetting(MainActivity.this, "Logout", "false");
                 Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                 startActivity(intent);

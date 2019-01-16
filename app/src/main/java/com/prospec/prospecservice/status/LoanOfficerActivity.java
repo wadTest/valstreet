@@ -8,15 +8,9 @@ import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
-
 import com.prospec.prospecservice.R;
-
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
@@ -27,7 +21,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -44,8 +37,8 @@ public class LoanOfficerActivity extends Activity {
         setContentView(R.layout.loan_officer);
 
 // Permission StrictMode
-
         if (android.os.Build.VERSION.SDK_INT > 9) {
+//            อนุญาต กำหนด policy
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
@@ -54,13 +47,15 @@ public class LoanOfficerActivity extends Activity {
         final ListView lisView1 = (ListView) findViewById(R.id.listView1);
         String url = "http://119.59.103.121/app_mobile/crm_status_button1.php";
         try {
+//            รับ JSON Url ในรูปแบบ Array ชื่อurl
             JSONArray data = new JSONArray(getJSONUrl(url));
             final ArrayList<HashMap<String, String>> MyArrList = new ArrayList<HashMap<String, String>>();
             HashMap<String, String> map;
+
             for (int i = 0; i < data.length(); i++) {
                 JSONObject c = data.getJSONObject(i);
                 map = new HashMap<String, String>();
-//                ชื่อ column ในตาราง db_corp ของ mysql
+//                ชื่อ column ในตาราง db1 ของ mysql
                 map.put("job_no", c.getString("job_no"));
                 map.put("job_event", c.getString("job_event"));
                 map.put("customer_name", c.getString("customer_name"));
@@ -68,10 +63,10 @@ public class LoanOfficerActivity extends Activity {
                 MyArrList.add(map);
 
             }
-//           เรียก layout activity_column_ass เพื่อเชื่อมต่อกับ database
+//           เรียก layout activity_column_loan เพื่อเชื่อมต่อกับ database
             SimpleAdapter sAdap;
             sAdap = new SimpleAdapter(LoanOfficerActivity.this, MyArrList, R.layout.activity_column_loan,
-
+//                    เชื่อมต่อตัวแปร mysql กับ layout  ด้วย id
                     new String[]{"job_no", "customer_name", "job_event", "marketing"},
                     new int[]{R.id.Col, R.id.Col1, R.id.Col2, R.id.Col3});
             lisView1.setAdapter(sAdap);
@@ -83,7 +78,7 @@ public class LoanOfficerActivity extends Activity {
 
                 public void onItemClick(AdapterView<?> myAdapter, View myView,
                                         int position, long mylng) {
-
+//                    job_no แรกคือเป็นการกำหนดstring ,job_no สองคือชื่อคอลัมที่นำมาจากdatabase mysql จาก table da1
                     String job_no = MyArrList.get(position).get("job_no").toString();
                     String customer_name = MyArrList.get(position).get("customer_name").toString();
                     String job_event = MyArrList.get(position).get("job_event").toString();
@@ -115,19 +110,27 @@ public class LoanOfficerActivity extends Activity {
         }
     }
 
+//    รับค่า JSON url
     public String getJSONUrl(String url) {
+//        ตัวสร้างสตริง --> str
         StringBuilder str = new StringBuilder();
+//        http ไคลเอ็นต์ --> client
         HttpClient client = new DefaultHttpClient();
+//        รับ Http --> httpGet
         HttpGet httpGet = new HttpGet(url);
         try {
+//            การตอบสนอง HTTP --> response = httpGet
             HttpResponse response = client.execute(httpGet);
+//            รับ Line Status
             StatusLine statusLine = response.getStatusLine();
             int statusCode = statusLine.getStatusCode();
+//            ถ้า รหัสสถานะ == 200 ให้ getEntity, getContent
             if (statusCode == 200) { // Download OK
                 HttpEntity entity = response.getEntity();
                 InputStream content = entity.getContent();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(content));
                 String line;
+//                ในขณะที่ line = reader ให้หลีกเลี่ยงการตรวจสอบ
                 while ((line = reader.readLine()) != null) {
                     str.append(line);
                 }

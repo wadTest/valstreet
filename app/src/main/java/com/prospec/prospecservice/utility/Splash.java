@@ -33,6 +33,7 @@ public class Splash extends Activity {
         };//End Runnable
     }//Method
 
+//    เกี่ยวกับการกำหนดเวลา
     public void onResume() {
         super.onResume();
         delay_time = time;

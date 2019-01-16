@@ -139,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:text="ที่ตั้ง"
                     android:textColor="@color/colorBack"
-                    android:textSize="@dimen/size_from22"
+                    android:textSize="@dimen/size18"
                     android:textStyle="bold" />
 
                 <!--ที่ดินเปล่า-->
@@ -757,7 +757,7 @@
                         android:layout_height="wrap_content"
                         android:text="รวมเนื้อที่ดิน"
                         android:textColor="@color/colorBack"
-                        android:textSize="@dimen/size_from"
+                        android:textSize="@dimen/size18"
                         android:textStyle="bold" />
 
                     <!--1 แปลง-->
