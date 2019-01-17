@@ -97,11 +97,10 @@ public class SignInActivity extends AppCompatActivity {
 //            เมื่อไหร่ก็ตามถ้ามีค่าเป็น true ให้ทำ finish โดยการกลับไปที่หน้าแรก
                     if (Boolean.parseBoolean(addUserToServer.get())) {
                         finish();
-                        Toast.makeText(SignInActivity.this, "อัพโหลดข้อมูลสำเร็จ", Toast.LENGTH_SHORT).show();
 
 //                แต่ถ้าไม่ใช่ ให้ แสดงข้อความ ไม่สามารถอัพโหลดได้ ขึ้นมาเป็นเวลา 4 วิ
                     } else {
-                        Toast.makeText(SignInActivity.this, "ไม่สามารถอัพโหลดได้", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignInActivity.this, "อัพโหลดข้อมูลสำเร็จ", Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -124,8 +123,8 @@ public class SignInActivity extends AppCompatActivity {
             return false;
         }
         if (!et_passwordString.equals(et_co_passwordString)) {
-            et_password.setError("รหัสผ่านและยืนยันรหัสผ่านไม่ตรงกัน");
-            et_password.requestFocus();
+            et_co_password.setError("รหัสผ่านและยืนยันรหัสผ่านไม่ตรงกัน");
+            et_co_password.requestFocus();
             return false;
         }
 

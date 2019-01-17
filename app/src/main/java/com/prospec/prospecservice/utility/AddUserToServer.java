@@ -43,6 +43,7 @@ public class AddUserToServer extends AsyncTask<Void, Void, String> {
                     .add("last_name", et_lastString)
                     .add("telephone", et_phoneString)
                     .add("email", et_emailString)
+                    .add("password", et_passwordString)
                     .build();
 
             Request.Builder builder = new Request.Builder();
