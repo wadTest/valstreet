@@ -84,6 +84,7 @@
     <string name="user_password_login">Password</string>
     <string name="hint_lookka">ลูกค้า</string>
     <string name="songngan">ผู้ส่งงาน</string>
+    <string name="prospec">Prospec Appraisal</string>
 
 
 </resources>

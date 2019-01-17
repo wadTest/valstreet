@@ -9,6 +9,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.prospec.prospecservice.utility.AddUserToServer;
 import com.prospec.prospecservice.utility.MyAlert;
 
@@ -35,7 +36,7 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                et_nameString = et_name.getText().toString().trim();
+                et_nameString = et_name.getText().toString();
                 et_lastString = et_last.getText().toString().trim();
                 et_phoneString = et_phone.getText().toString().trim();
                 et_emailString = et_email.getText().toString().trim();

@@ -1,14 +1,19 @@
 package com.prospec.prospecservice;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.prospec.prospecservice.status.LoanOfficerActivity;
 
@@ -24,28 +29,16 @@ public class StatusActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
 
-//        เรียกตัวแปรมาใช้
-        button1 = (Button) findViewById(R.id.button1);
-        button2 = (Button) findViewById(R.id.button2);
-        button3 = (Button) findViewById(R.id.button3);
-
-        //Get Event From Click สถานะประเมิน
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(StatusActivity.this, LoanOfficerActivity.class));
-            }
-        });
-
-
-        //        ADD Toolbar
+//        ADD Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("สถานะงาน");
         toolbar.setSubtitle("กรอกรหัสงานเพื่อตรวจสอบสถานะ");
         toolbar.setLogo(R.drawable.logo_prospec);
 
-        //เรียกตัวแปรมาใช้
+//        รับกิจกรรม
+        getEvent();
+//        เรียกตัวแปรมาใช้
         init();
 //        เรียก web มาใช้
         browse();
@@ -60,5 +53,110 @@ public class StatusActivity extends AppCompatActivity {
         WebSettings webSettings = webBrowser.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webBrowser.loadUrl("http://119.59.103.121/crm");
+    }
+
+    private void getEvent() {
+//               เรียกตัวแปรมาใช้
+        button1 = (Button) findViewById(R.id.button1);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
+
+//        Get Event From Click สถานะสินเชื่อ
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(StatusActivity.this);
+
+//                เรียก layout custom_layout มาใช้งาน
+                View view = LayoutInflater.from(StatusActivity.this).inflate(R.layout.custom_layout, null);
+
+//                Get Event ตัวแปรนี้มาจาก layout custom_layout
+                TextView title = (TextView) view.findViewById(R.id.title);
+                ImageButton imageButton = (ImageButton) view.findViewById(R.id.image);
+
+//                หัวข้อ toolbat
+                title.setText("Prospec Appraisal");
+
+//                photo ที่โชว์อยู่ใน dailog (บรรทัดนี้ ยังไม่นำไปใช้งาน)
+//                imageButton.setImageResource(R.drawable.logo_prospec); ยังไม่เอาไปใช้งาน
+
+                builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+
+//                กรณีที่อยากให้มีคำว่า "ยกเลิก"
+                builder.setNegativeButton("", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+
+                builder.setView(view);
+                builder.show();
+
+            }
+        });// Button สินเชื่อ
+
+        //        Get Event From Click สถานะตลาด
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(StatusActivity.this);
+                View view = LayoutInflater.from(StatusActivity.this).inflate(R.layout.custom_layout, null);
+
+                TextView title = (TextView) view.findViewById(R.id.title);
+                ImageButton imageButton = (ImageButton) view.findViewById(R.id.image);
+
+                title.setText("Prospec Appraisal");
+
+                builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+
+                builder.setNegativeButton("", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+
+                builder.setView(view);
+                builder.show();
+
+            }
+        });// Button ตลาด
+
+        //        Get Event From Click สถานะประเมิน
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(StatusActivity.this);
+                View view = LayoutInflater.from(StatusActivity.this).inflate(R.layout.custom_layout, null);
+
+                TextView title = (TextView) view.findViewById(R.id.title);
+                ImageButton imageButton = (ImageButton) view.findViewById(R.id.image);
+
+                title.setText("Prospec Appraisal");
+
+                builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+
+                builder.setNegativeButton("", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+
+                builder.setView(view);
+                builder.show();
+
+            }
+        });// Button ประเมิน
     }
 }

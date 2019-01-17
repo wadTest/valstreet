@@ -10,5 +10,6 @@
     <color name="colorView">#a6a6a6</color>
     <color name="BLUE">#0a00b6</color>
     <color name="BLUE_K">#29257b</color>
+    <color name="tool_dailog">#ff6d00</color>
 
 </resources>
