@@ -61,7 +61,7 @@ public class CallActivity extends AppCompatActivity {
                                 c1.setData(Uri.parse("tel:025590678"));
                                 startActivity(c1);
                                 return true;
-                            case R.id.ChiangMai2:
+                            case R.id.headquarters2:
                                 Intent c2 = new Intent(Intent.ACTION_DIAL);
                                 c2.setData(Uri.parse("tel:0892301694"));
                                 startActivity(c2);

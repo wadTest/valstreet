@@ -16,10 +16,11 @@ import com.prospec.prospecservice.utility.MyAlert;
 public class SignInActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
-    private EditText et_name, et_last, et_phone, et_email, et_password;
+    private EditText et_name, et_last, et_phone, et_email, et_password, et_co_password;
     private Button btn_register;
-    private String et_nameString, et_lastString, et_phoneString, et_emailString, et_passwordString;
+    private String et_nameString, et_lastString, et_phoneString, et_emailString, et_passwordString, et_co_passwordString;
     String[] title = {"นางสาว", "นาง", "นาย", "ว่าที่ร้อยตรี"};
+    private static final String KEY_EMPTY = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,26 @@ public class SignInActivity extends AppCompatActivity {
 
 //        Grt Event
         getevent();
+    }
+
+    private void AutoComplete() {
+        //การสร้างอินสแตนซ์ของ ArrayAdapter ที่มีคำนำหน้า
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>
+                (this, android.R.layout.select_dialog_item, title);
+        //รับอินสแตนซ์ของ AutoCompleteTextView
+        AutoCompleteTextView actv = (AutoCompleteTextView) findViewById(R.id.et_main);
+        actv.setThreshold(1);//จะเริ่มทำงานจากอักขระตัวแรก
+        actv.setAdapter(adapter);//การตั้งค่าข้อมูลอะแดปเตอร์ลงใน AutoCompleteTextView
+    }
+
+    private void getevent() {
+        et_name = (EditText) findViewById(R.id.et_name);
+        et_last = (EditText) findViewById(R.id.et_last);
+        et_phone = (EditText) findViewById(R.id.et_phone);
+        et_email = (EditText) findViewById(R.id.et_email);
+        et_password = (EditText) findViewById(R.id.et_password);
+        btn_register = (Button) findViewById(R.id.btn_register);
+        et_co_password = (EditText) findViewById(R.id.et_co_password);
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,24 +62,28 @@ public class SignInActivity extends AppCompatActivity {
                 et_phoneString = et_phone.getText().toString().trim();
                 et_emailString = et_email.getText().toString().trim();
                 et_passwordString = et_password.getText().toString().trim();
+                et_co_passwordString = et_co_password.getText().toString().trim();
+
+                if (validateInputs()) {
 
 //                เช็คความว่างเปล่า
-                if (et_nameString.equals("") || et_lastString.equals("") || et_phoneString.equals("") ||
-                        et_emailString.equals("") || et_passwordString.equals("")) {
+                    if (et_nameString.equals("") || et_lastString.equals("") || et_phoneString.equals("") ||
+                            et_emailString.equals("") || et_passwordString.equals("")) {
 
-                    MyAlert myAlert = new MyAlert(SignInActivity.this, "มีช่องว่าง",
-                            "กรุณากรอกข้อมูลในช่องว่าง");
-                    myAlert.myDialog();
+                        MyAlert myAlert = new MyAlert(SignInActivity.this, "มีช่องว่าง",
+                                "กรุณากรอกข้อมูลในช่องว่าง");
+                        myAlert.myDialog();
 
-                } else {
+                    } else {
 //                    upload ข้อมูลที่กรอกไปเก็บไว้ใน my sql
-                    uploadString();
+                        uploadString();
 
-                    //No Space ดึงค่าจาก server
-                    Intent intent = new Intent(SignInActivity.this, MainActivity.class);
-                    startActivity(intent);
+                        //No Space ดึงค่าจาก server
+                        Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                        startActivity(intent);
 //                ไม่ให้ย้อยกลับมาหน้าเก่า กดปุ่มกลับก็จะออกจากหน้าจอเลย
-                    finish();
+                        finish();
+                    }
                 }
             }//onClick
 
@@ -86,23 +111,25 @@ public class SignInActivity extends AppCompatActivity {
 
     }//Method
 
-    private void getevent() {
-        et_name = (EditText) findViewById(R.id.et_name);
-        et_last = (EditText) findViewById(R.id.et_last);
-        et_phone = (EditText) findViewById(R.id.et_phone);
-        et_email = (EditText) findViewById(R.id.et_email);
-        et_password = (EditText) findViewById(R.id.et_password);
-        btn_register = (Button) findViewById(R.id.btn_register);
+    private boolean validateInputs() {
+        if (KEY_EMPTY.equals(et_passwordString)) {
+            et_password.setError("กรุณากรอกรหัสผ่าน");
+            et_password.requestFocus();
+            return false;
+        }
 
+        if (KEY_EMPTY.equals(et_co_passwordString)) {
+            et_co_password.setError("เช็ครหัสผ่านต้องไม่ว่าง");
+            et_co_password.requestFocus();
+            return false;
+        }
+        if (!et_passwordString.equals(et_co_passwordString)) {
+            et_password.setError("รหัสผ่านและยืนยันรหัสผ่านไม่ตรงกัน");
+            et_password.requestFocus();
+            return false;
+        }
+
+        return true;
     }
 
-    private void AutoComplete() {
-        //การสร้างอินสแตนซ์ของ ArrayAdapter ที่มีคำนำหน้า
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>
-                (this, android.R.layout.select_dialog_item, title);
-        //รับอินสแตนซ์ของ AutoCompleteTextView
-        AutoCompleteTextView actv = (AutoCompleteTextView) findViewById(R.id.et_main);
-        actv.setThreshold(1);//จะเริ่มทำงานจากอักขระตัวแรก
-        actv.setAdapter(adapter);//การตั้งค่าข้อมูลอะแดปเตอร์ลงใน AutoCompleteTextView
-    }
 }//Main Class
