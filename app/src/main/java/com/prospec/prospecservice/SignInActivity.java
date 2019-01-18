@@ -118,7 +118,7 @@ public class SignInActivity extends AppCompatActivity {
         }
 
         if (KEY_EMPTY.equals(et_co_passwordString)) {
-            et_co_password.setError("เช็ครหัสผ่านต้องไม่ว่าง");
+            et_co_password.setError("ยืนยันรหัสผ่าน");
             et_co_password.requestFocus();
             return false;
         }

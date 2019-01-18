@@ -149,44 +149,44 @@
 
         </android.support.design.widget.TextInputLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="10dp">-->
 
-            <TextView
-                android:id="@+id/gender_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:paddingRight="15dp"
-                android:text="คุณคือ"
-                android:textSize="@dimen/size_main" />
+            <!--<TextView-->
+                <!--android:id="@+id/gender_textview"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:paddingRight="15dp"-->
+                <!--android:text="คุณคือ"-->
+                <!--android:textSize="@dimen/size_main" />-->
 
-            <RadioGroup
-                android:id="@+id/gender_radio_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/gender_textview"
-                android:orientation="horizontal">
+            <!--<RadioGroup-->
+                <!--android:id="@+id/gender_radio_group"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_toRightOf="@+id/gender_textview"-->
+                <!--android:orientation="horizontal">-->
 
-                <RadioButton
-                    android:id="@+id/radio_btn1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/hint_lookka"
-                    android:textSize="@dimen/size_main" />
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_btn1"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:checked="true"-->
+                    <!--android:text="@string/hint_lookka"-->
+                    <!--android:textSize="@dimen/size_main" />-->
 
-                <RadioButton
-                    android:id="@+id/radio_btn2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="@string/songngan"
-                    android:textSize="@dimen/size_main" />
-            </RadioGroup>
-        </RelativeLayout>
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_btn2"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="@string/songngan"-->
+                    <!--android:textSize="@dimen/size_main" />-->
+            <!--</RadioGroup>-->
+        <!--</RelativeLayout>-->
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_register"
