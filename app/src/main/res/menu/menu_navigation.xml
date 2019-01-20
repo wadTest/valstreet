@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_name"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/email"
+        android:icon="@drawable/ic_name"
+        android:title="@string/email" />
+
+    <item
+        android:id="@+id/line"
+        android:icon="@drawable/ic_name"
+        android:title="@string/line" />
+
+    <item
+        android:id="@+id/call"
+        android:icon="@drawable/ic_name"
+        android:title="@string/call" />
+
+    <item
+        android:id="@+id/status"
+        android:icon="@drawable/ic_name"
+        android:title="@string/statuss" />
+
+    <!--<item-->
+        <!--android:id="@+id/service"-->
+        <!--android:icon="@drawable/ic_name"-->
+        <!--android:title="@string/service" />-->
+
+    <!--<item-->
+        <!--android:id="@+id/nessage"-->
+        <!--android:icon="@drawable/ic_name"-->
+        <!--android:title="@string/message" />-->
+
+</menu>

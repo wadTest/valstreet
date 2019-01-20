@@ -48,4 +48,5 @@ android {
 
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:+'
+    implementation 'com.android.support:support-vector-drawable:27.1.1'
 }

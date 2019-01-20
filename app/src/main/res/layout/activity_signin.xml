@@ -149,6 +149,18 @@
 
         </android.support.design.widget.TextInputLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size18"
+            android:layout_marginBottom="10dp"
+            android:text="ยินยอมให้เข้าถึงข้อมูล"/>
+        </LinearLayout>
+
         <!--<RelativeLayout-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="wrap_content"-->

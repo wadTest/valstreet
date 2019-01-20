@@ -85,6 +85,16 @@
     <string name="hint_lookka">ลูกค้า</string>
     <string name="songngan">ผู้ส่งงาน</string>
     <string name="prospec">Prospec Appraisal</string>
+    <!--หน้า navigation button-->
+    <string name="title_home">หน้าเมนู</string>
+    <string name="logout">ออกจากระบบ</string>
+    <string name="email">อีเมล์</string>
+    <string name="line">ไลน์</string>
+    <string name="call">ติดต่อ</string>
+    <string name="statuss">สอบถาม</string>
+    <string name="service">บริหาร</string>
+    <string name="message">นัดตรวจ</string>
+    <string name="home">หน้าหลัก</string>
 
 
 </resources>

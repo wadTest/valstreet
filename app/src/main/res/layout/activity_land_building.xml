@@ -87,6 +87,26 @@
                     android:textSize="@dimen/size_main" />
             </LinearLayout>
 
+        <!--Content-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!--ที่ดินเปล่า-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="จำนวนแปลง"
+                android:textColor="@color/colorBack"
+                android:textSize="@dimen/size_main" />
+
+            <!--ที่ดินเปล่า-->
+           <Spinner
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+        </LinearLayout>
+
             <!--Content-->
             <LinearLayout
                 android:layout_width="match_parent"

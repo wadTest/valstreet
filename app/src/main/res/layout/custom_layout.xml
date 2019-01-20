@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/tool_dailog"
+        android:gravity="center_vertical"
+        android:paddingLeft="120dp"
+        android:text="@string/prospec"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:background="#FFF"
+        android:paddingBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/image"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="image"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            android:visibility="gone" />
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_below="@+id/image"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/dailog"/>-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="ขอขอบคุณ ที่เลือกใช้แอพ Valstreet\nถนนสายประเมินราคา ถ้าได้รับสิทธิ์\nเป็นผู้ทรงเกียรติเข้าใช้งานแอพของเราแล้ว\nในฐานะของ ผู้จ่ายงาน โดย\nท่านสามารถใช้บริการ ที่สำคัญ ในแอพนี้ ได้แก่\n\n1.ติดตามสถานะงานที่ท่าน ส่งงานเข้ามาให้เรา\nอยู่ในขั้นตอนใดบ้าง\n2. ท่านสามารถส่งงานด่วนให้เราประเมินราคา\nมาทาง App นี้ได้ อย่างสะดวกสบาย\n( อธิบายประกอบ ปุ่มหน้า app)\n\nหวังเป็นอย่างยิ่งว่า จะทำให้ท่านได้รับความ\nรื่นรมย์ในการใช้งานต่อไป\nยินดีรับฟังความคิดเห็นของท่าน\nในการใช้แอพนี้ทาง (ปุ่มติดต่อเรา)\nเรายินดีปรับปรุงแก้ไขเพื่อความสะดวกสบาย\nสูงสุดของลูกค้าผู้ใช้บริการครับ"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
