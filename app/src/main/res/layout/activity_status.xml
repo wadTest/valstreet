@@ -26,45 +26,23 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="15dp"
-            android:text="เจ้าหน้าที่"
+            android:text="แสดงรายการงานของท่าน"
             android:textColor="@color/colorBack"
             android:textSize="18dp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="105dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="75dp"
+            android:layout_marginLeft="220dp"
             android:drawableRight="@android:drawable/ic_menu_myplaces"
-            android:text="สินเชื่อ"
+            android:text="แสดงรายการ"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="105dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="175dp"
-            android:drawableRight="@android:drawable/ic_menu_myplaces"
-            android:text="ตลาด"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:drawableRight="@android:drawable/ic_menu_myplaces"
-            android:text="ประเมิน"
-            android:layout_marginLeft="275dp"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
     </RelativeLayout>
 
 

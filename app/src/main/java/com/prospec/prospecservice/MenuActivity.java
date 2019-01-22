@@ -1,33 +1,19 @@
 package com.prospec.prospecservice;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatButton;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-import com.prospec.prospecservice.status.LoanOfficerActivity;
-import com.prospec.prospecservice.utility.AddUserToServer;
 import com.prospec.prospecservice.utility.SharedPrefs;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 //class หน้าเมนูหลัก
 public class MenuActivity extends AppCompatActivity {
@@ -37,6 +23,7 @@ public class MenuActivity extends AppCompatActivity {
     ViewFlipper imageShow;
     private TextView textStatus, Status, tv_name;
     private Button btn_logout;
+    private String nameLogin;
 
     // คลาสที่ Android มีมาให้เพื่อเซฟและอ่านข้อมูล โดยข้อมูลจะเก็บเป็นแบบ key-value สามารถใช้ SharedPreferences
     // เก็บข้อมูลลงไปได้ ทั้ง boolean, float, int, long, String ข้อมูลที่เซฟจะอยู่แม้ว่าเราจะปิดแอพแล้วก็ตาม แต่ข้อมูลจะหายไป หากเราทำการ uninstall แอพพลิเคชัน
@@ -47,6 +34,10 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
+        nameLogin = sharedPreferences.getString("NameLogin", "");
+        Log.d("20JanV1", "nameLogin Receive in MenuActivity==>" + nameLogin);
+
 //        เรียกตัวแปรมาใช้งาน รูปที่ slider หน้าเมนู
         imageShow = findViewById(R.id.imageShow);
         int images[] = {R.drawable.photo1, R.drawable.photo2, R.drawable.photo3,
@@ -56,7 +47,8 @@ public class MenuActivity extends AppCompatActivity {
         for (int image : images) {
             flipperImages(image);
         }
-    }//Method
+    }//Main Method
+
 
     public void flipperImages(int image) {
         ImageView imageView = new ImageView(this);
@@ -120,14 +112,14 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        //Get Event From Click status เจ้าหน้าที่สินเชื่อ
-        Status.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, LoanOfficerActivity.class));
-
-            }
-        });
+//        //Get Event From Click status เจ้าหน้าที่สินเชื่อ
+//        Status.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MenuActivity.this, LoanOfficerActivity.class));
+//
+//            }
+//        });
 
         //Get Event From Click E-mail
         imageView1.setOnClickListener(new View.OnClickListener() {

@@ -8,7 +8,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- อนุญาตให้เปิดรุปภาพใน sd card -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <!-- &lt;!&ndash;เชื่อมต่อมสัญญาณอินเตอร์ทุกแบบ&ndash;&gt; -->
     <!-- <uses-permission android:name="android.permission.INTERNET"></uses-permission> -->
     <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission> -->
@@ -87,15 +86,16 @@
             android:name=".CustomDialogActivity"
             android:screenOrientation="portrait" />
         <!-- หน้าสถานะสินเชื่อ -->
+        <!-- หน้าห้องชุดหรือพื้นที่เช่า -->
         <activity
-            android:name=".status.LoanOfficerActivity"
+            android:name=".CondoRentActivity"
             android:screenOrientation="portrait" />
-        <!--หน้าห้องชุดหรือพื้นที่เช่า-->
-        <activity android:name=".CondoRentActivity"
+        <!-- หน้าที่ดินพร้อมสิ่งปลูกสร้าง(สัญญาเช่า) -->
+        <activity
+            android:name=".BuildindRentActivity"
             android:screenOrientation="portrait" />
-        <!--หน้าที่ดินพร้อมสิ่งปลูกสร้าง(สัญญาเช่า)-->
-        <activity android:name=".BuildindRentActivity"
-            android:screenOrientation="portrait" />
-            <!--หน้าที่ดินเปล่า (สัญญาเช่า)-->
+        <!-- หน้าที่ดินเปล่า (สัญญาเช่า) -->
+        <activity android:name=".MyStatusActivity"></activity>
     </application>
+
 </manifest>

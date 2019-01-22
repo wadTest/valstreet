@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AlertDialog;
@@ -93,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
             synUser.execute();
 //            อ่านค่ามันออกมา
             String s = synUser.get();
+            Log.d("20JanV1", "s From Json users_app_crm==>" +s);
+            String nameLogin = "";
             JSONArray jsonArray = new JSONArray(s);
 //            วบ loop
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -102,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
 //                    ให้เอาค่าของ aBoolean มีค่า = false
                     aBoolean = false;
                     truePassString = jsonObject.getString("password");
+                    nameLogin = jsonObject.getString("name");
+                    Log.d("20JanV1", "nameLogin==>" +nameLogin);
                 }
             }//for
 
@@ -114,7 +119,14 @@ public class MainActivity extends AppCompatActivity {
             } else if (passwordString.equals(truePassString)) {
 
 
-                SharedPrefs.saveSharedSetting(MainActivity.this, "Logout", "false");
+//                SharedPrefs.saveSharedSetting(MainActivity.this, "Logout", "false");
+
+                SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("NameLogin", nameLogin);
+                editor.putString("Logout", "false");
+                editor.commit();
+
                 Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                 startActivity(intent);
 //                ไม่ให้ย้อยกลับมาหน้าเก่า กดปุ่มกลับก็จะออกจากหน้าจอเลย

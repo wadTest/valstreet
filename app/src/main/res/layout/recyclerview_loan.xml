@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <!--job_no-->
+        <TextView
+            android:id="@+id/txtJobNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.4"
+            android:text="รหัสงาน"
+            android:textSize="16sp"
+            android:textStyle="" />
+
+        <!--cus_name-->
+        <TextView
+            android:id="@+id/txtCusName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="ชื่อลูกค้า"
+            android:textSize="16sp" />
+
+        <!--job_event-->
+        <TextView
+            android:id="@+id/txtJobEvent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.6"
+            android:text="สถานะงาน"
+            android:textSize="16sp" />
+
+        <!--&lt;!&ndash;job_event&ndash;&gt;-->
+        <!--<TextView-->
+            <!--android:id="@+id/txtMarketing"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="16sp"-->
+            <!--android:visibility="gone" />-->
+    </LinearLayout>
+
+    <!--&lt;!&ndash;Image User&ndash;&gt;-->
+    <!--<ImageView-->
+        <!--android:id="@+id/imageMarketing"-->
+        <!--android:layout_width="230dp"-->
+        <!--android:layout_height="230dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="@drawable/logoapp" />-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:padding="4dp">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/telephone"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_weight="1"-->
+            <!--android:src="@drawable/alert"-->
+            <!--android:textSize="@dimen/size_main"-->
+            <!--android:textStyle="bold" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/mobile"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_weight="1"-->
+            <!--android:src="@drawable/alert"-->
+            <!--android:textSize="@dimen/size_main"-->
+            <!--android:textStyle="bold" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/line"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_weight="1"-->
+            <!--android:src="@drawable/alert"-->
+            <!--android:textSize="@dimen/size_main"-->
+            <!--android:textStyle="bold" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/emailM"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_weight="1"-->
+            <!--android:src="@drawable/alert"-->
+            <!--android:textSize="@dimen/size_main"-->
+            <!--android:textStyle="bold" />-->
+    <!--</LinearLayout>-->
+
+</LinearLayout>
+

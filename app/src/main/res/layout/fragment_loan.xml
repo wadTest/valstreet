@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoanFragment">
+
+    <!--Head-->
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--job_no-->
+        <TextView
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:textSize="18sp"
+            android:text="รหัสงาน"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <!--cus_name-->
+        <TextView
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="ชื่อลูกค้า"
+            android:layout_weight="2.5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <!--job_event-->
+        <TextView
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="สถานะงาน"
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <!--Content-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerLoan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
