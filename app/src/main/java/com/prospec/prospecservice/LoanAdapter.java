@@ -6,23 +6,26 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder>{
+public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder> {
 
     private Context context;
     private ArrayList<String> jobNoStringArrayList, jobEventStringArrayList, cusNameStringArrayList, MarketingStringArrayList;
-//    private ArrayList<String> imageStringArrayList, telephoneStringArrayList, mobileStringArrayList, lineStringArrayList, emailMStringArrayList;
     private OnClickItem onClickItem;
     private LayoutInflater layoutInflater;
 
+
     public LoanAdapter(Context context, ArrayList<String> jobNoStringArrayList,
                        ArrayList<String> jobEventStringArrayList,
-                       ArrayList<String>cusNameStringArrayList,
-                       ArrayList<String>MarketingStringArrayList,
+                       ArrayList<String> cusNameStringArrayList,
+                       ArrayList<String> MarketingStringArrayList,
+
                        OnClickItem onClickItem) {
+
         this.layoutInflater = LayoutInflater.from(context);
         this.jobNoStringArrayList = jobNoStringArrayList;
         this.jobEventStringArrayList = jobEventStringArrayList;
@@ -48,7 +51,6 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         String jobEventstring = jobEventStringArrayList.get(position);
         String cusNameString = cusNameStringArrayList.get(position);
         String marketingString = MarketingStringArrayList.get(position);
-
 
         holder.jobNoTextView.setText(jobNoString);
         holder.jobEventTextView.setText(jobEventstring);

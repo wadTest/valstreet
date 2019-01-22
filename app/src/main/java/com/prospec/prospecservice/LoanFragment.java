@@ -64,7 +64,7 @@ public class LoanFragment extends Fragment {
 
             }
 
-            LoanAdapter loanAdapter = new LoanAdapter(getActivity(), jobNoStringArrayList, jobEventStringArrayList, cutNameStringArrayList, marketingStringArrayList,new OnClickItem() {
+            LoanAdapter loanAdapter = new LoanAdapter(getActivity(), jobNoStringArrayList, jobEventStringArrayList, cutNameStringArrayList, marketingStringArrayList, new OnClickItem() {
                 @Override
                 public void onClickItem(View view, int position) {
                     showAlert(jobNoStringArrayList.get(position), jobEventStringArrayList.get(position), cutNameStringArrayList.get(position), marketingStringArrayList.get(position));
@@ -79,7 +79,7 @@ public class LoanFragment extends Fragment {
 
     private void showAlert(String jobNo, String jobEvent, String cusName, String marketing) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
-        alertDialogBuilder.setTitle("รายละเอียดงาน").setMessage("รหัสงาน : " + jobNo + "\n" + "ชื่อลูกค้า : " + cusName + "\n" + "สถานะงาน : " + jobEvent + "\n"+ "เจ้าหน้าที่การตลาด : " + marketing  )
+        alertDialogBuilder.setTitle("รายละเอียดงาน").setMessage("รหัสงาน : " + jobNo + "\n" + "ชื่อลูกค้า : " + cusName + "\n" + "สถานะงาน : " + jobEvent + "\n"+ "เจ้าหน้าที่การตลาด : " + marketing)
                 .setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
