@@ -55,6 +55,7 @@ public class LoanFragment extends Fragment {
             final ArrayList<String> marketingStringArrayList = new ArrayList<>();
             final ArrayList<String> txtLoanStringArrayList = new ArrayList<>();
             final ArrayList<String> phoneStringArrayList = new ArrayList<>();
+            final ArrayList<String> txtValuerStringArrayLis = new ArrayList<>();
             final ArrayList<String> emailStringArrayList = new ArrayList<>();
             final ArrayList<String> imageStringArrayList = new ArrayList<>();
             final ArrayList<String> txtTidtoStringArrayLis = new ArrayList<>();
@@ -71,18 +72,20 @@ public class LoanFragment extends Fragment {
 //                txtLoanStringArrayList.add(jsonObject.getString("Loanofficer3")+"\n");
                 phoneStringArrayList.add(jsonObject.getString("telephone")+"\n");
                 emailStringArrayList.add(jsonObject.getString("email")+"\n");
+                txtValuerStringArrayLis.add(jsonObject.getString("valuer")+"\n");
                 imageStringArrayList.add(jsonObject.getString("Personal")+"\n");
                 txtTidtoStringArrayLis.add(jsonObject.getString("Table_phone")+"\n");
 
             }
 
             LoanAdapter loanAdapter = new LoanAdapter(getActivity(), jobNoStringArrayList, jobEventStringArrayList, cutNameStringArrayList, marketingStringArrayList,
-                    txtLoanStringArrayList, imageStringArrayList, phoneStringArrayList, emailStringArrayList, txtTidtoStringArrayLis, new OnClickItem() {
+                    txtLoanStringArrayList, imageStringArrayList, phoneStringArrayList, emailStringArrayList, txtTidtoStringArrayLis, txtValuerStringArrayLis, new OnClickItem() {
                 @Override
 
                 public void onClickItem(View view, int position) {
                     showAlert(jobNoStringArrayList.get(position), jobEventStringArrayList.get(position), cutNameStringArrayList.get(position), marketingStringArrayList.get(position),
-                            txtLoanStringArrayList.get(position) , imageStringArrayList.get(position),  phoneStringArrayList.get(position), emailStringArrayList.get(position) , txtTidtoStringArrayLis.get(position));
+                            txtLoanStringArrayList.get(position) , imageStringArrayList.get(position),  phoneStringArrayList.get(position), emailStringArrayList.get(position),
+                            txtTidtoStringArrayLis.get(position)  , txtValuerStringArrayLis.get(position));
                 }
             });
             recyclerView.setAdapter(loanAdapter);
@@ -92,11 +95,11 @@ public class LoanFragment extends Fragment {
         }
     }
 
-    private void showAlert(String jobNo, String jobEvent, String cusName, String marketing, String loan , String image, String phone, String email, String tidto) {
+    private void showAlert(String jobNo, String jobEvent, String cusName, String marketing, String loan , String image, String phone, String email, String tidto, String valuer) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
 //        + "เจ้าหน้าที่การตลาด " +  "\n"
         alertDialogBuilder.setTitle("รายละเอียดงาน").setMessage("รหัสงาน : " + jobNo + "\n" + "ชื่อลูกค้า : " + cusName + "\n" + "สถานะงาน : " + jobEvent + "\n" + "เจ้าหน้าที่การตลาด : " + marketing + "\n"+
-                "เจ้าหน้าที่สินเชื่อ : " + loan + "\n" + image +  "\n" + "โทรศัพท์มือถือ : " + phone + "\n" + "อีเมล์ : " + email + "\n" + "ติดต่อสายใน 025590678 : " + tidto)
+                "เจ้าหน้าที่สินเชื่อ : " + loan + "\n" + "เจ้าหน้าที่ประเมิน : " + valuer +  "\n" + image +  "\n" + "โทรศัพท์มือถือ : " + phone + "\n" + "อีเมล์ : " + email + "\n" + "ติดต่อสายใน 025590678 : " + tidto)
                 .setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();

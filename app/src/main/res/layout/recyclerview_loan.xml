@@ -56,6 +56,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <!--Loanofficer1,2,3-->
+        <TextView
+            android:id="@+id/txtValuer"
+            android:textSize="16sp"
+            android:text="เจ้าหน้าที่สินเชื่อ"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <!--<ImageView-->
         <!--android:id="@+id/txtPhone"-->
         <!--android:textSize="16sp"-->
