@@ -98,8 +98,17 @@ public class LoanFragment extends Fragment {
     private void showAlert(String jobNo, String jobEvent, String cusName, String marketing, String loan , String image, String phone, String email, String tidto, String valuer) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
 //        + "เจ้าหน้าที่การตลาด " +  "\n"
-        alertDialogBuilder.setTitle("รายละเอียดงาน").setMessage("รหัสงาน : " + jobNo + "\n" + "ชื่อลูกค้า : " + cusName + "\n" + "สถานะงาน : " + jobEvent + "\n" + "เจ้าหน้าที่การตลาด : " + marketing + "\n"+
-                "เจ้าหน้าที่สินเชื่อ : " + loan + "\n" + "เจ้าหน้าที่ประเมิน : " + valuer +  "\n" + image +  "\n" + "โทรศัพท์มือถือ : " + phone + "\n" + "อีเมล์ : " + email + "\n" + "ติดต่อสายใน 025590678 : " + tidto)
+        alertDialogBuilder.setTitle("รายละเอียดงาน").setMessage(
+                "รหัสงาน : "  + jobNo + "\n"
+                + "ชื่อลูกค้า : " + cusName + "\n"
+                + "สถานะงาน : "  + jobEvent + "\n"
+                + "เจ้าหน้าที่การตลาด : " + marketing + "\n"
+                + "เจ้าหน้าที่สินเชื่อ : "  + loan + "\n"
+                + "เจ้าหน้าที่ประเมิน : "  + valuer +  "\n"
+                + image +  "\n"
+                + "โทรศัพท์มือถือ : "  + phone + "\n"
+                + "อีเมล์ : "  + email + "\n"
+                + "ติดต่อสายใน 025590678 : " + tidto)
                 .setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
