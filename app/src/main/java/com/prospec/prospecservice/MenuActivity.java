@@ -71,7 +71,7 @@ public class MenuActivity extends AppCompatActivity {
         imageView.setBackgroundResource(image);
 
         imageShow.addView(imageView);
-        imageShow.setFlipInterval(5000); //5วิ
+        imageShow.setFlipInterval(7000); //7วิ
         imageShow.setAutoStart(true);
 
 //        ภาพเคลื่อนไหว
@@ -90,6 +90,8 @@ public class MenuActivity extends AppCompatActivity {
         tv_name = (TextView) findViewById(R.id.tv_name);
         btn_logout = (Button) findViewById(R.id.btn_logout);
 
+        tv_name.setText("ยินดีต้อนรับ "+nameLogin.trim());
+
 //        ปุ่มออกจากระบบ
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +109,8 @@ public class MenuActivity extends AppCompatActivity {
 
     //    Class Create SharePerferance Sataus Login
     public void CekSession() {
+
+
 
         Boolean Check = Boolean.valueOf(SharedPrefs.readSharedSetting(MenuActivity.this, "Logout", "true"));
 

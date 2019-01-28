@@ -3,37 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/bgm"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <!--Image User-->
+    <ImageView
+        android:id="@+id/imageUser"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/logo_app" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="บริษัท โปรสเปค แอพแพรซัล จำกัด"
+        android:textAlignment="center"
+        android:textColor="@color/colorBack"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:text="Prospec Appraisal Co.,Ltd."
+        android:textAlignment="center"
+        android:textColor="@color/colorBack"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <!--LinearLayout Main-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/background_bgm"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:scaleType="centerCrop">
 
-        <!--Image User-->
-        <ImageView
-            android:id="@+id/imageUser"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_gravity="center"
-            android:background="@drawable/logo_app" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:text="ลงชื่อเข้าใช้ระบบ"
-            android:textAlignment="center"
-            android:textColor="@color/colorBack"
-            android:textSize="22sp"
-            android:textStyle="bold" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -45,8 +61,9 @@
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_email1"
+                android:drawableRight="@drawable/add"
                 android:hint="Email"
+                android:textColor="@color/colorWite"
                 android:inputType="textEmailAddress" />
 
         </android.support.design.widget.TextInputLayout>
@@ -61,7 +78,8 @@
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_key"
+                android:drawableRight="@drawable/key"
+                android:textColor="@color/colorWite"
                 android:hint="Password"
                 android:inputType="textPassword" />
 
@@ -76,35 +94,37 @@
             android:textColor="@android:color/white" />
 
 
-            <TextView
-                android:id="@+id/tv_register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginTop="20dp"
-                android:text="ยังไม่ได้ลงทะเบียน? สมัครตอนนี้"
-                android:textColor="@color/BLUE"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"
+            android:text="ยังไม่ได้ลงทะเบียน? สมัครตอนนี้"
+            android:textColor="@color/colorWite"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/ol_password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="20dp"
-                android:text="ลืมรหัสผ่าน"
-                android:textColor="@color/BLUE"
-                android:textStyle="bold" />
-
-
-            <ProgressBar
-                android:id="@+id/progress"
-                style="@style/Base.Widget.AppCompat.ProgressBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:indeterminate="true"
-                android:visibility="invisible" />
-
+        <TextView
+            android:id="@+id/ol_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20sp"
+            android:text="ลืมรหัสผ่าน"
+            android:textColor="@color/colorWite"
+            android:textStyle="bold" />
     </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@style/Base.Widget.AppCompat.ProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:indeterminate="true"
+        android:visibility="invisible" />
+
+
 </LinearLayout>

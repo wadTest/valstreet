@@ -74,9 +74,8 @@
                     android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:textSize="16sp" />
 
                 <Button
@@ -96,7 +95,7 @@
             <ViewFlipper
                 android:id="@+id/imageShow"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="230dp"
                 android:layout_gravity="center" />
 
 
@@ -105,12 +104,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
+                android:layout_weight="3"
                 android:orientation="horizontal">
 
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 1 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
+                    android:layout_height="130dp"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/background_liner"
@@ -131,18 +131,18 @@
                         android:id="@+id/textView1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="8dp"
                         android:text="ติดต่อสอบถาม"
                         android:textAlignment="center"
-                        android:textColor="#ffff"
-                        android:textSize="18sp"
+                        android:textColor="@color/colorBack"
+                        android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 2 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
+                    android:layout_height="130dp"
                     android:layout_marginLeft="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/background_liner"
@@ -163,18 +163,18 @@
                         android:id="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="8dp"
                         android:text="ติดต่อทาง @line"
                         android:textAlignment="center"
-                        android:textColor="#ffff"
-                        android:textSize="18sp"
+                        android:textColor="@color/colorBack"
+                        android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 3 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
+                    android:layout_height="130dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
@@ -196,11 +196,11 @@
                         android:id="@+id/textView3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="8dp"
                         android:text="ติดต่อสายตรง"
                         android:textAlignment="center"
-                        android:textColor="#ffff"
-                        android:textSize="18sp"
+                        android:textColor="@color/colorBack"
+                        android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -211,12 +211,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
+                android:layout_weight="3"
                 android:orientation="horizontal">
 
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 4 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
+                    android:layout_height="130dp"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/background_liner"
@@ -237,18 +238,18 @@
                         android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="8dp"
                         android:text="สอบถามสถานะงาน"
                         android:textAlignment="center"
-                        android:textColor="#ffff"
-                        android:textSize="18sp"
+                        android:textColor="@color/colorBack"
+                        android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 5 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
+                    android:layout_height="130dp"
                     android:layout_marginLeft="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/background_liner"
@@ -269,18 +270,18 @@
                         android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="8dp"
                         android:text="ใช้บริการประเมิน"
                         android:textAlignment="center"
-                        android:textColor="#ffff"
-                        android:textSize="18sp"
+                        android:textColor="@color/colorBack"
+                        android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 6 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
+                    android:layout_height="130dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
@@ -302,22 +303,15 @@
                         android:id="@+id/textView6"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="8dp"
                         android:text="นัดตรวจงวดงาน"
                         android:textAlignment="center"
-                        android:textColor="#ffff"
-                        android:textSize="18sp"
+                        android:textColor="@color/colorBack"
+                        android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
 
-            <android.support.design.widget.BottomNavigationView
-                android:id="@+id/navigation"
-                android:layout_width="match_parent"
-                android:background="#efecec"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                app:menu="@menu/menu_navigation" />
 
         </LinearLayout>
 
