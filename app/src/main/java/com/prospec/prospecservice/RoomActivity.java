@@ -24,7 +24,14 @@ public class RoomActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("ห้องชุด");
         toolbar.setSubtitle("โปรดกรอกรายละเอียดห้องชุด");
-        toolbar.setLogo(R.drawable.logo_prospec);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }//Method
 }//Main Class

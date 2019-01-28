@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="15dp"
-            android:text="แสดงรายการงานของท่าน"
+            android:text="รายการงานของท่าน"
             android:textColor="@color/colorBack"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="220dp"
+            android:layout_marginLeft="170dp"
             android:drawableRight="@android:drawable/ic_menu_myplaces"
             android:text="แสดงรายการ"
             android:textColor="@android:color/black"

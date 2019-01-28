@@ -100,38 +100,38 @@
                 android:textSize="@dimen/size_from22"
                 android:textStyle="bold" />
 
-            <!--ปุ่ม ที่ดินเปล่า(สัญญาเช่า)-->
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/background_liner"
-                android:text="ที่ดินเปล่า(สัญญาเช่า)"
-                android:textSize="@dimen/size_from22"
-                android:textStyle="bold" />
+            <!--&lt;!&ndash;ปุ่ม ที่ดินเปล่า(สัญญาเช่า)&ndash;&gt;-->
+            <!--<Button-->
+                <!--android:id="@+id/button4"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="60dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:background="@drawable/background_liner"-->
+                <!--android:text="ที่ดินเปล่า(สัญญาเช่า)"-->
+                <!--android:textSize="@dimen/size_from22"-->
+                <!--android:textStyle="bold" />-->
 
-            <!--ปุ่ม ที่ดินพร้อมสิ่งปลูกสร้าง(สัญญาเช่า)-->
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/background_liner"
-                android:text="ที่ดินพร้อมสิ่งปลูกสร้าง(สัญญาเช่า)"
-                android:textSize="@dimen/size_from22"
-                android:textStyle="bold" />
+            <!--&lt;!&ndash;ปุ่ม ที่ดินพร้อมสิ่งปลูกสร้าง(สัญญาเช่า)&ndash;&gt;-->
+            <!--<Button-->
+                <!--android:id="@+id/button5"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="60dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:background="@drawable/background_liner"-->
+                <!--android:text="ที่ดินพร้อมสิ่งปลูกสร้าง(สัญญาเช่า)"-->
+                <!--android:textSize="@dimen/size_from22"-->
+                <!--android:textStyle="bold" />-->
 
-            <!--ปุ่ม ห้องชุดหรือเช่าพื้นที่-->
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/background_liner"
-                android:text="ห้องชุดหรือเช่าพื้นที่"
-                android:textSize="@dimen/size_from22"
-                android:textStyle="bold" />
+            <!--&lt;!&ndash;ปุ่ม ห้องชุดหรือเช่าพื้นที่&ndash;&gt;-->
+            <!--<Button-->
+                <!--android:id="@+id/button6"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="60dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:background="@drawable/background_liner"-->
+                <!--android:text="ห้องชุดหรือเช่าพื้นที่"-->
+                <!--android:textSize="@dimen/size_from22"-->
+                <!--android:textStyle="bold" />-->
 
         </LinearLayout>
     </ScrollView>

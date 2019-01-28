@@ -71,17 +71,17 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <!--ปุ่ม ส่งข้อมความละอียด-->
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/backgroup_b1"
-            android:text="ส่งข้อความละเอียด"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+        <!--&lt;!&ndash;ปุ่ม ส่งข้อมความละอียด&ndash;&gt;-->
+        <!--<Button-->
+            <!--android:id="@+id/button2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="80dp"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginTop="50dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--android:background="@drawable/backgroup_b1"-->
+            <!--android:text="ส่งข้อความละเอียด"-->
+            <!--android:textSize="30sp"-->
+            <!--android:textStyle="bold" />-->
     </LinearLayout>
 </LinearLayout>

@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             synUser.execute();
 //            อ่านค่ามันออกมา
             String s = synUser.get();
-            Log.d("20JanV1", "s From Json users_app_crm==>" +s);
+            Log.d("20JanV1", "s From Json user_app_crm ==> " + s);
             String nameLogin = "";
             JSONArray jsonArray = new JSONArray(s);
 //            วบ loop
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                     aBoolean = false;
                     truePassString = jsonObject.getString("password");
                     nameLogin = jsonObject.getString("name");
-                    Log.d("20JanV1", "nameLogin==>" +nameLogin);
+                    Log.d("20JanV1", "nameLogin ==> " + nameLogin);
                 }
             }//for
 

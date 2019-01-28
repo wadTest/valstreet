@@ -11,7 +11,7 @@ import com.squareup.okhttp.Response;
 public class SynUser extends AsyncTask<Void, Void, String> {
     //    ประกาศตัวแปร
     private Context context;
-//    ทำการดึง JSON
+    //    ทำการดึง JSON
     private static final String urlJSON = "http://119.59.103.121/app_mobile/get.data.php";
 
     public SynUser(Context context) {

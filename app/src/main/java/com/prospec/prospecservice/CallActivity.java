@@ -29,7 +29,15 @@ public class CallActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("ติดต่อสายตรง");
         toolbar.setSubtitle("เลือกเมนูทางในการติดต่อ");
-        toolbar.setLogo(R.drawable.logo_prospec);
+//        toolbar.setLogo(R.drawable.logo_prospec);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 //        Get Event การรับกิจกรรมจาก ตัวแปร กดปุ่ม 1-13
         button1 = (Button) findViewById(R.id.button1);

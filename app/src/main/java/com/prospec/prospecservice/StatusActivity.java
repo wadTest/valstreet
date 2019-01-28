@@ -16,6 +16,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
 import com.prospec.prospecservice.utility.GetDb2WhereNameLoginThread;
 import com.prospec.prospecservice.utility.MyConstant;
 
@@ -24,7 +25,7 @@ public class StatusActivity extends AppCompatActivity {
     //    ประกาศตัวแปร
     private WebView webBrowser;
     private Toolbar toolbar;
-    private Button button1, button2, button3;
+    private Button button1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,15 @@ public class StatusActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("สถานะงาน");
         toolbar.setSubtitle("กรอกรหัสงานเพื่อตรวจสอบสถานะ");
-        toolbar.setLogo(R.drawable.logo_prospec);
+//        toolbar.setLogo(R.drawable.logo_prospec);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 //        รับกิจกรรม
         getEvent();
@@ -60,14 +69,10 @@ public class StatusActivity extends AppCompatActivity {
     private void getEvent() {
 //               เรียกตัวแปรมาใช้
         button1 = (Button) findViewById(R.id.button1);
-        button2 = (Button) findViewById(R.id.button2);
-        button3 = (Button) findViewById(R.id.button3);
 
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         String nameLogin = sharedPreferences.getString("NameLogin", "");
         Log.d("20JanV2", "nameLogin ==> " + nameLogin);
-
-
 
         MyConstant myConstant = new MyConstant();
 
@@ -127,83 +132,6 @@ public class StatusActivity extends AppCompatActivity {
 
                 }   // onClick
             });// Button สินเชื่อ
-
-            //        Get Event From Click สถานะตลาด
-            button2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    if (jsonString.equals("null")) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(StatusActivity.this);
-                        View view = LayoutInflater.from(StatusActivity.this).inflate(R.layout.custom_layout, null);
-
-                        TextView title = (TextView) view.findViewById(R.id.title);
-                        ImageButton imageButton = (ImageButton) view.findViewById(R.id.image);
-
-                        title.setText("Prospec Appraisal");
-
-                        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                            }
-                        });
-
-                        builder.setNegativeButton("", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                            }
-                        });
-
-                        builder.setView(view);
-                        builder.show();
-                    } else {
-                        Intent intent = new Intent(StatusActivity.this, MyStatusActivity.class);
-                        intent.putExtra("index", 1);
-                        intent.putExtra("json", jsonString);
-                        startActivity(intent);
-                    }
-
-                }   // onClick
-            });// Button ตลาด
-
-            //        Get Event From Click สถานะประเมิน
-            button3.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    if (jsonString.equals("null")) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(StatusActivity.this);
-                        View view = LayoutInflater.from(StatusActivity.this).inflate(R.layout.custom_layout, null);
-
-                        TextView title = (TextView) view.findViewById(R.id.title);
-                        ImageButton imageButton = (ImageButton) view.findViewById(R.id.image);
-
-                        title.setText("Prospec Appraisal");
-
-                        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                            }
-                        });
-
-                        builder.setNegativeButton("", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                            }
-                        });
-
-                        builder.setView(view);
-                        builder.show();
-                    } else {
-                        Intent intent = new Intent(StatusActivity.this, MyStatusActivity.class);
-                        intent.putExtra("index", 2);
-                        intent.putExtra("json", jsonString);
-                        startActivity(intent);
-
-                    }
-
-                }
-            });// Button ประเมิน
 
 
         } catch (Exception e) {

@@ -240,7 +240,7 @@ public class AssessmentActivity extends Activity {
             SimpleAdapter sAdap;
             sAdap = new SimpleAdapter(AssessmentActivity.this, MyArrList, R.layout.activity_column_ass,
 
-            new String[] {"Site", "Job_No", "Assign_Date", "Value_Price", "Asset_name"},
+                    new String[] {"Site", "Job_No", "Assign_Date", "Value_Price", "Asset_name"},
                     new int[] {R.id.Col, R.id.Col1, R.id.Col2, R.id.Col3, R.id.Col4});
             lisView1.setAdapter(sAdap);
 
@@ -266,14 +266,14 @@ public class AssessmentActivity extends Activity {
                             + "มูลค่า : " + Value_Price + "\n"
                             + "ทรัพย์สิน : " + Asset_name);
                     viewDetail.setPositiveButton("ตกลง",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog,
-                                            int which) {
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,
+                                                    int which) {
 
 // TODO Auto-generated method stub
-                            dialog.dismiss();
-                        }
-                    });
+                                    dialog.dismiss();
+                                }
+                            });
                     viewDetail.show();
                 }
             });

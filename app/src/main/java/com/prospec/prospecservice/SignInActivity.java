@@ -9,7 +9,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.prospec.prospecservice.utility.AddUserToServer;
 import com.prospec.prospecservice.utility.MyAlert;
 
@@ -19,7 +18,7 @@ public class SignInActivity extends AppCompatActivity {
     private EditText et_name, et_last, et_phone, et_email, et_password, et_co_password;
     private Button btn_register;
     private String et_nameString, et_lastString, et_phoneString, et_emailString, et_passwordString, et_co_passwordString;
-    String[] title = {"นางสาว", "นาง", "นาย", "ว่าที่ร้อยตรี"};
+//    String[] title = {"นางสาว", "นาง", "นาย", "ว่าที่ร้อยตรี"};
     private static final String KEY_EMPTY = "";
 
     @Override
@@ -28,21 +27,21 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
 
 //        ข้อความขึ้นออโต้
-        AutoComplete();
+//        AutoComplete();
 
 //        Grt Event
         getevent();
     }
 
-    private void AutoComplete() {
-        //การสร้างอินสแตนซ์ของ ArrayAdapter ที่มีคำนำหน้า
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>
-                (this, android.R.layout.select_dialog_item, title);
-        //รับอินสแตนซ์ของ AutoCompleteTextView
-        AutoCompleteTextView actv = (AutoCompleteTextView) findViewById(R.id.et_main);
-        actv.setThreshold(1);//จะเริ่มทำงานจากอักขระตัวแรก
-        actv.setAdapter(adapter);//การตั้งค่าข้อมูลอะแดปเตอร์ลงใน AutoCompleteTextView
-    }
+//    private void AutoComplete() {
+//        //การสร้างอินสแตนซ์ของ ArrayAdapter ที่มีคำนำหน้า
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>
+//                (this, android.R.layout.select_dialog_item, title);
+//        //รับอินสแตนซ์ของ AutoCompleteTextView
+//        AutoCompleteTextView actv = (AutoCompleteTextView) findViewById(R.id.et_main);
+//        actv.setThreshold(1);//จะเริ่มทำงานจากอักขระตัวแรก
+//        actv.setAdapter(adapter);//การตั้งค่าข้อมูลอะแดปเตอร์ลงใน AutoCompleteTextView
+//    }
 
     private void getevent() {
         et_name = (EditText) findViewById(R.id.et_name);
@@ -97,7 +96,7 @@ public class SignInActivity extends AppCompatActivity {
 //            เมื่อไหร่ก็ตามถ้ามีค่าเป็น true ให้ทำ finish โดยการกลับไปที่หน้าแรก
                     if (Boolean.parseBoolean(addUserToServer.get())) {
                         finish();
-
+                        Toast.makeText(SignInActivity.this, "อัพโหลดข้อมูลสำเร็จ", Toast.LENGTH_SHORT).show();
 //                แต่ถ้าไม่ใช่ ให้ แสดงข้อความ ไม่สามารถอัพโหลดได้ ขึ้นมาเป็นเวลา 4 วิ
                     } else {
                         Toast.makeText(SignInActivity.this, "อัพโหลดข้อมูลสำเร็จ", Toast.LENGTH_SHORT).show();

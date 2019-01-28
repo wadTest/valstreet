@@ -17,7 +17,7 @@ import com.prospec.prospecservice.utility.MyAlert;
 //class รายละเอียดสินทรัพย์
 public class CustomDialogActivity extends AppCompatActivity {
 
-//    ประกาศตัวแปร
+    //    ประกาศตัวแปร
     private EditText editText;
     private Button buttonMessage;
     private String editTextString;
@@ -60,7 +60,7 @@ public class CustomDialogActivity extends AppCompatActivity {
                     Add_Message add_message = new Add_Message(CustomDialogActivity.this, editTextString);
                     add_message.execute();
 
-                        Toast.makeText(CustomDialogActivity.this, "อัพโหลดข้อมูลสำเร็จ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CustomDialogActivity.this, "อัพโหลดข้อมูลสำเร็จ", Toast.LENGTH_SHORT).show();
 
                 } catch (Exception e) {
                     e.printStackTrace();

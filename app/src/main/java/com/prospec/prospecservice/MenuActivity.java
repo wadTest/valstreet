@@ -1,19 +1,33 @@
 package com.prospec.prospecservice;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.prospec.prospecservice.utility.AddUserToServer;
 import com.prospec.prospecservice.utility.SharedPrefs;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 //class หน้าเมนูหลัก
 public class MenuActivity extends AppCompatActivity {
@@ -27,16 +41,18 @@ public class MenuActivity extends AppCompatActivity {
 
     // คลาสที่ Android มีมาให้เพื่อเซฟและอ่านข้อมูล โดยข้อมูลจะเก็บเป็นแบบ key-value สามารถใช้ SharedPreferences
     // เก็บข้อมูลลงไปได้ ทั้ง boolean, float, int, long, String ข้อมูลที่เซฟจะอยู่แม้ว่าเราจะปิดแอพแล้วก็ตาม แต่ข้อมูลจะหายไป หากเราทำการ uninstall แอพพลิเคชัน
-   // private SharedPreferences pref;
+    // private SharedPreferences pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+//        Find Who Login ?
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         nameLogin = sharedPreferences.getString("NameLogin", "");
-        Log.d("20JanV1", "nameLogin Receive in MenuActivity==>" + nameLogin);
+        Log.d("20JanV1", "nameLogin Receive in MenuActivity ==> " + nameLogin);
+
 
 //        เรียกตัวแปรมาใช้งาน รูปที่ slider หน้าเมนู
         imageShow = findViewById(R.id.imageShow);
@@ -47,9 +63,9 @@ public class MenuActivity extends AppCompatActivity {
         for (int image : images) {
             flipperImages(image);
         }
-    }//Main Method
+    }   // Main Method
 
-
+    //    Create Banner
     public void flipperImages(int image) {
         ImageView imageView = new ImageView(this);
         imageView.setBackgroundResource(image);
@@ -89,6 +105,7 @@ public class MenuActivity extends AppCompatActivity {
         CekSession();
     }
 
+    //    Class Create SharePerferance Sataus Login
     public void CekSession() {
 
         Boolean Check = Boolean.valueOf(SharedPrefs.readSharedSetting(MenuActivity.this, "Logout", "true"));
@@ -176,7 +193,7 @@ public class MenuActivity extends AppCompatActivity {
         });
     }// End CekSession
 
-//    intent ไปยัง Message Facebook
+    //    intent ไปยัง Message Facebook
     public static Intent openMessage(Context context) {
         try {
             context.getPackageManager()
@@ -191,4 +208,6 @@ public class MenuActivity extends AppCompatActivity {
         }
 
     }//End openMessage
+
+
 }//Class Main

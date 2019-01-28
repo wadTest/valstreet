@@ -18,7 +18,7 @@ public class MyAlert {
         this.titleString = titleString;
         this.messageString = messageString;
     }
-//   public =  Method ที่ใช้ภายนอก , void = ไม่มีการรีเทรนค่ากลับ
+    //   public =  Method ที่ใช้ภายนอก , void = ไม่มีการรีเทรนค่ากลับ
     public  void myDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
 //        เมื่อไหร่ก็ตามถ้า pop up มันโพ่ขึ้นมา user จะไม่สารมารถกดปุ่ม undo ได้ ชั่วคราว

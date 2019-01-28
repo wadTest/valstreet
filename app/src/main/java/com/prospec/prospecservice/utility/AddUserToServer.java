@@ -16,7 +16,7 @@ public class AddUserToServer extends AsyncTask<Void, Void, String> {
     //Explicit ประกาศตัวแปร
     private Context c;
     //ประกาศตัวแปรที่เป็นค่าคงที่ ไม่สารถแก้ไขได้
-    private static final String urlPHP = "http://119.59.103.121/app_mobile/signup_crm.php";
+    private static final String urlPHP = "http://119.59.103.121/app_mobile/users/addData.php";
     private String et_nameString, et_lastString, et_phoneString, et_emailString, et_passwordString;
 
     public AddUserToServer(Context c, String et_nameString, String et_lastString, String et_phoneString, String et_emailString, String et_passwordString) {
@@ -39,6 +39,7 @@ public class AddUserToServer extends AsyncTask<Void, Void, String> {
             RequestBody requestBody = new FormEncodingBuilder()
 
                     .add("isAdd", "true")
+//                    .add("title", et_nameString)
                     .add("name", et_nameString)
                     .add("last_name", et_lastString)
                     .add("telephone", et_phoneString)

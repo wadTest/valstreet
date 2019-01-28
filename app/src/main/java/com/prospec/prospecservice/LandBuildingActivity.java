@@ -51,7 +51,14 @@ public class LandBuildingActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("ที่ดินเปล่า");
         toolbar.setSubtitle("โปรดกรอกรายละเอียดที่ดินเปล่า");
-        toolbar.setLogo(R.drawable.logo_prospec);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 //        เป็นการ findViewById ทั้งหมดในตัว activity_land_building
         onBindView();
@@ -69,9 +76,6 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     private void onBindView() {
 //       Get Even
-        editText1 = (EditText) findViewById(R.id.editText1);
-        editText2 = (EditText) findViewById(R.id.editText2);
-        editText3 = (EditText) findViewById(R.id.editText3);
         editText4 = (EditText) findViewById(R.id.editText4);
         editText5 = (EditText) findViewById(R.id.editText5);
         editText6 = (EditText) findViewById(R.id.editText6);
@@ -80,46 +84,11 @@ public class LandBuildingActivity extends AppCompatActivity {
         editText9 = (EditText) findViewById(R.id.editText9);
         editText10 = (EditText) findViewById(R.id.editText10);
         editText11 = (EditText) findViewById(R.id.editText11);
-        editText12 = (EditText) findViewById(R.id.editText12);
-        editText13 = (EditText) findViewById(R.id.editText13);
-        editText14 = (EditText) findViewById(R.id.editText14);
-        editText15 = (EditText) findViewById(R.id.editText15);
-        editText16 = (EditText) findViewById(R.id.editText16);
-        editText17 = (EditText) findViewById(R.id.editText17);
-        editText18 = (EditText) findViewById(R.id.editText18);
-        editText19 = (EditText) findViewById(R.id.editText19);
-        editText20 = (EditText) findViewById(R.id.editText20);
-        editText21 = (EditText) findViewById(R.id.editText21);
-        editText22 = (EditText) findViewById(R.id.editText22);
-        editText23 = (EditText) findViewById(R.id.editText23);
         editText24 = (EditText) findViewById(R.id.editText24);
         editText25 = (EditText) findViewById(R.id.editText25);
-        editText26 = (EditText) findViewById(R.id.editText26);
-        editText27 = (EditText) findViewById(R.id.editText27);
-        editText28 = (EditText) findViewById(R.id.editText28);
-        editText29 = (EditText) findViewById(R.id.editText29);
-        editText30 = (EditText) findViewById(R.id.editText30);
-        editText31 = (EditText) findViewById(R.id.editText31);
-        editText32 = (EditText) findViewById(R.id.editText32);
-        editText33 = (EditText) findViewById(R.id.editText33);
-        editText34 = (EditText) findViewById(R.id.editText34);
-        editText35 = (EditText) findViewById(R.id.editText35);
-        editText36 = (EditText) findViewById(R.id.editText36);
-        editText37 = (EditText) findViewById(R.id.editText37);
-        editText38 = (EditText) findViewById(R.id.editText38);
-        editText39 = (EditText) findViewById(R.id.editText39);
-        editText40 = (EditText) findViewById(R.id.editText40);
-        editText41 = (EditText) findViewById(R.id.editText41);
-        editText42 = (EditText) findViewById(R.id.editText42);
-        editText43 = (EditText) findViewById(R.id.editText43);
-        editText44 = (EditText) findViewById(R.id.editText44);
-        editText45 = (EditText) findViewById(R.id.editText45);
 
         editTextPanng1 = (EditText) findViewById(R.id.editTextPanng1);
-        editTextPanng2 = (EditText) findViewById(R.id.editTextPanng2);
-        editTextPanng3 = (EditText) findViewById(R.id.editTextPanng3);
-        editTextPanng4 = (EditText) findViewById(R.id.editTextPanng4);
-        editTextPanng5 = (EditText) findViewById(R.id.editTextPanng5);
+
 
 
         btn_send = (Button) findViewById(R.id.btn_send);

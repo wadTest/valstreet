@@ -27,7 +27,15 @@ public class LineActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("ติดต่อทาง@line");
         toolbar.setSubtitle("เลือกเมนูในการติดต่อทางไลน์");
-        toolbar.setLogo(R.drawable.logo_prospec);
+//        toolbar.setLogo(R.drawable.logo_prospec);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
         //        Get Event การรับกิจกรรมจาก ตัวแปร กดปุ่ม 1-13
@@ -190,7 +198,7 @@ public class LineActivity extends AppCompatActivity {
         });
     }
 
-//      https Line สำนักงานใหญ่
+    //      https Line สำนักงานใหญ่
     public static Intent openLine1(Context context1) {
         try {
             context1.getPackageManager()
@@ -204,7 +212,7 @@ public class LineActivity extends AppCompatActivity {
         }
     }
 
-//      https Line สาขา เชียงใหม่
+    //      https Line สาขา เชียงใหม่
     public static Intent openLine2(Context context2) {
         try {
             context2.getPackageManager()

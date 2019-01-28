@@ -10,7 +10,7 @@ import com.prospec.prospecservice.R;
 
 public class Splash extends Activity {
 
-//    ประกาศตัวแปร
+    //    ประกาศตัวแปร
     Handler handler;
     Runnable runnable;
     long delay_time;
@@ -33,7 +33,7 @@ public class Splash extends Activity {
         };//End Runnable
     }//Method
 
-//    เกี่ยวกับการกำหนดเวลา
+    //    เกี่ยวกับการกำหนดเวลา
     public void onResume() {
         super.onResume();
         delay_time = time;
