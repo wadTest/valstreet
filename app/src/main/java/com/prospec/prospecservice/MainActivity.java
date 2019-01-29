@@ -1,10 +1,13 @@
 package com.prospec.prospecservice;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AlertDialog;
@@ -47,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
     private String uerString, passwordString, truePassString;
     private boolean aBoolean = true;
 
+//    แสดงข้อความต้อนรับ
+    Dialog myDialog;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,13 +65,39 @@ public class MainActivity extends AppCompatActivity {
         btn_login = (Button) findViewById(R.id.btn_login);
         tv_register = (TextView) findViewById(R.id.tv_register);
 
-        //      เมื่อยังไม่ได้ลงทะเบียน กดปุ่มนี้จะไปลงทะเบียน
-        tv_register.setOnClickListener(new View.OnClickListener() {
+
+//        ส่วนของการแสดงรูปภาพ
+        myDialog = new Dialog(this);
+    }
+    public void ShowPopup(View v) {
+        TextView txtclose;
+
+        myDialog.setContentView(R.layout.popup_welcome);
+        txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
+        txtclose.setText("X");
+
+        txtclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SignInActivity.class));
+                myDialog.dismiss();
+
+                //No Space ดึงค่าจาก server
+                Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+                startActivity(intent);
+//                ไม่ให้ย้อยกลับมาหน้าเก่า กดปุ่มกลับก็จะออกจากหน้าจอเลย
+//                finish();
             }
         });
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+
+//        //      เมื่อยังไม่ได้ลงทะเบียน กดปุ่มนี้จะไปลงทะเบียน
+//        tv_register.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, SignInActivity.class));
+//            }
+//        });
 
 //       เมื่อกดปุ่มนี้จะขึ้นหน้าเมนู ของหน้าถัดไป
         btn_login.setOnClickListener(new View.OnClickListener() {

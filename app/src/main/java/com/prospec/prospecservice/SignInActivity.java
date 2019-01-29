@@ -26,8 +26,6 @@ public class SignInActivity extends AppCompatActivity {
     //    String[] title = {"นางสาว", "นาง", "นาย", "ว่าที่ร้อยตรี"};
     private static final String KEY_EMPTY = "";
 
-    Dialog myDialog;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

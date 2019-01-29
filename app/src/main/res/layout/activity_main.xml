@@ -74,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="30dp"
+                android:onClick="ShowPopup"
                 android:text="ยังไม่ได้ลงทะเบียน? สมัครตอนนี้"
                 android:textColor="@color/colorGray"
                 android:textStyle="bold" />
