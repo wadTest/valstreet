@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
@@ -175,12 +176,28 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        //Get Event From Click Menu Message
+//            Get Event From Click Menu Message
+//        เลือกรายการว่าจะกรอกข้อมูลแบบ ละเอียด, ย่อ
         imageView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MessageActivity.class));
-
+                final PopupMenu message = new PopupMenu(MenuActivity.this, imageView5);
+                message.getMenuInflater().inflate(R.menu.message, message.getMenu());
+                message.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.message1:
+                                startActivity(new Intent(MenuActivity.this, CustomDialogActivity.class));
+                                return true;
+                            case R.id.message2:
+                                startActivity(new Intent(MenuActivity.this, MenuAssetActivity.class));
+                                return true;
+                        }
+                        return true;
+                    }
+                });
+                message.show();
             }
         });
 

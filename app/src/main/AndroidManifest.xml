@@ -50,9 +50,6 @@
             android:name=".MenuAssetActivity"
             android:screenOrientation="portrait" />
         <!-- หน้าเมนูข้อความ -->
-        <activity
-            android:name=".MessageActivity"
-            android:screenOrientation="portrait" />
         <!-- หน้ากรอกข้อความ -->
         <activity
             android:name=".SignInActivity"
