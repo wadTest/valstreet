@@ -71,7 +71,7 @@ public class MenuActivity extends AppCompatActivity {
         imageView.setBackgroundResource(image);
 
         imageShow.addView(imageView);
-        imageShow.setFlipInterval(7000); //7วิ
+        imageShow.setFlipInterval(9000); //9วิ
         imageShow.setAutoStart(true);
 
 //        ภาพเคลื่อนไหว

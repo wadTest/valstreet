@@ -22,23 +22,29 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/scrollingtext"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="15dp"
-            android:text="รายการงานของท่าน"
-            android:textColor="@color/colorBack"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textSize="16sp"
+            android:background="#ffcc99"
+            android:text=" Prospec Appraisal นวัตกรรมของการประเมินราคาทรัพย์สิน ขอต้อนรับ ท่านสู่ Valstreet ถนนสายประเมินราคา ที่ทันสมัยและสะดวกสบาย ให้กับลูกค้าผู้ใช้บริการของเราทุกท่านครับ"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:singleLine="true"
+            android:scrollHorizontally="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit ="marquee_forever"/>
+
 
         <Button
             android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="170dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
             android:drawableRight="@android:drawable/ic_menu_myplaces"
-            android:text="แสดงรายการ"
+            android:text="แสดงรายการงานของท่าน"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -52,6 +58,6 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="105dp" />
+        android:layout_marginTop="140dp" />
 
 </RelativeLayout>

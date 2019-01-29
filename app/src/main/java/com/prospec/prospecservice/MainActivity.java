@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private String uerString, passwordString, truePassString;
     private boolean aBoolean = true;
 
-//    แสดงข้อความต้อนรับ
+    //    แสดงข้อความต้อนรับ
     Dialog myDialog;
 
 
@@ -65,15 +65,15 @@ public class MainActivity extends AppCompatActivity {
         btn_login = (Button) findViewById(R.id.btn_login);
         tv_register = (TextView) findViewById(R.id.tv_register);
 
-
 //        ส่วนของการแสดงรูปภาพ
         myDialog = new Dialog(this);
     }
+
     public void ShowPopup(View v) {
         TextView txtclose;
 
         myDialog.setContentView(R.layout.popup_welcome);
-        txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
+        txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
         txtclose.setText("X");
 
         txtclose.setOnClickListener(new View.OnClickListener() {

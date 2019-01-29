@@ -26,6 +26,7 @@ public class StatusActivity extends AppCompatActivity {
     private WebView webBrowser;
     private Toolbar toolbar;
     private Button button1;
+    TextView scrollingText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,15 @@ public class StatusActivity extends AppCompatActivity {
         init();
 //        เรียก web มาใช้
         browse();
+
+//        ข้อความเลื่อนออโต
+        textshow();
+    }
+
+
+    private void textshow() {
+        scrollingText = (TextView)findViewById(R.id.scrollingtext);
+        scrollingText.setSelected(true);
     }
 
     public void init() {
