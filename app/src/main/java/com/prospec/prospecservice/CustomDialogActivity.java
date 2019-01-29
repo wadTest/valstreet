@@ -33,7 +33,15 @@ public class CustomDialogActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("รายละเอียดสินทรัพย์");
         toolbar.setSubtitle("โปรดกรอกรายละเอียดสินทรัพย์ที่จะประเมิน พร้อมที่ตั้งทรัพย์สิน");
-        toolbar.setLogo(R.drawable.logo_prospec);
+       // toolbar.setLogo(R.drawable.logo_prospec);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         editText = (EditText) findViewById(R.id.editText);
         buttonMessage = (Button) findViewById(R.id.buttonMessage);

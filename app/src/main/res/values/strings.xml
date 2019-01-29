@@ -95,6 +95,7 @@
     <string name="service">บริหาร</string>
     <string name="message">นัดตรวจ</string>
     <string name="home">หน้าหลัก</string>
+    <string name="login">เข้าสู่ระบบ</string>
 
 
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff6d00</color>
+    <color name="colorPrimary">#ff9100</color>
     <color name="colorPrimaryDark">#ff3d00</color>
     <color name="colorAccent">#D81B60</color>
     <color name="edit_textok">#f53e3e</color>
@@ -12,5 +12,6 @@
     <color name="BLUE">#0a00b6</color>
     <color name="BLUE_K">#29257b</color>
     <color name="tool_dailog">#ff6d00</color>
+    <color name="colorGray">#2b2a2a</color>
 
 </resources>

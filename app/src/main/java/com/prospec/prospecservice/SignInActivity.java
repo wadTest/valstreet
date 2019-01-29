@@ -1,6 +1,9 @@
 package com.prospec.prospecservice;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,7 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
 import com.prospec.prospecservice.utility.AddUserToServer;
 import com.prospec.prospecservice.utility.MyAlert;
 
@@ -18,8 +23,10 @@ public class SignInActivity extends AppCompatActivity {
     private EditText et_name, et_last, et_phone, et_email, et_password, et_co_password;
     private Button btn_register;
     private String et_nameString, et_lastString, et_phoneString, et_emailString, et_passwordString, et_co_passwordString;
-//    String[] title = {"นางสาว", "นาง", "นาย", "ว่าที่ร้อยตรี"};
+    //    String[] title = {"นางสาว", "นาง", "นาย", "ว่าที่ร้อยตรี"};
     private static final String KEY_EMPTY = "";
+
+    Dialog myDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +84,7 @@ public class SignInActivity extends AppCompatActivity {
 //                    upload ข้อมูลที่กรอกไปเก็บไว้ใน my sql
                         uploadString();
 
+
                         //No Space ดึงค่าจาก server
                         Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                         startActivity(intent);
@@ -128,6 +136,7 @@ public class SignInActivity extends AppCompatActivity {
         }
 
         return true;
+
     }
 
 }//Main Class

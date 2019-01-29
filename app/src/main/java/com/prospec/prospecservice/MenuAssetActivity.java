@@ -15,7 +15,7 @@ import android.widget.EditText;
 public class MenuAssetActivity extends AppCompatActivity {
 
     //  Explicit  ประกาศตัวแปร
-    private Button button1, button2, button3, button4, button5, button6;
+    private Button button1, button2, button3;
     final Context context1 = this;
 
     @Override
@@ -27,9 +27,6 @@ public class MenuAssetActivity extends AppCompatActivity {
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
-        button4 = (Button) findViewById(R.id.button4);
-        button5 = (Button) findViewById(R.id.button5);
-        button6 = (Button) findViewById(R.id.button6);
 
         //Get Event From Click Land and Building
         button1.setOnClickListener(new View.OnClickListener() {

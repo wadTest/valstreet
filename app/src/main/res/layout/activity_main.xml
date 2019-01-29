@@ -3,67 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgm"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
-
-    <!--Image User-->
-    <ImageView
-        android:id="@+id/imageUser"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/logo_app" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:text="บริษัท โปรสเปค แอพแพรซัล จำกัด"
-        android:textAlignment="center"
-        android:textColor="@color/colorBack"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="20dp"
-        android:text="Prospec Appraisal Co.,Ltd."
-        android:textAlignment="center"
-        android:textColor="@color/colorBack"
-        android:textSize="20sp"
-        android:textStyle="bold" />
 
     <!--LinearLayout Main-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/background_bgm"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:gravity="center"
-        android:orientation="vertical"
-        android:scaleType="centerCrop">
+        android:orientation="vertical">
 
+        <!--Image User-->
+        <ImageView
+            android:id="@+id/imageUser"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"
+            android:background="@drawable/logo_app" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="50dp"
             android:layout_marginBottom="8dp">
 
+            <!--android:drawableLeft="@drawable/add"-->
             <EditText
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/add"
                 android:hint="Email"
-                android:textColor="@color/colorWite"
                 android:inputType="textEmailAddress" />
 
         </android.support.design.widget.TextInputLayout>
@@ -72,14 +44,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            app:passwordToggleEnabled="true">
 
+            <!--android:drawableLeft="@drawable/key"-->
             <EditText
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/key"
-                android:textColor="@color/colorWite"
                 android:hint="Password"
                 android:inputType="textPassword" />
 
@@ -90,41 +62,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background_button"
-            android:text="Login"
+            android:text="@string/login"
+            android:layout_marginTop="20dp"
+            android:textSize="@dimen/size_from"
+            android:textStyle="bold"
             android:textColor="@android:color/white" />
 
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="30dp"
+                android:text="ยังไม่ได้ลงทะเบียน? สมัครตอนนี้"
+                android:textColor="@color/colorGray"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tv_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="20dp"
-            android:text="ยังไม่ได้ลงทะเบียน? สมัครตอนนี้"
-            android:textColor="@color/colorWite"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/ol_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:text="ลืมรหัสผ่าน"
+                android:textColor="@color/colorGray"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/ol_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20sp"
-            android:text="ลืมรหัสผ่าน"
-            android:textColor="@color/colorWite"
-            android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="@style/Base.Widget.AppCompat.ProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:indeterminate="true"
+                android:visibility="invisible" />
+
     </LinearLayout>
-
-
-    <ProgressBar
-        android:id="@+id/progress"
-        style="@style/Base.Widget.AppCompat.ProgressBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:indeterminate="true"
-        android:visibility="invisible" />
-
-
 </LinearLayout>

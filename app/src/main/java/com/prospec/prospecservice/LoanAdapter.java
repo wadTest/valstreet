@@ -15,7 +15,7 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
 
     private Context context;
     private ArrayList<String> jobNoStringArrayList, jobEventStringArrayList, cusNameStringArrayList, MarketingStringArrayList, txtLoanStringArrayList,
-            txtValuerStringArrayLis, imageStringArrayList, phoneStringArrayList, emailStringArrayList, txtTidtoStringArrayLis;
+            imageStringArrayList, phoneStringArrayList, emailStringArrayList, txtTidtoStringArrayLis;
     private OnClickItem onClickItem;
     private LayoutInflater layoutInflater;
 
@@ -27,7 +27,6 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
                        ArrayList<String> txtLoanStringArrayList,
                        ArrayList<String> phoneStringArrayList,
                        ArrayList<String> emailStringArrayList,
-                       ArrayList<String> txtValuerStringArrayLis,
                        ArrayList<String> imageStringArrayList,
                        ArrayList<String> txtTidtoStringArrayLis,
                        OnClickItem onClickItem) {
@@ -40,7 +39,6 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         this.txtLoanStringArrayList = txtLoanStringArrayList;
         this.phoneStringArrayList = phoneStringArrayList;
         this.emailStringArrayList = emailStringArrayList;
-        this.txtValuerStringArrayLis = txtValuerStringArrayLis;
         this.imageStringArrayList = imageStringArrayList;
         this.txtTidtoStringArrayLis = txtTidtoStringArrayLis;
         this.onClickItem = onClickItem;
@@ -66,7 +64,6 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         String loanString = MarketingStringArrayList.get(position);
         String phoneString = phoneStringArrayList.get(position);
         String emailString = emailStringArrayList.get(position);
-        String valuerString = txtValuerStringArrayLis.get(position);
         String imageString = imageStringArrayList.get(position);
         String tidtoString = txtTidtoStringArrayLis.get(position);
 
@@ -77,7 +74,6 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         holder.loanTextView.setText(loanString);
         holder.txtPhone.setText(phoneString);
         holder.txtEmail.setText(emailString);
-        holder.valuerTextView.setText(valuerString);
         holder.Image.setText(imageString);
         holder.tidtoTextView.setText(tidtoString);
 
@@ -97,7 +93,7 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
 
     public class LoanViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView jobNoTextView, jobEventTextView, cusNameTextView, marketingTextView, loanTextView, valuerTextView, Image, txtPhone, txtEmail, tidtoTextView;
+        private TextView jobNoTextView, jobEventTextView, cusNameTextView, marketingTextView, loanTextView, Image, txtPhone, txtEmail, tidtoTextView;
 
         public LoanViewHolder(View itemView) {
             super(itemView);
@@ -109,7 +105,6 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
             loanTextView = itemView.findViewById(R.id.txtLoan);
             txtPhone = itemView.findViewById(R.id.txtPhone);
             txtEmail = itemView.findViewById(R.id.txtEmail);
-            valuerTextView = itemView.findViewById(R.id.txtValuer);
             Image = itemView.findViewById(R.id.txtImage);
             tidtoTextView = itemView.findViewById(R.id.txtTidto);
 

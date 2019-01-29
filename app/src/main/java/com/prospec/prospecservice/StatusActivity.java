@@ -84,7 +84,6 @@ public class StatusActivity extends AppCompatActivity {
             final String jsonString = getDb2WhereNameLoginThread.get();
             Log.d("20JanV2", "JSoN ==> " + jsonString);
 
-
             //        Get Event From Click สถานะสินเชื่อ
             button1.setOnClickListener(new View.OnClickListener() {
                 @Override
