@@ -36,7 +36,7 @@
                 android:background="@drawable/backgroup_call"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_02_559_0678"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <Button
@@ -48,7 +48,7 @@
                 android:background="@drawable/background_liner"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_05_324_0216"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <Button
@@ -60,7 +60,7 @@
                 android:background="@drawable/backgroup_call"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_05_371_8391"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <Button
@@ -72,7 +72,7 @@
                 android:background="@drawable/background_liner"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_05_422_2879"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <Button
@@ -84,7 +84,7 @@
                 android:background="@drawable/backgroup_call"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_05_521_1243"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <Button
@@ -96,7 +96,7 @@
                 android:background="@drawable/background_liner"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_03_524_3242"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <Button
@@ -108,7 +108,7 @@
                 android:background="@drawable/backgroup_call"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_03_232_1934"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <Button
@@ -120,7 +120,7 @@
                 android:background="@drawable/background_liner"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_05_672_1980"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <Button
@@ -132,7 +132,7 @@
                 android:background="@drawable/backgroup_call"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_05_571_4806"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <Button
@@ -144,7 +144,7 @@
                 android:background="@drawable/background_liner"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_03_667_0695"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <Button
@@ -156,7 +156,7 @@
                 android:background="@drawable/backgroup_call"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_05_453_1220"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <Button
@@ -168,7 +168,7 @@
                 android:background="@drawable/background_liner"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_07_532_2331"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <Button
@@ -180,7 +180,7 @@
                 android:background="@drawable/backgroup_call"
                 android:drawableLeft="@android:drawable/ic_menu_call"
                 android:text="@string/n_tel_03_260_2286"
-                android:textSize="@dimen/size_main"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
         </LinearLayout>

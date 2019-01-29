@@ -61,7 +61,7 @@
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_button"
+            android:background="@drawable/background_login"
             android:text="@string/login"
             android:layout_marginTop="20dp"
             android:textSize="@dimen/size_from"
@@ -84,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:text="ลืมรหัสผ่าน"
                 android:textColor="@color/colorGray"
                 android:textStyle="bold" />
@@ -95,7 +95,7 @@
                 style="@style/Base.Widget.AppCompat.ProgressBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:indeterminate="true"
                 android:visibility="invisible" />
 

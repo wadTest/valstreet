@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:gravity="start|top"
         android:textAlignment="center"
-        android:lines="15" />
+        android:lines="13" />
 
     <Button
         android:id="@+id/button_send"
