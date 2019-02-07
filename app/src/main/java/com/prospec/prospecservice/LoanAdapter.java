@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,15 +60,15 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
 
         String urlIconString = iconStringArrayList.get(position);
         // แสดงรูปภาพโดยใช้ Picasso
-        if (!TextUtils.isEmpty(urlIconString)) {
+//        if (!TextUtils.isEmpty(urlIconString)) {
             Picasso.get()
                     .load(urlIconString)
                     .error(R.drawable.placeholder)
                     .resize(150, 150)
                     .placeholder(R.drawable.placeholder)
                     .into(holder.image);
-        }
-
+        Log.d("7/2/62", "image ==> " + urlIconString);
+       // }
 
         String jobNoString = jobNoStringArrayList.get(position);
         String jobEventstring = jobEventStringArrayList.get(position);
