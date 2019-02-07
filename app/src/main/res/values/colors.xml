@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff9100</color>
-    <color name="colorPrimaryDark">#ff3d00</color>
+    <color name="colorPrimary">#ffa726</color>
+    <color name="colorPrimaryDark">#c77800</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="edit_textok">#f53e3e</color>
+    <color name="edit_textok">#d4d3d3</color>
     <color name="edit_textok_g">#ede5e5</color>
     <color name="colorWite">#ffffff</color>
     <color name="colorBack">#120000</color>

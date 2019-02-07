@@ -6,19 +6,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
+import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder> {
 
     private Context context;
     private ArrayList<String> jobNoStringArrayList, jobEventStringArrayList, cusNameStringArrayList, MarketingStringArrayList, txtLoanStringArrayList,
-            imageStringArrayList, phoneStringArrayList, emailStringArrayList, txtTidtoStringArrayLis;
+            iconStringArrayList, phoneStringArrayList, emailStringArrayList, txtTidtoStringArrayLis;
     private OnClickItem onClickItem;
     private LayoutInflater layoutInflater;
-
 
     public LoanAdapter(Context context, ArrayList<String> jobNoStringArrayList,
                        ArrayList<String> jobEventStringArrayList,
@@ -27,7 +26,7 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
                        ArrayList<String> txtLoanStringArrayList,
                        ArrayList<String> phoneStringArrayList,
                        ArrayList<String> emailStringArrayList,
-                       ArrayList<String> imageStringArrayList,
+                       ArrayList<String> iconStringArrayList,
                        ArrayList<String> txtTidtoStringArrayLis,
                        OnClickItem onClickItem) {
 
@@ -39,7 +38,7 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         this.txtLoanStringArrayList = txtLoanStringArrayList;
         this.phoneStringArrayList = phoneStringArrayList;
         this.emailStringArrayList = emailStringArrayList;
-        this.imageStringArrayList = imageStringArrayList;
+        this.iconStringArrayList = iconStringArrayList;
         this.txtTidtoStringArrayLis = txtTidtoStringArrayLis;
         this.onClickItem = onClickItem;
     }
@@ -61,12 +60,13 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         String jobEventstring = jobEventStringArrayList.get(position);
         String cusNameString = cusNameStringArrayList.get(position);
         String marketingString = MarketingStringArrayList.get(position);
-        String loanString = MarketingStringArrayList.get(position);
+        String loanString = txtLoanStringArrayList.get(position);
         String phoneString = phoneStringArrayList.get(position);
         String emailString = emailStringArrayList.get(position);
-        String imageString = imageStringArrayList.get(position);
+        String urlIconString = iconStringArrayList.get(position);
         String tidtoString = txtTidtoStringArrayLis.get(position);
 
+//        โชว์ตัวอักษร
         holder.jobNoTextView.setText(jobNoString);
         holder.jobEventTextView.setText(jobEventstring);
         holder.cusNameTextView.setText(cusNameString);
@@ -74,8 +74,14 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         holder.loanTextView.setText(loanString);
         holder.txtPhone.setText(phoneString);
         holder.txtEmail.setText(emailString);
-        holder.Image.setText(imageString);
         holder.tidtoTextView.setText(tidtoString);
+
+        //        โชว์รูปภาพ
+        Picasso.get()
+                .load(urlIconString)
+                .resize(200, 200)
+                .centerCrop()
+                .into(holder.circleImageView);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +89,6 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
                 onClickItem.onClickItem(v, holder.getAdapterPosition());
             }
         });
-
     }
 
     @Override
@@ -93,7 +98,8 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
 
     public class LoanViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView jobNoTextView, jobEventTextView, cusNameTextView, marketingTextView, loanTextView, Image, txtPhone, txtEmail, tidtoTextView;
+        private TextView jobNoTextView, jobEventTextView, cusNameTextView, marketingTextView, loanTextView, txtPhone, txtEmail, tidtoTextView;
+        private CircleImageView circleImageView;
 
         public LoanViewHolder(View itemView) {
             super(itemView);
@@ -105,9 +111,9 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
             loanTextView = itemView.findViewById(R.id.txtLoan);
             txtPhone = itemView.findViewById(R.id.txtPhone);
             txtEmail = itemView.findViewById(R.id.txtEmail);
-            Image = itemView.findViewById(R.id.txtImage);
             tidtoTextView = itemView.findViewById(R.id.txtTidto);
 
+            circleImageView = itemView.findViewById(R.id.circleImageView);
         }
     }    //Second Class
 

@@ -21,7 +21,6 @@ import java.util.ArrayList;
  */
 public class LoanFragment extends Fragment {
 
-
     public LoanFragment() {
         // Required empty public constructor
     }
@@ -33,7 +32,6 @@ public class LoanFragment extends Fragment {
         bundle.putString("json", jsonString);
         loanFragment.setArguments(bundle);
         return loanFragment;
-
     }
 
     @Override
@@ -42,6 +40,7 @@ public class LoanFragment extends Fragment {
 
 //        Create RecyclerView
         RecyclerView recyclerView = getView().findViewById(R.id.recyclerLoan);
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -56,7 +55,7 @@ public class LoanFragment extends Fragment {
             final ArrayList<String> txtLoanStringArrayList = new ArrayList<>();
             final ArrayList<String> phoneStringArrayList = new ArrayList<>();
             final ArrayList<String> emailStringArrayList = new ArrayList<>();
-            final ArrayList<String> imageStringArrayList = new ArrayList<>();
+            final ArrayList<String> iconStringArrayList = new ArrayList<>();
             final ArrayList<String> txtTidtoStringArrayLis = new ArrayList<>();
 
             for (int i = 0; i < jsonArray.length(); i += 1) {
@@ -70,18 +69,18 @@ public class LoanFragment extends Fragment {
                 txtLoanStringArrayList.add(jsonObject.getString("Loanofficer1") + "\n");
                 phoneStringArrayList.add(jsonObject.getString("telephone") + "\n");
                 emailStringArrayList.add(jsonObject.getString("email") + "\n");
-                imageStringArrayList.add(jsonObject.getString("Personal") + "\n");
-                txtTidtoStringArrayLis.add(jsonObject.getString("Table_phone") + "\n");
+                iconStringArrayList.add(jsonObject.getString("Personal") + "\n");
+                txtTidtoStringArrayLis.add(jsonObject.getString("Table_phone"));
 
             }
 
             LoanAdapter loanAdapter = new LoanAdapter(getActivity(), jobNoStringArrayList, jobEventStringArrayList, cutNameStringArrayList, marketingStringArrayList,
-                    txtLoanStringArrayList, imageStringArrayList, phoneStringArrayList, emailStringArrayList, txtTidtoStringArrayLis, new OnClickItem() {
-                @Override
+                    txtLoanStringArrayList, iconStringArrayList, phoneStringArrayList, emailStringArrayList, txtTidtoStringArrayLis, new OnClickItem() {
 
+                @Override
                 public void onClickItem(View view, int position) {
                     showAlert(jobNoStringArrayList.get(position), jobEventStringArrayList.get(position), cutNameStringArrayList.get(position), marketingStringArrayList.get(position),
-                            txtLoanStringArrayList.get(position), imageStringArrayList.get(position), phoneStringArrayList.get(position), emailStringArrayList.get(position), txtTidtoStringArrayLis.get(position));
+                            txtLoanStringArrayList.get(position), iconStringArrayList.get(position), phoneStringArrayList.get(position), emailStringArrayList.get(position), txtTidtoStringArrayLis.get(position));
                 }
             });
             recyclerView.setAdapter(loanAdapter);
@@ -93,13 +92,15 @@ public class LoanFragment extends Fragment {
 
     private void showAlert(String jobNo, String cusName, String jobEvent, String marketing, String loan, String image, String phone, String email, String tidto) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
-//        + "เจ้าหน้าที่การตลาด " +  "\n"
+
+        alertDialogBuilder.setIcon(android.R.drawable.btn_star_big_on);
         alertDialogBuilder.setTitle("รายละเอียดงาน").setMessage(
                         "รหัสงาน : " + jobNo + "\n" +
                         "ชื่อลูกค้า : " + cusName + "\n" +
                         "สถานะงาน : " + jobEvent + "\n" +
                         "เจ้าหน้าที่การตลาด : " + marketing + "\n" +
-                        "เจ้าหน้าที่สินเชื่อ : " + loan + "\n" + image + "\n" +
+                        "เจ้าหน้าที่สินเชื่อ : " + loan + "\n" +
+                                        image + "\n" +
                         "โทรศัพท์มือถือ : " + phone + "\n" +
                         "อีเมล์ : " + email + "\n" +
                         "ติดต่อสายใน 025590678 : " + tidto)

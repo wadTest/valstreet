@@ -65,31 +65,6 @@ public class MainActivity extends AppCompatActivity {
         btn_login = (Button) findViewById(R.id.btn_login);
         tv_register = (TextView) findViewById(R.id.tv_register);
 
-//        ส่วนของการแสดงรูปภาพ
-        myDialog = new Dialog(this);
-    }
-
-    public void ShowPopup(View v) {
-        TextView txtclose;
-
-        myDialog.setContentView(R.layout.popup_welcome);
-        txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
-        txtclose.setText("X");
-
-        txtclose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myDialog.dismiss();
-
-                //No Space ดึงค่าจาก server
-                Intent intent = new Intent(MainActivity.this, SignInActivity.class);
-                startActivity(intent);
-//                ไม่ให้ย้อยกลับมาหน้าเก่า กดปุ่มกลับก็จะออกจากหน้าจอเลย
-//                finish();
-            }
-        });
-        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        myDialog.show();
 
 //        //      เมื่อยังไม่ได้ลงทะเบียน กดปุ่มนี้จะไปลงทะเบียน
 //        tv_register.setOnClickListener(new View.OnClickListener() {
@@ -118,6 +93,33 @@ public class MainActivity extends AppCompatActivity {
                 }
             }//onClick
         });
+
+//        ส่วนของการแสดงรูปภาพ
+        myDialog = new Dialog(this);
+    }
+
+    public void ShowPopup(View v) {
+        TextView txtclose;
+
+        myDialog.setContentView(R.layout.popup_welcome);
+        txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
+        txtclose.setText("X");
+
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+
+                //No Space ดึงค่าจาก server
+                Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+                startActivity(intent);
+//                ไม่ให้ย้อยกลับมาหน้าเก่า กดปุ่มกลับก็จะออกจากหน้าจอเลย
+//                finish();
+            }
+        });
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+
     }//Method
 
     private void checkUser() {

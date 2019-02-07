@@ -8,4 +8,5 @@
     <dimen name="size_from_main">24sp</dimen>
     <dimen name="size_from_b">28sp</dimen>
     <dimen name="size_from_main1">30sp</dimen>
+    <dimen name="icon">200dp</dimen>
 </resources>

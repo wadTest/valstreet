@@ -4,6 +4,16 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+
+    <!--Photo-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon" />
+
+
     <LinearLayout
         android:padding="5dp"
         android:background="@drawable/background_list"
@@ -50,6 +60,7 @@
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+    </LinearLayout>
 
         <!--Loanofficer1,2,3-->
         <TextView
@@ -93,21 +104,11 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/txtImage"
-            android:textSize="16sp"
-            android:text="รูปภาพ"
-            android:visibility="gone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
             android:id="@+id/txtTidto"
             android:textSize="16sp"
-            android:text="รูปภาพ"
+            android:text="ติดต่อภายใน"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-
-</LinearLayout>
