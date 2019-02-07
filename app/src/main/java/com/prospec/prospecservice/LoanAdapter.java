@@ -64,7 +64,7 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
             Picasso.get()
                     .load(urlIconString)
                     .error(R.drawable.placeholder)
-                    .resize(150, 150)
+//                    .resize(150, 150)
                     .placeholder(R.drawable.placeholder)
                     .into(holder.image);
         Log.d("7/2/62", "image ==> " + urlIconString);
@@ -78,6 +78,8 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         String phoneString = phoneStringArrayList.get(position);
         String emailString = emailStringArrayList.get(position);
         String tidtoString = txtTidtoStringArrayLis.get(position);
+
+        Log.d("7/2/62", "text ==> " + jobNoString);
 
 //        โชว์ตัวอักษร
         holder.jobNoTextView.setText(jobNoString);
