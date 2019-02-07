@@ -3,13 +3,16 @@ package com.prospec.prospecservice;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder> {
 
@@ -46,15 +49,25 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
     @NonNull
     @Override
     public LoanViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = layoutInflater.inflate(R.layout.recyclerview_loan, parent, false);
         LoanViewHolder loanViewHolder = new LoanViewHolder(view);
-
         return loanViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull final LoanViewHolder holder, int position) {
+
+        String urlIconString = iconStringArrayList.get(position);
+        // แสดงรูปภาพโดยใช้ Picasso
+        if (!TextUtils.isEmpty(urlIconString)) {
+            Picasso.get()
+                    .load(urlIconString)
+                    .error(R.drawable.placeholder)
+                    .resize(150, 150)
+                    .placeholder(R.drawable.placeholder)
+                    .into(holder.image);
+        }
+
 
         String jobNoString = jobNoStringArrayList.get(position);
         String jobEventstring = jobEventStringArrayList.get(position);
@@ -63,7 +76,6 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         String loanString = txtLoanStringArrayList.get(position);
         String phoneString = phoneStringArrayList.get(position);
         String emailString = emailStringArrayList.get(position);
-        String urlIconString = iconStringArrayList.get(position);
         String tidtoString = txtTidtoStringArrayLis.get(position);
 
 //        โชว์ตัวอักษร
@@ -75,13 +87,6 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         holder.txtPhone.setText(phoneString);
         holder.txtEmail.setText(emailString);
         holder.tidtoTextView.setText(tidtoString);
-
-        //        โชว์รูปภาพ
-        Picasso.get()
-                .load(urlIconString)
-                .resize(200, 200)
-                .centerCrop()
-                .into(holder.circleImageView);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +104,7 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
     public class LoanViewHolder extends RecyclerView.ViewHolder {
 
         private TextView jobNoTextView, jobEventTextView, cusNameTextView, marketingTextView, loanTextView, txtPhone, txtEmail, tidtoTextView;
-        private CircleImageView circleImageView;
+        private ImageView image;
 
         public LoanViewHolder(View itemView) {
             super(itemView);
@@ -112,8 +117,7 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
             txtPhone = itemView.findViewById(R.id.txtPhone);
             txtEmail = itemView.findViewById(R.id.txtEmail);
             tidtoTextView = itemView.findViewById(R.id.txtTidto);
-
-            circleImageView = itemView.findViewById(R.id.circleImageView);
+            image = itemView.findViewById(R.id.image);
         }
     }    //Second Class
 
