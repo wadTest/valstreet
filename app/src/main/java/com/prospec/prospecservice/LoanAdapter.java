@@ -1,6 +1,7 @@
 package com.prospec.prospecservice;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -10,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
+import com.koushikdutta.ion.Ion;
 
 import java.util.ArrayList;
 
@@ -23,7 +24,8 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
     private OnClickItem onClickItem;
     private LayoutInflater layoutInflater;
 
-    public LoanAdapter(Context context, ArrayList<String> jobNoStringArrayList,
+    public LoanAdapter(Context context,
+                       ArrayList<String> jobNoStringArrayList,
                        ArrayList<String> jobEventStringArrayList,
                        ArrayList<String> cusNameStringArrayList,
                        ArrayList<String> MarketingStringArrayList,
@@ -44,31 +46,36 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         this.emailStringArrayList = emailStringArrayList;
         this.iconStringArrayList = iconStringArrayList;
         this.txtTidtoStringArrayLis = txtTidtoStringArrayLis;
+        // ตรงนี้เพิ่ม
+        this.context = context;
         this.onClickItem = onClickItem;
     }
 
     @NonNull
     @Override
     public LoanViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View view = layoutInflater.inflate(R.layout.recyclerview_loan, parent, false);
         LoanViewHolder loanViewHolder = new LoanViewHolder(view);
+
         return loanViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull final LoanViewHolder holder, int position) {
 
-        String urlIconString = iconStringArrayList.get(position);
-        // แสดงรูปภาพโดยใช้ Picasso
-//        if (!TextUtils.isEmpty(urlIconString)) {
-            Picasso.get()
-                    .load(urlIconString)
-                    .error(R.drawable.placeholder)
-//                    .resize(150, 150)
-                    .placeholder(R.drawable.placeholder)
-                    .into(holder.image);
+       String urlIconString = iconStringArrayList.get(position);
+        //String urlIconString = "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+
+        Glide.with(context)
+                .load(urlIconString)
+//                .error(R.drawable.placeholder)
+//                .resize(200, 100)
+//                .placeholder(R.drawable.placeholder)
+                .into(holder.image);
+
         Log.d("7/2/62", "image ==> " + urlIconString);
-       // }
+
 
         String jobNoString = jobNoStringArrayList.get(position);
         String jobEventstring = jobEventStringArrayList.get(position);
@@ -78,8 +85,7 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         String phoneString = phoneStringArrayList.get(position);
         String emailString = emailStringArrayList.get(position);
         String tidtoString = txtTidtoStringArrayLis.get(position);
-
-        Log.d("7/2/62", "text ==> " + jobNoString);
+        Log.d("7/2/62", "text ==> " + emailString);
 
 //        โชว์ตัวอักษร
         holder.jobNoTextView.setText(jobNoString);
@@ -90,7 +96,6 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         holder.txtPhone.setText(phoneString);
         holder.txtEmail.setText(emailString);
         holder.tidtoTextView.setText(tidtoString);
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

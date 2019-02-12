@@ -8,12 +8,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- อนุญาตให้เปิดรุปภาพใน sd card -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!-- &lt;!&ndash;เชื่อมต่อมสัญญาณอินเตอร์ทุกแบบ&ndash;&gt; -->
-    <!-- <uses-permission android:name="android.permission.INTERNET"></uses-permission> -->
-    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission> -->
-    <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission> -->
-    <!-- <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission> -->
-    <!-- <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"></uses-permission> -->
+    <!--JSON Image-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_app"
