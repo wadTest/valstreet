@@ -18,12 +18,14 @@ import java.util.ArrayList;
 
 public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder> {
 
+//    ประกาศตัวแปร
     private Context context;
     private ArrayList<String> jobNoStringArrayList, jobEventStringArrayList, cusNameStringArrayList, MarketingStringArrayList, txtLoanStringArrayList,
             iconStringArrayList, phoneStringArrayList, emailStringArrayList, txtTidtoStringArrayLis;
     private OnClickItem onClickItem;
     private LayoutInflater layoutInflater;
 
+//    get event
     public LoanAdapter(Context context,
                        ArrayList<String> jobNoStringArrayList,
                        ArrayList<String> jobEventStringArrayList,
@@ -67,6 +69,7 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
        String urlIconString = iconStringArrayList.get(position);
         //String urlIconString = "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
 
+//        image
         Glide.with(context)
                 .load(urlIconString)
 //                .error(R.drawable.placeholder)
@@ -87,7 +90,7 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
         String tidtoString = txtTidtoStringArrayLis.get(position);
         Log.d("7/2/62", "text ==> " + emailString);
 
-//        โชว์ตัวอักษร
+//       ทำ holderzz
         holder.jobNoTextView.setText(jobNoString);
         holder.jobEventTextView.setText(jobEventstring);
         holder.cusNameTextView.setText(cusNameString);
@@ -111,9 +114,11 @@ public class LoanAdapter extends RecyclerView.Adapter<LoanAdapter.LoanViewHolder
 
     public class LoanViewHolder extends RecyclerView.ViewHolder {
 
+//       ประกาศตัวแปร
         private TextView jobNoTextView, jobEventTextView, cusNameTextView, marketingTextView, loanTextView, txtPhone, txtEmail, tidtoTextView;
         private ImageView image;
 
+//        get event
         public LoanViewHolder(View itemView) {
             super(itemView);
 

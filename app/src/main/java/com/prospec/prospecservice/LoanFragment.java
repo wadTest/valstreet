@@ -58,6 +58,7 @@ public class LoanFragment extends Fragment {
             final ArrayList<String> iconStringArrayList = new ArrayList<>();
             final ArrayList<String> txtTidtoStringArrayLis = new ArrayList<>();
 
+//            php
             for (int i = 0; i < jsonArray.length(); i += 1) {
 
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -89,7 +90,7 @@ public class LoanFragment extends Fragment {
             e.printStackTrace();
         }
     }
-
+//      popup
     private void showAlert(String jobNo, String cusName, String jobEvent, String marketing, String loan, String image, String phone, String email, String tidto) {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
 

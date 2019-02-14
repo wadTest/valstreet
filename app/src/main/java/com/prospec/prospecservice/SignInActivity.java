@@ -23,7 +23,6 @@ public class SignInActivity extends AppCompatActivity {
     private EditText et_name, et_last, et_phone, et_email, et_password, et_co_password;
     private Button btn_register;
     private String et_nameString, et_lastString, et_phoneString, et_emailString, et_passwordString, et_co_passwordString;
-    //    String[] title = {"นางสาว", "นาง", "นาย", "ว่าที่ร้อยตรี"};
     private static final String KEY_EMPTY = "";
 
     @Override
@@ -31,22 +30,9 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-//        ข้อความขึ้นออโต้
-//        AutoComplete();
-
 //        Grt Event
         getevent();
     }
-
-//    private void AutoComplete() {
-//        //การสร้างอินสแตนซ์ของ ArrayAdapter ที่มีคำนำหน้า
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>
-//                (this, android.R.layout.select_dialog_item, title);
-//        //รับอินสแตนซ์ของ AutoCompleteTextView
-//        AutoCompleteTextView actv = (AutoCompleteTextView) findViewById(R.id.et_main);
-//        actv.setThreshold(1);//จะเริ่มทำงานจากอักขระตัวแรก
-//        actv.setAdapter(adapter);//การตั้งค่าข้อมูลอะแดปเตอร์ลงใน AutoCompleteTextView
-//    }
 
     private void getevent() {
         et_name = (EditText) findViewById(R.id.et_name);

@@ -18,7 +18,6 @@ public class Add_Status extends AsyncTask<Void, Void, String> {
     private static final String urlStatus = "http://119.59.103.121/app_mobile/CRM_status_lo.php";
     private String Text1String, Text2String;
 
-
     public Add_Status(Context context1, String text1String, String text2String) {
         this.context1 = context1;
         Text1String = text1String;

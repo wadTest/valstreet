@@ -29,7 +29,6 @@ public class MyStatusActivity extends AppCompatActivity {
                 case 0:
                     getSupportFragmentManager().beginTransaction().add(R.id.contentMyStatusFragment, LoanFragment.loanInstance(jsonString)).commit();
                     break;
-
             }
 
         }

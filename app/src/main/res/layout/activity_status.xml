@@ -36,6 +36,47 @@
             android:ellipsize="marquee"
             android:marqueeRepeatLimit ="marquee_forever"/>
 
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_height="wrap_content">-->
+
+        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--android:layout_width="80dp"-->
+            <!--android:layout_height="80dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginTop="35dp"-->
+            <!--android:src="@drawable/mk1"/>-->
+
+            <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="80dp"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:layout_marginTop="35dp"-->
+                <!--android:src="@drawable/mk2"/>-->
+
+            <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="80dp"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:layout_marginTop="35dp"-->
+                <!--android:src="@drawable/mk3"/>-->
+
+            <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="80dp"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:layout_marginTop="35dp"-->
+                <!--android:src="@drawable/mk4"/>-->
+
+            <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="80dp"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_marginTop="35dp"-->
+                <!--android:src="@drawable/mk5"/>-->
+        <!--</LinearLayout>-->
 
         <Button
             android:id="@+id/button1"

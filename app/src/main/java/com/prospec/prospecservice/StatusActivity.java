@@ -110,7 +110,7 @@ public class StatusActivity extends AppCompatActivity {
                         TextView title = (TextView) view.findViewById(R.id.title);
                         ImageButton imageButton = (ImageButton) view.findViewById(R.id.image);
 
-//                หัวข้อ toolbat
+//                หัวข้อ Toolbar
                         title.setText("Prospec Appraisal");
 
 //                photo ที่โชว์อยู่ใน dailog (บรรทัดนี้ ยังไม่นำไปใช้งาน)

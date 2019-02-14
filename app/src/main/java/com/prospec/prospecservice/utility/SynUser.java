@@ -7,7 +7,7 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
-//ทำการสืบทอด
+//get sql users_app_crm
 public class SynUser extends AsyncTask<Void, Void, String> {
     //    ประกาศตัวแปร
     private Context context;
