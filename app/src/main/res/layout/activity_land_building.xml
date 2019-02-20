@@ -12,7 +12,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:background="@color/colorPrimary"></android.support.v7.widget.Toolbar>
+        android:background="@color/colorPrimary"/>
 
     <!--Content เลื่อนลง-->
     <ScrollView
@@ -290,49 +290,49 @@
             <!--android:textSize="@dimen/size_main" />-->
             <!--</LinearLayout>-->
 
-            <!--&lt;!&ndash;ถนน ซอย&ndash;&gt;-->
-            <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:orientation="horizontal">-->
+            <!--ถนน ซอย-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="ถนน"-->
-            <!--android:textColor="@color/colorBack"-->
-            <!--android:textSize="@dimen/size_main" />-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ถนน"
+                    android:textColor="@color/colorBack"
+                    android:textSize="@dimen/size_main" />
 
-            <!--<EditText-->
-            <!--android:id="@+id/editT7"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="3dp"-->
-            <!--android:hint="@string/edit_text"-->
-            <!--android:inputType="text"-->
-            <!--android:textAlignment="center"-->
-            <!--android:textColorHint="@color/edit_textok"-->
-            <!--android:textSize="@dimen/size_main" />-->
+                <EditText
+                    android:id="@+id/editT7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:hint="@string/edit_text"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/edit_textok"
+                    android:textSize="@dimen/size_main" />
 
-            <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="3dp"-->
-            <!--android:text="ซอย"-->
-            <!--android:textColor="@color/colorBack"-->
-            <!--android:textSize="@dimen/size_main" />-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="ซอย"
+                    android:textColor="@color/colorBack"
+                    android:textSize="@dimen/size_main" />
 
-            <!--<EditText-->
-            <!--android:id="@+id/editT8"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="3dp"-->
-            <!--android:hint="@string/edit_text"-->
-            <!--android:inputType="text"-->
-            <!--android:textAlignment="center"-->
-            <!--android:textColorHint="@color/edit_textok"-->
-            <!--android:textSize="@dimen/size_main" />-->
-            <!--</LinearLayout>-->
+                <EditText
+                    android:id="@+id/editT8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:hint="@string/edit_text"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/edit_textok"
+                    android:textSize="@dimen/size_main" />
+            </LinearLayout>
 
             <!--โครงการ-->
             <LinearLayout
@@ -406,6 +406,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="checkboxName"
                     android:text="ตรงตามชื่อก่อนหน้า"
                     android:textSize="@dimen/size_main" />
 
@@ -427,6 +428,17 @@
                     android:text="ไม่ทราบ"
                     android:textSize="@dimen/size_main" />
             </LinearLayout>
+
+            <!--ชื่อที่ดิึงมาจากหน้าลงทะเบียน-->
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorBack"
+                android:textSize="16sp"
+                android:visibility="gone" />
 
             <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/card1"
@@ -574,7 +586,7 @@
                     android:id="@+id/selectImg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                   android:background="@drawable/background_button"
+                    android:background="@drawable/background_button"
                     android:text="image"
                     android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main"
@@ -585,26 +597,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_button"
-                    android:text="uplaod"
+                    android:text="up"
                     android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main"
                     android:textStyle="bold" />
             </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_below="@+id/uploadImg"
-                    android:layout_centerHorizontal="true" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/uploadImg"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
-
-
-
-
-
-
 

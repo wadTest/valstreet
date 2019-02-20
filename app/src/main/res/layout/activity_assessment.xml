@@ -196,15 +196,16 @@
                 android:layout_marginBottom="8dp"
                 android:background="#e6e6e4"
                 android:text="site"
+                android:visibility="gone"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
 
             <TextView
                 android:id="@+id/Col1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="2dp"
+                android:textColor="@color/colorBack"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
                 android:background="#e6e6e4"
@@ -219,6 +220,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
+                android:textColor="@color/colorBack"
                 android:background="#e6e6e4"
                 android:text="วันที่"
                 android:textSize="18sp"
@@ -232,6 +234,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
                 android:background="#e6e6e4"
+                android:textColor="@color/colorBack"
                 android:text="มูลค่า"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -243,6 +246,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
+                android:visibility="gone"
                 android:background="#e6e6e4"
                 android:text="ทรัพย์สิน"
                 android:textSize="18sp"

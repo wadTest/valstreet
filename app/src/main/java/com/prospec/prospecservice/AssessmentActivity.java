@@ -219,7 +219,7 @@ public class AssessmentActivity extends Activity {
 // listView1 ดึงข้อมูลแบบ JSON array
 
         final ListView lisView1 = (ListView)findViewById(R.id.listView1);
-        String url = "http://119.59.103.121/app_mobile/crm_status_corporate.php";
+        String url = "http://119.59.103.121/app_mobile/status_corporate.php";
         try {
             JSONArray data = new JSONArray(getJSONUrl(url));
             final ArrayList<HashMap<String, String>> MyArrList = new ArrayList<HashMap<String, String>>();
@@ -260,10 +260,10 @@ public class AssessmentActivity extends Activity {
 //                  กรณีคลิกที่ตัวใดตัวนึง จะขึ้น popup รายละเอียด Corporate นั้นๆ
                     viewDetail.setIcon(android.R.drawable.btn_star_big_on);
                     viewDetail.setTitle("รายละเอียด Corporate");
-                    viewDetail.setMessage("Site: " + Site + "\n"
-                            + "รหัสงาน : " + Job_Noe + "\n"
-                            + "วันที่ : " + Assign_Date + "\n"
-                            + "มูลค่า : " + Value_Price + "\n"
+                    viewDetail.setMessage("Site: " + Site + "\n\n"
+                            + "รหัสงาน : " + Job_Noe + "\n\n"
+                            + "วันที่ : " + Assign_Date + "\n\n"
+                            + "มูลค่า : " + Value_Price + "\n\n"
                             + "ทรัพย์สิน : " + Asset_name);
                     viewDetail.setPositiveButton("ตกลง",
                             new DialogInterface.OnClickListener() {

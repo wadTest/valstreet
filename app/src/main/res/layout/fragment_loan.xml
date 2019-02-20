@@ -7,9 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".LoanFragment">
 
-
-
-
     <!--Head-->
     <LinearLayout
         android:padding="5dp"
