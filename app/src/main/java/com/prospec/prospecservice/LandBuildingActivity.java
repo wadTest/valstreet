@@ -1,6 +1,5 @@
 package com.prospec.prospecservice;
 
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
