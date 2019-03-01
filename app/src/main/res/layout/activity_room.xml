@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LandBuildingActivity">
+    tools:context=".lands.LandBuildingActivity">
 
     <!--แถบเครื่องมือ-->
     <android.support.v7.widget.Toolbar
@@ -403,7 +403,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:entries="@array/prated"
+
                     android:textAlignment="center"
                     android:textColorHint="@color/edit_textok"
                     android:textSize="@dimen/size_main" />
@@ -588,7 +588,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="10dp"
-                android:entries="@array/image"
+
                 android:textAlignment="center"
                 android:textColorHint="@color/edit_textok"/>
 

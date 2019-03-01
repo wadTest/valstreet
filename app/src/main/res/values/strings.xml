@@ -97,25 +97,25 @@
     <string name="home">หน้าหลัก</string>
     <string name="login">เข้าสู่ระบบ</string>
 
-    <string-array name="prated">
-        <item>เลือกประเภทกรรมสิทธิ์</item>
-        <item>กรรมสิทธิ์สมบูรณ์(ซื้อขายขาด)</item>
-        <item>ได้รับสิทธิการเช่ามา</item>
-        <item>ไม่ทราบ</item>
-    </string-array>
+    <!--<string-array name="prated">-->
+        <!--<item>เลือกประเภทกรรมสิทธิ์</item>-->
+        <!--<item>กรรมสิทธิ์สมบูรณ์(ซื้อขายขาด)</item>-->
+        <!--<item>ได้รับสิทธิการเช่ามา</item>-->
+        <!--<item>ไม่ทราบ</item>-->
+    <!--</string-array>-->
 
-    <string-array name="image">
-        <item>เลือกการเบราซ์</item>
-        <item>เบราซ์เพื่อส่งเอกสาร</item>
-        <item>เบราซ์เพื่อส่งภาพถ่าย</item>
-        <item>เบราซ์เพื่อส่งพิกัดแผนที่</item>
-    </string-array>
+    <!--<string-array name="image">-->
+        <!--<item>เลือกการเบราซ์</item>-->
+        <!--<item>เบราซ์เพื่อส่งเอกสาร</item>-->
+        <!--<item>เบราซ์เพื่อส่งภาพถ่าย</item>-->
+        <!--<item>เบราซ์เพื่อส่งพิกัดแผนที่</item>-->
+    <!--</string-array>-->
 
-    <string-array name="ekasan">
-        <item>เลือกเอกสารสิทธิ์</item>
-        <item>โฉนดที่ดิน</item>
-        <item>นส.3ก</item>
-        <item>นส.3</item>
-    </string-array>
+    <!--<string-array name="ekasan">-->
+        <!--<item>เลือกเอกสารสิทธิ์</item>-->
+        <!--<item>โฉนดที่ดิน</item>-->
+        <!--<item>นส.3ก</item>-->
+        <!--<item>นส.3</item>-->
+    <!--</string-array>-->
 
 </resources>

@@ -10,7 +10,7 @@
         android:id="@+id/spinnerEka"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:entries="@array/ekasan"
+
         android:hint="@string/edit_praped"
         android:inputType="text"
         android:textAlignment="center"

@@ -1,4 +1,4 @@
-package com.prospec.prospecservice;
+package com.prospec.prospecservice.lands;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -15,21 +15,14 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import com.prospec.prospecservice.R;
+import com.prospec.prospecservice.utility.MyAlert;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -48,20 +41,22 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 //class ที่ดินเปล่า
 public class LandBuildingActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
-//    private EditText editT1, editT2, editT3, editT4, editT5, editT6, editT7, editT8, editT9, editT10, editT11, editT12;
-//   private ImageButton plus;
-//    private Spinner spinnerP;
+    private EditText editT1, editT2, editT3, editT4, editT5, editT6, editT7, editT8, editT9, editT10;
+    private String editT1String, editT2String, editT3String, editT4String, editT5String, editT6String, editT7String, editT8String, editT9String, editT10String;
+    private Spinner spinner1, spinner2, spinner3, spinner4;
+
+    private Button buttonSave;
+    //   private ImageButton plus;
     private CheckBox checkbox1, checkbox2, checkbox3, checkbox4, checkbox5, checkbox6;
-//    private Button buttonB, buttonS;
+    //    private Button buttonB, buttonS;
     private CardView card1, card2;
     private LinearLayout parentLinearLayout;
-//    ส่วนของการget ชื่อ มาแสดง
+    //    ส่วนของการget ชื่อ มาแสดง
     private TextView tv_name;
     private String nameLogin;
 
@@ -82,8 +77,10 @@ public class LandBuildingActivity extends AppCompatActivity {
 
         address();
 
-    }//Method
+        savedata();
 
+
+    }//Method
 
     private void toolbar() {
         //        ADD Toolbar
@@ -101,12 +98,12 @@ public class LandBuildingActivity extends AppCompatActivity {
         });
     }//end toolbar
 
-//    ส่วนของการกดบวก ลบ
+    //    ส่วนของการกดบวก ลบ
     private void addremove() {
         parentLinearLayout = (LinearLayout) findViewById(R.id.parent_linear_layout);
     }
 
-//    เมื่อกดบวก
+    //    เมื่อกดบวก
     public void onAddField(View v) {
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View rowView = inflater.inflate(R.layout.field, null);
@@ -114,12 +111,12 @@ public class LandBuildingActivity extends AppCompatActivity {
         parentLinearLayout.addView(rowView, parentLinearLayout.getChildCount() - 1);
     }
 
-//    เมื่อกดลบ
+    //    เมื่อกดลบ
     public void onDelete(View v) {
         parentLinearLayout.removeView((View) v.getParent());
     }
 
-//    get DB. sql มาแสดงในส่วนของที่อยู่
+    //    get DB. sql มาแสดงในส่วนของที่อยู่
     private void address() {
 
         // Permission StrictMode
@@ -141,7 +138,7 @@ public class LandBuildingActivity extends AppCompatActivity {
             final ArrayList<HashMap<String, String>> MyArrList = new ArrayList<HashMap<String, String>>();
             HashMap<String, String> map;
 
-            for(int i = 0; i < data.length(); i++){
+            for (int i = 0; i < data.length(); i++) {
                 JSONObject c = data.getJSONObject(i);
 
                 map = new HashMap<String, String>();
@@ -153,8 +150,8 @@ public class LandBuildingActivity extends AppCompatActivity {
 
             SimpleAdapter sAdap;
             sAdap = new SimpleAdapter(LandBuildingActivity.this, MyArrList, R.layout.activity_column,
-                    new String[] {"tambon_th", "amphur_th", "province_th"},
-                    new int[] {R.id.ColMemberID, R.id.ColName, R.id.ColTel});
+                    new String[]{"tambon_th", "amphur_th", "province_th"},
+                    new int[]{R.id.ColMemberID, R.id.ColName, R.id.ColTel});
             autoAddress.setAdapter(sAdap);
 
             final AlertDialog.Builder viewDetail = new AlertDialog.Builder(this);
@@ -198,22 +195,25 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     private void getevent() {
 //        กรอกข้อมูล
-//        editT1 = (EditText) findViewById(R.id.editT1);
-//        editT2 = (EditText) findViewById(R.id.editT2);
-//        editT3 = (EditText) findViewById(R.id.editT3);
-//        editT4 = (EditText) findViewById(R.id.editT4);
-//        editT5 = (EditText) findViewById(R.id.editT5);
-//        editT6 = (EditText) findViewById(R.id.editT6);
-//        editT7 = (EditText) findViewById(R.id.editT7);
-//        editT8 = (EditText) findViewById(R.id.editT8);
-//        editT9 = (EditText) findViewById(R.id.editT9);
-//        editT10 = (EditText) findViewById(R.id.editT10);
-//        editT11 = (EditText) findViewById(R.id.editT11);
-//        editT12 = (EditText) findViewById(R.id.editT12);
+        editT1 = (EditText) findViewById(R.id.editT1);
+        editT2 = (EditText) findViewById(R.id.editT2);
+        editT3 = (EditText) findViewById(R.id.editT3);
+        editT4 = (EditText) findViewById(R.id.editT4);
+        editT5 = (EditText) findViewById(R.id.editT5);
+        editT6 = (EditText) findViewById(R.id.editT6);
+        editT7 = (EditText) findViewById(R.id.editT7);
+        editT8 = (EditText) findViewById(R.id.editT8);
+        editT9 = (EditText) findViewById(R.id.editT9);
+        editT10 = (EditText) findViewById(R.id.editT10);
+        buttonSave = (Button) findViewById(R.id.buttonSave);
+
 ////        เบราซ์รูปภาพ
 //       plus = (ImageButton) findViewById(R.id.plus);
 //        เลือกประเภทกรรมสิทธิ์
-//        spinnerP = (Spinner) findViewById(R.id.spinnerP);
+        spinner1 = (Spinner) findViewById(R.id.spinner1);
+        spinner2 = (Spinner) findViewById(R.id.spinner2);
+        spinner3 = (Spinner) findViewById(R.id.spinner3);
+        spinner4 = (Spinner) findViewById(R.id.spinner4);
 //        checkbox ให้เลือก
         checkbox1 = (CheckBox) findViewById(R.id.checkbox1);
         checkbox2 = (CheckBox) findViewById(R.id.checkbox2);
@@ -233,7 +233,7 @@ public class LandBuildingActivity extends AppCompatActivity {
     }//end get event
 
 
-    public void checkboxName (View view) {
+    public void checkboxName(View view) {
         boolean checked = ((CheckBox) view).isChecked();
         switch (view.getId()) {
             case R.id.checkbox1:
@@ -245,7 +245,7 @@ public class LandBuildingActivity extends AppCompatActivity {
         }
     }//end ไม่ทราบชื่อบุคคลอื่น
 
-    public void checkboxMenu (View view) {
+    public void checkboxMenu(View view) {
         boolean checked = ((CheckBox) view).isChecked();
         switch (view.getId()) {
             case R.id.checkbox2:
@@ -255,9 +255,9 @@ public class LandBuildingActivity extends AppCompatActivity {
                     card1.setVisibility(View.VISIBLE);
                 break;
         }
-        }//end ไม่ทราบชื่อบุคคลอื่น
+    }//end ไม่ทราบชื่อบุคคลอื่น
 
-    public void checkboxMenu1 (View view) {
+    public void checkboxMenu1(View view) {
         boolean checked = ((CheckBox) view).isChecked();
         switch (view.getId()) {
             case R.id.checkbox4:
@@ -268,4 +268,48 @@ public class LandBuildingActivity extends AppCompatActivity {
                 break;
         }
     }//end นิติบุคคล
+
+    //    เก็บข้อมูลที่กรอกไปยัง Server
+    private void savedata() {
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                editT1String = editT1.getText().toString().trim();
+                editT2String = editT2.getText().toString().trim();
+                editT3String = editT3.getText().toString().trim();
+                editT4String = editT4.getText().toString().trim();
+                editT5String = editT5.getText().toString().trim();
+                editT6String = editT6.getText().toString().trim();
+                editT7String = editT7.getText().toString().trim();
+                editT8String = editT8.getText().toString().trim();
+                editT9String = editT9.getText().toString().trim();
+                editT10String = editT10.getText().toString().trim();
+
+                if (editT1String.equals("") || editT2String.equals("") || editT3String.equals("") || editT4String.equals("")
+                        || editT5String.equals("") || editT6String.equals("") || editT7String.equals("")) {
+
+                    MyAlert myAlert = new MyAlert(LandBuildingActivity.this, "มีช่องว่าง", "กรุณากรอกข้อมูลในช่องว่าง");
+                    myAlert.myDialog();
+
+                } else {
+//                    upload ข้อมูลที่กรอกไปเก็บไว้ใน my sql
+                    uploadString();
+                }
+            }//onClick
+
+            private void uploadString() {
+                try {
+                    Add_Lands add_lands = new Add_Lands(LandBuildingActivity.this, editT1String, editT2String,
+                            editT3String, editT4String, editT5String, editT6String, editT7String, editT8String, editT9String, editT10String);
+                    add_lands.execute();
+
+                    Toast.makeText(LandBuildingActivity.this, "อัพโหลดข้อมูลสำเร็จ", Toast.LENGTH_SHORT).show();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 }//Main Class
