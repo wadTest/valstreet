@@ -8,11 +8,13 @@
     tools:context=".lands.LandBuildingActivity">
 
     <!--แถบเครื่องมือ-->
+    <!--Toolbar-->
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbar_land_tab1"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:background="@color/colorPrimary" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <!--Content เลื่อนลง-->
     <ScrollView
@@ -601,13 +603,6 @@
                 android:layout_gravity="center_horizontal"
                 android:visibility="gone" />
 
-            <Button
-                android:id="@+id/buttonSave"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="บันทึกข้อมูล"
-                android:textSize="@dimen/size18"
-                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

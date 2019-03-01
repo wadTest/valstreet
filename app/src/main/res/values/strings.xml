@@ -97,6 +97,10 @@
     <string name="home">หน้าหลัก</string>
     <string name="login">เข้าสู่ระบบ</string>
 
+    <!--toolbar-->
+    <string name="lands">ที่ดินเปล่า</string>
+    <string name="massage_alert">โปรดกรอกรายละเอียดให้ครบถ้วน</string>
+
     <!--<string-array name="prated">-->
         <!--<item>เลือกประเภทกรรมสิทธิ์</item>-->
         <!--<item>กรรมสิทธิ์สมบูรณ์(ซื้อขายขาด)</item>-->
