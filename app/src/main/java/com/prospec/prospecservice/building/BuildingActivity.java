@@ -1,11 +1,11 @@
-package com.prospec.prospecservice.lands;
+package com.prospec.prospecservice.building;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -21,7 +21,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.prospec.prospecservice.LandBuildingActivity;
 import com.prospec.prospecservice.R;
+import com.prospec.prospecservice.utility.Add_Lands;
 import com.prospec.prospecservice.utility.MyAlert;
 
 import org.apache.http.HttpEntity;
@@ -42,20 +44,21 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-//class ที่ดินเปล่า
-public class LandBuildingActivity extends AppCompatActivity {
+public class BuildingActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
-    private EditText editT1, editT2, editT3, editT4, editT5, editT6, editT7, editT8, editT9, editT10;
-    private String editT1String, editT2String, editT3String, editT4String, editT5String, editT6String, editT7String, editT8String, editT9String, editT10String;
-    private Spinner spinner1, spinner2, spinner3, spinner4;
+    private EditText editT1, editT2, editT3, editT4, editT5, editT6, editT7, editT8, editT9, editT10,
+            editT11, editT12, editT13, editT14, editT15, editT16, editT17, editT18, editT19, editT20;
+    private String editT1String, editT2String, editT3String, editT4String, editT5String, editT6String, editT7String, editT8String, editT9String, editT10String,
+            editT11String, editT12String, editT13String, editT14String, editT15String, editT16String, editT17String, editT18String, editT19String, editT20String;
+//    private Spinner spinner1, spinner2, spinner3, spinner4;
 
     private Button buttonSave;
     //   private ImageButton plus;
     private CheckBox checkbox1, checkbox2, checkbox3, checkbox4, checkbox5, checkbox6;
     //    private Button buttonB, buttonS;
     private CardView card1, card2;
-    private LinearLayout parentLinearLayout;
+    private LinearLayout parentLinearLayout, parentLinearLayout1;
     //    ส่วนของการget ชื่อ มาแสดง
     private TextView tv_name;
     private String nameLogin;
@@ -63,7 +66,7 @@ public class LandBuildingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_land_building);
+        setContentView(R.layout.activity_building);
 
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         nameLogin = sharedPreferences.getString("NameLogin", "");
@@ -74,20 +77,21 @@ public class LandBuildingActivity extends AppCompatActivity {
         getevent();
 
         addremove();
+        addremove1();
 
         address();
 
         savedata();
 
-
     }//Method
 
+
     private void toolbar() {
-        //        ADD Toolbar
+//        ADD Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("ที่ดินเปล่า");
-        toolbar.setSubtitle("โปรดกรอกรายละเอียดที่ดินเปล่า");
+        getSupportActionBar().setTitle("ที่ดินพร้อมสิ่งปลูกสร้าง");
+        toolbar.setSubtitle("โปรดกรอกรายละเอียดในช่องว่าง");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -98,7 +102,7 @@ public class LandBuildingActivity extends AppCompatActivity {
         });
     }//end toolbar
 
-    //    ส่วนของการกดบวก ลบ
+    //    ส่วนของการกดบวก ลบ (ที่ดินเปล่า)
     private void addremove() {
         parentLinearLayout = (LinearLayout) findViewById(R.id.parent_linear_layout);
     }
@@ -115,6 +119,22 @@ public class LandBuildingActivity extends AppCompatActivity {
     public void onDelete(View v) {
         parentLinearLayout.removeView((View) v.getParent());
     }
+
+    //    ส่วนของการกดบวก ลบ (ที่ดินพร้อมสิ่งปลูกสร้าง)
+    private void addremove1() {
+        parentLinearLayout1 = (LinearLayout) findViewById(R.id.parent_linear_layout1);
+    } //    เมื่อกดบวก
+    public void onAddField1(View v) {
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View rowView = inflater.inflate(R.layout.field, null);
+        // เป็นการเพิ่มแถวใหม่ก่อนปุ่มเพิ่มฟิลด์
+        parentLinearLayout1.addView(rowView, parentLinearLayout1.getChildCount() - 1);
+    }
+    //    เมื่อกดลบ
+    public void onDelete1(View v) {
+        parentLinearLayout1.removeView((View) v.getParent());
+    }
+
 
     //    get DB. sql มาแสดงในส่วนของที่อยู่
     private void address() {
@@ -149,7 +169,7 @@ public class LandBuildingActivity extends AppCompatActivity {
             }
 
             SimpleAdapter sAdap;
-            sAdap = new SimpleAdapter(LandBuildingActivity.this, MyArrList, R.layout.activity_column,
+            sAdap = new SimpleAdapter(BuildingActivity.this, MyArrList, R.layout.activity_column,
                     new String[]{"tambon_th", "amphur_th", "province_th"},
                     new int[]{R.id.ColMemberID, R.id.ColName, R.id.ColTel});
             autoAddress.setAdapter(sAdap);
@@ -205,15 +225,26 @@ public class LandBuildingActivity extends AppCompatActivity {
         editT8 = (EditText) findViewById(R.id.editT8);
         editT9 = (EditText) findViewById(R.id.editT9);
         editT10 = (EditText) findViewById(R.id.editT10);
+        editT11 = (EditText) findViewById(R.id.editT11);
+        editT12 = (EditText) findViewById(R.id.editT12);
+        editT13 = (EditText) findViewById(R.id.editT13);
+        editT14 = (EditText) findViewById(R.id.editT14);
+        editT15 = (EditText) findViewById(R.id.editT15);
+        editT16 = (EditText) findViewById(R.id.editT16);
+        editT17 = (EditText) findViewById(R.id.editT17);
+        editT18 = (EditText) findViewById(R.id.editT18);
+        editT19 = (EditText) findViewById(R.id.editT19);
+        editT20 = (EditText) findViewById(R.id.editT20);
+
         buttonSave = (Button) findViewById(R.id.buttonSave);
 
 ////        เบราซ์รูปภาพ
 //       plus = (ImageButton) findViewById(R.id.plus);
 //        เลือกประเภทกรรมสิทธิ์
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
-        spinner3 = (Spinner) findViewById(R.id.spinner3);
-        spinner4 = (Spinner) findViewById(R.id.spinner4);
+//        spinner1 = (Spinner) findViewById(R.id.spinner1);
+//        spinner2 = (Spinner) findViewById(R.id.spinner2);
+//        spinner3 = (Spinner) findViewById(R.id.spinner3);
+//        spinner4 = (Spinner) findViewById(R.id.spinner4);
 //        checkbox ให้เลือก
         checkbox1 = (CheckBox) findViewById(R.id.checkbox1);
         checkbox2 = (CheckBox) findViewById(R.id.checkbox2);
@@ -285,11 +316,26 @@ public class LandBuildingActivity extends AppCompatActivity {
                 editT8String = editT8.getText().toString().trim();
                 editT9String = editT9.getText().toString().trim();
                 editT10String = editT10.getText().toString().trim();
+                editT11String = editT11.getText().toString().trim();
+                editT12String = editT12.getText().toString().trim();
+                editT13String = editT13.getText().toString().trim();
+                editT14String = editT14.getText().toString().trim();
+                editT15String = editT15.getText().toString().trim();
+                editT16String = editT16.getText().toString().trim();
+                editT17String = editT17.getText().toString().trim();
+                editT18String = editT18.getText().toString().trim();
+                editT19String = editT19.getText().toString().trim();
+                editT20String = editT12.getText().toString().trim();
+
 
                 if (editT1String.equals("") || editT2String.equals("") || editT3String.equals("") || editT4String.equals("")
-                        || editT5String.equals("") || editT6String.equals("") || editT7String.equals("")) {
+                        || editT5String.equals("") || editT6String.equals("") || editT7String.equals("") || editT8String.equals("")
+                        || editT9String.equals("") || editT10String.equals("") || editT11String.equals("") || editT12String.equals("")
+               ) {
+                    //         || editT13String.equals("") || editT14String.equals("") || editT15String.equals("") || editT16String.equals("")
+                    //                        || editT17String.equals("") || editT18String.equals("") || editT19String.equals("") || editT20String.equals("")
 
-                    MyAlert myAlert = new MyAlert(LandBuildingActivity.this, "มีช่องว่าง", "กรุณากรอกข้อมูลในช่องว่าง");
+                    MyAlert myAlert = new MyAlert(BuildingActivity.this, "มีช่องว่าง", "กรุณากรอกข้อมูลในช่องว่าง");
                     myAlert.myDialog();
 
                 } else {
@@ -300,11 +346,13 @@ public class LandBuildingActivity extends AppCompatActivity {
 
             private void uploadString() {
                 try {
-                    Add_Lands add_lands = new Add_Lands(LandBuildingActivity.this, editT1String, editT2String,
-                            editT3String, editT4String, editT5String, editT6String, editT7String, editT8String, editT9String, editT10String);
-                    add_lands.execute();
+                    AddBuilding addBuilding = new AddBuilding(BuildingActivity.this, editT1String, editT2String,
+                            editT3String, editT4String, editT5String, editT6String, editT7String, editT8String, editT9String, editT10String,
+                            editT11String, editT12String, editT13String, editT14String, editT15String,
+                            editT16String, editT17String, editT18String, editT19String, editT20String);
+                    addBuilding.execute();
 
-                    Toast.makeText(LandBuildingActivity.this, "อัพโหลดข้อมูลสำเร็จ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BuildingActivity.this, "อัพโหลดข้อมูลสำเร็จ", Toast.LENGTH_SHORT).show();
 
                 } catch (Exception e) {
                     e.printStackTrace();

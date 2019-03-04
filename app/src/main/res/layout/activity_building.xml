@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".lands.LandBuildingActivity">
+    tools:context=".LandBuildingActivity">
 
     <!--แถบเครื่องมือ-->
     <android.support.v7.widget.Toolbar
@@ -119,7 +119,7 @@
 
                 <!--ส่วนของการกรอก-->
                 <LinearLayout
-                    android:id="@+id/linearPang1"
+                    android:id="@+id/parent_linear_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -132,20 +132,19 @@
                         android:padding="6dp">
 
                         <!--แปลงที่-->
-                        <TextView
-                            android:id="@+id/editT2"
+                        <EditText
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:inputType="number"
-                            android:text="1"
+                            android:hint="แปลงที่"
                             android:textAlignment="center"
                             android:textColorHint="@color/edit_textok"
                             android:textSize="@dimen/size_main" />
 
                         <!--เอกสารสิทธิ์-->
                         <EditText
-                            android:id="@+id/editT3"
+                            android:id="@+id/editT2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="3.5"
@@ -157,7 +156,7 @@
 
                         <!--เลขที่-->
                         <EditText
-                            android:id="@+id/editT4"
+                            android:id="@+id/editT3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="2.2"
@@ -169,7 +168,7 @@
 
                         <!--เนื้อที่-->
                         <EditText
-                            android:id="@+id/editT5"
+                            android:id="@+id/editT4"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
@@ -204,7 +203,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/editT6"
+                        android:id="@+id/editT5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -239,7 +238,7 @@
                 <!--android:textSize="@dimen/size_main" />-->
 
                 <EditText
-                    android:id="@+id/editT7"
+                    android:id="@+id/editT6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
@@ -308,7 +307,7 @@
                     android:textSize="@dimen/size_main" />
 
                 <EditText
-                    android:id="@+id/editT10"
+                    android:id="@+id/editT7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
@@ -327,7 +326,7 @@
                     android:textSize="@dimen/size_main" />
 
                 <EditText
-                    android:id="@+id/editT11"
+                    android:id="@+id/editT8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
@@ -352,7 +351,7 @@
                     android:textSize="@dimen/size_main" />
 
                 <EditText
-                    android:id="@+id/editT12"
+                    android:id="@+id/editT9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
@@ -389,6 +388,7 @@
 
                 <!--กรอก ที่ดินเปล่า-->
                 <EditText
+                    android:id="@+id/editT10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
@@ -410,6 +410,7 @@
 
                 <!--กรอก ที่ดินเปล่า-->
                 <EditText
+                    android:id="@+id/editT11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
@@ -489,11 +490,10 @@
 
             <!--ส่วนของการกรอก-->
             <LinearLayout
-                android:id="@+id/linearPang1"
+                android:id="@+id/parent_linear_layout1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
                 <TableRow
                     android:id="@+id/tableRow1"
                     android:layout_width="match_parent"
@@ -503,7 +503,7 @@
 
                     <!--แปลงที่-->
                     <EditText
-                        android:id="@+id/editT2"
+                        android:id="@+id/editT12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.2"
@@ -515,7 +515,7 @@
 
                     <!--เอกสารสิทธิ์-->
                     <EditText
-                        android:id="@+id/editT3"
+                        android:id="@+id/editT13"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="3.5"
@@ -527,7 +527,7 @@
 
                     <!--เลขที่-->
                     <EditText
-                        android:id="@+id/editT4"
+                        android:id="@+id/editT14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="2.2"
@@ -539,7 +539,7 @@
 
                     <!--เนื้อที่-->
                     <EditText
-                        android:id="@+id/editT5"
+                        android:id="@+id/editT15"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
@@ -551,7 +551,7 @@
 
                     <!--เนื้อที่-->
                     <EditText
-
+                        android:id="@+id/editT16"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
@@ -586,7 +586,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/editT6"
+                    android:id="@+id/editT17"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -733,7 +733,7 @@
                             android:textSize="@dimen/size_main" />
 
                         <EditText
-                            android:id="@+id/editT13"
+                            android:id="@+id/editT18"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/edit_text"
@@ -756,7 +756,7 @@
                             android:textSize="@dimen/size_main" />
 
                         <EditText
-                            android:id="@+id/editT14"
+                            android:id="@+id/editT19"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="3dp"
@@ -780,7 +780,7 @@
                             android:textSize="@dimen/size_main" />
 
                         <EditText
-                            android:id="@+id/editT15"
+                            android:id="@+id/editT20"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="3dp"
@@ -828,6 +828,13 @@
                     android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main" />
             </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:text="บันทึกข้อมูล"
+                android:textSize="@dimen/size18"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>

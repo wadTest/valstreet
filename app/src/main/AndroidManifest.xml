@@ -55,7 +55,7 @@
             android:screenOrientation="portrait" />
         <!-- หน้าที่ดิน -->
         <activity
-            android:name=".lands.LandBuildingActivity"
+            android:name=".LandBuildingActivity"
             android:screenOrientation="portrait" />
         <!-- หน้าที่ดิน+อาคาร -->
         <activity

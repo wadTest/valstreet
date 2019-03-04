@@ -1,4 +1,4 @@
-package com.prospec.prospecservice.lands;
+package com.prospec.prospecservice.utility;
 
 import android.content.Context;
 import android.os.AsyncTask;

@@ -35,4 +35,26 @@ public class MyAlert {
         });
         builder.show();
     }
+
+//    Alert เมื่อไม่ได้กรอกข้อมุล (ส่งงานประเเมิน)
+
+
+    public MyAlert(Context context) {
+        this.context = context;
+    }
+    public void normalDialog(String titleSting, String messageString) {
+
+        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(context);
+        builder.setCancelable(false);
+        builder.setIcon(R.drawable.ic_action_alert);
+        builder.setTitle(titleSting);
+        builder.setMessage(messageString);
+        builder.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+    }
 }//Main Class

@@ -100,6 +100,21 @@
     <!--toolbar-->
     <string name="lands">ที่ดินเปล่า</string>
     <string name="massage_alert">โปรดกรอกรายละเอียดให้ครบถ้วน</string>
+    <string name="title_have_space">มีช่องว่าง</string>
+    <string name="massage_have_space">โปรดกรอกให้ครบทุกช่อง</string>
+    <string name="title_type_doc1">ยังไม่ได้เลือกเอกสารสิทธิ์</string>
+    <string name="message_type_doc1">กรุณาเลือกเอกสารสิทธิ์</string>
+    <string name="title_comfirm">โปรดใส่ข้อมูล</string>
+    <string name="number_land">ที่ดินจำนวน</string>
+    <string name="numbers">เลขที่</string>
+    <string name="area">เนื้อที่</string>
+    <string name="all">รวมเนื้อที่ดิน</string>
+    <string name="road">ถนน</string>
+    <string name="soi">ซอย</string>
+    <string name="project">โครงการ</string>
+    <string name="nameniti">ชื่อนิติบุคคล</string>
+    <string name="address">ที่อยู่</string>
+    <string name="telephone">โทรศัพท์</string>
 
     <!--<string-array name="prated">-->
         <!--<item>เลือกประเภทกรรมสิทธิ์</item>-->

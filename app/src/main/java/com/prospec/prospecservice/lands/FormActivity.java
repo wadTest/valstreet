@@ -1,13 +1,11 @@
-package com.prospec.prospecservice.fragment;
+package com.prospec.prospecservice.lands;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.util.Log;
 
 import com.prospec.prospecservice.R;
+import com.prospec.prospecservice.lands.LandsFragment;
 
 
 public class FormActivity extends AppCompatActivity {
