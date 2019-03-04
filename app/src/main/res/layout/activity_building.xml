@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LandBuildingActivity">
+    tools:context=".building.BuildingActivity">
 
     <!--แถบเครื่องมือ-->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:background="@color/colorPrimary"></android.support.v7.widget.Toolbar>
+        android:background="@color/colorPrimary"/>
 
     <!--Content เลื่อนลง-->
     <ScrollView
@@ -124,12 +124,11 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <TableRow
-                        android:id="@+id/tableRow1"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:padding="6dp">
+                        android:layout_height="50dp"
+                        android:background="#eceff1"
+                        android:orientation="horizontal">
 
                         <!--แปลงที่-->
                         <EditText
@@ -180,11 +179,16 @@
 
                         <!--ปุ่ม add-->
                         <ImageView
-                            android:id="@+id/Plus"
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:background="@drawable/ic_plus" />
-                    </TableRow>
+                            android:id="@+id/add_field_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:onClick="AddField"
+                            android:paddingLeft="5dp"
+                            android:src="@mipmap/add" />
+                    </LinearLayout>
                 </LinearLayout>
 
 
@@ -423,7 +427,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linear1"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -494,12 +498,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                <TableRow
-                    android:id="@+id/tableRow1"
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:padding="6dp">
+                    android:layout_height="50dp"
+                    android:background="#eceff1"
+                    android:orientation="horizontal">
 
                     <!--แปลงที่-->
                     <EditText
@@ -563,11 +567,16 @@
 
                     <!--ปุ่ม add-->
                     <ImageView
-                        android:id="@+id/Plus"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:background="@drawable/ic_plus" />
-                </TableRow>
+                        android:id="@+id/add_field_button1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:onClick="AddField1"
+                        android:paddingLeft="5dp"
+                        android:src="@mipmap/add" />
+                </LinearLayout>
             </LinearLayout>
 
 
@@ -635,6 +644,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:visibility="gone"
                 android:orientation="horizontal"
                 android:padding="2dp">
 
@@ -830,13 +840,18 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/Save"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20sp"
+                android:background="@drawable/background_button"
                 android:text="บันทึกข้อมูล"
-                android:textSize="@dimen/size18"
-                android:textStyle="bold"
-                android:layout_height="wrap_content" />
-
-
+                android:textColor="@color/colorBack"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

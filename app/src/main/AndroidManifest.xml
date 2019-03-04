@@ -58,9 +58,6 @@
             android:name=".LandBuildingActivity"
             android:screenOrientation="portrait" />
         <!-- หน้าที่ดิน+อาคาร -->
-        <activity
-            android:name=".BuildingActivity"
-            android:screenOrientation="portrait" />
         <!-- หน้าห้องชุด -->
         <activity
             android:name=".RoomActivity"
@@ -80,6 +77,9 @@
         <!-- หน้าส่งข้อความแบบย่อ -->
         <activity
             android:name=".CustomDialogActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".building.BuildingActivity"
             android:screenOrientation="portrait" />
         <!-- หน้าสถานะสินเชื่อ -->
         <!-- หน้าห้องชุดหรือพื้นที่เช่า -->
