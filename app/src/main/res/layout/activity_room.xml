@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LandBuildingActivity">
+    tools:context=".condo.RoomActivity">
 
     <!--แถบเครื่องมือ-->
     <android.support.v7.widget.Toolbar
@@ -192,7 +192,7 @@
 
                         <!--เนื้อที่-->
                         <EditText
-                            android:id="@+id/editT5"
+                            android:id="@+id/editT6"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="4"
@@ -225,16 +225,6 @@
                         android:textSize="@dimen/size_main"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editT6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:hint="@string/edit_text"
-                        android:inputType="number"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/edit_textok"
-                        android:textSize="@dimen/size_main" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -330,7 +320,7 @@
                     android:textSize="@dimen/size_main" />
 
                 <EditText
-                    android:id="@+id/editT10"
+                    android:id="@+id/editT8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
@@ -349,7 +339,7 @@
                     android:textSize="@dimen/size_main" />
 
                 <EditText
-                    android:id="@+id/editT11"
+                    android:id="@+id/editT9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
@@ -374,7 +364,7 @@
                     android:textSize="@dimen/size_main" />
 
                 <EditText
-                    android:id="@+id/editT12"
+                    android:id="@+id/editT10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
@@ -521,7 +511,7 @@
                             android:textSize="@dimen/size_main" />
 
                         <EditText
-                            android:id="@+id/editT13"
+                            android:id="@+id/editT11"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/edit_text"
@@ -544,7 +534,7 @@
                             android:textSize="@dimen/size_main" />
 
                         <EditText
-                            android:id="@+id/editT14"
+                            android:id="@+id/editT12"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="3dp"
@@ -568,7 +558,7 @@
                             android:textSize="@dimen/size_main" />
 
                         <EditText
-                            android:id="@+id/editT15"
+                            android:id="@+id/editT13"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="3dp"
@@ -616,6 +606,14 @@
                     android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/Save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="บันทึกข้อมูล"
+                android:textStyle="bold"
+                android:textSize="@dimen/size18" />
 
 
         </LinearLayout>

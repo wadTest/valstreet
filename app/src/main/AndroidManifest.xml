@@ -60,7 +60,7 @@
         <!-- หน้าที่ดิน+อาคาร -->
         <!-- หน้าห้องชุด -->
         <activity
-            android:name=".RoomActivity"
+            android:name=".condo.RoomActivity"
             android:screenOrientation="portrait" />
         <!-- หน้าแสดงสถานะ -->
         <activity
