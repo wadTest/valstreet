@@ -2,7 +2,6 @@ package com.prospec.prospecservice.building;
 
 import android.content.Context;
 import android.os.AsyncTask;
-
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;

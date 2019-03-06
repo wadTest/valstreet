@@ -130,11 +130,11 @@
         <!--<item>เบราซ์เพื่อส่งพิกัดแผนที่</item>-->
     <!--</string-array>-->
 
-    <!--<string-array name="ekasan">-->
-        <!--<item>เลือกเอกสารสิทธิ์</item>-->
-        <!--<item>โฉนดที่ดิน</item>-->
-        <!--<item>นส.3ก</item>-->
-        <!--<item>นส.3</item>-->
-    <!--</string-array>-->
+    <string-array name="ekasan">
+        <item>เลือกเอกสารสิทธิ์</item>
+        <item>โฉนดที่ดิน</item>
+        <item>นส.3ก</item>
+        <item>นส.3</item>
+    </string-array>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.prospec.prospecservice;
+package com.prospec.prospecservice.lands;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -21,7 +22,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.prospec.prospecservice.utility.Add_Lands;
+import com.prospec.prospecservice.R;
 import com.prospec.prospecservice.utility.MyAlert;
 
 import org.apache.http.HttpEntity;
@@ -47,12 +48,14 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
     private EditText editT1, editT2, editT3, editT4, editT5, editT6, editT7, editT8, editT9, editT10;
-    private String editT1String, editT2String, editT3String, editT4String, editT5String, editT6String, editT7String, editT8String, editT9String, editT10String;
+    private String editT1String, editT2String, editT3String, editT4String, editT5String, editT6String,
+            editT7String, editT8String, editT9String, editT10String,
+            spinner1String, spinner2String, spinner3String, spinner4String;
     private Spinner spinner1, spinner2, spinner3, spinner4;
 
     private Button buttonSave;
     //   private ImageButton plus;
-    private CheckBox checkbox1, checkbox2, checkbox3, checkbox4, checkbox5, checkbox6;
+    private CheckBox checkB1, checkB2, checkB3, checkB4, checkB5, checkB6;
     //    private Button buttonB, buttonS;
     private CardView card1, card2;
     private LinearLayout parentLinearLayout;
@@ -79,8 +82,12 @@ public class LandBuildingActivity extends AppCompatActivity {
 
         savedata();
 
+        spinNer1();
+
 
     }//Method
+
+
 
     private void toolbar() {
         //        ADD Toolbar
@@ -215,12 +222,12 @@ public class LandBuildingActivity extends AppCompatActivity {
         spinner3 = (Spinner) findViewById(R.id.spinner3);
         spinner4 = (Spinner) findViewById(R.id.spinner4);
 //        checkbox ให้เลือก
-        checkbox1 = (CheckBox) findViewById(R.id.checkbox1);
-        checkbox2 = (CheckBox) findViewById(R.id.checkbox2);
-        checkbox3 = (CheckBox) findViewById(R.id.checkbox3);
-        checkbox4 = (CheckBox) findViewById(R.id.checkbox4);
-        checkbox5 = (CheckBox) findViewById(R.id.checkbox5);
-        checkbox6 = (CheckBox) findViewById(R.id.checkbox6);
+        checkB1 = (CheckBox) findViewById(R.id.checkbox1);
+        checkB2 = (CheckBox) findViewById(R.id.checkbox2);
+        checkB3 = (CheckBox) findViewById(R.id.checkbox3);
+        checkB4 = (CheckBox) findViewById(R.id.checkbox4);
+        checkB5 = (CheckBox) findViewById(R.id.checkbox5);
+        checkB6 = (CheckBox) findViewById(R.id.checkbox6);
 //        ปุ่มเบราซ์ รูปภาพเข้า
 //        buttonB = (Button) findViewById(R.id.buttonB);
 //        buttonS = (Button) findViewById(R.id.buttonS);
@@ -285,18 +292,34 @@ public class LandBuildingActivity extends AppCompatActivity {
                 editT8String = editT8.getText().toString().trim();
                 editT9String = editT9.getText().toString().trim();
                 editT10String = editT10.getText().toString().trim();
+                spinner1String = spinner1.getSelectedItem().toString();
+                spinner2String = spinner2.getSelectedItem().toString();
+                spinner3String = spinner3.getSelectedItem().toString();
+                spinner4String = spinner4.getSelectedItem().toString();
+                Boolean cb1 = checkB1.isChecked();
+                Boolean cb2 = checkB2.isChecked();
+                Boolean cb3 = checkB3.isChecked();
+                Boolean cb4 = checkB4.isChecked();
+                Boolean cb5 = checkB5.isChecked();
+                Boolean cb6 = checkB6.isChecked();
 
                 if (editT1String.equals("") || editT2String.equals("") || editT3String.equals("") || editT4String.equals("")
-                        || editT5String.equals("") || editT6String.equals("") || editT7String.equals("")) {
+                        || editT5String.equals("") || editT6String.equals("") || editT7String.equals("")
+                        || spinner1String.equals("") || spinner2String.equals("") || spinner3String.equals("") || spinner4String.equals("")) {
 
                     MyAlert myAlert = new MyAlert(LandBuildingActivity.this, "มีช่องว่าง", "กรุณากรอกข้อมูลในช่องว่าง");
                     myAlert.myDialog();
 
                 } else {
+
+
 //                    upload ข้อมูลที่กรอกไปเก็บไว้ใน my sql
                     uploadString();
+
+//                    upLandstring();
                 }
             }//onClick
+
 
             private void uploadString() {
                 try {
@@ -311,5 +334,48 @@ public class LandBuildingActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+//
+//    //    Add spinner checkbox edittext to mysql
+//    private void upLandstring() {
+//        Lands lands = new Lands();
+//        lands.setEd1(editT1String);
+//        lands.setEd2(editT2String);
+//        lands.setEd3(editT3String);
+//        lands.setEd4(editT4String);
+//        lands.setEd5(editT5String);
+//        lands.setEd6(editT6String);
+//        lands.setEd7(editT7String);
+//        lands.setEd8(editT8String);
+//        lands.setEd9(editT9String);
+//        lands.setEd10(editT10String);
+//
+//        lands.setSp1(spinner1String);
+//        lands.setSp2(spinner2String);
+//        lands.setSp3(spinner3String);
+//        lands.setSp4(spinner4String);
+
+//        lands.setCb1(cb1 ? 1 : 0);
+//        lands.setCb2(cb2 ? 1 : 0);
+//        lands.setCb3(cb3 ? 1 : 0);
+//        lands.setCb4(cb4 ? 1 : 0);
+//        lands.setCb5(cb5 ? 1 : 0);
+//        lands.setCb6(cb6 ? 1 : 0);
+
+//        Add_Lands add_lands = new Add_Lands(LandBuildingActivity.this, editT1String, editT2String,
+//                editT3String, editT4String, editT5String, editT6String, editT7String, editT8String, editT9String, editT10String,
+//                spinner1String, spinner2String, spinner3String, spinner4String);
+//    }
+
+    private void spinNer1() {
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item);
+
+        adapter.add("เลือกประเภทเอกสารสิทธิ์");
+        adapter.add("โฉนดที่ดิน");
+        adapter.add("นส.3ก");
+        adapter.add("นส.3");
+
+        spinner1.setAdapter(adapter);
+        spinner1.setSelection(0);
     }
 }//Main Class

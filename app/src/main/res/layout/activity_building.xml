@@ -179,13 +179,13 @@
 
                         <!--ปุ่ม add-->
                         <ImageView
-                            android:id="@+id/add_field_button"
+                            android:id="@+id/add1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp"
                             android:layout_marginBottom="5dp"
-                            android:onClick="AddField"
+                            android:onClick="add1"
                             android:paddingLeft="5dp"
                             android:src="@mipmap/add" />
                     </LinearLayout>
@@ -567,13 +567,13 @@
 
                     <!--ปุ่ม add-->
                     <ImageView
-                        android:id="@+id/add_field_button1"
+                        android:id="@+id/add2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginRight="5dp"
                         android:layout_marginBottom="5dp"
-                        android:onClick="AddField1"
+                        android:onClick="add2"
                         android:paddingLeft="5dp"
                         android:src="@mipmap/add" />
                 </LinearLayout>
