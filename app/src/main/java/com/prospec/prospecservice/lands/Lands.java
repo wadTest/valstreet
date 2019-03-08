@@ -4,8 +4,8 @@ package com.prospec.prospecservice.lands;
 public class Lands {
     //    ประกาศตัวแปร
     private int id;
-    private String ed1, ed2, ed3, ed4, ed5, ed6, ed7, ed8, ed9, ed10;
-    private String sp1, sp2, sp3, sp4;
+    private String ed1, ed2, ed3, ed4, ed5, ed6, ed7, ed8, ed9, ed10, ed11;
+    private String sp1, sp2, sp3, sp4, sp5, sp6;
     private int cb1, cb2, cb3, cb4, cb5, cb6;
 
     //    ตัวรับและตัวตั้ง
@@ -89,6 +89,7 @@ public class Lands {
         this.ed9 = ed9;
     }
 
+
     public String getEd10() {
         return ed10;
     }
@@ -96,6 +97,15 @@ public class Lands {
     public void setEd10(String ed10) {
         this.ed10 = ed10;
     }
+
+    public String getEd11() {
+        return ed11;
+    }
+
+    public void setEd11(String ed11) {
+        this.ed11 = ed11;
+    }
+
 
 
     public String getSp1() {
@@ -130,6 +140,20 @@ public class Lands {
         this.sp4 = sp4;
     }
 
+    public String getSp5() {
+        return sp5;
+    }
+
+    public void setSp5(String sp5) {
+        this.sp5 = sp5;
+    }
+    public String getSp6() {
+        return sp6;
+    }
+
+    public void setSp6(String sp6) {
+        this.sp6 = sp6;
+    }
     public int getCb1() {
         return cb1;
     }

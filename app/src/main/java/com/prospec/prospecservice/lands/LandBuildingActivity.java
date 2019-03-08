@@ -4,12 +4,15 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.StrictMode;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -17,6 +20,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -47,21 +51,21 @@ import java.util.HashMap;
 public class LandBuildingActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
-    private EditText editT1, editT2, editT3, editT4, editT5, editT6, editT7, editT8, editT9, editT10;
-    private String editT1String, editT2String, editT3String, editT4String, editT5String, editT6String,
-            editT7String, editT8String, editT9String, editT10String,
-            spinner1String, spinner2String, spinner3String, spinner4String;
-    private Spinner spinner1, spinner2, spinner3, spinner4;
+    private TextInputEditText edit1, edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
+    private Spinner spin1, spin2, spin3, spin4, spin5, spin6;
+    private CheckBox check1, check2, check3, check4, check5, check6;
+    private Button Add;
 
-    private Button buttonSave;
-    //   private ImageButton plus;
-    private CheckBox checkB1, checkB2, checkB3, checkB4, checkB5, checkB6;
-    //    private Button buttonB, buttonS;
-    private CardView card1, card2;
+    //    ตัวแปร + - จำนวนแปลง
     private LinearLayout parentLinearLayout;
+    //    ตัวแปรในส่วนของการทำให้ โชว์ ซ้อน
+    private CardView card1, card2;
     //    ส่วนของการget ชื่อ มาแสดง
     private TextView tv_name;
     private String nameLogin;
+
+    private View LinearOne, LinearTwo, LinearThree,  LinearFour;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,20 +76,21 @@ public class LandBuildingActivity extends AppCompatActivity {
         nameLogin = sharedPreferences.getString("NameLogin", "");
         Log.d("20JanV1", "nameLogin Receive in MenuActivity ==> " + nameLogin);
 
-        toolbar();
+        this.toolbar();
 
-        getevent();
+        this.getevent();
 
-        addremove();
+        this.addremove();
 
-        address();
+        this.address();
 
         savedata();
 
-        spinNer1();
+//        redioGruup();
 
-
+        spinner1();
     }//Method
+
 
 
 
@@ -132,109 +137,102 @@ public class LandBuildingActivity extends AppCompatActivity {
             StrictMode.setThreadPolicy(policy);
         }
 
-//        getevent autoAddress
-        final AutoCompleteTextView autoAddress = (AutoCompleteTextView) findViewById(R.id.address);
-
-//        url php
-        String url = "http://119.59.103.121/app_mobile/get%20spinner.php";
-
-        try {
-
-            JSONArray data = new JSONArray(getJSONUrl(url));
-
-            final ArrayList<HashMap<String, String>> MyArrList = new ArrayList<HashMap<String, String>>();
-            HashMap<String, String> map;
-
-            for (int i = 0; i < data.length(); i++) {
-                JSONObject c = data.getJSONObject(i);
-
-                map = new HashMap<String, String>();
-                map.put("tambon_th", c.getString("tambon_th") + "\n");
-                map.put("amphur_th", c.getString("amphur_th") + "\n");
-                map.put("province_th", c.getString("province_th"));
-                MyArrList.add(map);
-            }
-
-            SimpleAdapter sAdap;
-            sAdap = new SimpleAdapter(LandBuildingActivity.this, MyArrList, R.layout.activity_column,
-                    new String[]{"tambon_th", "amphur_th", "province_th"},
-                    new int[]{R.id.ColMemberID, R.id.ColName, R.id.ColTel});
-            autoAddress.setAdapter(sAdap);
-
-            final AlertDialog.Builder viewDetail = new AlertDialog.Builder(this);
-
-        } catch (JSONException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-    }
-
-
-    public String getJSONUrl(String url) {
-        StringBuilder str = new StringBuilder();
-        HttpClient client = new DefaultHttpClient();
-        HttpGet httpGet = new HttpGet(url);
-        try {
-            HttpResponse response = client.execute(httpGet);
-            StatusLine statusLine = response.getStatusLine();
-            int statusCode = statusLine.getStatusCode();
-            if (statusCode == 200) { // Download OK
-                HttpEntity entity = response.getEntity();
-                InputStream content = entity.getContent();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(content));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    str.append(line);
-                }
-            } else {
-                Log.e("Log", "Failed to download result..");
-            }
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return str.toString();
+//        getevent autoAddress (AutoComplete)
+//        final AutoCompleteTextView autoAddress = (AutoCompleteTextView) findViewById(R.id.address);
+//
+////        url php
+//        String url = "http://119.59.103.121/app_mobile/get%20spinner.php";
+//
+//        try {
+//
+//            JSONArray data = new JSONArray(getJSONUrl(url));
+//
+//            final ArrayList<HashMap<String, String>> MyArrList = new ArrayList<HashMap<String, String>>();
+//            HashMap<String, String> map;
+//
+//            for (int i = 0; i < data.length(); i++) {
+//                JSONObject c = data.getJSONObject(i);
+//
+//                map = new HashMap<String, String>();
+//                map.put("tambon_th", c.getString("tambon_th") + "\n");
+//                map.put("amphur_th", c.getString("amphur_th") + "\n");
+//                map.put("province_th", c.getString("province_th"));
+//                MyArrList.add(map);
+//            }
+//
+//            SimpleAdapter sAdap;
+//            sAdap = new SimpleAdapter(LandBuildingActivity.this, MyArrList, R.layout.activity_column,
+//                    new String[]{"tambon_th", "amphur_th", "province_th"},
+//                    new int[]{R.id.ColMemberID, R.id.ColName, R.id.ColTel});
+//            autoAddress.setAdapter(sAdap);
+//
+//            final AlertDialog.Builder viewDetail = new AlertDialog.Builder(this);
+//
+//        } catch (JSONException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+//
+//    }
+//
+//    public String getJSONUrl(String url) {
+//        StringBuilder str = new StringBuilder();
+//        HttpClient client = new DefaultHttpClient();
+//        HttpGet httpGet = new HttpGet(url);
+//        try {
+//            HttpResponse response = client.execute(httpGet);
+//            StatusLine statusLine = response.getStatusLine();
+//            int statusCode = statusLine.getStatusCode();
+//            if (statusCode == 200) { // Download OK
+//                HttpEntity entity = response.getEntity();
+//                InputStream content = entity.getContent();
+//                BufferedReader reader = new BufferedReader(new InputStreamReader(content));
+//                String line;
+//                while ((line = reader.readLine()) != null) {
+//                    str.append(line);
+//                }
+//            } else {
+//                Log.e("Log", "Failed to download result..");
+//            }
+//        } catch (ClientProtocolException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return str.toString();
 
     }
 
     private void getevent() {
 //        กรอกข้อมูล
-        editT1 = (EditText) findViewById(R.id.editT1);
-        editT2 = (EditText) findViewById(R.id.editT2);
-        editT3 = (EditText) findViewById(R.id.editT3);
-        editT4 = (EditText) findViewById(R.id.editT4);
-        editT5 = (EditText) findViewById(R.id.editT5);
-        editT6 = (EditText) findViewById(R.id.editT6);
-        editT7 = (EditText) findViewById(R.id.editT7);
-        editT8 = (EditText) findViewById(R.id.editT8);
-        editT9 = (EditText) findViewById(R.id.editT9);
-        editT10 = (EditText) findViewById(R.id.editT10);
-        buttonSave = (Button) findViewById(R.id.buttonSave);
+        edit1 = (TextInputEditText) findViewById(R.id.editT1);
+        edit2 = (TextInputEditText) findViewById(R.id.editT2);
+        edit3 = (TextInputEditText) findViewById(R.id.editT3);
+        edit4 = (TextInputEditText) findViewById(R.id.editT4);
+        edit5 = (TextInputEditText) findViewById(R.id.editT5);
+        edit6 = (TextInputEditText) findViewById(R.id.editT6);
+        edit7 = (TextInputEditText) findViewById(R.id.editT7);
+        edit8 = (TextInputEditText) findViewById(R.id.editT8);
+        edit9 = (TextInputEditText) findViewById(R.id.editT9);
+        edit10 = (TextInputEditText) findViewById(R.id.editT10);
+        edit11 = (TextInputEditText) findViewById(R.id.editT11);
+        check1 = (CheckBox) findViewById(R.id.checkBox1);
+        check2 = (CheckBox) findViewById(R.id.checkBox2);
+        check3 = (CheckBox) findViewById(R.id.checkBox3);
+        check4 = (CheckBox) findViewById(R.id.checkBox4);
+        check5 = (CheckBox) findViewById(R.id.checkBox5);
+        check6 = (CheckBox) findViewById(R.id.checkBox6);
+        Add = (Button) findViewById(R.id.buttonSave);
+        spin1 = (Spinner) findViewById(R.id.spinner1);
+        spin2 = (Spinner) findViewById(R.id.spinner2);
+        spin3 = (Spinner) findViewById(R.id.spinner3);
+        spin4 = (Spinner) findViewById(R.id.spinner4);
+        spin5 = (Spinner) findViewById(R.id.spinner5);
+        spin6 = (Spinner) findViewById(R.id.spinner6);
 
-////        เบราซ์รูปภาพ
-//       plus = (ImageButton) findViewById(R.id.plus);
-//        เลือกประเภทกรรมสิทธิ์
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
-        spinner3 = (Spinner) findViewById(R.id.spinner3);
-        spinner4 = (Spinner) findViewById(R.id.spinner4);
-//        checkbox ให้เลือก
-        checkB1 = (CheckBox) findViewById(R.id.checkbox1);
-        checkB2 = (CheckBox) findViewById(R.id.checkbox2);
-        checkB3 = (CheckBox) findViewById(R.id.checkbox3);
-        checkB4 = (CheckBox) findViewById(R.id.checkbox4);
-        checkB5 = (CheckBox) findViewById(R.id.checkbox5);
-        checkB6 = (CheckBox) findViewById(R.id.checkbox6);
-//        ปุ่มเบราซ์ รูปภาพเข้า
-//        buttonB = (Button) findViewById(R.id.buttonB);
-//        buttonS = (Button) findViewById(R.id.buttonS);
-//        checkbox เมนูที่เลือก
         card1 = (CardView) findViewById(R.id.card1);
         card2 = (CardView) findViewById(R.id.card2);
-//        แสดงชื่อในกรณี click checkbox ตรงตามชื่อก่อนหน้า
         tv_name = (TextView) findViewById(R.id.tv_name);
         tv_name.setText("ชื่อก่อนหน้า : " + nameLogin.trim());
     }//end get event
@@ -276,106 +274,129 @@ public class LandBuildingActivity extends AppCompatActivity {
         }
     }//end นิติบุคคล
 
-    //    เก็บข้อมูลที่กรอกไปยัง Server
     private void savedata() {
-        buttonSave.setOnClickListener(new View.OnClickListener() {
+
+        //    เก็บข้อมูลที่กรอกไปยัง Server
+        Add.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
-                editT1String = editT1.getText().toString().trim();
-                editT2String = editT2.getText().toString().trim();
-                editT3String = editT3.getText().toString().trim();
-                editT4String = editT4.getText().toString().trim();
-                editT5String = editT5.getText().toString().trim();
-                editT6String = editT6.getText().toString().trim();
-                editT7String = editT7.getText().toString().trim();
-                editT8String = editT8.getText().toString().trim();
-                editT9String = editT9.getText().toString().trim();
-                editT10String = editT10.getText().toString().trim();
-                spinner1String = spinner1.getSelectedItem().toString();
-                spinner2String = spinner2.getSelectedItem().toString();
-                spinner3String = spinner3.getSelectedItem().toString();
-                spinner4String = spinner4.getSelectedItem().toString();
-                Boolean cb1 = checkB1.isChecked();
-                Boolean cb2 = checkB2.isChecked();
-                Boolean cb3 = checkB3.isChecked();
-                Boolean cb4 = checkB4.isChecked();
-                Boolean cb5 = checkB5.isChecked();
-                Boolean cb6 = checkB6.isChecked();
+                //GET VALUES
+                String editText1 = edit1.getText().toString().trim();
+                String editText2 = edit2.getText().toString().trim();
+                String editText3 = edit3.getText().toString().trim();
+                String editText4 = edit4.getText().toString().trim();
+                String editText5 = edit5.getText().toString().trim();
+                String editText6 = edit6.getText().toString().trim();
+                String editText7 = edit7.getText().toString().trim();
+                String editText8 = edit8.getText().toString().trim();
+                String editText9 = edit9.getText().toString().trim();
+                String editText10 = edit10.getText().toString().trim();
+                String editText11 = edit11.getText().toString().trim();
 
-                if (editT1String.equals("") || editT2String.equals("") || editT3String.equals("") || editT4String.equals("")
-                        || editT5String.equals("") || editT6String.equals("") || editT7String.equals("")
-                        || spinner1String.equals("") || spinner2String.equals("") || spinner3String.equals("") || spinner4String.equals("")) {
+                String spinner1 = spin1.getSelectedItem().toString();
+                String spinner2 = spin2.getSelectedItem().toString();
+                String spinner3 = spin3.getSelectedItem().toString();
+                String spinner4 = spin4.getSelectedItem().toString();
+                String spinner5 = spin5.getSelectedItem().toString();
+                String spinner6 = spin6.getSelectedItem().toString();
 
-                    MyAlert myAlert = new MyAlert(LandBuildingActivity.this, "มีช่องว่าง", "กรุณากรอกข้อมูลในช่องว่าง");
-                    myAlert.myDialog();
+                Boolean checkbox1 = check1.isChecked();
+                Boolean checkbox2 = check2.isChecked();
+                Boolean checkbox3 = check3.isChecked();
+                Boolean checkbox4 = check4.isChecked();
+                Boolean checkbox5 = check5.isChecked();
+                Boolean checkbox6 = check6.isChecked();
+
+                //BASIC CLIENT SIDE VALIDATION
+                if ((editText1.length() < 1 || editText2.length() < 1 || editText3.length() < 1 || editText4.length() < 1 || editText5.length() < 1
+                        || editText6.length() < 1 || editText7.length() < 1 || editText8.length() < 1 || editText9.length() < 1 || editText10.length() < 1 || editText11.length() < 1
+                        || spinner1.length() < 1 || spinner2.length() < 1 || spinner3.length() < 1 || spinner4.length() < 1 || spinner5.length() < 1 || spinner6.length() < 1)) {
+
+                    Toast.makeText(LandBuildingActivity.this, "กรุณากรอกทุกช่อง", Toast.LENGTH_SHORT).show();
 
                 } else {
+                    //SAVE
+
+                    Lands s = new Lands();
+                    s.setEd1(editText1);
+                    s.setEd2(editText2);
+                    s.setEd3(editText3);
+                    s.setEd4(editText4);
+                    s.setEd5(editText5);
+                    s.setEd6(editText6);
+                    s.setEd7(editText7);
+                    s.setEd8(editText8);
+                    s.setEd9(editText9);
+                    s.setEd10(editText10);
+                    s.setEd11(editText11);
+                    s.setSp1(spinner1);
+                    s.setSp2(spinner2);
+                    s.setSp3(spinner3);
+                    s.setSp4(spinner4);
+                    s.setSp5(spinner5);
+                    s.setSp6(spinner6);
+                    s.setCb1(checkbox1 ? 1 : 0);
+                    s.setCb2(checkbox2 ? 1 : 0);
+                    s.setCb3(checkbox3 ? 1 : 0);
+                    s.setCb4(checkbox4 ? 1 : 0);
+                    s.setCb5(checkbox5 ? 1 : 0);
+                    s.setCb6(checkbox6 ? 1 : 0);
 
 
-//                    upload ข้อมูลที่กรอกไปเก็บไว้ใน my sql
-                    uploadString();
-
-//                    upLandstring();
-                }
-            }//onClick
-
-
-            private void uploadString() {
-                try {
-                    Add_Lands add_lands = new Add_Lands(LandBuildingActivity.this, editT1String, editT2String,
-                            editT3String, editT4String, editT5String, editT6String, editT7String, editT8String, editT9String, editT10String);
-                    add_lands.execute();
-
-                    Toast.makeText(LandBuildingActivity.this, "อัพโหลดข้อมูลสำเร็จ", Toast.LENGTH_SHORT).show();
-
-                } catch (Exception e) {
-                    e.printStackTrace();
+                    new Add_Lands(LandBuildingActivity.this).add(s,edit1, edit2, edit3, edit4, edit5, edit6,
+                            edit7, edit7, edit8, edit9, edit10, edit11, spin1, spin2, spin3, spin4, spin5, spin6);
                 }
             }
         });
-    }
-//
-//    //    Add spinner checkbox edittext to mysql
-//    private void upLandstring() {
-//        Lands lands = new Lands();
-//        lands.setEd1(editT1String);
-//        lands.setEd2(editT2String);
-//        lands.setEd3(editT3String);
-//        lands.setEd4(editT4String);
-//        lands.setEd5(editT5String);
-//        lands.setEd6(editT6String);
-//        lands.setEd7(editT7String);
-//        lands.setEd8(editT8String);
-//        lands.setEd9(editT9String);
-//        lands.setEd10(editT10String);
-//
-//        lands.setSp1(spinner1String);
-//        lands.setSp2(spinner2String);
-//        lands.setSp3(spinner3String);
-//        lands.setSp4(spinner4String);
 
-//        lands.setCb1(cb1 ? 1 : 0);
-//        lands.setCb2(cb2 ? 1 : 0);
-//        lands.setCb3(cb3 ? 1 : 0);
-//        lands.setCb4(cb4 ? 1 : 0);
-//        lands.setCb5(cb5 ? 1 : 0);
-//        lands.setCb6(cb6 ? 1 : 0);
+    }//end save data
 
-//        Add_Lands add_lands = new Add_Lands(LandBuildingActivity.this, editT1String, editT2String,
-//                editT3String, editT4String, editT5String, editT6String, editT7String, editT8String, editT9String, editT10String,
-//                spinner1String, spinner2String, spinner3String, spinner4String);
+//    private void redioGruup() {
+//        //    กลุ่มย่อยของ Redio Button ที่1
+//        LinearOne = findViewById(R.id.LinearOne);
+//        LinearTwo = findViewById(R.id.LinearTwo);
+//
+//        RadioGroup redioGroup1 = (RadioGroup) findViewById(R.id.redioGroup1);
+//        redioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                switch (checkedId) {
+//                    case R.id.checkBox1:
+//                        select(true);
+//                        break;
+//                    case R.id.checkBox2:
+//                        select(false);
+//                        break;
+//                    case R.id.checkBox6:
+//                        select(false);
+//                        break;
+//
+//
+//                }
+//            }
+//        });
 //    }
+//
+//
+//    private void select(boolean b) {
+//        tv_name.setVisibility(b ? View.GONE : View.VISIBLE);
+//        LinearTwo.setVisibility(b ? View.GONE : View.VISIBLE);
+//    }//end Redio Button
 
-    private void spinNer1() {
+    private void spinner1() {
+
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item);
 
-        adapter.add("เลือกประเภทเอกสารสิทธิ์");
+        adapter.add("เลือกเอกสารสิทธิ์");
         adapter.add("โฉนดที่ดิน");
         adapter.add("นส.3ก");
         adapter.add("นส.3");
 
-        spinner1.setAdapter(adapter);
-        spinner1.setSelection(0);
+        spin1.setAdapter(adapter);
+        spin1.setSelection(0);
+
     }
+
 }//Main Class

@@ -20,13 +20,13 @@ import android.widget.TextView;
 import com.prospec.prospecservice.utility.GetDb2WhereNameLoginThread;
 import com.prospec.prospecservice.utility.MyConstant;
 
+
 public class StatusActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
     private WebView webBrowser;
     private Toolbar toolbar;
-    private Button button1;
-    TextView scrollingText;
+    private Button button1, button2, button3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +38,7 @@ public class StatusActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("สถานะงาน");
         toolbar.setSubtitle("กรอกรหัสงานเพื่อตรวจสอบสถานะ");
-//        toolbar.setLogo(R.drawable.logo_prospec);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        toolbar.setLogo(R.drawable.logo_prospec);
 
 //        รับกิจกรรม
         getEvent();
@@ -54,15 +46,6 @@ public class StatusActivity extends AppCompatActivity {
         init();
 //        เรียก web มาใช้
         browse();
-
-//        ข้อความเลื่อนออโต
-        textshow();
-    }
-
-
-    private void textshow() {
-        scrollingText = (TextView)findViewById(R.id.scrollingtext);
-        scrollingText.setSelected(true);
     }
 
     public void init() {
@@ -79,10 +62,14 @@ public class StatusActivity extends AppCompatActivity {
     private void getEvent() {
 //               เรียกตัวแปรมาใช้
         button1 = (Button) findViewById(R.id.button1);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
 
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         String nameLogin = sharedPreferences.getString("NameLogin", "");
         Log.d("20JanV2", "nameLogin ==> " + nameLogin);
+
+
 
         MyConstant myConstant = new MyConstant();
 
@@ -93,6 +80,7 @@ public class StatusActivity extends AppCompatActivity {
 
             final String jsonString = getDb2WhereNameLoginThread.get();
             Log.d("20JanV2", "JSoN ==> " + jsonString);
+
 
             //        Get Event From Click สถานะสินเชื่อ
             button1.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +98,7 @@ public class StatusActivity extends AppCompatActivity {
                         TextView title = (TextView) view.findViewById(R.id.title);
                         ImageButton imageButton = (ImageButton) view.findViewById(R.id.image);
 
-//                หัวข้อ Toolbar
+//                หัวข้อ toolbat
                         title.setText("Prospec Appraisal");
 
 //                photo ที่โชว์อยู่ใน dailog (บรรทัดนี้ ยังไม่นำไปใช้งาน)
@@ -135,7 +123,6 @@ public class StatusActivity extends AppCompatActivity {
                     } else {
                         Intent intent = new Intent(StatusActivity.this, MyStatusActivity.class);
                         intent.putExtra("index", 0);
-                        intent.putExtra("json", jsonString);
                         startActivity(intent);
                     }
 

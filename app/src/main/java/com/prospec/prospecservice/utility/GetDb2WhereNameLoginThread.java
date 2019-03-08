@@ -9,6 +9,16 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
+
+import android.content.Context;
+import android.os.AsyncTask;
+
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+
 public class GetDb2WhereNameLoginThread extends AsyncTask<String, Void, String> {
 
     private Context context;

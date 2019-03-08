@@ -115,6 +115,9 @@
     <string name="nameniti">ชื่อนิติบุคคล</string>
     <string name="address">ที่อยู่</string>
     <string name="telephone">โทรศัพท์</string>
+    <string name="edit_province">เลือกจังหวัด</string>
+    <string name="aumpor">เลือกอำเภอ</string>
+    <string name="SaveData">Save</string>
 
     <!--<string-array name="prated">-->
         <!--<item>เลือกประเภทกรรมสิทธิ์</item>-->
