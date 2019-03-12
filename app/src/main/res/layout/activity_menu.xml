@@ -13,13 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <FrameLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
-
 
         <!--Main -->
         <LinearLayout
@@ -32,10 +30,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
-
-
-
-
 
                 <!--ชื่อที่ดิึงมาจากหน้าลงทะเบียน-->
                 <TextView
@@ -67,30 +61,13 @@
                 android:layout_gravity="center" />
 
             <!--ปุ่ม Corporate member-->
-            <!--ถูกซ้อนไว้อยู่-->
-            <TextView
-                android:id="@+id/Status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_gravity="center"
-                android:drawableRight="@drawable/ic_name"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="10dp"
-                android:text="รายละเอียดงาน เจ้าหน้าที่สินเชื่อ "
-                android:visibility="gone"
-                android:textAlignment="center"
-                android:textColor="@color/colorBack"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <!--ปุ่ม Corporate member-->
             <TextView
                 android:id="@+id/textStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_gravity="center"
+                android:visibility="gone"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="10dp"
                 android:drawableRight="@drawable/ic_name"
@@ -109,12 +86,42 @@
                 android:layout_weight="3"
                 android:orientation="horizontal">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!--Image ติดต่อสอบถาม-->
+                    <ImageView
+                        android:id="@+id/service"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_pramear"
+                        tools:ignore="ContentDescription" />
+
+                    <!--ปุ่ม ติดต่อสอบถาม-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="ใช้บริการประเมิน"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorBack"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 1 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
+                    android:visibility="gone"
                     android:background="@drawable/background_liner"
                     android:orientation="vertical">
 
@@ -144,43 +151,40 @@
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 2 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="120dp"
                     android:layout_marginLeft="8dp"
                     android:layout_weight="1"
-                    android:background="@drawable/background_liner"
                     android:orientation="vertical">
 
                     <!--Image ติดต่อเราทาง @line-->
                     <ImageView
                         android:id="@+id/imageView2"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_line"
+                        android:src="@drawable/corporate"
                         tools:ignore="ContentDescription" />
 
                     <!--ปุ่ม ติดต่อเราทาง @line-->
                     <TextView
                         android:id="@+id/textView2"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
-                        android:text="ติดต่อทาง @line"
+                        android:layout_height="wrap_content"
+                        android:text="Corporate member"
                         android:textAlignment="center"
-                        android:textColor="@color/colorWite"
-                        android:textSize="@dimen/size_main"
+                        android:textColor="@color/colorBack"
+                        android:textSize="13sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 3 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="120dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/background_liner"
                     android:orientation="vertical">
 
                     <!--Image ติดต่อสายตรง-->
@@ -190,19 +194,19 @@
                         android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_phone"
+                        android:src="@drawable/status"
                         tools:ignore="ContentDescription" />
 
                     <!--ปุ่ม ติดต่อสายตรง-->
                     <TextView
                         android:id="@+id/textView3"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="ติดต่อสายตรง"
+                        android:text="สอบถามสถานะงาน"
                         android:textAlignment="center"
-                        android:textColor="@color/colorWite"
-                        android:textSize="@dimen/size_main"
+                        android:textColor="@color/colorBack"
+                        android:textSize="13sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -212,17 +216,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
                 android:layout_weight="3"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 4 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="120dp"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/background_liner"
                     android:orientation="vertical">
 
                     <!--Image สอบถามสถานะงาน-->
@@ -232,29 +236,28 @@
                         android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_status"
+                        android:src="@drawable/message"
                         tools:ignore="ContentDescription" />
 
                     <!--ปุ่ม สอบถามสถานะงาน-->
                     <TextView
                         android:id="@+id/textView4"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="สอบถามสถานะงาน"
+                        android:text="นัดตรวจงวดงาน"
                         android:textAlignment="center"
-                        android:textColor="@color/colorWite"
-                        android:textSize="@dimen/size_main"
+                        android:textColor="@color/colorBack"
+                        android:textSize="13sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 5 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="120dp"
                     android:layout_marginLeft="8dp"
                     android:layout_weight="1"
-                    android:background="@drawable/background_liner"
                     android:orientation="vertical">
 
                     <!--Image ใช้บริการประเมิน-->
@@ -264,30 +267,29 @@
                         android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_pramear"
+                        android:src="@drawable/ic_name"
                         tools:ignore="ContentDescription" />
 
                     <!--ปุ่ม ใช้บริการประเมิน-->
                     <TextView
                         android:id="@+id/textView5"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="ใช้บริการประเมิน"
+                        android:text="ติดต่อสอบถาม"
                         android:textAlignment="center"
-                        android:textColor="@color/colorWite"
-                        android:textSize="@dimen/size_main"
+                        android:textColor="@color/colorBack"
+                        android:textSize="13sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <!--LinearLayout ย่อย บรรทัดที่ 1 ปุ่มที่ 6 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="120dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/background_liner"
                     android:orientation="vertical">
 
                     <!--Image นัดตรวจงวดงาน-->
@@ -297,19 +299,19 @@
                         android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/ic_messenger"
+                        android:src="@drawable/vedio"
                         tools:ignore="ContentDescription" />
 
                     <!--ปุ่ม นัดตรวจงวดงาน-->
                     <TextView
                         android:id="@+id/textView6"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="นัดตรวจงวดงาน"
+                        android:text="Vedio Edupro"
                         android:textAlignment="center"
-                        android:textColor="@color/colorWite"
-                        android:textSize="@dimen/size_main"
+                        android:textColor="@color/colorBack"
+                        android:textSize="13sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>

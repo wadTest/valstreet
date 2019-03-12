@@ -31,7 +31,7 @@ import org.json.JSONException;
 public class Add_Lands  {
 
     //    บันทึก/รับ URL ใหม่
-        private static final String DATA_INSERT_URL = "http://119.59.103.121/app_mobile/assessment/lands.php";
+        private static final String DATA_INSERT_URL = "http://119.59.103.121/app_mobile/lands/CRUD.php";
 
         //INSTANCE FIELDS
         private final Context c;
@@ -46,7 +46,7 @@ public class Add_Lands  {
                 Toast.makeText(c, "ไม่มีข้อมูลที่จะบันทึก", Toast.LENGTH_SHORT).show();
             } else {
                 AndroidNetworking.post(DATA_INSERT_URL)
-                        .addBodyParameter("action", "save")
+                        .addBodyParameter("isAdd", "true")
                         .addBodyParameter("convert_id", s.getEd1())// รับ EditText
                         .addBodyParameter("land_no", s.getEd2())// รับ EditText
                         .addBodyParameter("land_size", s.getEd3())// รับ EditText

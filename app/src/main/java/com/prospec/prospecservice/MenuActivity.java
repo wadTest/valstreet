@@ -87,13 +87,14 @@ public class MenuActivity extends AppCompatActivity {
         imageView5 = (ImageView) findViewById(R.id.imageView5);
         imageView6 = (ImageView) findViewById(R.id.imageView6);
         textStatus = (TextView) findViewById(R.id.textStatus);
-        Status = (TextView) findViewById(R.id.Status);
+//        Status = (TextView) findViewById(R.id.Status);
         tv_name = (TextView) findViewById(R.id.tv_name);
         btn_logout = (Button) findViewById(R.id.btn_logout);
 
         tv_name.setText("ยินดีต้อนรับ "+nameLogin.trim());
 
 //        ปุ่มออกจากระบบ
+
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,8 +111,6 @@ public class MenuActivity extends AppCompatActivity {
 
     //    Class Create SharePerferance Sataus Login
     public void CekSession() {
-
-
 
         Boolean Check = Boolean.valueOf(SharedPrefs.readSharedSetting(MenuActivity.this, "Logout", "true"));
 
