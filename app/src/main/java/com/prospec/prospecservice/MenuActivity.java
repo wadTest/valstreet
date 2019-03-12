@@ -1,5 +1,6 @@
 package com.prospec.prospecservice;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -34,11 +35,13 @@ import java.util.TimerTask;
 public class MenuActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
-    private ImageView imageView1, imageView2, imageView3, imageView4, imageView5, imageView6;
+    private ImageView assessment, corporate, status, message, service, vedio;
     ViewFlipper imageShow;
-    private TextView textStatus, tv_name;
+    private TextView  tv_name;
     private Button btn_logout;
     private String nameLogin;
+    //    แสดงข้อความตแจ้งเตือน Edupro
+    Dialog myDialog;
 
     // คลาสที่ Android มีมาให้เพื่อเซฟและอ่านข้อมูล โดยข้อมูลจะเก็บเป็นแบบ key-value สามารถใช้ SharedPreferences
     // เก็บข้อมูลลงไปได้ ทั้ง boolean, float, int, long, String ข้อมูลที่เซฟจะอยู่แม้ว่าเราจะปิดแอพแล้วก็ตาม แต่ข้อมูลจะหายไป หากเราทำการ uninstall แอพพลิเคชัน
@@ -48,6 +51,9 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        //        ส่วนของการแสดงรูปภาพ
+        myDialog = new Dialog(this);
 
 //        Find Who Login ?
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
@@ -80,15 +86,14 @@ public class MenuActivity extends AppCompatActivity {
         imageShow.setInAnimation(this, android.R.anim.slide_out_right);
 
 //       ปุ่มกดไปหน้าต่างๆ
-        imageView1 = (ImageView) findViewById(R.id.imageView1);
-        imageView2 = (ImageView) findViewById(R.id.imageView2);
-//        imageView3 = (ImageView) findViewById(R.id.imageView3);
-        imageView4 = (ImageView) findViewById(R.id.imageView4);
-        imageView5 = (ImageView) findViewById(R.id.imageView5);
-        imageView6 = (ImageView) findViewById(R.id.imageView6);
-//        Status = (TextView) findViewById(R.id.Status);
+        status = (ImageView) findViewById(R.id.status);
+        assessment = (ImageView) findViewById(R.id.assessment);
+        message = (ImageView) findViewById(R.id.message);
+        vedio = (ImageView) findViewById(R.id.vedio);
+        service = (ImageView) findViewById(R.id.service);
         tv_name = (TextView) findViewById(R.id.tv_name);
         btn_logout = (Button) findViewById(R.id.btn_logout);
+        corporate = (ImageView)findViewById(R.id.corporate);
 
         tv_name.setText("ยินดีต้อนรับ "+nameLogin.trim());
 
@@ -124,7 +129,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
         //Get Event From Click status corporate
-        textStatus.setOnClickListener(new View.OnClickListener() {
+        corporate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MenuActivity.this, AssessmentActivity.class));
@@ -132,41 +137,9 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-//        //Get Event From Click status เจ้าหน้าที่สินเชื่อ
-//        Status.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MenuActivity.this, LoanOfficerActivity.class));
-//
-//            }
-//        });
-
-        //Get Event From Click E-mail
-        imageView1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, EmailActivity.class));
-            }
-        });
-
-        //Get Event From Click Line
-        imageView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, LineActivity.class));
-            }
-        });
-
-//        //Get Event From Click Call
-//        imageView3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MenuActivity.this, CallActivity.class));
-//            }
-//        });
 
         //Get Event From Click Status
-        imageView4.setOnClickListener(new View.OnClickListener() {
+        status.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MenuActivity.this, StatusActivity.class));
@@ -176,10 +149,10 @@ public class MenuActivity extends AppCompatActivity {
 
 //            Get Event From Click Menu Message
 //        เลือกรายการว่าจะกรอกข้อมูลแบบ ละเอียด, ย่อ
-        imageView5.setOnClickListener(new View.OnClickListener() {
+        assessment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final PopupMenu message = new PopupMenu(MenuActivity.this, imageView5);
+                final PopupMenu message = new PopupMenu(MenuActivity.this, assessment);
                 message.getMenuInflater().inflate(R.menu.message, message.getMenu());
                 message.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
@@ -199,9 +172,36 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        //        ติดต่อ line email call
+        service.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final PopupMenu button = new PopupMenu(MenuActivity.this, service);
+                button.getMenuInflater().inflate(R.menu.button, button.getMenu());
+                button.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.butT1:
+                                startActivity(new Intent(MenuActivity.this, EmailActivity.class));
+                                return true;
+                            case R.id.butT2:
+                                startActivity(new Intent(MenuActivity.this, LineActivity.class));
+                                return true;
+                            case R.id.butT3:
+                                startActivity(new Intent(MenuActivity.this, CallActivity.class));
+                                return true;
+                        }
+                        return true;
+                    }
+                });
+                button.show();
+            }
+        });
+
 
         //Get Event From Click Message Facebook
-        imageView6.setOnClickListener(new View.OnClickListener() {
+        message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -227,6 +227,24 @@ public class MenuActivity extends AppCompatActivity {
         }
 
     }//End openMessage
+
+    public void ShowPopup(View v) {
+        TextView txtclose;
+
+        myDialog.setContentView(R.layout.popup_edupro);
+        txtclose = (TextView) myDialog.findViewById(R.id.txtclose);
+        txtclose.setText("X");
+
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+
+            }
+        });
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+    }
 
 
 }//Class Main

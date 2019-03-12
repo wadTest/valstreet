@@ -26,7 +26,7 @@ public class StatusActivity extends AppCompatActivity {
     //    ประกาศตัวแปร
     private WebView webBrowser;
     private Toolbar toolbar;
-    private Button button1, button2, button3;
+    private Button button1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,14 @@ public class StatusActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("สถานะงาน");
         toolbar.setSubtitle("กรอกรหัสงานเพื่อตรวจสอบสถานะ");
-        toolbar.setLogo(R.drawable.logo_prospec);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 //        รับกิจกรรม
         getEvent();
@@ -62,14 +69,10 @@ public class StatusActivity extends AppCompatActivity {
     private void getEvent() {
 //               เรียกตัวแปรมาใช้
         button1 = (Button) findViewById(R.id.button1);
-        button2 = (Button) findViewById(R.id.button2);
-        button3 = (Button) findViewById(R.id.button3);
 
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         String nameLogin = sharedPreferences.getString("NameLogin", "");
         Log.d("20JanV2", "nameLogin ==> " + nameLogin);
-
-
 
         MyConstant myConstant = new MyConstant();
 
@@ -134,6 +137,6 @@ public class StatusActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-    }   // Get Event
+    }
 
 }   //  Main Class

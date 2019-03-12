@@ -96,7 +96,7 @@
 
                     <!--Image ติดต่อสอบถาม-->
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/assessment"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
@@ -125,8 +125,9 @@
                     android:orientation="vertical">
 
                     <!--Image ติดต่อเราทาง @line-->
+                    <!--android:id="@+id/textStatus"-->
                     <ImageView
-                        android:id="@+id/textStatus"
+                        android:id="@+id/corporate"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
@@ -136,7 +137,6 @@
 
                     <!--ปุ่ม ติดต่อเราทาง @line-->
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Corporate member"
@@ -157,7 +157,7 @@
 
                     <!--Image ติดต่อสายตรง-->
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/status"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
@@ -198,7 +198,7 @@
 
                     <!--Image สอบถามสถานะงาน-->
                     <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/message"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
@@ -229,7 +229,7 @@
 
                     <!--Image ใช้บริการประเมิน-->
                     <ImageView
-                        android:id="@+id/imageView1"
+                        android:id="@+id/service"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
@@ -261,10 +261,11 @@
 
                     <!--Image นัดตรวจงวดงาน-->
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/vedio"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
+                        android:onClick="ShowPopup"
                         android:layout_marginTop="8dp"
                         android:src="@drawable/vedio"
                         tools:ignore="ContentDescription" />
