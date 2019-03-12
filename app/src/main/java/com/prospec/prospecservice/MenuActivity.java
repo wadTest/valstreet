@@ -36,7 +36,7 @@ public class MenuActivity extends AppCompatActivity {
     //    ประกาศตัวแปร
     private ImageView imageView1, imageView2, imageView3, imageView4, imageView5, imageView6;
     ViewFlipper imageShow;
-    private TextView textStatus, Status, tv_name;
+    private TextView textStatus, tv_name;
     private Button btn_logout;
     private String nameLogin;
 
@@ -82,11 +82,10 @@ public class MenuActivity extends AppCompatActivity {
 //       ปุ่มกดไปหน้าต่างๆ
         imageView1 = (ImageView) findViewById(R.id.imageView1);
         imageView2 = (ImageView) findViewById(R.id.imageView2);
-        imageView3 = (ImageView) findViewById(R.id.imageView3);
+//        imageView3 = (ImageView) findViewById(R.id.imageView3);
         imageView4 = (ImageView) findViewById(R.id.imageView4);
         imageView5 = (ImageView) findViewById(R.id.imageView5);
         imageView6 = (ImageView) findViewById(R.id.imageView6);
-        textStatus = (TextView) findViewById(R.id.textStatus);
 //        Status = (TextView) findViewById(R.id.Status);
         tv_name = (TextView) findViewById(R.id.tv_name);
         btn_logout = (Button) findViewById(R.id.btn_logout);
@@ -158,13 +157,13 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        //Get Event From Click Call
-        imageView3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, CallActivity.class));
-            }
-        });
+//        //Get Event From Click Call
+//        imageView3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MenuActivity.this, CallActivity.class));
+//            }
+//        });
 
         //Get Event From Click Status
         imageView4.setOnClickListener(new View.OnClickListener() {
