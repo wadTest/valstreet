@@ -6,7 +6,7 @@ public class Lands {
     private int id;
     private String ed1, ed2, ed3, ed4, ed5, ed6, ed7, ed8, ed9, ed10, ed11;
     private String sp1, sp2, sp3, sp4, sp5, sp6;
-    private int cb1, cb2, cb3, cb4, cb5, cb6;
+    private int cb1, cb2, cb3, cb4, cb6;
 
     //    ตัวรับและตัวตั้ง
     public int getId() {
@@ -187,15 +187,6 @@ public class Lands {
     public void setCb4(int cb4) {
         this.cb4 = cb4;
     }
-
-    public int getCb5() {
-        return cb5;
-    }
-
-    public void setCb5(int cb5) {
-        this.cb5 = cb5;
-    }
-
 
     public int getCb6() {
         return cb6;

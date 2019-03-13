@@ -98,8 +98,6 @@ public class LandBuildingActivity extends AppCompatActivity {
     }//Method
 
 
-
-
     private void toolbar() {
         //        ADD Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -320,8 +318,8 @@ public class LandBuildingActivity extends AppCompatActivity {
                     Toast.makeText(LandBuildingActivity.this, "กรุณากรอกทุกช่อง", Toast.LENGTH_SHORT).show();
 
                 } else {
-                    //SAVE
 
+                    //SAVE
                     Lands s = new Lands();
                     s.setEd1(editText1);
                     s.setEd2(editText2);
@@ -346,7 +344,6 @@ public class LandBuildingActivity extends AppCompatActivity {
                     s.setCb4(checkbox4 ? 1 : 0);
                     s.setCb6(checkbox6 ? 1 : 0);
 
-
                     new Add_Lands(LandBuildingActivity.this).add(s,edit1, edit2, edit3, edit4, edit5, edit6,
                             edit7, edit7, edit8, edit9, edit10, edit11, spin1, spin2, spin3, spin4, spin5, spin6);
                 }
@@ -354,39 +351,6 @@ public class LandBuildingActivity extends AppCompatActivity {
         });
 
     }//end save data
-
-//    private void redioGruup() {
-//        //    กลุ่มย่อยของ Redio Button ที่1
-//        LinearOne = findViewById(R.id.LinearOne);
-//        LinearTwo = findViewById(R.id.LinearTwo);
-//
-//        RadioGroup redioGroup1 = (RadioGroup) findViewById(R.id.redioGroup1);
-//        redioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                switch (checkedId) {
-//                    case R.id.checkBox1:
-//                        select(true);
-//                        break;
-//                    case R.id.checkBox2:
-//                        select(false);
-//                        break;
-//                    case R.id.checkBox6:
-//                        select(false);
-//                        break;
-//
-//
-//                }
-//            }
-//        });
-//    }
-//
-//
-//    private void select(boolean b) {
-//        tv_name.setVisibility(b ? View.GONE : View.VISIBLE);
-//        LinearTwo.setVisibility(b ? View.GONE : View.VISIBLE);
-//    }//end Redio Button
 
     private void spinner1() {
 
@@ -415,7 +379,6 @@ public class LandBuildingActivity extends AppCompatActivity {
         spin2.setSelection(0);
 
     }
-
 
     private void spinner3() {
 
@@ -533,7 +496,6 @@ public class LandBuildingActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, rowStrings);
         spin4.setAdapter(stringArrayAdapter);
         stringArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
-
     }
 
     private void spinner5() {
@@ -547,7 +509,6 @@ public class LandBuildingActivity extends AppCompatActivity {
 
         spin5.setAdapter(adapter);
         spin5.setSelection(0);
-
     }
 
     private void spinner6() {
@@ -561,7 +522,6 @@ public class LandBuildingActivity extends AppCompatActivity {
 
         spin6.setAdapter(adapter);
         spin6.setSelection(0);
-
     }
 
 }//Main Class

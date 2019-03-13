@@ -31,7 +31,7 @@ import org.json.JSONException;
 public class Add_Lands  {
 
     //    บันทึก/รับ URL ใหม่
-        private static final String DATA_INSERT_URL = "http://119.59.103.121/app_mobile/lands/CRUD.php";
+        private static final String DATA_INSERT_URL = "http://119.59.103.121/app_mobile/assessment/lands.php";
 
         //INSTANCE FIELDS
         private final Context c;
@@ -39,14 +39,13 @@ public class Add_Lands  {
         public Add_Lands(Context c) {
             this.c = c;
         }
-
         //    SAVE/INSERT URL
         public void add(Lands s, final View... inputViews) {
             if (s == null) {
                 Toast.makeText(c, "ไม่มีข้อมูลที่จะบันทึก", Toast.LENGTH_SHORT).show();
             } else {
                 AndroidNetworking.post(DATA_INSERT_URL)
-                        .addBodyParameter("isAdd", "true")
+                        .addBodyParameter("action", "save")
                         .addBodyParameter("convert_id", s.getEd1())// รับ EditText
                         .addBodyParameter("land_no", s.getEd2())// รับ EditText
                         .addBodyParameter("land_size", s.getEd3())// รับ EditText
@@ -66,12 +65,11 @@ public class Add_Lands  {
                         .addBodyParameter("t_ownership", s.getSp5())// รับ Spinner
                         .addBodyParameter("urlImage", s.getSp6())// รับ Spinner
 
-                        .addBodyParameter("checkbox", String.valueOf(s.getCb1()))// รับ Checkbox
-                        .addBodyParameter("", String.valueOf(s.getCb2()))// รับ Checkbox
-                        .addBodyParameter("", String.valueOf(s.getCb3()))// รับ Checkbox
-                        .addBodyParameter("", String.valueOf(s.getCb4()))// รับ Checkbox
-                        .addBodyParameter("", String.valueOf(s.getCb5()))// รับ Checkbox
-                        .addBodyParameter("", String.valueOf(s.getCb6()))// รับ Checkbox
+                        .addBodyParameter("straight", String.valueOf(s.getCb1()))// รับ Checkbox
+                        .addBodyParameter("another_person", String.valueOf(s.getCb2()))// รับ Checkbox
+                        .addBodyParameter("not", String.valueOf(s.getCb3()))// รับ Checkbox
+                        .addBodyParameter("legal_entity", String.valueOf(s.getCb4()))// รับ Checkbox
+                        .addBodyParameter("natural_person", String.valueOf(s.getCb6()))// รับ Checkbox
                         .setTag("TAG_ADD")
                         .build()
                         .getAsJSONArray(new JSONArrayRequestListener() {
@@ -82,17 +80,17 @@ public class Add_Lands  {
                                     try {
                                         //SHOW RESPONSE FROM SERVER
                                         String responseString = response.get(0).toString();
-                                        Toast.makeText(c, "Success : " + responseString, Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(c, "การตอบสนองของเซิร์ฟเวอร์ PHP : " + responseString, Toast.LENGTH_SHORT).show();
 
                                         if (responseString.equalsIgnoreCase("Success")) {
                                             //RESET VIEWS
                                             EditText nameTxt = (EditText) inputViews[0];
-                                            Spinner spinnerTxt = (Spinner) inputViews[1];
+                                            Spinner spPropellant = (Spinner) inputViews[1];
 
                                             nameTxt.setText("");
-                                            spinnerTxt.setSelection(0);
+                                            spPropellant.setSelection(0);
                                         } else {
-                                            Toast.makeText(c, "ไม่ประสบความสำเร็จ : ", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(c, "PHP ไม่ประสบความสำเร็จ : ", Toast.LENGTH_SHORT).show();
 
                                         }
 
@@ -105,7 +103,7 @@ public class Add_Lands  {
                             //ERROR
                             @Override
                             public void onError(ANError anError) {
-                                Toast.makeText(c, "ไม่สำเร็จ: ข้อผิดพลาดคือ : " + anError.getMessage(), Toast.LENGTH_SHORT).show();
+                                //  Toast.makeText(c, "ไม่สำเร็จ: ข้อผิดพลาดคือ : " + anError.getMessage(), Toast.LENGTH_SHORT).show();
                             }
 
                         });
