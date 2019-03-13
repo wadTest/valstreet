@@ -52,7 +52,6 @@ import java.util.HashMap;
 public class LandBuildingActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
-
     private TextInputEditText edit1, edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
     private Spinner spin1, spin2, spin3, spin4, spin5, spin6;
     private CheckBox check1, check2, check3, check4, check6;
@@ -67,7 +66,6 @@ public class LandBuildingActivity extends AppCompatActivity {
     private String nameLogin;
 
     private View LinearOne, LinearTwo, LinearThree,  LinearFour;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
