@@ -100,6 +100,17 @@
                 android:textSize="@dimen/size_from22"
                 android:textStyle="bold" />
 
+
+            <!--ปุ่ม ห้องชุด-->
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/background_button"
+                android:text="ส่งงานประเมิน"
+                android:textSize="@dimen/size_from22"
+                android:textStyle="bold" />
             <!--&lt;!&ndash;ปุ่ม ที่ดินเปล่า(สัญญาเช่า)&ndash;&gt;-->
             <!--<Button-->
                 <!--android:id="@+id/button4"-->

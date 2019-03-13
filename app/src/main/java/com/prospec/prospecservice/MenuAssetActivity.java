@@ -11,7 +11,7 @@ import com.prospec.prospecservice.building.BuildingActivity;
 import com.prospec.prospecservice.condo.RoomActivity;
 import com.prospec.prospecservice.lands.LandsFragment;
 
-//class กรอกข้อมูลแบบระเอียด เมนูให้เลือกทั้ง 6 ปุ่ม
+//class กรอกข้อมูลแบบระเอียด เมนูให้เลือกทั้ง 3 ปุ่ม
 public class MenuAssetActivity extends AppCompatActivity {
 
     //  Explicit  ประกาศตัวแปร
@@ -27,6 +27,7 @@ public class MenuAssetActivity extends AppCompatActivity {
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
+
 
         //Get Event From Click Land and Building
         button1.setOnClickListener(new View.OnClickListener() {
@@ -53,5 +54,6 @@ public class MenuAssetActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }

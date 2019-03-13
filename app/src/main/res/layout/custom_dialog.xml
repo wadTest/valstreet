@@ -53,6 +53,7 @@
             android:layout_marginBottom="20sp"
             android:background="@drawable/background_button"
             android:text="บันทึกข้อมูล"
+            android:textSize="@dimen/size18"
             android:textColor="@color/colorBack"
             android:textStyle="bold" />
     </RelativeLayout>

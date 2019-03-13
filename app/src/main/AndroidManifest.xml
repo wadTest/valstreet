@@ -81,6 +81,8 @@
         <activity
             android:name=".building.BuildingActivity"
             android:screenOrientation="portrait" />
+
+        <!--ส่งงานประเมินพร้อมดู ประวัติการส่ง-->
         <!-- หน้าสถานะสินเชื่อ -->
         <!-- หน้าห้องชุดหรือพื้นที่เช่า -->
         <!-- หน้าที่ดินพร้อมสิ่งปลูกสร้าง(สัญญาเช่า) -->
