@@ -58,11 +58,11 @@ public class LandBuildingActivity extends AppCompatActivity {
     private CheckBox check1, check2, check3, check4, check6;
     private Button Add;
 
-//    Add number
-   private int minteger = 1;
+    //    Add number
+    private int minteger = 1;
 
     //    ตัวแปร + - จำนวนแปลง
-//    private LinearLayout parentLinearLayout;
+//    private LinearLayout Line1;
     //    ตัวแปรในส่วนของการทำให้ โชว์ ซ้อน
     private CardView card1, card2;
     //    ส่วนของการget ชื่อ มาแสดง
@@ -95,14 +95,17 @@ public class LandBuildingActivity extends AppCompatActivity {
         this.spinner3();
         this.spinner5();
         this.spinner6();
+
     }//Method
 
-//    ส่วนของการกด บวก ลบ
+
+    //    ส่วนของการกด บวก ลบ
     public void increaseInteger(View view) {
         minteger = minteger + 1;
         display(minteger);
+    }
 
-    }public void decreaseInteger(View view) {
+    public void decreaseInteger(View view) {
         minteger = minteger - 1;
         display(minteger);
     }
@@ -336,7 +339,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
 
                 //BASIC CLIENT SIDE VALIDATION
-                if ((editText2.length() < 1 || editText3.length() < 1  || editText5.length() < 1
+                if ((editText2.length() < 1 || editText3.length() < 1 || editText5.length() < 1
                         || editText6.length() < 1 || editText7.length() < 1 || editText8.length() < 1
                         || spinner1.length() < 1 || spinner2.length() < 1 || spinner3.length() < 1 || spinner4.length() < 1
                         || spinner5.length() < 1 || spinner6.length() < 1)) {
@@ -373,7 +376,7 @@ public class LandBuildingActivity extends AppCompatActivity {
                     s.setCb4(checkbox4 ? 1 : 0);
                     s.setCb6(checkbox6 ? 1 : 0);
 
-                    new Add_Lands(LandBuildingActivity.this).add(s,tv_name, title, number, edit2, edit3, edit4, edit5, edit6,
+                    new Add_Lands(LandBuildingActivity.this).add(s, tv_name, title, number, edit2, edit3, edit4, edit5, edit6,
                             edit7, edit7, edit8, edit9, edit10, edit11, spin1, spin2, spin3, spin4, spin5, spin6);
                 }
             }
@@ -383,7 +386,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     private void spinner1() {
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
 
         adapter.add("เลือกเอกสารสิทธิ์");
         adapter.add("โฉนดที่ดิน");
@@ -397,7 +400,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     private void spinner2() {
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
 
         adapter.add("เลือกประเภท");
         adapter.add("ไร่-งาน-ตารางวา");
@@ -529,7 +532,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     private void spinner5() {
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
 
         adapter.add("เลือกประเภทกรรมสิทธิ์");
         adapter.add("กรรมสิทธิ์สมบูรณ์(ซื้อขายขาด)");
@@ -542,7 +545,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     private void spinner6() {
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
 
         adapter.add("เลือกการเบราซ์");
         adapter.add("เบราซ์เพื่อส่งเอกสาร");

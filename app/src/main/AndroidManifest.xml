@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".utility.Splash">
+        <!--<activity android:name=".utility.Splash">-->
+        <activity android:name=".lands.LandBuildingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,9 +55,9 @@
             android:name=".SignInActivity"
             android:screenOrientation="portrait" />
         <!-- หน้าที่ดิน -->
-        <activity
-            android:name=".lands.LandBuildingActivity"
-            android:screenOrientation="portrait" />
+        <!--<activity-->
+            <!--android:name=".lands.LandBuildingActivity"-->
+            <!--android:screenOrientation="portrait" />-->
         <!-- หน้าที่ดิน+อาคาร -->
         <!-- หน้าห้องชุด -->
         <activity
@@ -88,6 +89,9 @@
         <!-- หน้าที่ดินพร้อมสิ่งปลูกสร้าง(สัญญาเช่า) -->
         <!-- หน้าที่ดินเปล่า (สัญญาเช่า) -->
         <activity android:name=".MyStatusActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".fragment.Calulation"
             android:screenOrientation="portrait" />
     </application>
 
