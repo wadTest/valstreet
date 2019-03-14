@@ -309,8 +309,8 @@ public class LandBuildingActivity extends AppCompatActivity {
                 Boolean checkbox6 = check6.isChecked();
 
                 //BASIC CLIENT SIDE VALIDATION
-                if ((editText1.length() < 1 || editText2.length() < 1 || editText3.length() < 1 || editText4.length() < 1 || editText5.length() < 1
-                        || editText6.length() < 1 || editText7.length() < 1 || editText8.length() < 1 || editText9.length() < 1 || editText10.length() < 1 || editText11.length() < 1
+                if ((editText1.length() < 1 || editText2.length() < 1 || editText3.length() < 1  || editText5.length() < 1
+                        || editText6.length() < 1 || editText7.length() < 1 || editText8.length() < 1
                         || spinner1.length() < 1 || spinner2.length() < 1 || spinner3.length() < 1 || spinner4.length() < 1 || spinner5.length() < 1 || spinner6.length() < 1)) {
 
                     Toast.makeText(LandBuildingActivity.this, "กรุณากรอกทุกช่อง", Toast.LENGTH_SHORT).show();
