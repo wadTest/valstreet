@@ -46,7 +46,9 @@ public class Add_Lands  {
             } else {
                 AndroidNetworking.post(DATA_INSERT_URL)
                         .addBodyParameter("action", "save")
-                        .addBodyParameter("convert_id", s.getEd1())// รับ EditText
+                        .addBodyParameter("name_login", s.getTw1())// รับ TextView
+                        .addBodyParameter("title", s.gettTitle())// รับ TextView
+                        .addBodyParameter("convert_id", s.getTnumber())// รับ TextView
                         .addBodyParameter("land_no", s.getEd2())// รับ EditText
                         .addBodyParameter("land_size", s.getEd3())// รับ EditText
                         .addBodyParameter("total_all", s.getEd4())// รับ EditText

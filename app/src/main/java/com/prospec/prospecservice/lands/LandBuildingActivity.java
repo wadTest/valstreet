@@ -53,18 +53,21 @@ import java.util.HashMap;
 public class LandBuildingActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
-    private TextInputEditText edit1, edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
+    private TextInputEditText edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
     private Spinner spin1, spin2, spin3, spin4, spin5, spin6;
     private CheckBox check1, check2, check3, check4, check6;
     private Button Add;
 
+//    Add number
+   private int minteger = 1;
+
     //    ตัวแปร + - จำนวนแปลง
-    private LinearLayout parentLinearLayout;
+//    private LinearLayout parentLinearLayout;
     //    ตัวแปรในส่วนของการทำให้ โชว์ ซ้อน
     private CardView card1, card2;
     //    ส่วนของการget ชื่อ มาแสดง
-    private TextView tv_name;
-    private String nameLogin;
+    private TextView tv_name, title, number;
+    private String nameLogin, titleLogin;
 
 
     @Override
@@ -73,16 +76,15 @@ public class LandBuildingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_land_building);
 
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
+        titleLogin = sharedPreferences.getString("titleLogin", "");
         nameLogin = sharedPreferences.getString("NameLogin", "");
-        Log.d("share name", "nameLogin Receive in MenuActivity ==> " + nameLogin);
+        Log.d("share title, name", "title and nameLogin Receive in MenuActivity ==> " + nameLogin);
 
         this.toolbar();
 
         this.getevent();
-
-        this.addremove();
-
-        this.address();
+//
+//        this.address();
 
         savedata();
 
@@ -94,6 +96,22 @@ public class LandBuildingActivity extends AppCompatActivity {
         this.spinner5();
         this.spinner6();
     }//Method
+
+//    ส่วนของการกด บวก ลบ
+    public void increaseInteger(View view) {
+        minteger = minteger + 1;
+        display(minteger);
+
+    }public void decreaseInteger(View view) {
+        minteger = minteger - 1;
+        display(minteger);
+    }
+
+    private void display(int number) {
+        TextView displayInteger = (TextView) findViewById(
+                R.id.number);
+        displayInteger.setText("" + number);
+    }
 
 
     private void toolbar() {
@@ -112,32 +130,32 @@ public class LandBuildingActivity extends AppCompatActivity {
         });
     }//end toolbar
 
-    //    ส่วนของการกดบวก ลบ
-    private void addremove() {
-        parentLinearLayout = (LinearLayout) findViewById(R.id.parent_linear_layout);
-    }
-
-    //    เมื่อกดบวก
-    public void onAddField(View v) {
-        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        final View rowView = inflater.inflate(R.layout.field, null);
-        // เป็นการเพิ่มแถวใหม่ก่อนปุ่มเพิ่มฟิลด์
-        parentLinearLayout.addView(rowView, parentLinearLayout.getChildCount() - 1);
-    }
-
-    //    เมื่อกดลบ
-    public void onDelete(View v) {
-        parentLinearLayout.removeView((View) v.getParent());
-    }
-
-    //    get DB. sql มาแสดงในส่วนของที่อยู่
-    private void address() {
-
-        // Permission StrictMode
-        if (android.os.Build.VERSION.SDK_INT > 9) {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }
+//    //    ส่วนของการกดบวก ลบ
+//    private void addremove() {
+//        parentLinearLayout = (LinearLayout) findViewById(R.id.parent_linear_layout);
+//    }
+//
+//    //    เมื่อกดบวก
+//    public void onAddField(View v) {
+//        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        final View rowView = inflater.inflate(R.layout.field, null);
+//        // เป็นการเพิ่มแถวใหม่ก่อนปุ่มเพิ่มฟิลด์
+//        parentLinearLayout.addView(rowView, parentLinearLayout.getChildCount() - 1);
+//    }
+//
+//    //    เมื่อกดลบ
+//    public void onDelete(View v) {
+//        parentLinearLayout.removeView((View) v.getParent());
+//    }
+//
+//    //    get DB. sql มาแสดงในส่วนของที่อยู่
+//    private void address() {
+//
+//        // Permission StrictMode
+//        if (android.os.Build.VERSION.SDK_INT > 9) {
+//            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+//            StrictMode.setThreadPolicy(policy);
+//        }
 
 //        getevent autoAddress (AutoComplete)
 //        final AutoCompleteTextView autoAddress = (AutoCompleteTextView) findViewById(R.id.address);
@@ -204,11 +222,11 @@ public class LandBuildingActivity extends AppCompatActivity {
 //
 //        return str.toString();
 
-    }
+//    }
 
     private void getevent() {
 //        กรอกข้อมูล
-        edit1 = (TextInputEditText) findViewById(R.id.editT1);
+        number = (TextView) findViewById(R.id.number);
         edit2 = (TextInputEditText) findViewById(R.id.editT2);
         edit3 = (TextInputEditText) findViewById(R.id.editT3);
         edit4 = (TextInputEditText) findViewById(R.id.editT4);
@@ -234,8 +252,12 @@ public class LandBuildingActivity extends AppCompatActivity {
 
         card1 = (CardView) findViewById(R.id.card1);
         card2 = (CardView) findViewById(R.id.card2);
+//        ชื่อคนที่login
         tv_name = (TextView) findViewById(R.id.tv_name);
-        tv_name.setText("ชื่อก่อนหน้า : " + nameLogin.trim());
+        tv_name.setText(nameLogin.trim());
+//        title TB :uers_app_crm
+        title = (TextView) findViewById(R.id.title);
+        title.setText(titleLogin.trim());
     }//end get event
 
 
@@ -264,6 +286,7 @@ public class LandBuildingActivity extends AppCompatActivity {
     }//end ไม่ทราบชื่อบุคคลอื่น
 
     public void checkboxMenu1(View view) {
+
         boolean checked = ((CheckBox) view).isChecked();
         switch (view.getId()) {
             case R.id.checkBox4:
@@ -283,7 +306,10 @@ public class LandBuildingActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //GET VALUES
-                String editText1 = edit1.getText().toString().trim();
+                String text = tv_name.getText().toString();
+                String textTitle = title.getText().toString();
+                String tnumber = number.getText().toString().trim();
+
                 String editText2 = edit2.getText().toString().trim();
                 String editText3 = edit3.getText().toString().trim();
                 String editText4 = edit4.getText().toString().trim();
@@ -308,10 +334,12 @@ public class LandBuildingActivity extends AppCompatActivity {
                 Boolean checkbox4 = check4.isChecked();
                 Boolean checkbox6 = check6.isChecked();
 
+
                 //BASIC CLIENT SIDE VALIDATION
-                if ((editText1.length() < 1 || editText2.length() < 1 || editText3.length() < 1  || editText5.length() < 1
+                if ((editText2.length() < 1 || editText3.length() < 1  || editText5.length() < 1
                         || editText6.length() < 1 || editText7.length() < 1 || editText8.length() < 1
-                        || spinner1.length() < 1 || spinner2.length() < 1 || spinner3.length() < 1 || spinner4.length() < 1 || spinner5.length() < 1 || spinner6.length() < 1)) {
+                        || spinner1.length() < 1 || spinner2.length() < 1 || spinner3.length() < 1 || spinner4.length() < 1
+                        || spinner5.length() < 1 || spinner6.length() < 1)) {
 
                     MyAlert myAlert = new MyAlert(LandBuildingActivity.this, "มีช่องว่าง", "กรุณากรอกข้อมูลในช่องว่าง");
                     myAlert.myDialog();
@@ -320,7 +348,9 @@ public class LandBuildingActivity extends AppCompatActivity {
 
                     //SAVE
                     Lands s = new Lands();
-                    s.setEd1(editText1);
+                    s.setTw1(text);
+                    s.settTitle(textTitle);
+                    s.setTnumber(tnumber);
                     s.setEd2(editText2);
                     s.setEd3(editText3);
                     s.setEd4(editText4);
@@ -343,7 +373,7 @@ public class LandBuildingActivity extends AppCompatActivity {
                     s.setCb4(checkbox4 ? 1 : 0);
                     s.setCb6(checkbox6 ? 1 : 0);
 
-                    new Add_Lands(LandBuildingActivity.this).add(s,edit1, edit2, edit3, edit4, edit5, edit6,
+                    new Add_Lands(LandBuildingActivity.this).add(s,tv_name, title, number, edit2, edit3, edit4, edit5, edit6,
                             edit7, edit7, edit8, edit9, edit10, edit11, spin1, spin2, spin3, spin4, spin5, spin6);
                 }
             }

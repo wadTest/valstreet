@@ -41,16 +41,13 @@
                     android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main" />
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/editT1"
+                <TextView
+                    android:id="@+id/number"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="25dp"
                     android:layout_marginLeft="3dp"
                     android:background="@drawable/b_edittext"
-                    android:enabled="true"
-                    android:focusable="true"
-                    android:hint="กรอกรข้อมูล"
-                    android:inputType="number"
+                    android:text="1"
                     android:textAlignment="center"
                     android:textSize="@dimen/size_main" />
             </LinearLayout>
@@ -172,15 +169,17 @@
                             android:textSize="@dimen/size_main" />
 
                         <ImageView
-                            android:id="@+id/add_field_button"
+                            android:id="@+id/increase"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp"
                             android:layout_marginBottom="5dp"
-                            android:onClick="onAddField"
+                            android:onClick="increaseInteger"
                             android:paddingLeft="5dp"
                             android:src="@mipmap/add" />
+
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -595,9 +594,19 @@
                 android:textSize="16sp"
                 android:visibility="gone" />
 
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/b_edittext"
+                android:textColor="@color/colorBack"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
 
             <LinearLayout
-                android:id="@+id/LinearTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -645,13 +654,13 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_marginTop="5dp"
+                android:visibility="gone"
                 app:cardCornerRadius="7dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"

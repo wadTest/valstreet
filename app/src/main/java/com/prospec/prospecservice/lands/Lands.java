@@ -4,6 +4,7 @@ package com.prospec.prospecservice.lands;
 public class Lands {
     //    ประกาศตัวแปร
     private int id;
+    private String tw1, tTitle, tnumber;
     private String ed1, ed2, ed3, ed4, ed5, ed6, ed7, ed8, ed9, ed10, ed11;
     private String sp1, sp2, sp3, sp4, sp5, sp6;
     private int cb1, cb2, cb3, cb4, cb6;
@@ -17,12 +18,28 @@ public class Lands {
         this.id = id;
     }
 
-    public String getEd1() {
-        return ed1;
+    public String getTw1() {
+        return tw1;
     }
 
-    public void setEd1(String ed1) {
-        this.ed1 = ed1;
+    public void setTw1(String tw1) {
+        this.tw1 = tw1;
+    }
+
+    public String gettTitle() {
+        return tTitle;
+    }
+
+    public void settTitle(String tTitle) {
+        this.tTitle= tTitle;
+    }
+
+    public String getTnumber() {
+        return tnumber;
+    }
+
+    public void setTnumber(String tnumber) {
+        this.tnumber = tnumber;
     }
 
     public String getEd2() {

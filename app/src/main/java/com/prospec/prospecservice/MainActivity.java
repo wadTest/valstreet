@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
     //    แสดงข้อความต้อนรับ
     Dialog myDialog;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,8 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 passwordString = et_password.getText().toString().trim();
 
                 if (uerString.equals("") || passwordString.equals("")) {
-                    MyAlert myAlert = new MyAlert(MainActivity.this, "มีช่องว่าง",
-                            "กรุณากรอกข้อมูลในช่องว่าง");
+                    MyAlert myAlert = new MyAlert(MainActivity.this, "มีช่องว่าง", "กรุณากรอกข้อมูลในช่องว่าง");
                     myAlert.myDialog();
                 } else {
 
@@ -131,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
             String s = synUser.get();
             Log.d("20JanV1", "s From Json user_app_crm ==> " + s);
             String nameLogin = "";
+            String titleLogin ="";
             JSONArray jsonArray = new JSONArray(s);
 //            วบ loop
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -140,8 +139,9 @@ public class MainActivity extends AppCompatActivity {
 //                    ให้เอาค่าของ aBoolean มีค่า = false
                     aBoolean = false;
                     truePassString = jsonObject.getString("password");
+                    titleLogin = jsonObject.getString("title");
                     nameLogin = jsonObject.getString("name");
-                    Log.d("20JanV1", "nameLogin ==> " + nameLogin);
+                    Log.d("check", "titleLogin nameLogin  ==> " + titleLogin + nameLogin );
                 }
             }//for
 
@@ -158,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
 
                 SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("titleLogin", titleLogin);
                 editor.putString("NameLogin", nameLogin);
                 editor.putString("Logout", "false");
                 editor.commit();
