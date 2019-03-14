@@ -551,57 +551,50 @@
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
-
-                <!--android:onClick="checkboxName"-->
                 <CheckBox
                     android:id="@+id/checkBox1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
+                    android:onClick="checkboxName"
                     android:text="ตรงตามชื่อก่อนหน้า"
                     android:textSize="@dimen/size_main" />
 
-                <!--android:onClick="checkboxMenu"-->
+
                 <CheckBox
                     android:id="@+id/checkBox2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
+                    android:onClick="checkboxMenu"
                     android:text="ชื่อบุคคลอื่น"
                     android:textSize="@dimen/size_main" />
 
-                <!--android:onClick="checkboxMenu"-->
+
                 <CheckBox
                     android:id="@+id/checkBox6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
+                    android:onClick="checkboxMenu"
                     android:text="ไม่ทราบ"
                     android:textSize="@dimen/size_main" />
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/LinearOne"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
 
-                <!--ชื่อที่ดิึงมาจากหน้าลงทะเบียน-->
-                <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/b_edittext"
-                    android:textColor="@color/colorBack"
-                    android:textSize="16sp" />
-            </LinearLayout>
+            <!--ชื่อที่ดิึงมาจากหน้าลงทะเบียน-->
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/b_edittext"
+                android:textColor="@color/colorBack"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
 
             <LinearLayout
                 android:id="@+id/LinearTwo"
@@ -615,6 +608,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_marginTop="5dp"
+                    android:visibility="gone"
                     app:cardCornerRadius="7dp">
 
                     <LinearLayout
@@ -632,12 +626,12 @@
                             android:text="บุคคลธรรมดา"
                             android:textSize="@dimen/size_main" />
 
-                        <!--android:onClick="checkboxMenu1"-->
                         <CheckBox
                             android:id="@+id/checkBox4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:onClick="checkboxMenu1"
                             android:text="นิติบุคคล"
                             android:textSize="@dimen/size_main" />
 
@@ -656,7 +650,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"

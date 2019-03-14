@@ -27,6 +27,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.prospec.prospecservice.CustomDialogActivity;
 import com.prospec.prospecservice.R;
 import com.prospec.prospecservice.utility.MyAlert;
 
@@ -65,7 +66,6 @@ public class LandBuildingActivity extends AppCompatActivity {
     private TextView tv_name;
     private String nameLogin;
 
-    private View LinearOne, LinearTwo, LinearThree,  LinearFour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +74,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         nameLogin = sharedPreferences.getString("NameLogin", "");
-        Log.d("20JanV1", "nameLogin Receive in MenuActivity ==> " + nameLogin);
+        Log.d("share name", "nameLogin Receive in MenuActivity ==> " + nameLogin);
 
         this.toolbar();
 
@@ -242,7 +242,7 @@ public class LandBuildingActivity extends AppCompatActivity {
     public void checkboxName(View view) {
         boolean checked = ((CheckBox) view).isChecked();
         switch (view.getId()) {
-            case R.id.checkbox1:
+            case R.id.checkBox1:
                 if (!checked)
                     tv_name.setVisibility(View.GONE);
                 else
@@ -254,7 +254,7 @@ public class LandBuildingActivity extends AppCompatActivity {
     public void checkboxMenu(View view) {
         boolean checked = ((CheckBox) view).isChecked();
         switch (view.getId()) {
-            case R.id.checkbox2:
+            case R.id.checkBox2:
                 if (!checked)
                     card1.setVisibility(View.GONE);
                 else
@@ -266,7 +266,7 @@ public class LandBuildingActivity extends AppCompatActivity {
     public void checkboxMenu1(View view) {
         boolean checked = ((CheckBox) view).isChecked();
         switch (view.getId()) {
-            case R.id.checkbox4:
+            case R.id.checkBox4:
                 if (!checked)
                     card2.setVisibility(View.GONE);
                 else
@@ -313,7 +313,8 @@ public class LandBuildingActivity extends AppCompatActivity {
                         || editText6.length() < 1 || editText7.length() < 1 || editText8.length() < 1
                         || spinner1.length() < 1 || spinner2.length() < 1 || spinner3.length() < 1 || spinner4.length() < 1 || spinner5.length() < 1 || spinner6.length() < 1)) {
 
-                    Toast.makeText(LandBuildingActivity.this, "กรุณากรอกทุกช่อง", Toast.LENGTH_SHORT).show();
+                    MyAlert myAlert = new MyAlert(LandBuildingActivity.this, "มีช่องว่าง", "กรุณากรอกข้อมูลในช่องว่าง");
+                    myAlert.myDialog();
 
                 } else {
 

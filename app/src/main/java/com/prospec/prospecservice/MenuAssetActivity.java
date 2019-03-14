@@ -10,7 +10,6 @@ import android.widget.Button;
 import com.prospec.prospecservice.building.BuildingActivity;
 import com.prospec.prospecservice.condo.RoomActivity;
 import com.prospec.prospecservice.lands.LandBuildingActivity;
-import com.prospec.prospecservice.lands.LandsFragment;
 
 //class กรอกข้อมูลแบบระเอียด เมนูให้เลือกทั้ง 3 ปุ่ม
 public class MenuAssetActivity extends AppCompatActivity {
