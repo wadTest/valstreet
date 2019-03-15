@@ -21,7 +21,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".utility.Splash">
+        <!--<activity android:name=".utility.Splash">-->
+        <activity android:name=".condo.RoomActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -60,9 +61,9 @@
             android:screenOrientation="portrait" />
         <!-- หน้าที่ดิน+อาคาร -->
         <!-- หน้าห้องชุด -->
-        <activity
-            android:name=".condo.RoomActivity"
-            android:screenOrientation="portrait" />
+        <!--<activity-->
+            <!--android:name=".condo.RoomActivity"-->
+            <!--android:screenOrientation="portrait" />-->
         <!-- หน้าแสดงสถานะ -->
         <activity
             android:name=".StatusActivity"
@@ -79,7 +80,7 @@
         <activity
             android:name=".CustomDialogActivity"
             android:screenOrientation="portrait" />
-        <!--<activity-->
+        <activity
             android:name=".building.BuildingActivity"
             android:screenOrientation="portrait" />
 
