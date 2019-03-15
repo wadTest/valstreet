@@ -32,6 +32,7 @@ public class Add_Lands  {
 
     //    บันทึก/รับ URL ใหม่
         private static final String DATA_INSERT_URL = "http://119.59.103.121/app_mobile/assessment/lands.php";
+//    private static final String DATA_INSERT_URL = "http://119.59.103.121/app_mobile/assessment/lands%20-%20Copy.php";
 
         //INSTANCE FIELDS
         private final Context c;

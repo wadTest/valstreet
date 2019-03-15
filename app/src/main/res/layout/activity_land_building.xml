@@ -42,16 +42,39 @@
                     android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main" />
 
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:onClick="decreaseInteger"
+                    android:paddingLeft="5dp"
+                    android:src="@mipmap/minus" />
+
+
                 <TextView
                     android:id="@+id/number"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="3dp"
                     android:background="@drawable/b_edittext"
                     android:text="1"
-                    android:textColor="@color/colorBack"
                     android:textAlignment="center"
+                    android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main" />
+
+                <ImageView
+                    android:id="@+id/increase1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:onClick="increaseInteger"
+                    android:paddingLeft="5dp"
+                    android:src="@mipmap/add" />
             </LinearLayout>
 
             <LinearLayout
@@ -116,7 +139,8 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Line1"
                         android:background="#eceff1"
                         android:orientation="horizontal">
 
@@ -165,37 +189,38 @@
                             android:enabled="true"
                             android:focusable="true"
                             android:hint="เนื้อที่ดิน"
-                            android:inputType="text"
+                            android:inputType="number"
                             android:textAlignment="center"
                             android:textSize="@dimen/size_main" />
 
-                        <ImageView
-                            android:id="@+id/increase"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:onClick="increaseInteger"
-                            android:paddingLeft="5dp"
-                            android:src="@mipmap/add" />
+                        <!--<ImageView-->
+                            <!--android:id="@+id/share1"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--android:layout_marginRight="5dp"-->
+                            <!--android:layout_marginBottom="5dp"-->
+                            <!--android:paddingLeft="5dp"-->
+                            <!--android:src="@android:drawable/ic_menu_save" />-->
                     </LinearLayout>
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Line2"
                         android:background="#eceff1"
-                        android:id="@+id/Line1"
                         android:orientation="horizontal">
 
                         <android.support.v7.widget.CardView
                             android:layout_width="wrap_content"
-                            android:layout_height="35dp">
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp">
 
+                            <!--android:entries="@array/ekasan"-->
                             <!--เอกสารสิทธิ์-->
                             <Spinner
-                                android:id="@+id/sp1"
+                                android:id="@+id/sp2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
@@ -206,10 +231,11 @@
 
 
                         <android.support.design.widget.TextInputEditText
-                            android:id="@+id/ed1"
+                            android:id="@+id/ed2"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
                             android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"
                             android:layout_weight="1"
                             android:background="@drawable/b_edittext"
                             android:enabled="true"
@@ -220,33 +246,233 @@
                             android:textSize="@dimen/size_main" />
 
                         <android.support.design.widget.TextInputEditText
-                            android:id="@+id/ed01"
+                            android:id="@+id/ed02"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
                             android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"
                             android:layout_weight="1"
                             android:background="@drawable/b_edittext"
                             android:enabled="true"
                             android:focusable="true"
                             android:hint="เนื้อที่ดิน"
-                            android:inputType="text"
+                            android:inputType="number"
                             android:textAlignment="center"
                             android:textSize="@dimen/size_main" />
 
-                        <ImageView
-                            android:id="@+id/increase"
+                        <!--<ImageView-->
+                            <!--android:id="@+id/share2"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--android:layout_marginRight="5dp"-->
+                            <!--android:layout_marginBottom="5dp"-->
+                            <!--android:paddingLeft="5dp"-->
+                            <!--android:src="@android:drawable/ic_menu_save" />-->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Line3"
+                        android:background="#eceff1"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.CardView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:onClick="decreaseInteger"
-                            android:paddingLeft="5dp"
-                            android:src="@mipmap/minus" />
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp">
+
+                            <!--android:entries="@array/ekasan"-->
+                            <!--เอกสารสิทธิ์-->
+                            <Spinner
+                                android:id="@+id/sp3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:inputType="text"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_main" />
+                        </android.support.v7.widget.CardView>
+
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/ed3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/b_edittext"
+                            android:enabled="true"
+                            android:focusable="true"
+                            android:hint="เลขที่"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/size_main" />
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/ed03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/b_edittext"
+                            android:enabled="true"
+                            android:focusable="true"
+                            android:hint="เนื้อที่ดิน"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/size_main" />
+
+                        <!--<ImageView-->
+                            <!--android:id="@+id/share3"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--android:layout_marginRight="5dp"-->
+                            <!--android:layout_marginBottom="5dp"-->
+                            <!--android:paddingLeft="5dp"-->
+                            <!--android:src="@android:drawable/ic_menu_save" />-->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Line4"
+                        android:background="#eceff1"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp">
+
+                            <!--android:entries="@array/ekasan"-->
+                            <!--เอกสารสิทธิ์-->
+                            <Spinner
+                                android:id="@+id/sp4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:inputType="text"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_main" />
+                        </android.support.v7.widget.CardView>
+
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/ed4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/b_edittext"
+                            android:enabled="true"
+                            android:focusable="true"
+                            android:hint="เลขที่"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/size_main" />
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/ed04"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/b_edittext"
+                            android:enabled="true"
+                            android:focusable="true"
+                            android:hint="เนื้อที่ดิน"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/size_main" />
+
+                        <!--<ImageView-->
+                            <!--android:id="@+id/share4"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--android:layout_marginRight="5dp"-->
+                            <!--android:layout_marginBottom="5dp"-->
+                            <!--android:paddingLeft="5dp"-->
+                            <!--android:src="@android:drawable/ic_menu_save" />-->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Line5"
+                        android:background="#eceff1"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp">
+
+                            <!--android:entries="@array/ekasan"-->
+                            <!--เอกสารสิทธิ์-->
+                            <Spinner
+                                android:id="@+id/sp5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:inputType="text"
+                                android:textAlignment="center"
+                                android:textSize="@dimen/size_main" />
+                        </android.support.v7.widget.CardView>
+
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/ed5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/b_edittext"
+                            android:enabled="true"
+                            android:focusable="true"
+                            android:hint="เลขที่"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/size_main" />
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/ed05"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/b_edittext"
+                            android:enabled="true"
+                            android:focusable="true"
+                            android:hint="เนื้อที่ดิน"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/size_main" />
+
+                        <!--<ImageView-->
+                            <!--android:id="@+id/share5"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_marginTop="5dp"-->
+                            <!--android:layout_marginRight="5dp"-->
+                            <!--android:layout_marginBottom="5dp"-->
+                            <!--android:paddingLeft="5dp"-->
+                            <!--android:src="@android:drawable/ic_menu_save" />-->
                     </LinearLayout>
                 </LinearLayout>
-
-
 
                 <!--รวมเนื้อที่ดิน ไร่-งาน-ตารางวา-->
                 <LinearLayout
@@ -825,7 +1051,7 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="2.5">
 
                     <!--android:entries="@array/ekasan"-->
@@ -840,35 +1066,33 @@
                         android:textColorHint="@color/edit_textok" />
                 </android.support.v7.widget.CardView>
 
-                <Button
-                    android:id="@+id/selectImg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/background_button"
-                    android:text="image"
-                    android:textColor="@color/colorBack"
-                    android:textSize="@dimen/size_main"
-                    android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/uploadImg"
+                    android:id="@+id/buttonSelect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/backgroup_b1"
+                    android:text="Image" />
+
+                <Button
+                    android:id="@+id/buttonUpload"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_button"
-                    android:text="up"
-                    android:textColor="@color/colorBack"
-                    android:textSize="@dimen/size_main"
-                    android:textStyle="bold" />
+                    android:text="Up"
+                    android:visibility="gone"
+                    android:textColor="#FFF"
+                   />
+
             </LinearLayout>
+
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_below="@+id/uploadImg"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center_horizontal"
-                android:visibility="gone" />
+                android:layout_width="fill_parent"
+                android:layout_height="270dp" />
+
+
 
             <Button
                 android:id="@+id/buttonSave"

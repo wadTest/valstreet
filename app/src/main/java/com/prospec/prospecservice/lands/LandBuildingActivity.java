@@ -1,14 +1,27 @@
 package com.prospec.prospecservice.lands;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.StrictMode;
+import android.provider.MediaStore;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,6 +33,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.SimpleAdapter;
@@ -43,11 +57,24 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+
+import javax.net.ssl.HttpsURLConnection;
+
+import static android.view.View.VISIBLE;
 
 //class ที่ดินเปล่า
 public class LandBuildingActivity extends AppCompatActivity {
@@ -55,6 +82,7 @@ public class LandBuildingActivity extends AppCompatActivity {
     //    ประกาศตัวแปร
     private TextInputEditText edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
     private Spinner spin1, spin2, spin3, spin4, spin5, spin6;
+    private Spinner sp2, sp3, sp4, sp5;
     private CheckBox check1, check2, check3, check4, check6;
     private Button Add;
 
@@ -62,13 +90,36 @@ public class LandBuildingActivity extends AppCompatActivity {
     private int minteger = 1;
 
     //    ตัวแปร + - จำนวนแปลง
-//    private LinearLayout Line1;
+    private LinearLayout Line1;
+    private ImageView increase1;
+
     //    ตัวแปรในส่วนของการทำให้ โชว์ ซ้อน
     private CardView card1, card2;
     //    ส่วนของการget ชื่อ มาแสดง
     private TextView tv_name, title, number;
     private String nameLogin, titleLogin;
 
+    //    ส่วนชองรูปภาพ
+    Button GetImageFromGalleryButton, UploadImageOnServerButton;
+    ImageView ShowSelectedImage;
+    EditText imageName;
+    Bitmap FixBitmap;
+    String ImageTag = "urlImage";
+    String ImageName = "idocument";
+    ProgressDialog progressDialog;
+    ByteArrayOutputStream byteArrayOutputStream;
+    byte[] byteArray;
+    String ConvertImage;
+    String GetImageNameFromEditText;
+    HttpURLConnection httpURLConnection;
+    URL url;
+    OutputStream outputStream;
+    BufferedWriter bufferedWriter;
+    int RC;
+    BufferedReader bufferedReader;
+    StringBuilder stringBuilder;
+    boolean check = true;
+    private int GALLERY = 1, CAMERA = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +147,398 @@ public class LandBuildingActivity extends AppCompatActivity {
         this.spinner5();
         this.spinner6();
 
+        this.sp02();
+        this.sp03();
+        this.sp04();
+        this.sp05();
+        
+//        ส่วนของรูปภาพ
+        Image();
+
+//        auto tatal
+        calculation();
     }//Method
+
+    private void calculation() {
+        final EditText arrayEditText = findViewById(R.id.editT3);
+        final EditText showEditText = findViewById(R.id.ed02);
+        final EditText all = findViewById(R.id.ed03);
+        final EditText addFo = findViewById(R.id.ed04);
+        final EditText addFi = findViewById(R.id.ed05);
+        final EditText thbEditText = findViewById(R.id.editT4);
+        final String[] strings = new String[]{"0", "0", "0", "0", "0"};
+
+        //        ช่องที่ 1
+        arrayEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                strings[0] = arrayEditText.getText().toString();
+                if (strings[0].isEmpty()) {
+                    strings[0] = "0";
+                }
+//                sum
+                calculate(strings, thbEditText);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+//        ช่องที่ 2
+        showEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                strings[1] = showEditText.getText().toString();
+                if (strings[1].isEmpty()) {
+                    strings[1] = "0";
+                }
+//                sum
+                calculate(strings, thbEditText);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+//        ช่องที่ 3
+        all.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                strings[2] = all.getText().toString();
+                if (strings[2].isEmpty()) {
+                    strings[2] = "0";
+                }
+//                sum
+                calculate(strings, thbEditText);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        //        ช่องที่ 4
+        addFo.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                strings[3] = addFo.getText().toString();
+                if (strings[3].isEmpty()) {
+                    strings[3] = "0";
+                }
+//                sum
+                calculate(strings, thbEditText);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        //        ช่องที่ 5
+        addFi.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                strings[3] = addFi.getText().toString();
+                if (strings[4].isEmpty()) {
+                    strings[4] = "0";
+                }
+//                sum
+                calculate(strings, thbEditText);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+    }
+
+    private void calculate(String[] strings, EditText showEditText) {
+        int arrayInt = Integer.parseInt(strings[0]);
+        int thbInt = Integer.parseInt(strings[1]);
+        int all = Integer.parseInt(strings[2]);
+        int addFo = Integer.parseInt(strings[3]);
+        int addFi = Integer.parseInt(strings[4]);
+        int answerInt = arrayInt + thbInt + all + addFo + addFi;
+        showEditText.setText(Integer.toString(answerInt));
+    }
+
+    private void Image() {
+        GetImageFromGalleryButton = (Button)findViewById(R.id.buttonSelect);
+        UploadImageOnServerButton = (Button)findViewById(R.id.buttonUpload);
+        ShowSelectedImage = (ImageView)findViewById(R.id.imageView);
+
+        byteArrayOutputStream = new ByteArrayOutputStream();
+
+        GetImageFromGalleryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                showPictureDialog();
+            }
+        });
+
+
+        UploadImageOnServerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                GetImageNameFromEditText = imageName.getText().toString();
+
+                UploadImageToServer();
+
+            }
+        });
+
+        if (ContextCompat.checkSelfPermission(LandBuildingActivity.this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{android.Manifest.permission.CAMERA},
+                        5);
+            }
+        }
+    }
+
+    private void showPictureDialog(){
+        android.support.v7.app.AlertDialog.Builder pictureDialog = new android.support.v7.app.AlertDialog.Builder(this);
+        pictureDialog.setTitle("Select Action");
+        String[] pictureDialogItems = {
+                "Photo Gallery",
+                "Camera" };
+        pictureDialog.setItems(pictureDialogItems,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case 0:
+                                choosePhotoFromGallary();
+                                break;
+                            case 1:
+                                takePhotoFromCamera();
+                                break;
+                        }
+                    }
+                });
+        pictureDialog.show();
+    }
+    public void choosePhotoFromGallary() {
+        Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+        startActivityForResult(galleryIntent, GALLERY);
+    }
+
+    private void takePhotoFromCamera() {
+        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, CAMERA);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == this.RESULT_CANCELED) {
+            return;
+        }
+        if (requestCode == GALLERY) {
+            if (data != null) {
+                Uri contentURI = data.getData();
+                try {
+                    FixBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
+                    // String path = saveImage(bitmap);
+                    //Toast.makeText(MainActivity.this, "Image Saved!", Toast.LENGTH_SHORT).show();
+                    ShowSelectedImage.setImageBitmap(FixBitmap);
+                    UploadImageOnServerButton.setVisibility(View.VISIBLE);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(LandBuildingActivity.this, "ล้มเหลว!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        } else if (requestCode == CAMERA) {
+            FixBitmap = (Bitmap) data.getExtras().get("data");
+            ShowSelectedImage.setImageBitmap(FixBitmap);
+            UploadImageOnServerButton.setVisibility(View.VISIBLE);
+            //  saveImage(thumbnail);
+            //Toast.makeText(ShadiRegistrationPart5.this, "Image Saved!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    public void UploadImageToServer(){
+
+        FixBitmap.compress(Bitmap.CompressFormat.JPEG, 40, byteArrayOutputStream);
+
+        byteArray = byteArrayOutputStream.toByteArray();
+
+        ConvertImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
+
+        class AsyncTaskUploadClass extends AsyncTask<Void,Void,String> {
+
+            @Override
+            protected void onPreExecute() {
+
+                super.onPreExecute();
+
+                progressDialog = ProgressDialog.show(LandBuildingActivity.this,"กำลังอัพโหลดรูปภาพ","โปรดรอ",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(String string1) {
+
+                super.onPostExecute(string1);
+
+                progressDialog.dismiss();
+
+                Toast.makeText(LandBuildingActivity.this,string1,Toast.LENGTH_LONG).show();
+
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+
+                ImageProcessClass imageProcessClass = new ImageProcessClass();
+
+                HashMap<String,String> HashMapParams = new HashMap<String,String>();
+
+                HashMapParams.put(ImageTag, GetImageNameFromEditText);
+
+                HashMapParams.put(ImageName, ConvertImage);
+
+                String FinalData = imageProcessClass.ImageHttpRequest("http://119.59.103.121/app_mobile/assessment/lands.php", HashMapParams);
+
+                return FinalData;
+            }
+        }
+        AsyncTaskUploadClass AsyncTaskUploadClassOBJ = new AsyncTaskUploadClass();
+        AsyncTaskUploadClassOBJ.execute();
+    }
+
+    public class ImageProcessClass{
+
+        public String ImageHttpRequest(String requestURL,HashMap<String, String> PData) {
+
+            StringBuilder stringBuilder = new StringBuilder();
+
+            try {
+                url = new URL(requestURL);
+                httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setReadTimeout(20000);
+                httpURLConnection.setConnectTimeout(20000);
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoInput(true);
+                httpURLConnection.setDoOutput(true);
+                outputStream = httpURLConnection.getOutputStream();
+                bufferedWriter = new BufferedWriter(
+
+                        new OutputStreamWriter(outputStream, "UTF-8"));
+
+                bufferedWriter.write(bufferedWriterDataFN(PData));
+
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+
+                RC = httpURLConnection.getResponseCode();
+
+                if (RC == HttpsURLConnection.HTTP_OK) {
+
+                    bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+
+                    stringBuilder = new StringBuilder();
+
+                    String RC2;
+
+                    while ((RC2 = bufferedReader.readLine()) != null){
+
+                        stringBuilder.append(RC2);
+                    }
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return stringBuilder.toString();
+        }
+
+        private String bufferedWriterDataFN(HashMap<String, String> HashMapParams) throws UnsupportedEncodingException {
+
+            stringBuilder = new StringBuilder();
+
+            for (Map.Entry<String, String> KEY : HashMapParams.entrySet()) {
+                if (check)
+                    check = false;
+                else
+                    stringBuilder.append("&");
+
+                stringBuilder.append(URLEncoder.encode(KEY.getKey(), "UTF-8"));
+
+                stringBuilder.append("=");
+
+                stringBuilder.append(URLEncoder.encode(KEY.getValue(), "UTF-8"));
+            }
+
+            return stringBuilder.toString();
+        }
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 5) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Now user should be able to use camera
+
+            }
+            else {
+
+                Toast.makeText(LandBuildingActivity.this, "ไม่สามารถใช้กล้องถ่ายรูปได้โปรดให้เราใช้กล้องถ่ายรูป", Toast.LENGTH_LONG).show();
+
+            }
+        }
+    }
 
 
     //    ส่วนของการกด บวก ลบ
@@ -253,6 +695,11 @@ public class LandBuildingActivity extends AppCompatActivity {
         spin5 = (Spinner) findViewById(R.id.spinner5);
         spin6 = (Spinner) findViewById(R.id.spinner6);
 
+        sp2 = (Spinner) findViewById(R.id.sp2);
+        sp3 = (Spinner) findViewById(R.id.sp3);
+        sp4 = (Spinner) findViewById(R.id.sp4);
+        sp5 = (Spinner) findViewById(R.id.sp5);
+
         card1 = (CardView) findViewById(R.id.card1);
         card2 = (CardView) findViewById(R.id.card2);
 //        ชื่อคนที่login
@@ -261,6 +708,11 @@ public class LandBuildingActivity extends AppCompatActivity {
 //        title TB :uers_app_crm
         title = (TextView) findViewById(R.id.title);
         title.setText(titleLogin.trim());
+
+//        + -
+        increase1 = (ImageView) findViewById(R.id.increase1);
+        Line1 = (LinearLayout) findViewById(R.id.Line1);
+
     }//end get event
 
 
@@ -271,7 +723,7 @@ public class LandBuildingActivity extends AppCompatActivity {
                 if (!checked)
                     tv_name.setVisibility(View.GONE);
                 else
-                    tv_name.setVisibility(View.VISIBLE);
+                    tv_name.setVisibility(VISIBLE);
                 break;
         }
     }//end ไม่ทราบชื่อบุคคลอื่น
@@ -283,7 +735,7 @@ public class LandBuildingActivity extends AppCompatActivity {
                 if (!checked)
                     card1.setVisibility(View.GONE);
                 else
-                    card1.setVisibility(View.VISIBLE);
+                    card1.setVisibility(VISIBLE);
                 break;
         }
     }//end ไม่ทราบชื่อบุคคลอื่น
@@ -296,7 +748,7 @@ public class LandBuildingActivity extends AppCompatActivity {
                 if (!checked)
                     card2.setVisibility(View.GONE);
                 else
-                    card2.setVisibility(View.VISIBLE);
+                    card2.setVisibility(VISIBLE);
                 break;
         }
     }//end นิติบุคคล
@@ -330,6 +782,11 @@ public class LandBuildingActivity extends AppCompatActivity {
                 String spinner4 = spin4.getSelectedItem().toString();
                 String spinner5 = spin5.getSelectedItem().toString();
                 String spinner6 = spin6.getSelectedItem().toString();
+
+//                String sp02 = sp2.getSelectedItem().toString();
+//                String sp03 = sp3.getSelectedItem().toString();
+//                String sp04 = sp4.getSelectedItem().toString();
+//                String sp05 = sp5.getSelectedItem().toString();
 
                 Boolean checkbox1 = check1.isChecked();
                 Boolean checkbox2 = check2.isChecked();
@@ -403,7 +860,7 @@ public class LandBuildingActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
 
         adapter.add("เลือกประเภท");
-        adapter.add("ไร่-งาน-ตารางวา");
+//        adapter.add("ไร่-งาน-ตารางวา");
         adapter.add("ตารางวา");
         adapter.add("ตารางเมตร");
 
@@ -556,4 +1013,60 @@ public class LandBuildingActivity extends AppCompatActivity {
         spin6.setSelection(0);
     }
 
+//    ส่วนที่ +
+private void sp02() {
+
+    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
+
+    adapter.add("เลือกเอกสารสิทธิ์");
+    adapter.add("โฉนดที่ดิน");
+    adapter.add("นส.3ก");
+    adapter.add("นส.3");
+
+    sp2.setAdapter(adapter);
+    sp2.setSelection(0);
+
+}
+
+    private void sp03() {
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
+
+        adapter.add("เลือกเอกสารสิทธิ์");
+        adapter.add("โฉนดที่ดิน");
+        adapter.add("นส.3ก");
+        adapter.add("นส.3");
+
+        sp3.setAdapter(adapter);
+        sp3.setSelection(0);
+
+    }
+
+    private void sp04() {
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
+
+        adapter.add("เลือกเอกสารสิทธิ์");
+        adapter.add("โฉนดที่ดิน");
+        adapter.add("นส.3ก");
+        adapter.add("นส.3");
+
+        sp4.setAdapter(adapter);
+        sp4.setSelection(0);
+
+    }
+
+    private void sp05() {
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
+
+        adapter.add("เลือกเอกสารสิทธิ์");
+        adapter.add("โฉนดที่ดิน");
+        adapter.add("นส.3ก");
+        adapter.add("นส.3");
+
+        sp5.setAdapter(adapter);
+        sp5.setSelection(0);
+
+    }
 }//Main Class

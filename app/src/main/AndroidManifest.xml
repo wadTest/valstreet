@@ -13,6 +13,7 @@
    <!--เปิดกล้อง-->
     <uses-permission android:name="android.permission.CAMERA" />
 
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_app"
@@ -20,8 +21,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--<activity android:name=".utility.Splash">-->
-        <activity android:name=".lands.LandBuildingActivity">
+        <activity android:name=".utility.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,9 +55,9 @@
             android:name=".SignInActivity"
             android:screenOrientation="portrait" />
         <!-- หน้าที่ดิน -->
-        <!--<activity-->
-            <!--android:name=".lands.LandBuildingActivity"-->
-            <!--android:screenOrientation="portrait" />-->
+        <activity
+            android:name=".lands.LandBuildingActivity"
+            android:screenOrientation="portrait" />
         <!-- หน้าที่ดิน+อาคาร -->
         <!-- หน้าห้องชุด -->
         <activity
@@ -79,7 +79,7 @@
         <activity
             android:name=".CustomDialogActivity"
             android:screenOrientation="portrait" />
-        <activity
+        <!--<activity-->
             android:name=".building.BuildingActivity"
             android:screenOrientation="portrait" />
 
