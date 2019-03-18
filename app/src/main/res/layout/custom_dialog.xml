@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".CustomDialogActivity">
 
+    <!--Toolbar    -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <!--กรอกชื่อผู้ใช้งาน-->
+    <!--ช่องกรอกข้อมูล-->
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
@@ -29,6 +30,7 @@
         android:inputType="text"
         android:textAlignment="center" />
 
+    <!--แถบแสดงการโหลด-->
     <ProgressBar
         android:id="@+id/progress"
         style="@style/Base.Widget.AppCompat.ProgressBar"
@@ -38,23 +40,42 @@
         android:indeterminate="true"
         android:visibility="gone" />
 
-    <RelativeLayout
+    <!--ปุ่มกดบันทึก จากนั้นข้อมูลนี้จะถูกส่งไปยัง DB.-->
+    <Button
+        android:id="@+id/buttonMessage"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20sp"
+        android:background="@drawable/background_button"
+        android:text="บันทึกข้อมูล"
+        android:textColor="@color/colorBack"
+        android:textSize="@dimen/size18"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/buttonMessage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="20sp"
-            android:background="@drawable/background_button"
-            android:text="บันทึกข้อมูล"
-            android:textSize="@dimen/size18"
-            android:textColor="@color/colorBack"
-            android:textStyle="bold" />
-    </RelativeLayout>
+  <!--ชื่อ และCไหน ของคนที่กรอกข้อมูล-->
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/b_edittext"
+        android:textColor="@color/colorBack"
+        android:textSize="16sp"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/b_edittext"
+        android:textColor="@color/colorBack"
+        android:textSize="@dimen/size18"
+        android:visibility="gone" />
+
 </LinearLayout>
