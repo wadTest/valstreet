@@ -138,9 +138,9 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/Line1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/Line1"
                         android:background="#eceff1"
                         android:orientation="horizontal">
 
@@ -194,21 +194,21 @@
                             android:textSize="@dimen/size_main" />
 
                         <!--<ImageView-->
-                            <!--android:id="@+id/share1"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_marginTop="5dp"-->
-                            <!--android:layout_marginRight="5dp"-->
-                            <!--android:layout_marginBottom="5dp"-->
-                            <!--android:paddingLeft="5dp"-->
-                            <!--android:src="@android:drawable/ic_menu_save" />-->
+                        <!--android:id="@+id/share1"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_marginRight="5dp"-->
+                        <!--android:layout_marginBottom="5dp"-->
+                        <!--android:paddingLeft="5dp"-->
+                        <!--android:src="@android:drawable/ic_menu_save" />-->
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/Line2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/Line2"
                         android:background="#eceff1"
                         android:orientation="horizontal">
 
@@ -261,21 +261,21 @@
                             android:textSize="@dimen/size_main" />
 
                         <!--<ImageView-->
-                            <!--android:id="@+id/share2"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_marginTop="5dp"-->
-                            <!--android:layout_marginRight="5dp"-->
-                            <!--android:layout_marginBottom="5dp"-->
-                            <!--android:paddingLeft="5dp"-->
-                            <!--android:src="@android:drawable/ic_menu_save" />-->
+                        <!--android:id="@+id/share2"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_marginRight="5dp"-->
+                        <!--android:layout_marginBottom="5dp"-->
+                        <!--android:paddingLeft="5dp"-->
+                        <!--android:src="@android:drawable/ic_menu_save" />-->
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/Line3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/Line3"
                         android:background="#eceff1"
                         android:orientation="horizontal">
 
@@ -328,21 +328,21 @@
                             android:textSize="@dimen/size_main" />
 
                         <!--<ImageView-->
-                            <!--android:id="@+id/share3"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_marginTop="5dp"-->
-                            <!--android:layout_marginRight="5dp"-->
-                            <!--android:layout_marginBottom="5dp"-->
-                            <!--android:paddingLeft="5dp"-->
-                            <!--android:src="@android:drawable/ic_menu_save" />-->
+                        <!--android:id="@+id/share3"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_marginRight="5dp"-->
+                        <!--android:layout_marginBottom="5dp"-->
+                        <!--android:paddingLeft="5dp"-->
+                        <!--android:src="@android:drawable/ic_menu_save" />-->
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/Line4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/Line4"
                         android:background="#eceff1"
                         android:orientation="horizontal">
 
@@ -395,21 +395,21 @@
                             android:textSize="@dimen/size_main" />
 
                         <!--<ImageView-->
-                            <!--android:id="@+id/share4"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_marginTop="5dp"-->
-                            <!--android:layout_marginRight="5dp"-->
-                            <!--android:layout_marginBottom="5dp"-->
-                            <!--android:paddingLeft="5dp"-->
-                            <!--android:src="@android:drawable/ic_menu_save" />-->
+                        <!--android:id="@+id/share4"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_marginRight="5dp"-->
+                        <!--android:layout_marginBottom="5dp"-->
+                        <!--android:paddingLeft="5dp"-->
+                        <!--android:src="@android:drawable/ic_menu_save" />-->
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/Line5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/Line5"
                         android:background="#eceff1"
                         android:orientation="horizontal">
 
@@ -462,15 +462,15 @@
                             android:textSize="@dimen/size_main" />
 
                         <!--<ImageView-->
-                            <!--android:id="@+id/share5"-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_gravity="center"-->
-                            <!--android:layout_marginTop="5dp"-->
-                            <!--android:layout_marginRight="5dp"-->
-                            <!--android:layout_marginBottom="5dp"-->
-                            <!--android:paddingLeft="5dp"-->
-                            <!--android:src="@android:drawable/ic_menu_save" />-->
+                        <!--android:id="@+id/share5"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_marginRight="5dp"-->
+                        <!--android:layout_marginBottom="5dp"-->
+                        <!--android:paddingLeft="5dp"-->
+                        <!--android:src="@android:drawable/ic_menu_save" />-->
                     </LinearLayout>
                 </LinearLayout>
 
@@ -1008,7 +1008,6 @@
                             android:textAlignment="center"
                             android:textSize="@dimen/size_main" />
 
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -1080,9 +1079,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_button"
                     android:text="Up"
-                    android:visibility="gone"
                     android:textColor="#FFF"
-                   />
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -1091,8 +1089,6 @@
                 android:id="@+id/imageView"
                 android:layout_width="fill_parent"
                 android:layout_height="270dp" />
-
-
 
             <Button
                 android:id="@+id/buttonSave"

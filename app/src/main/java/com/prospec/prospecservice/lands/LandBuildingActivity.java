@@ -129,7 +129,7 @@ public class LandBuildingActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         titleLogin = sharedPreferences.getString("titleLogin", "");
         nameLogin = sharedPreferences.getString("NameLogin", "");
-        Log.d("share title, name", "title and nameLogin Receive in MenuActivity ==> " + nameLogin);
+        Log.d("share title, name", "get name" + titleLogin +nameLogin);
 
         this.toolbar();
 
