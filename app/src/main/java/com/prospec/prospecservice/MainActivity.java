@@ -64,15 +64,6 @@ public class MainActivity extends AppCompatActivity {
         btn_login = (Button) findViewById(R.id.btn_login);
         tv_register = (TextView) findViewById(R.id.tv_register);
 
-
-//        //      เมื่อยังไม่ได้ลงทะเบียน กดปุ่มนี้จะไปลงทะเบียน
-//        tv_register.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, SignInActivity.class));
-//            }
-//        });
-
 //       เมื่อกดปุ่มนี้จะขึ้นหน้าเมนู ของหน้าถัดไป
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,9 +143,6 @@ public class MainActivity extends AppCompatActivity {
                         " กรุณาตรวจอีเมล์สอบอีกครั้ง");
                 myAlert.myDialog();
             } else if (passwordString.equals(truePassString)) {
-
-
-//                SharedPrefs.saveSharedSetting(MainActivity.this, "Logout", "false");
 
                 SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();

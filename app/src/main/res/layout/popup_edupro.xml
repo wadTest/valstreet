@@ -35,7 +35,7 @@
         android:textStyle="bold"
         android:layout_marginTop="10dp"
         android:textSize="20sp"
-        android:text="อยู่ในช่วงพัฒนา*" />
+        android:text="อยู่ในช่วงการพัฒนา*" />
 
     <TextView
         android:layout_width="match_parent"

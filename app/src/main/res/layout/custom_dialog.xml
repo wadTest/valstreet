@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,22 +13,21 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:background="@color/colorPrimary">
-
-    </android.support.v7.widget.Toolbar>
+        android:background="@color/colorPrimary"/>
 
     <!--ช่องกรอกข้อมูล-->
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
-        android:layout_height="420dp"
+        android:layout_height="380dp"
+        android:layout_below="@+id/toolbar"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="16dp"
-        android:ems="500"
         android:hint="กรอกข้อมูล"
         android:inputType="text"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="@dimen/size_main" />
 
     <!--แถบแสดงการโหลด-->
     <ProgressBar
@@ -56,7 +55,7 @@
         android:textSize="@dimen/size18"
         android:textStyle="bold" />
 
-  <!--ชื่อ และCไหน ของคนที่กรอกข้อมูล-->
+    <!--ชื่อ และCไหน ของคนที่กรอกข้อมูล-->
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="match_parent"
@@ -67,6 +66,7 @@
         android:textColor="@color/colorBack"
         android:textSize="16sp"
         android:visibility="gone" />
+
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -78,4 +78,4 @@
         android:textSize="@dimen/size18"
         android:visibility="gone" />
 
-</LinearLayout>
+</RelativeLayout>

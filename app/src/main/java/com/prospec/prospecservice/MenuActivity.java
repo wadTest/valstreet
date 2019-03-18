@@ -40,12 +40,7 @@ public class MenuActivity extends AppCompatActivity {
     private TextView  tv_name;
     private Button btn_logout;
     private String nameLogin;
-    //    แสดงข้อความตแจ้งเตือน Edupro
     Dialog myDialog;
-
-    // คลาสที่ Android มีมาให้เพื่อเซฟและอ่านข้อมูล โดยข้อมูลจะเก็บเป็นแบบ key-value สามารถใช้ SharedPreferences
-    // เก็บข้อมูลลงไปได้ ทั้ง boolean, float, int, long, String ข้อมูลที่เซฟจะอยู่แม้ว่าเราจะปิดแอพแล้วก็ตาม แต่ข้อมูลจะหายไป หากเราทำการ uninstall แอพพลิเคชัน
-    // private SharedPreferences pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +54,6 @@ public class MenuActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         nameLogin = sharedPreferences.getString("NameLogin", "");
         Log.d("20JanV1", "nameLogin Receive in MenuActivity ==> " + nameLogin);
-
 
 //        เรียกตัวแปรมาใช้งาน รูปที่ slider หน้าเมนู
         imageShow = findViewById(R.id.imageShow);
@@ -245,6 +239,4 @@ public class MenuActivity extends AppCompatActivity {
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
     }
-
-
 }//Class Main
