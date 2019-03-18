@@ -15,6 +15,10 @@
     <string name="phone">กรอกเบอร์โทร</string>
     <string name="Next">สมัครสมาชิกที่นี่</string>
 
+    <!--หน้า ส่งข้อมแบบย่อ-->
+    <string name="title">รายละเอียดสินทรัพย์แบบย่อ</string>
+    <string name="title_alert">ยืนยันการกรอกรายละเอียด</string>
+
     <!--หน้า activity_call-->
     <string name="n_tel_02_559_0678">สำนักงานใหญ่</string>
     <string name="n_tel_05_324_0216">สาขา เชียงใหม่</string>

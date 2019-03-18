@@ -21,7 +21,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".utility.Splash">
+        <!--<activity android:name=".utility.Splash">-->
+        <activity android:name=".CustomDialogActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -76,9 +77,9 @@
             android:name=".AssessmentActivity"
             android:screenOrientation="portrait" />
         <!-- หน้าส่งข้อความแบบย่อ -->
-        <activity
-            android:name=".CustomDialogActivity"
-            android:screenOrientation="portrait" />
+        <!--<activity-->
+            <!--android:name=".CustomDialogActivity"-->
+            <!--android:screenOrientation="portrait" />-->
         <activity
             android:name=".building.BuildingActivity"
             android:screenOrientation="portrait" />
