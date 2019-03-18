@@ -28,7 +28,6 @@ public class CustomDialogActivity extends AppCompatActivity {
     private String nameLogin, titleLogin;
     private TextView tv_name, title;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,10 +95,11 @@ public class CustomDialogActivity extends AppCompatActivity {
             private void uploadString() {
                 try {
 //                    File เชื่อมต่อ DB. หน้านี้ Add_Message
-                    Add_Message add_message = new Add_Message(CustomDialogActivity.this, editTextString);
+                    Add_Message add_message = new Add_Message(CustomDialogActivity.this, editTextString, nameLogin, titleLogin);
                     add_message.execute();
 
                     Toast.makeText(CustomDialogActivity.this, "อัพโหลดข้อมูลสำเร็จ", Toast.LENGTH_SHORT).show();
+                    finish();
 
                 } catch (Exception e) {
                     e.printStackTrace();

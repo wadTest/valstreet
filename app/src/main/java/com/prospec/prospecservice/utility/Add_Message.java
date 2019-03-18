@@ -15,12 +15,15 @@ public class Add_Message  extends AsyncTask<Void, Void, String> {
     private Context context;
     //ประกาศตัวแปรที่เป็นค่าคงที่ ไม่สารถแก้ไขได้
     private static final String urlMessage = "http://119.59.103.121/app_mobile/crm_message.php";
-    private String editTextString;
+    private String editTextString, nameLogin, titleLogin;
 
-    public Add_Message(Context context, String editTextString) {
+    public Add_Message(Context context, String editTextString, String nameLogin, String titleLogin) {
         this.context = context;
         this.editTextString = editTextString;
+        this.nameLogin = nameLogin;
+        this.titleLogin = titleLogin;
     }
+
     //    doInBackground คือ Method ที่ทำงานอยู่เบื้องหลัง
     @Override
     protected String doInBackground(Void... voids) {
@@ -32,6 +35,8 @@ public class Add_Message  extends AsyncTask<Void, Void, String> {
 
                     .add("isAdd", "true")
                     .add("short_message", editTextString)
+                    .add("name_login", nameLogin)
+                    .add("title", titleLogin)
                     .build();
 
             Request.Builder builder = new Request.Builder();
