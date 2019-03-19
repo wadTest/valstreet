@@ -80,7 +80,7 @@ import static android.view.View.VISIBLE;
 public class LandBuildingActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
-    private TextInputEditText edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
+    private TextInputEditText name, edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
     private Spinner spin1, spin2, spin3, spin4, spin5, spin6;
     private Spinner sp2, sp3, sp4, sp5;
     private CheckBox check1, check2, check3, check4, check6;
@@ -672,6 +672,7 @@ public class LandBuildingActivity extends AppCompatActivity {
     private void getevent() {
 //        กรอกข้อมูล
         number = (TextView) findViewById(R.id.number);
+        name = (TextInputEditText) findViewById(R.id.name);
         edit2 = (TextInputEditText) findViewById(R.id.editT2);
         edit3 = (TextInputEditText) findViewById(R.id.editT3);
         edit4 = (TextInputEditText) findViewById(R.id.editT4);
@@ -765,6 +766,7 @@ public class LandBuildingActivity extends AppCompatActivity {
                 String textTitle = title.getText().toString();
                 String tnumber = number.getText().toString().trim();
 
+                String nameS = name.getText().toString().trim();
                 String editText2 = edit2.getText().toString().trim();
                 String editText3 = edit3.getText().toString().trim();
                 String editText4 = edit4.getText().toString().trim();
@@ -796,7 +798,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
 
                 //BASIC CLIENT SIDE VALIDATION
-                if ((editText2.length() < 1 || editText3.length() < 1 || editText5.length() < 1
+                if ((nameS.length()<1 || editText2.length() < 1 || editText3.length() < 1 || editText5.length() < 1
                         || editText6.length() < 1 || editText7.length() < 1 || editText8.length() < 1
                         || spinner1.length() < 1 || spinner2.length() < 1 || spinner3.length() < 1 || spinner4.length() < 1
                         || spinner5.length() < 1 || spinner6.length() < 1)) {
@@ -811,6 +813,7 @@ public class LandBuildingActivity extends AppCompatActivity {
                     s.setTw1(text);
                     s.settTitle(textTitle);
                     s.setTnumber(tnumber);
+                    s.setEd1(nameS);
                     s.setEd2(editText2);
                     s.setEd3(editText3);
                     s.setEd4(editText4);
@@ -833,7 +836,7 @@ public class LandBuildingActivity extends AppCompatActivity {
                     s.setCb4(checkbox4 ? 1 : 0);
                     s.setCb6(checkbox6 ? 1 : 0);
 
-                    new Add_Lands(LandBuildingActivity.this).add(s, tv_name, title, number, edit2, edit3, edit4, edit5, edit6,
+                    new Add_Lands(LandBuildingActivity.this).add(s, tv_name, title, number, name, edit2, edit3, edit4, edit5, edit6,
                             edit7, edit7, edit8, edit9, edit10, edit11, spin1, spin2, spin3, spin4, spin5, spin6);
                 }
             }

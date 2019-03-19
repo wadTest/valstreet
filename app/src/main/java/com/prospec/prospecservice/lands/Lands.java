@@ -42,6 +42,14 @@ public class Lands {
         this.tnumber = tnumber;
     }
 
+    public String getEd1() {
+        return ed1;
+    }
+
+    public void setEd1(String ed1) {
+        this.ed1 = ed1;
+    }
+
     public String getEd2() {
         return ed2;
     }

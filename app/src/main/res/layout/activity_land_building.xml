@@ -26,6 +26,36 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!--เนื้อหา-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <!--ที่ดินเปล่า-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ตั้งชื่อทรัพย์"
+                    android:textColor="@color/colorBack"
+                    android:textSize="@dimen/size_main" />
+
+                <!--กรอก ที่ดินเปล่า-->
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/b_edittext"
+                    android:enabled="true"
+                    android:focusable="true"
+                    android:hint="ตั้งชื่อทรัพย์สินของท่าน"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/size_main" />
+            </LinearLayout>
 
             <!--เนื้อหา-->
             <LinearLayout
@@ -894,7 +924,6 @@
                 android:textColor="@color/colorBack"
                 android:textSize="16sp"
                 android:visibility="gone" />
-
 
             <LinearLayout
                 android:layout_width="match_parent"

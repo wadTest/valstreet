@@ -180,25 +180,15 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:layout_span="1"
+                android:textSize="@dimen/size_from"
                 android:gravity="center"
-                android:text="รายละเอียด Corporate"
+                android:text="ประวัติการส่งงานปีะเมินราคา"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textStyle="bold" />
         </TableRow>
 
         <LinearLayout>
 
-            <TextView
-                android:id="@+id/Col"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="2dp"
-                android:layout_marginBottom="8dp"
-                android:background="#e6e6e4"
-                android:text="site"
-                android:visibility="gone"
-                android:textSize="18sp"
-                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/Col1"
@@ -207,10 +197,11 @@
                 android:layout_marginRight="2dp"
                 android:textColor="@color/colorBack"
                 android:layout_marginBottom="8dp"
-                android:layout_weight="1"
                 android:background="#e6e6e4"
-                android:text="รหัสงาน"
-                android:textSize="16sp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="ชื่อทรัพย์สิน\n"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
 
             <TextView
@@ -220,37 +211,38 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
+                android:gravity="center_horizontal"
                 android:textColor="@color/colorBack"
                 android:background="#e6e6e4"
-                android:text="วันที่"
-                android:textSize="18sp"
+                android:text="เอกสารสิทธิ์จำนวน(แปลง)"
+                android:textSize="@dimen/size18"
                 android:textStyle="bold" />
+
 
             <TextView
                 android:id="@+id/Col3"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="2dp"
                 android:layout_marginBottom="8dp"
-                android:layout_weight="1"
                 android:background="#e6e6e4"
                 android:textColor="@color/colorBack"
-                android:text="มูลค่า"
+                android:text="เนื้อที่"
+                android:visibility="gone"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/Col4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="2dp"
-                android:layout_marginBottom="8dp"
-                android:layout_weight="1"
-                android:visibility="gone"
-                android:background="#e6e6e4"
-                android:text="ทรัพย์สิน"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+            <!--<TextView-->
+                <!--android:id="@+id/Col4"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginRight="2dp"-->
+                <!--android:layout_marginBottom="8dp"-->
+                <!--android:visibility="gone"-->
+                <!--android:background="#e6e6e4"-->
+                <!--android:text="อาคาร"-->
+                <!--android:textSize="18sp"-->
+                <!--android:textStyle="bold" />-->
         </LinearLayout>
 
         <View

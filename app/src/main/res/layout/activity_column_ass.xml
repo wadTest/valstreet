@@ -23,11 +23,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="2dp"
-        android:text="site"
-        android:visibility="gone"
+        android:text="ชื่อทรัพย์"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="5dp"
         android:textStyle="bold"
+        android:visibility="gone"
         android:layout_marginLeft="2dp"
         android:textColor="@color/colorBack"
         android:textSize="16sp" />
@@ -37,7 +37,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="รหัสงาน"
+        android:text="ชื่อทรัพย์"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="2dp"
@@ -50,7 +50,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="วันที่"
+        android:text="เอกสารสิทธิ์จำนวน(แปลง)"
         android:layout_marginLeft="2dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="5dp"
@@ -64,6 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_marginLeft="2dp"
+        android:visibility="gone"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="5dp"
         android:textStyle="bold"
@@ -71,17 +72,17 @@
         android:text="มูลค่า"
         android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/Col4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
-        android:layout_weight="1"
-        android:text="ทรัพย์สิน"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone"
-        android:layout_marginTop="5dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorBack"
-        android:textSize="16sp" />
+    <!--<TextView-->
+        <!--android:id="@+id/Col4"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="2dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:text="ทรัพย์สิน"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textColor="@color/colorBack"-->
+        <!--android:textSize="16sp" />-->
 </LinearLayout>

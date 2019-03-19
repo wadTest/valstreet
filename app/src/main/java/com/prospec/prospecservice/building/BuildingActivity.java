@@ -86,7 +86,24 @@ public class BuildingActivity extends AppCompatActivity {
         calculation();
         Image();
         structure();
+        this.toolbar();
     }
+
+    private void toolbar() {
+        //        ADD Toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("ที่ดินพร้อมสิ่งปลุกสร้าง");
+        toolbar.setSubtitle("โปรดกรอกรายละเอียดที่ดินพร้อมสิ่งปลูกสร้าง");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }//end toolbar
 
 
     private void event() {
