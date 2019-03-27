@@ -85,6 +85,7 @@ public class LandBuildingActivity extends AppCompatActivity {
     private CheckBox check1, check2, check3, check4, check6;
     private Button Add;
 
+
     //    Add number
     private int minteger = 1;
 
@@ -141,7 +142,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 //        redioGruup();
 
         this.spinner1();
-        this.spinner2();
+//        this.spinner2();
         this.spinner3();
         this.spinner5();
         this.spinner6();
@@ -670,7 +671,7 @@ public class LandBuildingActivity extends AppCompatActivity {
         check6 = (CheckBox) findViewById(R.id.checkBox6);
         Add = (Button) findViewById(R.id.buttonSave);
         spin1 = (Spinner) findViewById(R.id.spinner1);
-        spin2 = (Spinner) findViewById(R.id.spinner2);
+//        spin2 = (Spinner) findViewById(R.id.spinner2);
         spin3 = (Spinner) findViewById(R.id.spinner3);
         spin4 = (Spinner) findViewById(R.id.spinner4);
         spin5 = (Spinner) findViewById(R.id.spinner5);
@@ -834,19 +835,19 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     }
 
-    private void spinner2() {
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
-
-        adapter.add("เลือกประเภท");
-        adapter.add("ไร่-งาน-ตารางวา");
-        adapter.add("ตารางวา");
-        adapter.add("ตารางเมตร");
-
-        spin2.setAdapter(adapter);
-        spin2.setSelection(0);
-
-    }
+//    private void spinner2() {
+//
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
+//
+//        adapter.add("เลือกประเภท");
+//        adapter.add("ไร่-งาน-ตารางวา");
+//        adapter.add("ตารางวา");
+//        adapter.add("ตารางเมตร");
+//
+//        spin2.setAdapter(adapter);
+//        spin2.setSelection(0);
+//
+//    }
 
     private void spinner3() {
 
