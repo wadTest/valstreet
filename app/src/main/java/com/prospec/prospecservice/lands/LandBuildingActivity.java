@@ -82,7 +82,6 @@ public class LandBuildingActivity extends AppCompatActivity {
     //    ประกาศตัวแปร
     private TextInputEditText name, edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
     private Spinner spin1, spin2, spin3, spin4, spin5, spin6;
-    private Spinner sp2, sp3, sp4, sp5;
     private CheckBox check1, check2, check3, check4, check6;
     private Button Add;
 
@@ -104,8 +103,8 @@ public class LandBuildingActivity extends AppCompatActivity {
     ImageView ShowSelectedImage;
     EditText imageName;
     Bitmap FixBitmap;
-    String ImageTag = "urlImage";
-    String ImageName = "idocument";
+    String ImageTag = "image_document";
+    String ImageName = "document";
     ProgressDialog progressDialog;
     ByteArrayOutputStream byteArrayOutputStream;
     byte[] byteArray;
@@ -126,15 +125,15 @@ public class LandBuildingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_land_building);
 
+//        share name title ที่ login
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         titleLogin = sharedPreferences.getString("titleLogin", "");
         nameLogin = sharedPreferences.getString("NameLogin", "");
         Log.d("share title, name", "get name" + titleLogin +nameLogin);
 
         this.toolbar();
-
         this.getevent();
-//
+
 //        this.address();
 
         savedata();
@@ -146,171 +145,165 @@ public class LandBuildingActivity extends AppCompatActivity {
         this.spinner3();
         this.spinner5();
         this.spinner6();
-
-        this.sp02();
-        this.sp03();
-        this.sp04();
-        this.sp05();
         
 //        ส่วนของรูปภาพ
         Image();
 
 //        auto tatal
-        calculation();
+
+//        ส่วนของรวมผลลัพธ์อัตโนมัติ
+//        calculation();
     }//Method
 
-    private void calculation() {
-        final EditText arrayEditText = findViewById(R.id.editT3);
-        final EditText showEditText = findViewById(R.id.ed02);
-        final EditText all = findViewById(R.id.ed03);
-        final EditText addFo = findViewById(R.id.ed04);
-        final EditText addFi = findViewById(R.id.ed05);
-        final EditText thbEditText = findViewById(R.id.editT4);
-        final String[] strings = new String[]{"0", "0", "0", "0", "0"};
-
-        //        ช่องที่ 1
-        arrayEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                strings[0] = arrayEditText.getText().toString();
-                if (strings[0].isEmpty()) {
-                    strings[0] = "0";
-                }
-//                sum
-                calculate(strings, thbEditText);
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-//        ช่องที่ 2
-        showEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                strings[1] = showEditText.getText().toString();
-                if (strings[1].isEmpty()) {
-                    strings[1] = "0";
-                }
-//                sum
-                calculate(strings, thbEditText);
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-//        ช่องที่ 3
-        all.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                strings[2] = all.getText().toString();
-                if (strings[2].isEmpty()) {
-                    strings[2] = "0";
-                }
-//                sum
-                calculate(strings, thbEditText);
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        //        ช่องที่ 4
-        addFo.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                strings[3] = addFo.getText().toString();
-                if (strings[3].isEmpty()) {
-                    strings[3] = "0";
-                }
-//                sum
-                calculate(strings, thbEditText);
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        //        ช่องที่ 5
-        addFi.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                strings[3] = addFi.getText().toString();
-                if (strings[4].isEmpty()) {
-                    strings[4] = "0";
-                }
-//                sum
-                calculate(strings, thbEditText);
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-    }
-
-    private void calculate(String[] strings, EditText showEditText) {
-        int arrayInt = Integer.parseInt(strings[0]);
-        int thbInt = Integer.parseInt(strings[1]);
-        int all = Integer.parseInt(strings[2]);
-        int addFo = Integer.parseInt(strings[3]);
-        int addFi = Integer.parseInt(strings[4]);
-        int answerInt = arrayInt + thbInt + all + addFo + addFi;
-        showEditText.setText(Integer.toString(answerInt));
-    }
+//    private void calculation() {
+//        final EditText arrayEditText = findViewById(R.id.editT3);
+//        final EditText showEditText = findViewById(R.id.ed02);
+//        final EditText all = findViewById(R.id.ed03);
+//        final EditText addFo = findViewById(R.id.ed04);
+//        final EditText addFi = findViewById(R.id.ed05);
+//        final EditText thbEditText = findViewById(R.id.editT4);
+//        final String[] strings = new String[]{"0", "0", "0", "0", "0"};
+//
+//        //        ช่องที่ 1
+//        arrayEditText.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//                strings[0] = arrayEditText.getText().toString();
+//                if (strings[0].isEmpty()) {
+//                    strings[0] = "0";
+//                }
+////                sum
+//                calculate(strings, thbEditText);
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
+//
+////        ช่องที่ 2
+//        showEditText.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//                strings[1] = showEditText.getText().toString();
+//                if (strings[1].isEmpty()) {
+//                    strings[1] = "0";
+//                }
+////                sum
+//                calculate(strings, thbEditText);
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
+//
+////        ช่องที่ 3
+//        all.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//                strings[2] = all.getText().toString();
+//                if (strings[2].isEmpty()) {
+//                    strings[2] = "0";
+//                }
+////                sum
+//                calculate(strings, thbEditText);
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
+//
+//        //        ช่องที่ 4
+//        addFo.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//                strings[3] = addFo.getText().toString();
+//                if (strings[3].isEmpty()) {
+//                    strings[3] = "0";
+//                }
+////                sum
+//                calculate(strings, thbEditText);
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
+//
+//        //        ช่องที่ 5
+//        addFi.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//                strings[3] = addFi.getText().toString();
+//                if (strings[4].isEmpty()) {
+//                    strings[4] = "0";
+//                }
+////                sum
+//                calculate(strings, thbEditText);
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
+//    }
+//    private void calculate(String[] strings, EditText showEditText) {
+//        int arrayInt = Integer.parseInt(strings[0]);
+//        int thbInt = Integer.parseInt(strings[1]);
+//        int all = Integer.parseInt(strings[2]);
+//        int addFo = Integer.parseInt(strings[3]);
+//        int addFi = Integer.parseInt(strings[4]);
+//        int answerInt = arrayInt + thbInt + all + addFo + addFi;
+//        showEditText.setText(Integer.toString(answerInt));
+//    }// calculation
 
     private void Image() {
         GetImageFromGalleryButton = (Button)findViewById(R.id.buttonSelect);
         UploadImageOnServerButton = (Button)findViewById(R.id.buttonUpload);
         ShowSelectedImage = (ImageView)findViewById(R.id.imageView);
-
         byteArrayOutputStream = new ByteArrayOutputStream();
-
         GetImageFromGalleryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -319,18 +312,14 @@ public class LandBuildingActivity extends AppCompatActivity {
             }
         });
 
-
         UploadImageOnServerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 GetImageNameFromEditText = imageName.getText().toString();
 
                 UploadImageToServer();
-
             }
         });
-
         if (ContextCompat.checkSelfPermission(LandBuildingActivity.this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(new String[]{android.Manifest.permission.CAMERA},
@@ -338,7 +327,6 @@ public class LandBuildingActivity extends AppCompatActivity {
             }
         }
     }
-
     private void showPictureDialog(){
         android.support.v7.app.AlertDialog.Builder pictureDialog = new android.support.v7.app.AlertDialog.Builder(this);
         pictureDialog.setTitle("Select Action");
@@ -405,22 +393,15 @@ public class LandBuildingActivity extends AppCompatActivity {
         }
     }
 
-
     public void UploadImageToServer(){
-
         FixBitmap.compress(Bitmap.CompressFormat.JPEG, 40, byteArrayOutputStream);
-
         byteArray = byteArrayOutputStream.toByteArray();
-
         ConvertImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
-
         class AsyncTaskUploadClass extends AsyncTask<Void,Void,String> {
 
             @Override
             protected void onPreExecute() {
-
                 super.onPreExecute();
-
                 progressDialog = ProgressDialog.show(LandBuildingActivity.this,"กำลังอัพโหลดรูปภาพ","โปรดรอ",false,false);
             }
 
@@ -432,7 +413,6 @@ public class LandBuildingActivity extends AppCompatActivity {
                 progressDialog.dismiss();
 
                 Toast.makeText(LandBuildingActivity.this,string1,Toast.LENGTH_LONG).show();
-
             }
 
             @Override
@@ -696,10 +676,6 @@ public class LandBuildingActivity extends AppCompatActivity {
         spin5 = (Spinner) findViewById(R.id.spinner5);
         spin6 = (Spinner) findViewById(R.id.spinner6);
 
-        sp2 = (Spinner) findViewById(R.id.sp2);
-        sp3 = (Spinner) findViewById(R.id.sp3);
-        sp4 = (Spinner) findViewById(R.id.sp4);
-        sp5 = (Spinner) findViewById(R.id.sp5);
 
         card1 = (CardView) findViewById(R.id.card1);
         card2 = (CardView) findViewById(R.id.card2);
@@ -863,7 +839,7 @@ public class LandBuildingActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
 
         adapter.add("เลือกประเภท");
-//        adapter.add("ไร่-งาน-ตารางวา");
+        adapter.add("ไร่-งาน-ตารางวา");
         adapter.add("ตารางวา");
         adapter.add("ตารางเมตร");
 
@@ -1016,60 +992,4 @@ public class LandBuildingActivity extends AppCompatActivity {
         spin6.setSelection(0);
     }
 
-//    ส่วนที่ +
-private void sp02() {
-
-    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
-
-    adapter.add("เลือกเอกสารสิทธิ์");
-    adapter.add("โฉนดที่ดิน");
-    adapter.add("นส.3ก");
-    adapter.add("นส.3");
-
-    sp2.setAdapter(adapter);
-    sp2.setSelection(0);
-
-}
-
-    private void sp03() {
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
-
-        adapter.add("เลือกเอกสารสิทธิ์");
-        adapter.add("โฉนดที่ดิน");
-        adapter.add("นส.3ก");
-        adapter.add("นส.3");
-
-        sp3.setAdapter(adapter);
-        sp3.setSelection(0);
-
-    }
-
-    private void sp04() {
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
-
-        adapter.add("เลือกเอกสารสิทธิ์");
-        adapter.add("โฉนดที่ดิน");
-        adapter.add("นส.3ก");
-        adapter.add("นส.3");
-
-        sp4.setAdapter(adapter);
-        sp4.setSelection(0);
-
-    }
-
-    private void sp05() {
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
-
-        adapter.add("เลือกเอกสารสิทธิ์");
-        adapter.add("โฉนดที่ดิน");
-        adapter.add("นส.3ก");
-        adapter.add("นส.3");
-
-        sp5.setAdapter(adapter);
-        sp5.setSelection(0);
-
-    }
 }//Main Class

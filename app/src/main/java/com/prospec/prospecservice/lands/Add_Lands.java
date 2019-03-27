@@ -52,7 +52,7 @@ public class Add_Lands  {
                         .addBodyParameter("title", s.gettTitle())// รับ TextView
                         .addBodyParameter("convert_id", s.getTnumber())// รับ TextView
                         .addBodyParameter("land_no", s.getEd2())// รับ EditText
-                        .addBodyParameter("land_size", s.getEd3())// รับ EditText
+                        .addBodyParameter("land_sum", s.getEd3())// รับ EditText
                         .addBodyParameter("total_all", s.getEd4())// รับ EditText
                         .addBodyParameter("tambon_th", s.getEd5())// รับ EditText
                         .addBodyParameter("road", s.getEd6())// รับ EditText
