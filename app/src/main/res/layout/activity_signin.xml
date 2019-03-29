@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="ลงทะเบียน"
+            android:text="Register"
             android:textAlignment="center"
             android:textColor="@color/colorBack"
             android:textSize="@dimen/size_from22"
@@ -188,7 +188,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background_login"
-            android:text="สมัครสมาชิก"
+            android:text="Sign in"
             android:textColor="@android:color/white"
             android:textSize="@dimen/size_from"
             android:textStyle="bold" />

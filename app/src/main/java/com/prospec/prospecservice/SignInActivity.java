@@ -101,26 +101,41 @@ public class SignInActivity extends AppCompatActivity {
 
     }//Method
 
+
     private boolean validateInputs() {
-        if (KEY_EMPTY.equals(et_passwordString)) {
-            et_password.setError("กรุณากรอกรหัสผ่าน");
-            et_password.requestFocus();
-            return false;
+        boolean valid = true;
+//        if (KEY_EMPTY.equals(et_passwordString)) {
+//            et_password.setError("กรุณากรอกรหัสผ่าน");
+//            et_password.requestFocus();
+//            valid = false;
+//        }
+
+//        if (KEY_EMPTY.equals(et_co_passwordString)) {
+//            et_co_password.setError("ยืนยันรหัสผ่าน");
+//            et_co_password.requestFocus();
+//            valid = false;
+//        }
+
+        if (et_passwordString.isEmpty() || et_password.length() < 6 || et_password.length() > 10) {
+            et_password.setError("ป้อนรหัสผ่านอย่างน้อย 6 ตัว");
+            valid = false;
+        } else {
+            et_password.setError(null);
         }
 
-        if (KEY_EMPTY.equals(et_co_passwordString)) {
-            et_co_password.setError("ยืนยันรหัสผ่าน");
-            et_co_password.requestFocus();
-            return false;
-        }
         if (!et_passwordString.equals(et_co_passwordString)) {
-            et_co_password.setError("รหัสผ่านและยืนยันรหัสผ่านไม่ตรงกัน");
+            et_co_password.setError("รหัสผ่านและรหัสยืนยันไม่ตรงกัน");
             et_co_password.requestFocus();
-            return false;
+            valid = false;
         }
 
-        return true;
-
+        if (et_emailString.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(et_emailString).matches()) {
+            et_email.setError("กรุณากรอกอีเมลให้ถูกต้อง");
+            valid = false;
+        } else {
+            et_email.setError(null);
+        }
+        return valid;
     }
 
 }//Main Class

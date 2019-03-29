@@ -73,9 +73,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="35dp"
                 android:onClick="ShowPopup"
-                android:text="ยังไม่ได้ลงทะเบียน? สมัครตอนนี้"
+                android:text="Register"
+                android:textSize="@dimen/size_main"
                 android:textColor="@color/colorGray"
                 android:textStyle="bold" />
 
@@ -85,7 +86,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="15dp"
-                android:text="ลืมรหัสผ่าน"
+                android:textSize="@dimen/size_main"
+                android:text="Forgot your password"
                 android:textColor="@color/colorGray"
                 android:textStyle="bold" />
 
