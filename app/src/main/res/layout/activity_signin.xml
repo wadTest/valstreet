@@ -31,12 +31,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp">
+                android:layout_marginTop="5dp"
+                app:passwordToggleEnabled="true"
+                android:layout_marginBottom="5dp">
 
                 <EditText
                     android:id="@+id/et_name"
@@ -54,7 +54,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="8dp">
+            app:passwordToggleEnabled="true"
+            android:layout_marginBottom="5dp">
 
             <EditText
                 android:id="@+id/et_last"
@@ -87,6 +88,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
             android:layout_marginBottom="5dp">
 
             <EditText
@@ -104,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             app:passwordToggleEnabled="true"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="5dp">
 
             <EditText
                 android:id="@+id/et_password"
@@ -120,7 +122,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="5dp">
 
             <EditText
                 android:id="@+id/et_co_password"
@@ -132,17 +134,12 @@
 
         </android.support.design.widget.TextInputLayout>
 
-        <LinearLayout
+        <CheckBox
+            android:id="@+id/Confirm"
+            android:textSize="@dimen/size14"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <!--<CheckBox-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textSize="@dimen/size18"-->
-            <!--android:layout_marginBottom="10dp"-->
-            <!--android:text="ยินยอมให้เข้าถึงข้อมูล"/>-->
-        </LinearLayout>
+            android:text="ข้อกำหนดและเงื่อนไข"
+            android:layout_height="wrap_content" />
 
         <!--<RelativeLayout-->
             <!--android:layout_width="match_parent"-->
@@ -186,6 +183,7 @@
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
             android:layout_height="wrap_content"
             android:background="@drawable/background_login"
             android:text="Sign in"
@@ -198,7 +196,6 @@
             style="@style/Base.Widget.AppCompat.ProgressBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:indeterminate="true"
             android:visibility="invisible" />
 
