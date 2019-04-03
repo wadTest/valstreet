@@ -87,7 +87,7 @@
                 <TextView
                     android:id="@+id/number"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:layout_marginLeft="3dp"
                     android:background="@drawable/b_edittext"
                     android:text="0"
