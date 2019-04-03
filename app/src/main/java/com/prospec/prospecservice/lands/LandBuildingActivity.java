@@ -93,8 +93,11 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     //    ตัวแปร + - จำนวนแปลง
     private LinearLayout Line1;
-    private ImageView increase1;
+    private ImageView increase1, increase2, increase3;
     private LinearLayout documentLinearLayout;
+    private EditText sqMaterEditText, sqWarEditText;
+//    ไพเวท
+    final int[] i = {0};
 
     //    ตัวแปรในส่วนของการทำให้ โชว์ ซ้อน
     private CardView card1, card2;
@@ -693,24 +696,31 @@ public class LandBuildingActivity extends AppCompatActivity {
 
 //        + -
         increase1 = (ImageView) findViewById(R.id.increase1);
+        increase2 = findViewById(R.id.increase2);
+        increase3 = findViewById(R.id.increase3);
+        sqMaterEditText = findViewById(R.id.editSquareMater);
+        sqWarEditText = findViewById(R.id.editSquareVar);
         documentLinearLayout = findViewById(R.id.layoutDocument);
-        final int[] i = {0};
+
+        increase3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickPlus();
+            }
+        });
+
+        increase2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickPlus();
+            }
+        });
+
 
         increase1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-//                การหาขนาด Width จอที่ทำงานขณะนั้น
-                Display display = getWindowManager().getDefaultDisplay();
-                Point point = new Point();
-                display.getSize(point);
-                int width = point.x;
-
-                i[0] += 1;
-                int height = 100 * i[0];
-                documentLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(width, height));
-                number.setText(Integer.toString(i[0]));
+                clickPlus();
 
             }
         });
@@ -718,6 +728,19 @@ public class LandBuildingActivity extends AppCompatActivity {
         Line1 = (LinearLayout) findViewById(R.id.Line1);
 
     }//end get event
+
+    private void clickPlus() {
+        //                การหาขนาด Width จอที่ทำงานขณะนั้น
+        Display display = getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+        int width = point.x;
+
+        i[0] += 1;
+        int height = 100 * i[0];
+        documentLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(width, height));
+        number.setText(Integer.toString(i[0]));
+    }
 
 
     public void checkboxName(View view) {
