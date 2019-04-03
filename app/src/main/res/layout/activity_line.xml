@@ -350,7 +350,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/background_line"
                     android:text="@string/n_tel_03_260_2286"
                     android:textSize="@dimen/size18"
