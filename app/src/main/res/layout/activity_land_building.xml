@@ -74,14 +74,14 @@
 
                 <!--<ImageView-->
 
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center"-->
-                    <!--android:layout_marginRight="5dp"-->
-                    <!--android:layout_marginBottom="5dp"-->
-                    <!--android:onClick="decreaseInteger"-->
-                    <!--android:paddingLeft="5dp"-->
-                    <!--android:src="@mipmap/minus" />-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:onClick="decreaseInteger"-->
+                <!--android:paddingLeft="5dp"-->
+                <!--android:src="@mipmap/minus" />-->
 
 
                 <TextView
@@ -90,7 +90,7 @@
                     android:layout_height="30dp"
                     android:layout_marginLeft="3dp"
                     android:background="@drawable/b_edittext"
-                    android:text="1"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main" />
@@ -152,127 +152,257 @@
                 </LinearLayout>
 
                 <!--ส่วนของการกรอก-->
-                    <LinearLayout
-                        android:id="@+id/Line1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#eceff1"
-                        android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/Line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#eceff1"
+                    android:orientation="horizontal">
 
-                        <android.support.v7.widget.CardView
+                    <!--เอกสารสิทธิ์-->
+                    <android.support.v7.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="2">
+
+                        <!--android:entries="@array/ekasan"-->
+                        <!--เอกสารสิทธิ์-->
+                        <Spinner
+                            android:id="@+id/spinner1"
                             android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:layout_marginTop="5dp">
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/size_main" />
+                    </android.support.v7.widget.CardView>
 
-                            <!--android:entries="@array/ekasan"-->
-                            <!--เอกสารสิทธิ์-->
-                            <Spinner
-                                android:id="@+id/spinner1"
+
+                    <!--เลขคี่-->
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/editT2"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/b_edittext"
+                        android:enabled="true"
+                        android:focusable="true"
+                        android:hint="เลขที่"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/size_main" />
+
+                    <!--TextField เนื้อที่ดิน-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:orientation="vertical">
+
+                        <!--Column1-->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textAlignment="center"
-                                android:textSize="@dimen/size_main" />
-                        </android.support.v7.widget.CardView>
+                                android:orientation="horizontal">
+
+                                <!--ไร่-->
+                                <android.support.design.widget.TextInputEditText
+                                    android:id="@+id/editT3"
+                                    android:layout_width="@dimen/w50"
+                                    android:layout_height="35dp"
+                                    android:layout_marginLeft="3dp"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/b_edittext"
+                                    android:enabled="true"
+                                    android:focusable="true"
+                                    android:hint="ไร่"
+                                    android:inputType="number"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/size_main" />
+
+                                <!--ที่ดินเปล่า-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="-"
+                                    android:textColor="@color/colorBack"
+                                    android:textSize="@dimen/size_main" />
+
+                                <!--งาน-->
+                                <android.support.design.widget.TextInputEditText
+                                    android:id="@+id/editT03"
+                                    android:layout_width="@dimen/w50"
+                                    android:layout_height="35dp"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/b_edittext"
+                                    android:enabled="true"
+                                    android:focusable="true"
+                                    android:hint="งาน"
+                                    android:inputType="number"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/size_main" />
+
+                                <!--ที่ดินเปล่า-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="-"
+                                    android:textColor="@color/colorBack"
+                                    android:textSize="@dimen/size_main" />
+
+                                <!--ตรว.-->
+                                <android.support.design.widget.TextInputEditText
+                                    android:id="@+id/editT003"
+                                    android:layout_width="@dimen/w50"
+                                    android:layout_height="35dp"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/b_edittext"
+                                    android:enabled="true"
+                                    android:focusable="true"
+                                    android:hint="ตรว."
+                                    android:inputType="number"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/size_main" />
 
 
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/editT2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:layout_marginLeft="3dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/b_edittext"
-                            android:enabled="true"
-                            android:focusable="true"
-                            android:hint="เลขที่"
-                            android:inputType="number"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_main" />
+                            </LinearLayout>
 
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/editT3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:layout_marginLeft="3dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_weight="0.2"
-                            android:background="@drawable/b_edittext"
-                            android:enabled="true"
-                            android:focusable="true"
-                            android:hint="ไร่"
-                            android:inputType="number"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_main" />
+                            <!--ปุ่มบวก-->
+                            <ImageView
+                                android:id="@+id/increase1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:onClick="increaseInteger"
+                                android:paddingLeft="5dp"
+                                android:src="@mipmap/add" />
 
-                        <!--ที่ดินเปล่า-->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="-"
-                            android:textColor="@color/colorBack"
-                            android:textSize="@dimen/size_main" />
-
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/editT03"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_weight="0.2"
-                            android:background="@drawable/b_edittext"
-                            android:enabled="true"
-                            android:focusable="true"
-                            android:hint="งาน"
-                            android:inputType="number"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_main" />
-
-                        <!--ที่ดินเปล่า-->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="-"
-                            android:textColor="@color/colorBack"
-                            android:textSize="@dimen/size_main" />
-
-                        <android.support.design.widget.TextInputEditText
-                            android:id="@+id/editT003"
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_weight="0.2"
-                            android:background="@drawable/b_edittext"
-                            android:enabled="true"
-                            android:focusable="true"
-                            android:hint="ตรว."
-                            android:inputType="number"
-                            android:textAlignment="center"
-                            android:textSize="@dimen/size_main" />
-
-                        <ImageView
-                            android:id="@+id/increase1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:onClick="increaseInteger"
-                            android:paddingLeft="5dp"
-                            android:src="@mipmap/add" />
+                        </RelativeLayout>
 
 
-                        <!--<ImageView-->
-                        <!--android:id="@+id/share1"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_gravity="center"-->
-                        <!--android:layout_marginTop="5dp"-->
-                        <!--android:layout_marginRight="5dp"-->
-                        <!--android:layout_marginBottom="5dp"-->
-                        <!--android:paddingLeft="5dp"-->
-                        <!--android:src="@android:drawable/ic_menu_save" />-->
+                        <!--Column2-->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <!--ตารางเมตร-->
+                                <android.support.design.widget.TextInputEditText
+                                    android:id="@+id/editSquareMater"
+                                    android:layout_width="100dp"
+                                    android:layout_height="35dp"
+                                    android:layout_marginLeft="3dp"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/b_edittext"
+                                    android:enabled="true"
+                                    android:focusable="true"
+                                    android:hint="ตารางเมตร"
+                                    android:inputType="number"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/size_main" />
+
+                            </LinearLayout>
+
+                            <!--ปุ่มบวก-->
+                            <ImageView
+                                android:id="@+id/increase2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:onClick="increaseInteger"
+                                android:paddingLeft="5dp"
+                                android:src="@mipmap/add" />
+
+                        </RelativeLayout>
+
+
+                        <!--Column3-->
+                      <RelativeLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+
+                          <LinearLayout
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:orientation="horizontal">
+
+                              <!--ตารางวา-->
+                              <android.support.design.widget.TextInputEditText
+                                  android:id="@+id/editSquareVar"
+                                  android:layout_width="100dp"
+                                  android:layout_height="35dp"
+                                  android:layout_marginLeft="3dp"
+                                  android:layout_marginTop="5dp"
+                                  android:background="@drawable/b_edittext"
+                                  android:enabled="true"
+                                  android:focusable="true"
+                                  android:hint="ตารางวา"
+                                  android:inputType="number"
+                                  android:textAlignment="center"
+                                  android:textSize="@dimen/size_main" />
+
+                          </LinearLayout>
+
+                          <!--ปุ่มบวก-->
+                          <ImageView
+                              android:id="@+id/increase3"
+                              android:layout_alignParentRight="true"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              android:layout_marginRight="5dp"
+                              android:layout_marginBottom="5dp"
+                              android:onClick="increaseInteger"
+                              android:paddingLeft="5dp"
+                              android:src="@mipmap/add" />
+
+                      </RelativeLayout>
+                    </LinearLayout>
+
+
+                    <!--<ImageView-->
+                    <!--android:id="@+id/share1"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:layout_marginRight="5dp"-->
+                    <!--android:layout_marginBottom="5dp"-->
+                    <!--android:paddingLeft="5dp"-->
+                    <!--android:src="@android:drawable/ic_menu_save" />-->
                 </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/layoutDocument"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/documentRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+
+                </LinearLayout>
+
+                <!--ผลจากการกดบวก-->
                 <LinearLayout
                     android:id="@+id/container"
                     android:layout_width="match_parent"
@@ -303,31 +433,31 @@
                         android:textColor="@color/colorBack"
                         android:textSize="@dimen/size_main" />
 
-                    <!--<android.support.v7.widget.CardView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="35dp">-->
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp">
 
-                        <!--&lt;!&ndash;เอกสารสิทธิ์&ndash;&gt;-->
-                        <!--<Spinner-->
-                            <!--android:id="@+id/spinner2"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_weight="1"-->
-                            <!--android:hint="@string/edit_praped"-->
-                            <!--android:inputType="text"-->
-                            <!--android:textAlignment="center"-->
-                            <!--android:textSize="@dimen/size_main" />-->
-                    <!--</android.support.v7.widget.CardView>-->
+                        <!--เอกสารสิทธิ์-->
+                        <Spinner
+                            android:id="@+id/spinner2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/edit_praped"
+                            android:inputType="text"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/size_main" />
+                    </android.support.v7.widget.CardView>
 
                     <android.support.design.widget.TextInputEditText
                         android:id="@+id/editT4"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
-                        android:layout_marginTop="5dp"
                         android:layout_marginLeft="3dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.2"
                         android:background="@drawable/b_edittext"
                         android:enabled="true"
-                        android:layout_weight="0.2"
                         android:focusable="true"
                         android:hint="ไร่"
                         android:inputType="number"

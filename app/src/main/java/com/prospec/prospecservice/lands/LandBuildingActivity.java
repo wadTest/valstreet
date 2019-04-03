@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -23,6 +24,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -92,6 +94,7 @@ public class LandBuildingActivity extends AppCompatActivity {
     //    ตัวแปร + - จำนวนแปลง
     private LinearLayout Line1;
     private ImageView increase1;
+    private LinearLayout documentLinearLayout;
 
     //    ตัวแปรในส่วนของการทำให้ โชว์ ซ้อน
     private CardView card1, card2;
@@ -130,7 +133,7 @@ public class LandBuildingActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         titleLogin = sharedPreferences.getString("titleLogin", "");
         nameLogin = sharedPreferences.getString("NameLogin", "");
-        Log.d("share title, name", "get name" + titleLogin +nameLogin);
+        Log.d("share title, name", "get name" + titleLogin + nameLogin);
 
         this.toolbar();
         this.getevent();
@@ -146,7 +149,7 @@ public class LandBuildingActivity extends AppCompatActivity {
         this.spinner3();
         this.spinner5();
         this.spinner6();
-        
+
 //        ส่วนของรูปภาพ
         Image();
 
@@ -301,9 +304,9 @@ public class LandBuildingActivity extends AppCompatActivity {
 //    }// calculation
 
     private void Image() {
-        GetImageFromGalleryButton = (Button)findViewById(R.id.buttonSelect);
-        UploadImageOnServerButton = (Button)findViewById(R.id.buttonUpload);
-        ShowSelectedImage = (ImageView)findViewById(R.id.imageView);
+        GetImageFromGalleryButton = (Button) findViewById(R.id.buttonSelect);
+        UploadImageOnServerButton = (Button) findViewById(R.id.buttonUpload);
+        ShowSelectedImage = (ImageView) findViewById(R.id.imageView);
         byteArrayOutputStream = new ByteArrayOutputStream();
         GetImageFromGalleryButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -328,12 +331,13 @@ public class LandBuildingActivity extends AppCompatActivity {
             }
         }
     }
-    private void showPictureDialog(){
+
+    private void showPictureDialog() {
         android.support.v7.app.AlertDialog.Builder pictureDialog = new android.support.v7.app.AlertDialog.Builder(this);
         pictureDialog.setTitle("Select Action");
         String[] pictureDialogItems = {
                 "Photo Gallery",
-                "Camera" };
+                "Camera"};
         pictureDialog.setItems(pictureDialogItems,
                 new DialogInterface.OnClickListener() {
                     @Override
@@ -350,6 +354,7 @@ public class LandBuildingActivity extends AppCompatActivity {
                 });
         pictureDialog.show();
     }
+
     public void choosePhotoFromGallary() {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -394,16 +399,16 @@ public class LandBuildingActivity extends AppCompatActivity {
         }
     }
 
-    public void UploadImageToServer(){
+    public void UploadImageToServer() {
         FixBitmap.compress(Bitmap.CompressFormat.JPEG, 40, byteArrayOutputStream);
         byteArray = byteArrayOutputStream.toByteArray();
         ConvertImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
-        class AsyncTaskUploadClass extends AsyncTask<Void,Void,String> {
+        class AsyncTaskUploadClass extends AsyncTask<Void, Void, String> {
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                progressDialog = ProgressDialog.show(LandBuildingActivity.this,"กำลังอัพโหลดรูปภาพ","โปรดรอ",false,false);
+                progressDialog = ProgressDialog.show(LandBuildingActivity.this, "กำลังอัพโหลดรูปภาพ", "โปรดรอ", false, false);
             }
 
             @Override
@@ -413,7 +418,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
                 progressDialog.dismiss();
 
-                Toast.makeText(LandBuildingActivity.this,string1,Toast.LENGTH_LONG).show();
+                Toast.makeText(LandBuildingActivity.this, string1, Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -421,7 +426,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
                 ImageProcessClass imageProcessClass = new ImageProcessClass();
 
-                HashMap<String,String> HashMapParams = new HashMap<String,String>();
+                HashMap<String, String> HashMapParams = new HashMap<String, String>();
 
                 HashMapParams.put(ImageTag, GetImageNameFromEditText);
 
@@ -436,9 +441,9 @@ public class LandBuildingActivity extends AppCompatActivity {
         AsyncTaskUploadClassOBJ.execute();
     }
 
-    public class ImageProcessClass{
+    public class ImageProcessClass {
 
-        public String ImageHttpRequest(String requestURL,HashMap<String, String> PData) {
+        public String ImageHttpRequest(String requestURL, HashMap<String, String> PData) {
 
             StringBuilder stringBuilder = new StringBuilder();
 
@@ -471,7 +476,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
                     String RC2;
 
-                    while ((RC2 = bufferedReader.readLine()) != null){
+                    while ((RC2 = bufferedReader.readLine()) != null) {
 
                         stringBuilder.append(RC2);
                     }
@@ -512,8 +517,7 @@ public class LandBuildingActivity extends AppCompatActivity {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Now user should be able to use camera
 
-            }
-            else {
+            } else {
 
                 Toast.makeText(LandBuildingActivity.this, "ไม่สามารถใช้กล้องถ่ายรูปได้โปรดให้เราใช้กล้องถ่ายรูป", Toast.LENGTH_LONG).show();
 
@@ -689,6 +693,28 @@ public class LandBuildingActivity extends AppCompatActivity {
 
 //        + -
         increase1 = (ImageView) findViewById(R.id.increase1);
+        documentLinearLayout = findViewById(R.id.layoutDocument);
+        final int[] i = {0};
+
+        increase1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+//                การหาขนาด Width จอที่ทำงานขณะนั้น
+                Display display = getWindowManager().getDefaultDisplay();
+                Point point = new Point();
+                display.getSize(point);
+                int width = point.x;
+
+                i[0] += 1;
+                int height = 100 * i[0];
+                documentLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(width, height));
+                number.setText(Integer.toString(i[0]));
+
+            }
+        });
+
         Line1 = (LinearLayout) findViewById(R.id.Line1);
 
     }//end get event
@@ -775,7 +801,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
 
                 //BASIC CLIENT SIDE VALIDATION
-                if ((nameS.length()<1 || editText2.length() < 1 || editText3.length() < 1 || editText5.length() < 1
+                if ((nameS.length() < 1 || editText2.length() < 1 || editText3.length() < 1 || editText5.length() < 1
                         || editText6.length() < 1 || editText7.length() < 1 || editText8.length() < 1
                         || spinner1.length() < 1 || spinner2.length() < 1 || spinner3.length() < 1 || spinner4.length() < 1
                         || spinner5.length() < 1 || spinner6.length() < 1)) {
