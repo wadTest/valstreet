@@ -13,6 +13,7 @@ import android.os.Build;
 import android.provider.MediaStore;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -74,6 +75,7 @@ public class LandBuildingActivity extends AppCompatActivity {
     private ArrayList<String> docStringArrayList = new ArrayList<>();
     private ArrayList<String> numberStringArrayList = new ArrayList<>();
     private ArrayList<String> areaStringArrayList = new ArrayList<>();
+    private ArrayList<String> indexStatusStrings = new ArrayList<>();
     private String docString;
     private RecyclerView docRecyclerView;
 
@@ -706,7 +708,10 @@ public class LandBuildingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String area = editSqVar.getText().toString().trim()+"ตารางวา";
-                clickPlus(area);
+
+                ArrayList<String> stringArrayList = new ArrayList<>();
+                stringArrayList.add(editSqVar.getText().toString().trim());
+                clickPlus(area,2,stringArrayList);
             }
         });
 
@@ -715,7 +720,9 @@ public class LandBuildingActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String area = editSqMater.getText().toString().trim() + "ตารางเมตร";
 
-                clickPlus(area);
+                ArrayList<String> stringArrayList = new ArrayList<>();
+                stringArrayList.add(editSqMater.getText().toString().trim());
+                clickPlus(area,1,stringArrayList);
             }
         });
 
@@ -728,7 +735,12 @@ public class LandBuildingActivity extends AppCompatActivity {
                         edit03.getText().toString().trim() + "งาน" +
                         edit003.getText().toString().trim() + "ตรว.";
 
-                clickPlus(area);
+                ArrayList<String> stringArrayList = new ArrayList<>();
+                stringArrayList.add(edit3.getText().toString().trim());
+                stringArrayList.add(edit03.getText().toString().trim());
+                stringArrayList.add(edit003.getText().toString().trim());
+
+                clickPlus(area,0, stringArrayList);
 
             }
         });
@@ -737,7 +749,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     }//end get event
 
-    private void clickPlus(String area) {
+    private void clickPlus(final String area,int indexStatus, ArrayList<String> stringsArrayList) {
         //                การหาขนาด Width จอที่ทำงานขณะนั้น
         Display display = getWindowManager().getDefaultDisplay();
         Point point = new Point();
@@ -747,6 +759,7 @@ public class LandBuildingActivity extends AppCompatActivity {
         docStringArrayList.add(docString);
         numberStringArrayList.add(edit2.getText().toString().trim());
         areaStringArrayList.add(area);
+        indexStatusStrings.add(Integer.toString(indexStatus));
 
         edit2.setText("");
         edit3.setText("");
@@ -758,20 +771,72 @@ public class LandBuildingActivity extends AppCompatActivity {
 
         Log.d("3ApriV1", "docStringArrayList==>" + docStringArrayList.toString());
 
+        creatRecyclerDoc(stringsArrayList);
+
+        i[0] += 1;
+        int height = 120 * i[0];
+        documentLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(width, height));
+        number.setText(Integer.toString(i[0]));
+    }
+
+    private void creatRecyclerDoc(final ArrayList<String> stringsArrayList) {
         DocumentAdapter documentAdapter = new DocumentAdapter(LandBuildingActivity.this,
                 docStringArrayList, numberStringArrayList, areaStringArrayList, new OnClickItem() {
             @Override
             public void onClickItem(View view, int position) {
 
+                chooseEditOrDelete(position, stringsArrayList);
+
+
             }
         });
 
         docRecyclerView.setAdapter(documentAdapter);
+    }
 
-        i[0] += 1;
-        int height = 70 * i[0];
-        documentLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(width, height));
-        number.setText(Integer.toString(i[0]));
+    private void chooseEditOrDelete(final int position,final ArrayList<String> stringsArrayList) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(LandBuildingActivity.this);
+        builder.setTitle("Edit or Delete");
+        builder.setMessage("What Do You Want?");
+        builder.setNegativeButton("Edit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                edit2.setText("");
+
+
+                switch (Integer.parseInt(indexStatusStrings.get(position))) {
+                    case 0:
+                        edit3.setText(stringsArrayList.get(0));
+                        edit03.setText(stringsArrayList.get(1));
+                        edit003.setText(stringsArrayList.get(2));
+                        break;
+                    case 1:
+                        sqMaterEditText.setText(stringsArrayList.get(0));
+                        break;
+                    case 2:
+                        sqWarEditText.setText(stringsArrayList.get(0));
+                        break;
+                }
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                deleteDocument(position,stringsArrayList);
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+    }
+
+    private void deleteDocument(int position, ArrayList<String>stringArrayList) {
+        docStringArrayList.remove(position);
+        numberStringArrayList.remove(position);
+        areaStringArrayList.remove(position);
+
+        creatRecyclerDoc(stringArrayList);
     }
 
 
