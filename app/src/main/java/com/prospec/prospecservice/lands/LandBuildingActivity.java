@@ -498,7 +498,6 @@ public class LandBuildingActivity extends AppCompatActivity {
 
             return stringBuilder.toString();
         }
-
     }
 
     @Override
@@ -516,7 +515,6 @@ public class LandBuildingActivity extends AppCompatActivity {
         }
     }
 
-
     //    ส่วนของการกด บวก ลบ
     public void increaseInteger(View view) {
         minteger = minteger + 1;
@@ -533,7 +531,6 @@ public class LandBuildingActivity extends AppCompatActivity {
                 R.id.number);
         displayInteger.setText("" + number);
     }
-
 
     private void toolbar() {
         //        ADD Toolbar
@@ -657,7 +654,6 @@ public class LandBuildingActivity extends AppCompatActivity {
         editSqVar = (TextInputEditText) findViewById(R.id.editSquareVar);
         docRecyclerView = findViewById(R.id.documentRecyclerView);
 
-
         edit4 = (TextInputEditText) findViewById(R.id.editT4);
         edit5 = (TextInputEditText) findViewById(R.id.editT5);
         edit6 = (TextInputEditText) findViewById(R.id.editT6);
@@ -674,14 +670,11 @@ public class LandBuildingActivity extends AppCompatActivity {
         Add = (Button) findViewById(R.id.buttonSave);
         spin1 = (Spinner) findViewById(R.id.spinner1);
 
-
-
 //        spin2 = (Spinner) findViewById(R.id.spinner2);
         spin3 = (Spinner) findViewById(R.id.spinner3);
         spin4 = (Spinner) findViewById(R.id.spinner4);
         spin5 = (Spinner) findViewById(R.id.spinner5);
         spin6 = (Spinner) findViewById(R.id.spinner6);
-
 
         card1 = (CardView) findViewById(R.id.card1);
         card2 = (CardView) findViewById(R.id.card2);
@@ -707,22 +700,22 @@ public class LandBuildingActivity extends AppCompatActivity {
         increase3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String area = editSqVar.getText().toString().trim()+"ตารางวา";
+                String area = editSqVar.getText().toString().trim() + "ตรว.";
 
                 ArrayList<String> stringArrayList = new ArrayList<>();
                 stringArrayList.add(editSqVar.getText().toString().trim());
-                clickPlus(area,2,stringArrayList);
+                clickPlus(area, 2, stringArrayList);
             }
         });
 
         increase2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String area = editSqMater.getText().toString().trim() + "ตารางเมตร";
+                String area = editSqMater.getText().toString().trim() + "ตรม.";
 
                 ArrayList<String> stringArrayList = new ArrayList<>();
                 stringArrayList.add(editSqMater.getText().toString().trim());
-                clickPlus(area,1,stringArrayList);
+                clickPlus(area, 1, stringArrayList);
             }
         });
 
@@ -740,7 +733,7 @@ public class LandBuildingActivity extends AppCompatActivity {
                 stringArrayList.add(edit03.getText().toString().trim());
                 stringArrayList.add(edit003.getText().toString().trim());
 
-                clickPlus(area,0, stringArrayList);
+                clickPlus(area, 0, stringArrayList);
 
             }
         });
@@ -749,7 +742,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     }//end get event
 
-    private void clickPlus(final String area,int indexStatus, ArrayList<String> stringsArrayList) {
+    private void clickPlus(final String area, int indexStatus, ArrayList<String> stringsArrayList) {
         //                การหาขนาด Width จอที่ทำงานขณะนั้น
         Display display = getWindowManager().getDefaultDisplay();
         Point point = new Point();
@@ -786,19 +779,17 @@ public class LandBuildingActivity extends AppCompatActivity {
             public void onClickItem(View view, int position) {
 
                 chooseEditOrDelete(position, stringsArrayList);
-
-
             }
         });
 
         docRecyclerView.setAdapter(documentAdapter);
     }
 
-    private void chooseEditOrDelete(final int position,final ArrayList<String> stringsArrayList) {
+    private void chooseEditOrDelete(final int position, final ArrayList<String> stringsArrayList) {
         AlertDialog.Builder builder = new AlertDialog.Builder(LandBuildingActivity.this);
-        builder.setTitle("Edit or Delete");
-        builder.setMessage("What Do You Want?");
-        builder.setNegativeButton("Edit", new DialogInterface.OnClickListener() {
+        builder.setTitle("แก้ไขหรือลบ");
+        builder.setMessage("เลือกทำรายการ แก้ไขหรือลบ");
+        builder.setNegativeButton("แก้ไข", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
@@ -821,17 +812,17 @@ public class LandBuildingActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("ลบ", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                deleteDocument(position,stringsArrayList);
+                deleteDocument(position, stringsArrayList);
                 dialog.dismiss();
             }
         });
         builder.show();
     }
 
-    private void deleteDocument(int position, ArrayList<String>stringArrayList) {
+    private void deleteDocument(int position, ArrayList<String> stringArrayList) {
         docStringArrayList.remove(position);
         numberStringArrayList.remove(position);
         areaStringArrayList.remove(position);
