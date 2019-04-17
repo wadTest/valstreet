@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!--เข้าถึงรูปภาพ-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-   <!--เปิดกล้อง-->
+    <!--เปิดกล้อง-->
     <uses-permission android:name="android.permission.CAMERA" />
 
 
@@ -22,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".utility.Splash">
-        <!--<activity android:name=".StatusActivity">-->
+            <!--<activity android:name=".StatusActivity">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

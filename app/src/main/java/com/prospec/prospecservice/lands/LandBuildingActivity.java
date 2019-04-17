@@ -1,49 +1,67 @@
+
 package com.prospec.prospecservice.lands;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.Point;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Base64;
 import android.util.Log;
-import android.view.Display;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.prospec.prospecservice.OnClickItem;
+import com.prospec.prospecservice.CustomDialogActivity;
 import com.prospec.prospecservice.R;
-import com.prospec.prospecservice.utility.DocumentAdapter;
 import com.prospec.prospecservice.utility.MyAlert;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.StatusLine;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -63,8 +81,7 @@ import static android.view.View.VISIBLE;
 public class LandBuildingActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
-    private TextInputEditText name, edit2, edit3, edit4, edit5,
-            edit6, edit7, edit8, edit9, edit10, edit11, edit03, edit003, editSqMater, editSqVar;
+    private TextInputEditText name, edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
     private Spinner spin1, spin2, spin3, spin4, spin5, spin6;
     private CheckBox check1, check2, check3, check4, check6;
     private Button Add;
@@ -72,20 +89,10 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     //    Add number
     private int minteger = 1;
-    private ArrayList<String> docStringArrayList = new ArrayList<>();
-    private ArrayList<String> numberStringArrayList = new ArrayList<>();
-    private ArrayList<String> areaStringArrayList = new ArrayList<>();
-    private ArrayList<String> indexStatusStrings = new ArrayList<>();
-    private String docString;
-    private RecyclerView docRecyclerView;
 
     //    ตัวแปร + - จำนวนแปลง
     private LinearLayout Line1;
-    private ImageView increase1, increase2, increase3;
-    private LinearLayout documentLinearLayout;
-    private EditText sqMaterEditText, sqWarEditText;
-    //    ไพเวท
-    final int[] i = {0};
+    private ImageView increase1;
 
     //    ตัวแปรในส่วนของการทำให้ โชว์ ซ้อน
     private CardView card1, card2;
@@ -124,7 +131,7 @@ public class LandBuildingActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         titleLogin = sharedPreferences.getString("titleLogin", "");
         nameLogin = sharedPreferences.getString("NameLogin", "");
-        Log.d("share title, name", "get name" + titleLogin + nameLogin);
+        Log.d("share title, name", "get name" + titleLogin +nameLogin);
 
         this.toolbar();
         this.getevent();
@@ -295,9 +302,9 @@ public class LandBuildingActivity extends AppCompatActivity {
 //    }// calculation
 
     private void Image() {
-        GetImageFromGalleryButton = (Button) findViewById(R.id.buttonSelect);
-        UploadImageOnServerButton = (Button) findViewById(R.id.buttonUpload);
-        ShowSelectedImage = (ImageView) findViewById(R.id.imageView);
+        GetImageFromGalleryButton = (Button)findViewById(R.id.buttonSelect);
+        UploadImageOnServerButton = (Button)findViewById(R.id.buttonUpload);
+        ShowSelectedImage = (ImageView)findViewById(R.id.imageView);
         byteArrayOutputStream = new ByteArrayOutputStream();
         GetImageFromGalleryButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -322,13 +329,12 @@ public class LandBuildingActivity extends AppCompatActivity {
             }
         }
     }
-
-    private void showPictureDialog() {
+    private void showPictureDialog(){
         android.support.v7.app.AlertDialog.Builder pictureDialog = new android.support.v7.app.AlertDialog.Builder(this);
         pictureDialog.setTitle("Select Action");
         String[] pictureDialogItems = {
                 "Photo Gallery",
-                "Camera"};
+                "Camera" };
         pictureDialog.setItems(pictureDialogItems,
                 new DialogInterface.OnClickListener() {
                     @Override
@@ -345,7 +351,6 @@ public class LandBuildingActivity extends AppCompatActivity {
                 });
         pictureDialog.show();
     }
-
     public void choosePhotoFromGallary() {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -390,16 +395,16 @@ public class LandBuildingActivity extends AppCompatActivity {
         }
     }
 
-    public void UploadImageToServer() {
+    public void UploadImageToServer(){
         FixBitmap.compress(Bitmap.CompressFormat.JPEG, 40, byteArrayOutputStream);
         byteArray = byteArrayOutputStream.toByteArray();
         ConvertImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
-        class AsyncTaskUploadClass extends AsyncTask<Void, Void, String> {
+        class AsyncTaskUploadClass extends AsyncTask<Void,Void,String> {
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                progressDialog = ProgressDialog.show(LandBuildingActivity.this, "กำลังอัพโหลดรูปภาพ", "โปรดรอ", false, false);
+                progressDialog = ProgressDialog.show(LandBuildingActivity.this,"กำลังอัพโหลดรูปภาพ","โปรดรอ",false,false);
             }
 
             @Override
@@ -409,7 +414,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
                 progressDialog.dismiss();
 
-                Toast.makeText(LandBuildingActivity.this, string1, Toast.LENGTH_LONG).show();
+                Toast.makeText(LandBuildingActivity.this,string1,Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -417,7 +422,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
                 ImageProcessClass imageProcessClass = new ImageProcessClass();
 
-                HashMap<String, String> HashMapParams = new HashMap<String, String>();
+                HashMap<String,String> HashMapParams = new HashMap<String,String>();
 
                 HashMapParams.put(ImageTag, GetImageNameFromEditText);
 
@@ -432,9 +437,9 @@ public class LandBuildingActivity extends AppCompatActivity {
         AsyncTaskUploadClassOBJ.execute();
     }
 
-    public class ImageProcessClass {
+    public class ImageProcessClass{
 
-        public String ImageHttpRequest(String requestURL, HashMap<String, String> PData) {
+        public String ImageHttpRequest(String requestURL,HashMap<String, String> PData) {
 
             StringBuilder stringBuilder = new StringBuilder();
 
@@ -467,7 +472,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
                     String RC2;
 
-                    while ((RC2 = bufferedReader.readLine()) != null) {
+                    while ((RC2 = bufferedReader.readLine()) != null){
 
                         stringBuilder.append(RC2);
                     }
@@ -498,6 +503,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
             return stringBuilder.toString();
         }
+
     }
 
     @Override
@@ -507,13 +513,15 @@ public class LandBuildingActivity extends AppCompatActivity {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Now user should be able to use camera
 
-            } else {
+            }
+            else {
 
                 Toast.makeText(LandBuildingActivity.this, "ไม่สามารถใช้กล้องถ่ายรูปได้โปรดให้เราใช้กล้องถ่ายรูป", Toast.LENGTH_LONG).show();
 
             }
         }
     }
+
 
     //    ส่วนของการกด บวก ลบ
     public void increaseInteger(View view) {
@@ -531,6 +539,7 @@ public class LandBuildingActivity extends AppCompatActivity {
                 R.id.number);
         displayInteger.setText("" + number);
     }
+
 
     private void toolbar() {
         //        ADD Toolbar
@@ -648,12 +657,6 @@ public class LandBuildingActivity extends AppCompatActivity {
         name = (TextInputEditText) findViewById(R.id.name);
         edit2 = (TextInputEditText) findViewById(R.id.editT2);
         edit3 = (TextInputEditText) findViewById(R.id.editT3);
-        edit03 = (TextInputEditText) findViewById(R.id.editT03);
-        edit003 = (TextInputEditText) findViewById(R.id.editT003);
-        editSqMater = (TextInputEditText) findViewById(R.id.editSquareMater);
-        editSqVar = (TextInputEditText) findViewById(R.id.editSquareVar);
-        docRecyclerView = findViewById(R.id.documentRecyclerView);
-
         edit4 = (TextInputEditText) findViewById(R.id.editT4);
         edit5 = (TextInputEditText) findViewById(R.id.editT5);
         edit6 = (TextInputEditText) findViewById(R.id.editT6);
@@ -669,12 +672,12 @@ public class LandBuildingActivity extends AppCompatActivity {
         check6 = (CheckBox) findViewById(R.id.checkBox6);
         Add = (Button) findViewById(R.id.buttonSave);
         spin1 = (Spinner) findViewById(R.id.spinner1);
-
 //        spin2 = (Spinner) findViewById(R.id.spinner2);
         spin3 = (Spinner) findViewById(R.id.spinner3);
         spin4 = (Spinner) findViewById(R.id.spinner4);
         spin5 = (Spinner) findViewById(R.id.spinner5);
         spin6 = (Spinner) findViewById(R.id.spinner6);
+
 
         card1 = (CardView) findViewById(R.id.card1);
         card2 = (CardView) findViewById(R.id.card2);
@@ -687,148 +690,9 @@ public class LandBuildingActivity extends AppCompatActivity {
 
 //        + -
         increase1 = (ImageView) findViewById(R.id.increase1);
-        increase2 = findViewById(R.id.increase2);
-        increase3 = findViewById(R.id.increase3);
-        sqMaterEditText = findViewById(R.id.editSquareMater);
-        sqWarEditText = findViewById(R.id.editSquareVar);
-        documentLinearLayout = findViewById(R.id.layoutDocument);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(LandBuildingActivity.this,
-                LinearLayoutManager.VERTICAL, false);
-        docRecyclerView.setLayoutManager(linearLayoutManager);
-
-        increase3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String area = editSqVar.getText().toString().trim() + "ตรว.";
-
-                ArrayList<String> stringArrayList = new ArrayList<>();
-                stringArrayList.add(editSqVar.getText().toString().trim());
-                clickPlus(area, 2, stringArrayList);
-            }
-        });
-
-        increase2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String area = editSqMater.getText().toString().trim() + "ตรม.";
-
-                ArrayList<String> stringArrayList = new ArrayList<>();
-                stringArrayList.add(editSqMater.getText().toString().trim());
-                clickPlus(area, 1, stringArrayList);
-            }
-        });
-
-
-        increase1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String area = edit3.getText().toString().trim() + "ไร่" +
-                        edit03.getText().toString().trim() + "งาน" +
-                        edit003.getText().toString().trim() + "ตรว.";
-
-                ArrayList<String> stringArrayList = new ArrayList<>();
-                stringArrayList.add(edit3.getText().toString().trim());
-                stringArrayList.add(edit03.getText().toString().trim());
-                stringArrayList.add(edit003.getText().toString().trim());
-
-                clickPlus(area, 0, stringArrayList);
-
-            }
-        });
-
         Line1 = (LinearLayout) findViewById(R.id.Line1);
 
     }//end get event
-
-    private void clickPlus(final String area, int indexStatus, ArrayList<String> stringsArrayList) {
-        //                การหาขนาด Width จอที่ทำงานขณะนั้น
-        Display display = getWindowManager().getDefaultDisplay();
-        Point point = new Point();
-        display.getSize(point);
-        int width = point.x;
-
-        docStringArrayList.add(docString);
-        numberStringArrayList.add(edit2.getText().toString().trim());
-        areaStringArrayList.add(area);
-        indexStatusStrings.add(Integer.toString(indexStatus));
-
-        edit2.setText("");
-        edit3.setText("");
-        edit03.setText("");
-        edit003.setText("");
-
-        sqMaterEditText.setText("");
-        sqWarEditText.setText("");
-
-        Log.d("3ApriV1", "docStringArrayList==>" + docStringArrayList.toString());
-
-        creatRecyclerDoc(stringsArrayList);
-
-        i[0] += 1;
-        int height = 120 * i[0];
-        documentLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(width, height));
-        number.setText(Integer.toString(i[0]));
-    }
-
-    private void creatRecyclerDoc(final ArrayList<String> stringsArrayList) {
-        DocumentAdapter documentAdapter = new DocumentAdapter(LandBuildingActivity.this,
-                docStringArrayList, numberStringArrayList, areaStringArrayList, new OnClickItem() {
-            @Override
-            public void onClickItem(View view, int position) {
-
-                chooseEditOrDelete(position, stringsArrayList);
-            }
-        });
-
-        docRecyclerView.setAdapter(documentAdapter);
-    }
-
-    private void chooseEditOrDelete(final int position, final ArrayList<String> stringsArrayList) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(LandBuildingActivity.this);
-        builder.setTitle("แก้ไขหรือลบ");
-        builder.setMessage("เลือกทำรายการ แก้ไขหรือลบ");
-        builder.setNegativeButton("แก้ไข", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                edit2.setText("");
-
-
-                switch (Integer.parseInt(indexStatusStrings.get(position))) {
-                    case 0:
-                        edit3.setText(stringsArrayList.get(0));
-                        edit03.setText(stringsArrayList.get(1));
-                        edit003.setText(stringsArrayList.get(2));
-                        break;
-                    case 1:
-                        sqMaterEditText.setText(stringsArrayList.get(0));
-                        break;
-                    case 2:
-                        sqWarEditText.setText(stringsArrayList.get(0));
-                        break;
-                }
-                dialog.dismiss();
-            }
-        });
-        builder.setPositiveButton("ลบ", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                deleteDocument(position, stringsArrayList);
-                dialog.dismiss();
-            }
-        });
-        builder.show();
-    }
-
-    private void deleteDocument(int position, ArrayList<String> stringArrayList) {
-        docStringArrayList.remove(position);
-        numberStringArrayList.remove(position);
-        areaStringArrayList.remove(position);
-
-        creatRecyclerDoc(stringArrayList);
-    }
 
 
     public void checkboxName(View view) {
@@ -893,7 +757,6 @@ public class LandBuildingActivity extends AppCompatActivity {
                 String editText11 = edit11.getText().toString().trim();
 
                 String spinner1 = spin1.getSelectedItem().toString();
-
                 String spinner2 = spin2.getSelectedItem().toString();
                 String spinner3 = spin3.getSelectedItem().toString();
                 String spinner4 = spin4.getSelectedItem().toString();
@@ -913,7 +776,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
 
                 //BASIC CLIENT SIDE VALIDATION
-                if ((nameS.length() < 1 || editText2.length() < 1 || editText3.length() < 1 || editText5.length() < 1
+                if ((nameS.length()<1 || editText2.length() < 1 || editText3.length() < 1 || editText5.length() < 1
                         || editText6.length() < 1 || editText7.length() < 1 || editText8.length() < 1
                         || spinner1.length() < 1 || spinner2.length() < 1 || spinner3.length() < 1 || spinner4.length() < 1
                         || spinner5.length() < 1 || spinner6.length() < 1)) {
@@ -961,7 +824,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     private void spinner1() {
 
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
 
         adapter.add("เลือกเอกสารสิทธิ์");
         adapter.add("โฉนดที่ดิน");
@@ -970,19 +833,6 @@ public class LandBuildingActivity extends AppCompatActivity {
 
         spin1.setAdapter(adapter);
         spin1.setSelection(0);
-
-        spin1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                docString = adapter.getItem(position);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-                docString = "";
-            }
-        });
 
     }
 
