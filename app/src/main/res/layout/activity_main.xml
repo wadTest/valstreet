@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
@@ -61,45 +61,42 @@
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="@drawable/background_login"
             android:text="@string/login"
-            android:layout_marginTop="20dp"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/size_from"
-            android:textStyle="bold"
-            android:textColor="@android:color/white" />
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginTop="35dp"
-                android:onClick="ShowPopup"
-                android:text="Register"
-                android:textSize="@dimen/size_main"
-                android:textColor="@color/colorGray"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="35dp"
+            android:onClick="ShowPopup"
+            android:text="Register"
+            android:textColor="@color/colorGray"
+            android:textSize="@dimen/size_main"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/ol_password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="15dp"
-                android:textSize="@dimen/size_main"
-                android:text="Forgot your password"
-                android:textColor="@color/colorGray"
-                android:textStyle="bold" />
+        <!--<TextView-->
+        <!--android:id="@+id/ol_password"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginTop="15dp"-->
+        <!--android:textSize="@dimen/size_main"-->
+        <!--android:text="Forgot your password"-->
+        <!--android:textColor="@color/colorGray"-->
+        <!--android:textStyle="bold" />-->
 
 
-            <ProgressBar
-                android:id="@+id/progress"
-                style="@style/Base.Widget.AppCompat.ProgressBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:indeterminate="true"
-                android:visibility="invisible" />
+        <!--<ProgressBar-->
+            <!--android:id="@+id/progress"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="5dp" />-->
 
     </LinearLayout>
 </LinearLayout>

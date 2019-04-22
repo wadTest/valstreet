@@ -125,7 +125,6 @@ public class SignInActivity extends AppCompatActivity {
 
     }//Method
 
-
     private boolean validateInputs() {
         boolean valid = true;
 
@@ -150,6 +149,5 @@ public class SignInActivity extends AppCompatActivity {
         }
         return valid;
     }
-
 
 }//Main Class

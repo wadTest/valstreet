@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import android.support.v7.app.AppCompatActivity;
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 if (uerString.equals("") || passwordString.equals("")) {
                     MyAlert myAlert = new MyAlert(MainActivity.this, "มีช่องว่าง", "กรุณากรอกข้อมูลในช่องว่าง");
                     myAlert.myDialog();
+
                 } else {
 
                     //No Space ดึงค่าจาก server

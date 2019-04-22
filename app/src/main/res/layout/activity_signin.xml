@@ -42,7 +42,7 @@
                     android:id="@+id/et_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:drawableRight="@drawable/ic_name"
                     android:hint="คำนำหน้า + ชื่อ"
                     android:inputType="text" />
@@ -60,6 +60,7 @@
             <EditText
                 android:id="@+id/et_last"
                 android:layout_width="match_parent"
+                android:layout_marginRight="5dp"
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_name"
                 android:hint="นามสกุล"
@@ -79,6 +80,7 @@
                 android:id="@+id/et_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
                 android:drawableRight="@drawable/ic_phone_signup"
                 android:hint="หมายเลขโทรศัพท์"
                 android:inputType="number" />
@@ -97,6 +99,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_mail_signup"
                 android:hint="Email"
+                android:layout_marginRight="5dp"
                 android:inputType="textEmailAddress" />
 
         </android.support.design.widget.TextInputLayout>
@@ -112,7 +115,7 @@
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_password"
+                android:layout_marginRight="5dp"
                 android:hint="Password"
                 android:inputType="textPassword" />
 
@@ -130,6 +133,7 @@
                 android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_password"
                 android:hint="Confirm password"
+                android:layout_marginRight="5dp"
                 android:inputType="textPassword" />
 
         </android.support.design.widget.TextInputLayout>
@@ -164,13 +168,13 @@
             <!--android:textAllCaps="false"-->
             <!--android:textSize="20dp" />-->
 
-        <ProgressBar
-            android:id="@+id/progress"
-            style="@style/Base.Widget.AppCompat.ProgressBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:visibility="invisible" />
+        <!--<ProgressBar-->
+            <!--android:id="@+id/progress"-->
+            <!--style="@style/Base.Widget.AppCompat.ProgressBar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:indeterminate="true"-->
+            <!--android:visibility="invisible" />-->
 
     </LinearLayout>
 </LinearLayout>
