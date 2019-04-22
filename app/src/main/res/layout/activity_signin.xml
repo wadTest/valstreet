@@ -141,56 +141,28 @@
             android:text="ข้อกำหนดและเงื่อนไข"
             android:layout_height="wrap_content" />
 
-
-        <!--<RelativeLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="10dp">-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/gender_textview"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="5dp"-->
-                <!--android:paddingRight="15dp"-->
-                <!--android:text="คุณคือ"-->
-                <!--android:textSize="@dimen/size_main" />-->
-
-            <!--<RadioGroup-->
-                <!--android:id="@+id/gender_radio_group"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_toRightOf="@+id/gender_textview"-->
-                <!--android:orientation="horizontal">-->
-
-                <!--<RadioButton-->
-                    <!--android:id="@+id/radio_btn1"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:checked="true"-->
-                    <!--android:text="@string/hint_lookka"-->
-                    <!--android:textSize="@dimen/size_main" />-->
-
-                <!--<RadioButton-->
-                    <!--android:id="@+id/radio_btn2"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginLeft="20dp"-->
-                    <!--android:text="@string/songngan"-->
-                    <!--android:textSize="@dimen/size_main" />-->
-            <!--</RadioGroup>-->
-        <!--</RelativeLayout>-->
-
-        <android.support.v7.widget.AppCompatButton
+        <Button
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_login"
+            android:background="@drawable/background_button"
+            android:layout_height="55dp"
             android:text="Sign in"
-            android:textColor="@android:color/white"
+            android:enabled="false"
+            android:textAllCaps="false"
             android:textSize="@dimen/size_from"
             android:textStyle="bold" />
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_register"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:background="#ffff"-->
+            <!--android:enabled="false"-->
+            <!--android:text="Download"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textSize="20dp" />-->
 
         <ProgressBar
             android:id="@+id/progress"

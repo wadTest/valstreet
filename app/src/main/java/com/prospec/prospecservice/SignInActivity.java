@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,7 @@ public class SignInActivity extends AppCompatActivity {
     private Button btn_register;
     private String et_nameString, et_lastString, et_phoneString, et_emailString, et_passwordString, et_co_passwordString;
     private static final String KEY_EMPTY = "";
+    private CheckBox Confirm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,11 @@ public class SignInActivity extends AppCompatActivity {
 
 //        Grt Event
         getevent();
-    }
+
+//        Accept Checkbox
+        accept();
+
+    }//Method
 
     private void getevent() {
         et_name = (EditText) findViewById(R.id.et_name);
@@ -43,6 +49,23 @@ public class SignInActivity extends AppCompatActivity {
         et_password = (EditText) findViewById(R.id.et_password);
         btn_register = (Button) findViewById(R.id.btn_register);
         et_co_password = (EditText) findViewById(R.id.et_co_password);
+        Confirm = (CheckBox) findViewById(R.id.Confirm);
+    }
+
+    private void accept() {
+
+        Confirm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                ((Button) findViewById(R.id.btn_register)).setEnabled(isChecked);
+            }
+
+        });
+
+        saveData();
+    }
+
+    private void saveData() {
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,17 +128,6 @@ public class SignInActivity extends AppCompatActivity {
 
     private boolean validateInputs() {
         boolean valid = true;
-//        if (KEY_EMPTY.equals(et_passwordString)) {
-//            et_password.setError("กรุณากรอกรหัสผ่าน");
-//            et_password.requestFocus();
-//            valid = false;
-//        }
-
-//        if (KEY_EMPTY.equals(et_co_passwordString)) {
-//            et_co_password.setError("ยืนยันรหัสผ่าน");
-//            et_co_password.requestFocus();
-//            valid = false;
-//        }
 
         if (et_passwordString.isEmpty() || et_password.length() < 6 || et_password.length() > 10) {
             et_password.setError("ป้อนรหัสผ่านอย่างน้อย 6 ตัว");
@@ -138,5 +150,6 @@ public class SignInActivity extends AppCompatActivity {
         }
         return valid;
     }
+
 
 }//Main Class
