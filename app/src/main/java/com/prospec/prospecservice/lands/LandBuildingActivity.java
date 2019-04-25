@@ -74,7 +74,7 @@ public class LandBuildingActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         titleLogin = sharedPreferences.getString("titleLogin", "");
         nameLogin = sharedPreferences.getString("NameLogin", "");
-        Log.d("share title, name", "get name" + titleLogin +nameLogin);
+        Log.d("share title, name", "get name" + titleLogin + nameLogin);
 
         toolbar();
 
@@ -82,402 +82,14 @@ public class LandBuildingActivity extends AppCompatActivity {
 
         savedata();
 
-        this.spinner1();
+        spinner1();
 //        this.spinner2();
-        this.spinner3();
-        this.spinner5();
-        this.spinner6();
+        spinner3();
+        spinner5();
+        spinner6();
 
-//        ส่วนของรูปภาพ
-        Image();
+    }// Method
 
-//        auto tatal
-
-//        ส่วนของรวมผลลัพธ์อัตโนมัติ
-//        calculation();
-    }//Method
-
-//    private void calculation() {
-//        final EditText arrayEditText = findViewById(R.id.editT3);
-//        final EditText showEditText = findViewById(R.id.ed02);
-//        final EditText all = findViewById(R.id.ed03);
-//        final EditText addFo = findViewById(R.id.ed04);
-//        final EditText addFi = findViewById(R.id.ed05);
-//        final EditText thbEditText = findViewById(R.id.editT4);
-//        final String[] strings = new String[]{"0", "0", "0", "0", "0"};
-//
-//        //        ช่องที่ 1
-//        arrayEditText.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//                strings[0] = arrayEditText.getText().toString();
-//                if (strings[0].isEmpty()) {
-//                    strings[0] = "0";
-//                }
-////                sum
-//                calculate(strings, thbEditText);
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//            }
-//        });
-//
-////        ช่องที่ 2
-//        showEditText.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//                strings[1] = showEditText.getText().toString();
-//                if (strings[1].isEmpty()) {
-//                    strings[1] = "0";
-//                }
-////                sum
-//                calculate(strings, thbEditText);
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//            }
-//        });
-//
-////        ช่องที่ 3
-//        all.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//                strings[2] = all.getText().toString();
-//                if (strings[2].isEmpty()) {
-//                    strings[2] = "0";
-//                }
-////                sum
-//                calculate(strings, thbEditText);
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//            }
-//        });
-//
-//        //        ช่องที่ 4
-//        addFo.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//                strings[3] = addFo.getText().toString();
-//                if (strings[3].isEmpty()) {
-//                    strings[3] = "0";
-//                }
-////                sum
-//                calculate(strings, thbEditText);
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//            }
-//        });
-//
-//        //        ช่องที่ 5
-//        addFi.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//                strings[3] = addFi.getText().toString();
-//                if (strings[4].isEmpty()) {
-//                    strings[4] = "0";
-//                }
-////                sum
-//                calculate(strings, thbEditText);
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//            }
-//        });
-//    }
-//    private void calculate(String[] strings, EditText showEditText) {
-//        int arrayInt = Integer.parseInt(strings[0]);
-//        int thbInt = Integer.parseInt(strings[1]);
-//        int all = Integer.parseInt(strings[2]);
-//        int addFo = Integer.parseInt(strings[3]);
-//        int addFi = Integer.parseInt(strings[4]);
-//        int answerInt = arrayInt + thbInt + all + addFo + addFi;
-//        showEditText.setText(Integer.toString(answerInt));
-//    }// calculation
-
-    private void Image() {
-        GetImageFromGalleryButton = (Button)findViewById(R.id.buttonSelect);
-        UploadImageOnServerButton = (Button)findViewById(R.id.buttonUpload);
-        ShowSelectedImage = (ImageView)findViewById(R.id.imageView);
-        byteArrayOutputStream = new ByteArrayOutputStream();
-        GetImageFromGalleryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                showPictureDialog();
-            }
-        });
-
-        UploadImageOnServerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GetImageNameFromEditText = imageName.getText().toString();
-
-                UploadImageToServer();
-            }
-        });
-        if (ContextCompat.checkSelfPermission(LandBuildingActivity.this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[]{android.Manifest.permission.CAMERA},
-                        5);
-            }
-        }
-    }
-    private void showPictureDialog(){
-        android.support.v7.app.AlertDialog.Builder pictureDialog = new android.support.v7.app.AlertDialog.Builder(this);
-        pictureDialog.setTitle("Select Action");
-        String[] pictureDialogItems = {
-                "Photo Gallery",
-                "Camera" };
-        pictureDialog.setItems(pictureDialogItems,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        switch (which) {
-                            case 0:
-                                choosePhotoFromGallary();
-                                break;
-                            case 1:
-                                takePhotoFromCamera();
-                                break;
-                        }
-                    }
-                });
-        pictureDialog.show();
-    }
-    public void choosePhotoFromGallary() {
-        Intent galleryIntent = new Intent(Intent.ACTION_PICK,
-                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-
-        startActivityForResult(galleryIntent, GALLERY);
-    }
-
-    private void takePhotoFromCamera() {
-        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent, CAMERA);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == this.RESULT_CANCELED) {
-            return;
-        }
-        if (requestCode == GALLERY) {
-            if (data != null) {
-                Uri contentURI = data.getData();
-                try {
-                    FixBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
-                    // String path = saveImage(bitmap);
-                    //Toast.makeText(MainActivity.this, "Image Saved!", Toast.LENGTH_SHORT).show();
-                    ShowSelectedImage.setImageBitmap(FixBitmap);
-                    UploadImageOnServerButton.setVisibility(View.VISIBLE);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    Toast.makeText(LandBuildingActivity.this, "ล้มเหลว!", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-        } else if (requestCode == CAMERA) {
-            FixBitmap = (Bitmap) data.getExtras().get("data");
-            ShowSelectedImage.setImageBitmap(FixBitmap);
-            UploadImageOnServerButton.setVisibility(View.VISIBLE);
-            //  saveImage(thumbnail);
-            //Toast.makeText(ShadiRegistrationPart5.this, "Image Saved!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void UploadImageToServer(){
-        FixBitmap.compress(Bitmap.CompressFormat.JPEG, 40, byteArrayOutputStream);
-        byteArray = byteArrayOutputStream.toByteArray();
-        ConvertImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
-        class AsyncTaskUploadClass extends AsyncTask<Void,Void,String> {
-
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                progressDialog = ProgressDialog.show(LandBuildingActivity.this,"กำลังอัพโหลดรูปภาพ","โปรดรอ",false,false);
-            }
-
-            @Override
-            protected void onPostExecute(String string1) {
-
-                super.onPostExecute(string1);
-
-                progressDialog.dismiss();
-
-                Toast.makeText(LandBuildingActivity.this,string1,Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            protected String doInBackground(Void... params) {
-
-                ImageProcessClass imageProcessClass = new ImageProcessClass();
-
-                HashMap<String,String> HashMapParams = new HashMap<String,String>();
-
-                HashMapParams.put(ImageTag, GetImageNameFromEditText);
-
-                HashMapParams.put(ImageName, ConvertImage);
-
-                String FinalData = imageProcessClass.ImageHttpRequest("http://119.59.103.121/app_mobile/assessment/lands.php", HashMapParams);
-
-                return FinalData;
-            }
-        }
-        AsyncTaskUploadClass AsyncTaskUploadClassOBJ = new AsyncTaskUploadClass();
-        AsyncTaskUploadClassOBJ.execute();
-    }
-
-    public class ImageProcessClass{
-
-        public String ImageHttpRequest(String requestURL,HashMap<String, String> PData) {
-
-            StringBuilder stringBuilder = new StringBuilder();
-
-            try {
-                url = new URL(requestURL);
-                httpURLConnection = (HttpURLConnection) url.openConnection();
-                httpURLConnection.setReadTimeout(20000);
-                httpURLConnection.setConnectTimeout(20000);
-                httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.setDoInput(true);
-                httpURLConnection.setDoOutput(true);
-                outputStream = httpURLConnection.getOutputStream();
-                bufferedWriter = new BufferedWriter(
-
-                        new OutputStreamWriter(outputStream, "UTF-8"));
-
-                bufferedWriter.write(bufferedWriterDataFN(PData));
-
-                bufferedWriter.flush();
-                bufferedWriter.close();
-                outputStream.close();
-
-                RC = httpURLConnection.getResponseCode();
-
-                if (RC == HttpsURLConnection.HTTP_OK) {
-
-                    bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
-
-                    stringBuilder = new StringBuilder();
-
-                    String RC2;
-
-                    while ((RC2 = bufferedReader.readLine()) != null){
-
-                        stringBuilder.append(RC2);
-                    }
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return stringBuilder.toString();
-        }
-
-        private String bufferedWriterDataFN(HashMap<String, String> HashMapParams) throws UnsupportedEncodingException {
-
-            stringBuilder = new StringBuilder();
-
-            for (Map.Entry<String, String> KEY : HashMapParams.entrySet()) {
-                if (check)
-                    check = false;
-                else
-                    stringBuilder.append("&");
-
-                stringBuilder.append(URLEncoder.encode(KEY.getKey(), "UTF-8"));
-
-                stringBuilder.append("=");
-
-                stringBuilder.append(URLEncoder.encode(KEY.getValue(), "UTF-8"));
-            }
-
-            return stringBuilder.toString();
-        }
-
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 5) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Now user should be able to use camera
-
-            }
-            else {
-
-                Toast.makeText(LandBuildingActivity.this, "ไม่สามารถใช้กล้องถ่ายรูปได้โปรดให้เราใช้กล้องถ่ายรูป", Toast.LENGTH_LONG).show();
-
-            }
-        }
-    }
-
-    //    ส่วนของการกด บวก ลบ
-    public void increaseInteger(View view) {
-        minteger = minteger + 1;
-        display(minteger);
-    }
-
-    public void decreaseInteger(View view) {
-        minteger = minteger - 1;
-        display(minteger);
-    }
-
-    private void display(int number) {
-        TextView displayInteger = (TextView) findViewById(
-                R.id.number);
-        displayInteger.setText("" + number);
-    }
 
     private void toolbar() {
         //        ADD Toolbar
@@ -495,103 +107,10 @@ public class LandBuildingActivity extends AppCompatActivity {
         });
     }//end toolbar
 
-//    //    ส่วนของการกดบวก ลบ
-//    private void addremove() {
-//        parentLinearLayout = (LinearLayout) findViewById(R.id.parent_linear_layout);
-//    }
-//
-//    //    เมื่อกดบวก
-//    public void onAddField(View v) {
-//        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        final View rowView = inflater.inflate(R.layout.field, null);
-//        // เป็นการเพิ่มแถวใหม่ก่อนปุ่มเพิ่มฟิลด์
-//        parentLinearLayout.addView(rowView, parentLinearLayout.getChildCount() - 1);
-//    }
-//
-//    //    เมื่อกดลบ
-//    public void onDelete(View v) {
-//        parentLinearLayout.removeView((View) v.getParent());
-//    }
-//
-//    //    get DB. sql มาแสดงในส่วนของที่อยู่
-//    private void address() {
-//
-//        // Permission StrictMode
-//        if (android.os.Build.VERSION.SDK_INT > 9) {
-//            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//            StrictMode.setThreadPolicy(policy);
-//        }
-
-//        getevent autoAddress (AutoComplete)
-//        final AutoCompleteTextView autoAddress = (AutoCompleteTextView) findViewById(R.id.address);
-//
-////        url php
-//        String url = "http://119.59.103.121/app_mobile/get%20spinner.php";
-//
-//        try {
-//
-//            JSONArray data = new JSONArray(getJSONUrl(url));
-//
-//            final ArrayList<HashMap<String, String>> MyArrList = new ArrayList<HashMap<String, String>>();
-//            HashMap<String, String> map;
-//
-//            for (int i = 0; i < data.length(); i++) {
-//                JSONObject c = data.getJSONObject(i);
-//
-//                map = new HashMap<String, String>();
-//                map.put("tambon_th", c.getString("tambon_th") + "\n");
-//                map.put("amphur_th", c.getString("amphur_th") + "\n");
-//                map.put("province_th", c.getString("province_th"));
-//                MyArrList.add(map);
-//            }
-//
-//            SimpleAdapter sAdap;
-//            sAdap = new SimpleAdapter(LandBuildingActivity.this, MyArrList, R.layout.activity_column,
-//                    new String[]{"tambon_th", "amphur_th", "province_th"},
-//                    new int[]{R.id.ColMemberID, R.id.ColName, R.id.ColTel});
-//            autoAddress.setAdapter(sAdap);
-//
-//            final AlertDialog.Builder viewDetail = new AlertDialog.Builder(this);
-//
-//        } catch (JSONException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//
-//    }
-//
-//    public String getJSONUrl(String url) {
-//        StringBuilder str = new StringBuilder();
-//        HttpClient client = new DefaultHttpClient();
-//        HttpGet httpGet = new HttpGet(url);
-//        try {
-//            HttpResponse response = client.execute(httpGet);
-//            StatusLine statusLine = response.getStatusLine();
-//            int statusCode = statusLine.getStatusCode();
-//            if (statusCode == 200) { // Download OK
-//                HttpEntity entity = response.getEntity();
-//                InputStream content = entity.getContent();
-//                BufferedReader reader = new BufferedReader(new InputStreamReader(content));
-//                String line;
-//                while ((line = reader.readLine()) != null) {
-//                    str.append(line);
-//                }
-//            } else {
-//                Log.e("Log", "Failed to download result..");
-//            }
-//        } catch (ClientProtocolException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return str.toString();
-
-//    }
 
     private void getevent() {
 //        กรอกข้อมูล
-        number = (TextView) findViewById(R.id.number);
+        number = (EditText) findViewById(R.id.number);
         name = (TextInputEditText) findViewById(R.id.name);
         edit2 = (TextInputEditText) findViewById(R.id.editT2);
         edit3 = (TextInputEditText) findViewById(R.id.editT3);
@@ -616,7 +135,6 @@ public class LandBuildingActivity extends AppCompatActivity {
         spin5 = (Spinner) findViewById(R.id.spinner5);
         spin6 = (Spinner) findViewById(R.id.spinner6);
 
-
         card1 = (CardView) findViewById(R.id.card1);
         card2 = (CardView) findViewById(R.id.card2);
 //        ชื่อคนที่login
@@ -626,9 +144,6 @@ public class LandBuildingActivity extends AppCompatActivity {
         title = (TextView) findViewById(R.id.title);
         title.setText(titleLogin.trim());
 
-//        + -
-        increase1 = (ImageView) findViewById(R.id.increase1);
-        Line1 = (LinearLayout) findViewById(R.id.Line1);
 
     }//end get event
 
@@ -701,11 +216,6 @@ public class LandBuildingActivity extends AppCompatActivity {
                 String spinner5 = spin5.getSelectedItem().toString();
                 String spinner6 = spin6.getSelectedItem().toString();
 
-//                String sp02 = sp2.getSelectedItem().toString();
-//                String sp03 = sp3.getSelectedItem().toString();
-//                String sp04 = sp4.getSelectedItem().toString();
-//                String sp05 = sp5.getSelectedItem().toString();
-
                 Boolean checkbox1 = check1.isChecked();
                 Boolean checkbox2 = check2.isChecked();
                 Boolean checkbox3 = check3.isChecked();
@@ -774,19 +284,6 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     }
 
-//    private void spinner2() {
-//
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
-//
-//        adapter.add("เลือกประเภท");
-//        adapter.add("ไร่-งาน-ตารางวา");
-//        adapter.add("ตารางวา");
-//        adapter.add("ตารางเมตร");
-//
-//        spin2.setAdapter(adapter);
-//        spin2.setSelection(0);
-//
-//    }
 
     private void spinner3() {
 
