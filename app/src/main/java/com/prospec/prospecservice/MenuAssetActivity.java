@@ -54,6 +54,5 @@ public class MenuAssetActivity extends AppCompatActivity {
 
             }
         });
-
     }
-}
+}//Main Class

@@ -36,7 +36,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ตั้งชื่อทรัพย์"
+                    android:text="ชื่อทรัพย์สิน"
                     android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main" />
 
@@ -84,10 +84,10 @@
                 <!--android:src="@mipmap/minus" />-->
 
 
-                <TextView
+                <EditText
                     android:id="@+id/number"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="35dp"
                     android:layout_marginLeft="3dp"
                     android:background="@drawable/b_edittext"
                     android:text="1"
@@ -323,11 +323,11 @@
                         android:id="@+id/editT4"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
-                        android:layout_marginTop="5dp"
                         android:layout_marginLeft="3dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.2"
                         android:background="@drawable/b_edittext"
                         android:enabled="true"
-                        android:layout_weight="0.2"
                         android:focusable="true"
                         android:hint="ไร่"
                         android:inputType="number"

@@ -53,65 +53,34 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
     private TextInputEditText name, edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
+    private EditText number;
     private Spinner spin1, spin2, spin3, spin4, spin5, spin6;
     private CheckBox check1, check2, check3, check4, check6;
     private Button Add;
 
-
-    //    Add number
-    private int minteger = 1;
-
-    //    ตัวแปร + - จำนวนแปลง
-    private LinearLayout Line1;
-    private ImageView increase1;
-
     //    ตัวแปรในส่วนของการทำให้ โชว์ ซ้อน
     private CardView card1, card2;
-    //    ส่วนของการget ชื่อ มาแสดง
-    private TextView tv_name, title, number;
-    private String nameLogin, titleLogin;
 
-    //    ส่วนชองรูปภาพ
-    Button GetImageFromGalleryButton, UploadImageOnServerButton;
-    ImageView ShowSelectedImage;
-    EditText imageName;
-    Bitmap FixBitmap;
-    String ImageTag = "image_document";
-    String ImageName = "document";
-    ProgressDialog progressDialog;
-    ByteArrayOutputStream byteArrayOutputStream;
-    byte[] byteArray;
-    String ConvertImage;
-    String GetImageNameFromEditText;
-    HttpURLConnection httpURLConnection;
-    URL url;
-    OutputStream outputStream;
-    BufferedWriter bufferedWriter;
-    int RC;
-    BufferedReader bufferedReader;
-    StringBuilder stringBuilder;
-    boolean check = true;
-    private int GALLERY = 1, CAMERA = 2;
+    //    ส่วนของการget ชื่อ มาแสดง
+    private TextView tv_name, title;
+    private String nameLogin, titleLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_land_building);
 
-//        share name title ที่ login
+//        share name title ที่ login เข้ามา
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
         titleLogin = sharedPreferences.getString("titleLogin", "");
         nameLogin = sharedPreferences.getString("NameLogin", "");
         Log.d("share title, name", "get name" + titleLogin +nameLogin);
 
-        this.toolbar();
-        this.getevent();
+        toolbar();
 
-//        this.address();
+        getevent();
 
         savedata();
-
-//        redioGruup();
 
         this.spinner1();
 //        this.spinner2();
@@ -493,7 +462,6 @@ public class LandBuildingActivity extends AppCompatActivity {
         }
     }
 
-
     //    ส่วนของการกด บวก ลบ
     public void increaseInteger(View view) {
         minteger = minteger + 1;
@@ -510,7 +478,6 @@ public class LandBuildingActivity extends AppCompatActivity {
                 R.id.number);
         displayInteger.setText("" + number);
     }
-
 
     private void toolbar() {
         //        ADD Toolbar
