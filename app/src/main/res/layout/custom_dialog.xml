@@ -1,81 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog_rl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#efecec"
-    android:orientation="vertical"
-    tools:context=".CustomDialogActivity">
+    android:padding="10dp">
 
-    <!--Toolbar    -->
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:background="@color/colorPrimary"/>
-
-    <!--ช่องกรอกข้อมูล-->
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="380dp"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="16dp"
-        android:hint="กรอกข้อมูล"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:textSize="@dimen/size_main" />
-
-    <!--แถบแสดงการโหลด-->
-    <ProgressBar
-        android:id="@+id/progress"
-        style="@style/Base.Widget.AppCompat.ProgressBar"
+    <TextView
+        android:id="@+id/dialog_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:indeterminate="true"
-        android:visibility="gone" />
-
-    <!--ปุ่มกดบันทึก จากนั้นข้อมูลนี้จะถูกส่งไปยัง DB.-->
-    <Button
-        android:id="@+id/buttonMessage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="20sp"
-        android:background="@drawable/background_button"
-        android:text="บันทึกข้อมูล"
+        android:background="#d5dda6"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="รายละเอียดสินทรัพย์แบบย่อ"
         android:textColor="@color/colorBack"
         android:textSize="@dimen/size18"
         android:textStyle="bold" />
 
-    <!--ชื่อ และCไหน ของคนที่กรอกข้อมูล-->
-    <TextView
-        android:id="@+id/tv_name"
+    <EditText
+        android:id="@+id/et_name"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginLeft="5dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/b_edittext"
-        android:textColor="@color/colorBack"
-        android:textSize="16sp"
-        android:visibility="gone" />
+        android:gravity="center"
+        android:layout_below="@id/dialog_title"
+        android:hint="กรอกรายละเอียด"
+        android:textSize="16dp" />
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/b_edittext"
-        android:textColor="@color/colorBack"
-        android:textSize="@dimen/size18"
-        android:visibility="gone" />
+    <Button
+        android:id="@+id/dialog_positive_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_name"
+        android:layout_alignParentRight="true"
+        android:background="#dde5ad"
+        android:text="ยืนยัน" />
 
+    <Button
+        android:id="@+id/dialog_negative_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/dialog_positive_btn"
+        android:layout_marginRight="3dp"
+        android:layout_toLeftOf="@id/dialog_positive_btn"
+        android:background="#dde5ad"
+        android:text="ยกเลิก" />
 </RelativeLayout>

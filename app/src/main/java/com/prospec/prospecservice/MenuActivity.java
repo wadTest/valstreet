@@ -15,14 +15,17 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.prospec.prospecservice.utility.AddUserToServer;
@@ -153,7 +156,8 @@ public class MenuActivity extends AppCompatActivity {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.message1:
-                                startActivity(new Intent(MenuActivity.this, CustomDialogActivity.class));
+//                                startActivity(new Intent(MenuActivity.this, CustomDialogActivity.class));
+                                sendShort();
                                 return true;
                             case R.id.message2:
                                 startActivity(new Intent(MenuActivity.this, MenuAssetActivity.class));
@@ -161,7 +165,59 @@ public class MenuActivity extends AppCompatActivity {
                         }
                         return true;
                     }
+
+                    private void sendShort() {
+
+                        // Build an AlertDialog
+                        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MenuActivity.this);
+
+                        LayoutInflater inflater = getLayoutInflater();
+                        View dialogView = inflater.inflate(R.layout.custom_dialog,null);
+
+                        // Specify alert dialog is not cancelable/not ignorable
+                        builder.setCancelable(false);
+
+                        // Set the custom layout as alert dialog view
+                        builder.setView(dialogView);
+
+                        // Get the custom alert dialog view widgets reference
+                        Button btn_positive = (Button) dialogView.findViewById(R.id.dialog_positive_btn);
+                        Button btn_negative = (Button) dialogView.findViewById(R.id.dialog_negative_btn);
+                        final EditText et_name = (EditText) dialogView.findViewById(R.id.et_name);
+
+                        // Create the alert dialog
+                        final android.app.AlertDialog dialog = builder.create();
+
+                        // Set positive/yes button click listener
+                        btn_positive.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                // Dismiss the alert dialog
+                                dialog.cancel();
+                                String name = et_name.getText().toString();
+                                Toast.makeText(getApplication(),
+                                        "Submitted name : " + name, Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
+
+                        // Set negative/no button click listener
+                        btn_negative.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                // Dismiss/cancel the alert dialog
+                                //dialog.cancel();
+                                dialog.dismiss();
+                                Toast.makeText(getApplication(),
+                                        "No button clicked", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                        // Display the custom alert dialog on interface
+                        dialog.show();
+                    }
                 });
+
                 message.show();
             }
         });
