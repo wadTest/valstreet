@@ -41,6 +41,19 @@
                     android:textColor="@color/colorBack"
                     android:textSize="16sp" />
 
+                <!--title ถูกซ้อนไว้-->
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/b_edittext"
+                    android:textColor="@color/colorBack"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+
                 <Button
                     android:id="@+id/btn_logout"
                     android:layout_width="wrap_content"
@@ -282,6 +295,7 @@
                         android:textSize="13sp"
                         android:textStyle="bold" />
                 </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>

@@ -29,6 +29,8 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.prospec.prospecservice.utility.AddUserToServer;
+import com.prospec.prospecservice.utility.Add_Message;
+import com.prospec.prospecservice.utility.MyAlert;
 import com.prospec.prospecservice.utility.SharedPrefs;
 
 import java.util.Timer;
@@ -40,9 +42,10 @@ public class MenuActivity extends AppCompatActivity {
     //    ประกาศตัวแปร
     private ImageView assessment, corporate, status, message, service, vedio;
     ViewFlipper imageShow;
-    private TextView  tv_name;
+    //    share name title
+    private TextView tv_name, title;
+    private String nameLogin, titleLogin, sendString;
     private Button btn_logout;
-    private String nameLogin;
     Dialog myDialog;
 
     @Override
@@ -55,8 +58,9 @@ public class MenuActivity extends AppCompatActivity {
 
 //        Find Who Login ?
         SharedPreferences sharedPreferences = getSharedPreferences("Logout", MODE_PRIVATE);
+        titleLogin = sharedPreferences.getString("titleLogin", "");
         nameLogin = sharedPreferences.getString("NameLogin", "");
-        Log.d("20JanV1", "nameLogin Receive in MenuActivity ==> " + nameLogin);
+        Log.d("20JanV1", "nameLogin Receive in MenuActivity ==> " + nameLogin + titleLogin);
 
 //        เรียกตัวแปรมาใช้งาน รูปที่ slider หน้าเมนู
         imageShow = findViewById(R.id.imageShow);
@@ -89,13 +93,14 @@ public class MenuActivity extends AppCompatActivity {
         vedio = (ImageView) findViewById(R.id.vedio);
         service = (ImageView) findViewById(R.id.service);
         tv_name = (TextView) findViewById(R.id.tv_name);
+        title = (TextView) findViewById(R.id.title);
         btn_logout = (Button) findViewById(R.id.btn_logout);
-        corporate = (ImageView)findViewById(R.id.corporate);
+        corporate = (ImageView) findViewById(R.id.corporate);
 
-        tv_name.setText("ยินดีต้อนรับ "+nameLogin.trim());
+        tv_name.setText("ยินดีต้อนรับ " + nameLogin.trim());
+        title.setText(titleLogin.trim());
 
 //        ปุ่มออกจากระบบ
-
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -156,7 +161,6 @@ public class MenuActivity extends AppCompatActivity {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.message1:
-//                                startActivity(new Intent(MenuActivity.this, CustomDialogActivity.class));
                                 sendShort();
                                 return true;
                             case R.id.message2:
@@ -172,7 +176,7 @@ public class MenuActivity extends AppCompatActivity {
                         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MenuActivity.this);
 
                         LayoutInflater inflater = getLayoutInflater();
-                        View dialogView = inflater.inflate(R.layout.custom_dialog,null);
+                        View dialogView = inflater.inflate(R.layout.custom_dialog, null);
 
                         // Specify alert dialog is not cancelable/not ignorable
                         builder.setCancelable(false);
@@ -193,11 +197,36 @@ public class MenuActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
                                 // Dismiss the alert dialog
-                                dialog.cancel();
-                                String name = et_name.getText().toString();
-                                Toast.makeText(getApplication(),
-                                        "Submitted name : " + name, Toast.LENGTH_SHORT).show();
 
+                                dialog.cancel();
+                                sendString = et_name.getText().toString().trim();
+
+//                                check ความว่างเปล่า
+                                if (sendString.equals("")) {
+
+                                    //                    ถ้าไม่กรอกจะขึ้นแจ้งเตือน
+                                    MyAlert myAlert = new MyAlert(MenuActivity.this, "มีช่องว่าง", "กรุณากรอกข้อมูลในช่องว่าง");
+                                    myAlert.myDialog();
+                                } else {
+//                    upload ข้อมูลที่กรอกไปเก็บไว้ใน MySQL
+                                    uploadString();
+
+                                }
+                            }//onClick
+
+                            private void uploadString() {
+
+                                try {
+
+//                    File เชื่อมต่อ DB. หน้านี้ Add_Message
+                                    Add_Message add_message = new Add_Message(MenuActivity.this, sendString, nameLogin, titleLogin);
+                                    add_message.execute();
+//
+                                    Toast.makeText(MenuActivity.this, "อัพโหลดข้อมูลสำเร็จ", Toast.LENGTH_LONG).show();
+
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                             }
                         });
 
@@ -209,7 +238,7 @@ public class MenuActivity extends AppCompatActivity {
                                 //dialog.cancel();
                                 dialog.dismiss();
                                 Toast.makeText(getApplication(),
-                                        "No button clicked", Toast.LENGTH_SHORT).show();
+                                        "เกิดข้อผิดพลาด", Toast.LENGTH_SHORT).show();
                             }
                         });
 
