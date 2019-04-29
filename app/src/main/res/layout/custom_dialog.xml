@@ -8,8 +8,7 @@
     <TextView
         android:id="@+id/dialog_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#d5dda6"
+        android:layout_height="@dimen/w50"
         android:gravity="center"
         android:padding="5dp"
         android:text="รายละเอียดสินทรัพย์แบบย่อ"
@@ -21,9 +20,9 @@
         android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_title"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:layout_below="@id/dialog_title"
         android:hint="กรอกรายละเอียด"
         android:textSize="16dp" />
 
@@ -33,8 +32,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/et_name"
         android:layout_alignParentRight="true"
-        android:background="#dde5ad"
-        android:text="ยืนยัน" />
+        android:layout_marginLeft="10dp"
+        android:background="#c6ffa3"
+        android:text="ยืนยัน"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/dialog_negative_btn"
@@ -43,6 +44,7 @@
         android:layout_alignBaseline="@id/dialog_positive_btn"
         android:layout_marginRight="3dp"
         android:layout_toLeftOf="@id/dialog_positive_btn"
-        android:background="#dde5ad"
-        android:text="ยกเลิก" />
+        android:background="#fff9a3"
+        android:text="ยกเลิก"
+        android:textStyle="bold" />
 </RelativeLayout>
