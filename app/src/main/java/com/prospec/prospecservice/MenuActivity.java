@@ -237,8 +237,6 @@ public class MenuActivity extends AppCompatActivity {
                                 // Dismiss/cancel the alert dialog
                                 //dialog.cancel();
                                 dialog.dismiss();
-                                Toast.makeText(getApplication(),
-                                        "เกิดข้อผิดพลาด", Toast.LENGTH_SHORT).show();
                             }
                         });
 

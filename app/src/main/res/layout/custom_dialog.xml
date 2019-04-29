@@ -1,8 +1,9 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/dialog_rl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="10dp">
 
     <TextView
@@ -26,25 +27,27 @@
         android:hint="กรอกรายละเอียด"
         android:textSize="16dp" />
 
-    <Button
-        android:id="@+id/dialog_positive_btn"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_name"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="10dp"
-        android:background="#c6ffa3"
-        android:text="ยืนยัน"
-        android:textStyle="bold" />
+        android:layout_marginTop="10dp">
 
-    <Button
-        android:id="@+id/dialog_negative_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/dialog_positive_btn"
-        android:layout_marginRight="3dp"
-        android:layout_toLeftOf="@id/dialog_positive_btn"
-        android:background="#fff9a3"
-        android:text="ยกเลิก"
-        android:textStyle="bold" />
-</RelativeLayout>
+        <Button
+            android:id="@+id/dialog_positive_btn"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="#6ec6ffa3"
+            android:text="ยืนยัน"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/dialog_negative_btn"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:background="#6efff9a3"
+            android:text="ยกเลิก"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</LinearLayout>
