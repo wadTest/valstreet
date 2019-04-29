@@ -170,6 +170,7 @@ public class MenuActivity extends AppCompatActivity {
                         return true;
                     }
 
+//                    popup ส่งงานแบบย่อ
                     private void sendShort() {
 
                         // Build an AlertDialog
@@ -184,7 +185,7 @@ public class MenuActivity extends AppCompatActivity {
                         // Set the custom layout as alert dialog view
                         builder.setView(dialogView);
 
-                        // Get the custom alert dialog view widgets reference
+                        // Get Event
                         Button btn_positive = (Button) dialogView.findViewById(R.id.dialog_positive_btn);
                         Button btn_negative = (Button) dialogView.findViewById(R.id.dialog_negative_btn);
                         final EditText et_name = (EditText) dialogView.findViewById(R.id.et_name);
@@ -234,8 +235,6 @@ public class MenuActivity extends AppCompatActivity {
                         btn_negative.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                // Dismiss/cancel the alert dialog
-                                //dialog.cancel();
                                 dialog.dismiss();
                             }
                         });

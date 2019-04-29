@@ -18,7 +18,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="58dp"
-        android:background="#e1f5fe"
         android:orientation="horizontal">
 
         <TextView
@@ -28,7 +27,6 @@
             android:textSize="16sp"
             android:layout_marginTop="5dp"
             android:textColor="@color/colorBack"
-            android:background="#e1f5fe"
             android:text=" Prospec Appraisal นวัตกรรมของการประเมินราคาทรัพย์สิน ขอต้อนรับ ท่านสู่ Valstreet ถนนสายประเมินราคา ที่ทันสมัยและสะดวกสบาย ให้กับลูกค้าผู้ใช้บริการของเราทุกท่านครับ"
             android:focusable="true"
             android:focusableInTouchMode="true"
