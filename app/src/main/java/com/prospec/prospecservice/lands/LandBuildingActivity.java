@@ -52,9 +52,8 @@ import static android.view.View.VISIBLE;
 public class LandBuildingActivity extends AppCompatActivity {
 
     //    ประกาศตัวแปร
-    private TextInputEditText name, edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
-    private EditText number;
-    private Spinner spin1, spin2, spin3, spin4, spin5, spin6;
+    private TextInputEditText name, edit1, edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
+    private Spinner spin1, spin3, spin4, spin5, spin6;
     private CheckBox check1, check2, check3, check4, check6;
     private Button Add;
 
@@ -110,7 +109,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 
     private void getevent() {
 //        กรอกข้อมูล
-        number = (EditText) findViewById(R.id.number);
+        edit1 = (TextInputEditText) findViewById(R.id.edit1);
         name = (TextInputEditText) findViewById(R.id.name);
         edit2 = (TextInputEditText) findViewById(R.id.editT2);
         edit3 = (TextInputEditText) findViewById(R.id.editT3);
@@ -195,9 +194,10 @@ public class LandBuildingActivity extends AppCompatActivity {
                 //GET VALUES
                 String text = tv_name.getText().toString();
                 String textTitle = title.getText().toString();
-                String tnumber = number.getText().toString().trim();
+
 
                 String nameS = name.getText().toString().trim();
+                String tnumber = edit1.getText().toString().trim();
                 String editText2 = edit2.getText().toString().trim();
                 String editText3 = edit3.getText().toString().trim();
                 String editText4 = edit4.getText().toString().trim();
@@ -210,7 +210,6 @@ public class LandBuildingActivity extends AppCompatActivity {
                 String editText11 = edit11.getText().toString().trim();
 
                 String spinner1 = spin1.getSelectedItem().toString();
-                String spinner2 = spin2.getSelectedItem().toString();
                 String spinner3 = spin3.getSelectedItem().toString();
                 String spinner4 = spin4.getSelectedItem().toString();
                 String spinner5 = spin5.getSelectedItem().toString();
@@ -226,7 +225,7 @@ public class LandBuildingActivity extends AppCompatActivity {
                 //BASIC CLIENT SIDE VALIDATION
                 if ((nameS.length()<1 || editText2.length() < 1 || editText3.length() < 1 || editText5.length() < 1
                         || editText6.length() < 1 || editText7.length() < 1 || editText8.length() < 1
-                        || spinner1.length() < 1 || spinner2.length() < 1 || spinner3.length() < 1 || spinner4.length() < 1
+                        || spinner1.length() < 1  || spinner3.length() < 1 || spinner4.length() < 1
                         || spinner5.length() < 1 || spinner6.length() < 1)) {
 
                     MyAlert myAlert = new MyAlert(LandBuildingActivity.this, "มีช่องว่าง", "กรุณากรอกข้อมูลในช่องว่าง");
@@ -251,7 +250,6 @@ public class LandBuildingActivity extends AppCompatActivity {
                     s.setEd10(editText10);
                     s.setEd11(editText11);
                     s.setSp1(spinner1);
-                    s.setSp2(spinner2);
                     s.setSp3(spinner3);
                     s.setSp4(spinner4);
                     s.setSp5(spinner5);
@@ -262,8 +260,8 @@ public class LandBuildingActivity extends AppCompatActivity {
                     s.setCb4(checkbox4 ? 1 : 0);
                     s.setCb6(checkbox6 ? 1 : 0);
 
-                    new Add_Lands(LandBuildingActivity.this).add(s, tv_name, title, number, name, edit2, edit3, edit4, edit5, edit6,
-                            edit7, edit7, edit8, edit9, edit10, edit11, spin1, spin2, spin3, spin4, spin5, spin6);
+                    new Add_Lands(LandBuildingActivity.this).add(s, tv_name, title, name, edit1, edit2, edit3, edit4, edit5, edit6,
+                            edit7, edit7, edit8, edit9, edit10, edit11, spin1, spin3, spin4, spin5, spin6);
                 }
             }
         });
@@ -283,7 +281,6 @@ public class LandBuildingActivity extends AppCompatActivity {
         spin1.setSelection(0);
 
     }
-
 
     private void spinner3() {
 

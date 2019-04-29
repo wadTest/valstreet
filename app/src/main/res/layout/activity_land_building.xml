@@ -49,11 +49,9 @@
                     android:layout_marginTop="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/b_edittext"
-                    android:enabled="true"
-                    android:focusable="true"
+                    android:gravity="center"
                     android:hint="ตั้งชื่อทรัพย์สินของท่าน"
                     android:inputType="text"
-                    android:textAlignment="center"
                     android:textSize="@dimen/size_main" />
             </LinearLayout>
 
@@ -72,30 +70,17 @@
                     android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main" />
 
-                <!--<ImageView-->
-
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:layout_marginRight="5dp"-->
-                <!--android:layout_marginBottom="5dp"-->
-                <!--android:onClick="decreaseInteger"-->
-                <!--android:paddingLeft="5dp"-->
-                <!--android:src="@mipmap/minus" />-->
-
-
-                <EditText
-                    android:id="@+id/number"
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit1"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginLeft="3dp"
                     android:background="@drawable/b_edittext"
+                    android:inputType="number"
                     android:text="1"
                     android:textAlignment="center"
                     android:textColor="@color/colorBack"
                     android:textSize="@dimen/size_main" />
-
-
             </LinearLayout>
 
             <LinearLayout
@@ -164,7 +149,6 @@
                         android:layout_height="35dp"
                         android:layout_marginTop="5dp">
 
-                        <!--android:entries="@array/ekasan"-->
                         <!--เอกสารสิทธิ์-->
                         <Spinner
                             android:id="@+id/spinner1"
@@ -196,7 +180,7 @@
                         android:layout_height="35dp"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="5dp"
-                        android:layout_weight="0.2"
+                        android:layout_weight="0.5"
                         android:background="@drawable/b_edittext"
                         android:enabled="true"
                         android:focusable="true"
@@ -218,7 +202,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
                         android:layout_marginTop="5dp"
-                        android:layout_weight="0.2"
+                        android:layout_weight="0.5"
                         android:background="@drawable/b_edittext"
                         android:enabled="true"
                         android:focusable="true"
@@ -240,7 +224,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
                         android:layout_marginTop="5dp"
-                        android:layout_weight="0.2"
+                        android:layout_weight="0.5"
                         android:background="@drawable/b_edittext"
                         android:enabled="true"
                         android:focusable="true"

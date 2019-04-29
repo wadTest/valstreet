@@ -84,15 +84,31 @@ public class CustomDialogActivity extends AppCompatActivity {
         buttonMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+//                adb.setIcon(R.drawable.ic_action_alert);
+//                adb.setTitle(R.string.title_alert);
+//                adb.setMessage(getString(R.string.title) + "\n\n" + editTextString);
+//                adb.setNegativeButton("ยกเลิก", null);
+//                adb.setPositiveButton("ตกลง", new AlertDialog.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int arg1) {
+//
+//                        Toast.makeText(CustomDialogActivity.this,"อัพโหลดข้อมูลสำเร็จ" , Toast.LENGTH_LONG).show();
+//                        finish();
+//                    }
+//                });
+//                adb.show();
+
                 editTextString = editText.getText().toString().trim();
 //                  check ความว่างเปล่า
                 if (editTextString.equals("")) {
+
 //                    ถ้าไม่กรอกจะขึ้นแจ้งเตือน
                     MyAlert myAlert = new MyAlert(CustomDialogActivity.this, "มีช่องว่าง", "กรุณากรอกข้อมูลในช่องว่าง");
                     myAlert.myDialog();
                         } else {
 //                    upload ข้อมูลที่กรอกไปเก็บไว้ใน MySQL
                     uploadString();
+
                 }
             }//onClick
 
@@ -102,19 +118,6 @@ public class CustomDialogActivity extends AppCompatActivity {
 //                    File เชื่อมต่อ DB. หน้านี้ Add_Message
                     Add_Message add_message = new Add_Message(CustomDialogActivity.this, editTextString, nameLogin, titleLogin);
                     add_message.execute();
-
-                    adb.setIcon(R.drawable.ic_action_alert);
-                    adb.setTitle(R.string.title_alert);
-                    adb.setMessage(getString(R.string.title) + "\n\n" + editTextString);
-                    adb.setNegativeButton("ยกเลิก", null);
-                    adb.setPositiveButton("ตกลง", new AlertDialog.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int arg1) {
-
-                            Toast.makeText(CustomDialogActivity.this,"อัพโหลดข้อมูลสำเร็จ" , Toast.LENGTH_LONG).show();
-                            finish();
-                        }
-                    });
-                    adb.show();
 
                 } catch (Exception e) {
                     e.printStackTrace();
