@@ -50,8 +50,8 @@ import static android.view.View.VISIBLE;
 
 //class ที่ดินเปล่า
 public class LandBuildingActivity extends AppCompatActivity {
-//
-//    //    ประกาศตัวแปร
+
+//      ประกาศตัวแปร
 //    private TextInputEditText name, edit1, edit2, edit3, edit4, edit5, edit6, edit7, edit8, edit9, edit10, edit11;
 //    private Spinner spin1, spin3, spin4, spin5, spin6;
 //    private CheckBox check1, check2, check3, check4, check6;
@@ -75,7 +75,7 @@ public class LandBuildingActivity extends AppCompatActivity {
 //        nameLogin = sharedPreferences.getString("NameLogin", "");
 //        Log.d("share title, name", "get name" + titleLogin + nameLogin);
 //
-//        toolbar();
+        toolbar();
 //
 //        getevent();
 //
@@ -87,24 +87,24 @@ public class LandBuildingActivity extends AppCompatActivity {
 //        spinner5();
 //        spinner6();
 //
-//    }// Method
-//
-//
-//    private void toolbar() {
-//        //        ADD Toolbar
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setTitle("ที่ดินเปล่า");
-//        toolbar.setSubtitle("โปรดกรอกรายละเอียดที่ดินเปล่า");
-//        getSupportActionBar().setHomeButtonEnabled(true);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
-//    }//end toolbar
+    }// Method
+
+
+    private void toolbar() {
+        //        ADD Toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("ที่ดินเปล่า");
+        toolbar.setSubtitle("โปรดกรอกรายละเอียดที่ดินเปล่า");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }//end toolbar
 //
 //
 //    private void getevent() {
@@ -424,6 +424,6 @@ public class LandBuildingActivity extends AppCompatActivity {
 //
 //        spin6.setAdapter(adapter);
 //        spin6.setSelection(0);
-    }
+//    }
 
 }//Main Class

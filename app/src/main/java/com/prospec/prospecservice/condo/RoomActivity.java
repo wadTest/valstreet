@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.prospec.prospecservice.CustomDialogActivity;
+
 import com.prospec.prospecservice.R;
 import com.prospec.prospecservice.utility.Add_Message;
 import com.prospec.prospecservice.utility.MyAlert;

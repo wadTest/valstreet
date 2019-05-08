@@ -87,8 +87,8 @@ public class MenuActivity extends AppCompatActivity {
         imageShow.setInAnimation(this, android.R.anim.slide_out_right);
 
 //       ปุ่มกดไปหน้าต่างๆ
-        status = (ImageView) findViewById(R.id.status);
         assessment = (ImageView) findViewById(R.id.assessment);
+        status = (ImageView) findViewById(R.id.status);
         message = (ImageView) findViewById(R.id.message);
         vedio = (ImageView) findViewById(R.id.vedio);
         service = (ImageView) findViewById(R.id.service);
@@ -130,24 +130,6 @@ public class MenuActivity extends AppCompatActivity {
         } //ถ้าไม่มีกิจกรรมหลักไม่ทำอะไรเลย
 
 
-        //Get Event From Click status corporate
-        corporate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, AssessmentActivity.class));
-
-            }
-        });
-
-
-        //Get Event From Click Status
-        status.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, StatusActivity.class));
-
-            }
-        });
 
 //            Get Event From Click Menu Message
 //        เลือกรายการว่าจะกรอกข้อมูลแบบ ละเอียด, ย่อ
@@ -170,7 +152,7 @@ public class MenuActivity extends AppCompatActivity {
                         return true;
                     }
 
-//                    popup ส่งงานแบบย่อ
+                    //                    popup ส่งงานแบบย่อ
                     private void sendShort() {
 
                         // Build an AlertDialog
@@ -247,6 +229,27 @@ public class MenuActivity extends AppCompatActivity {
                 message.show();
             }
         });
+
+
+        //Get Event From Click status corporate
+        corporate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuActivity.this, AssessmentActivity.class));
+
+            }
+        });
+
+
+        //Get Event From Click Status
+        status.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuActivity.this, StatusActivity.class));
+
+            }
+        });
+
 
         //        ติดต่อ line email call
         service.setOnClickListener(new View.OnClickListener() {

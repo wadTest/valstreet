@@ -13,7 +13,7 @@ public class AddBuilding extends AsyncTask<Void, Void, String> {
     //Explicit ประกาศตัวแปร
     private Context context;
     //ประกาศตัวแปรที่เป็นค่าคงที่ ไม่สารถแก้ไขได้
-    private static final String urlBuilding = "http://119.59.103.121/app_mobile/assessment/buildings.php";
+    private static final String urlBuilding = "http://119.59.103.121/app_mobile/crm_buildings.php";
     private String editT1String, editT2String, editT3String, editT4String, editT5String, editT6String, editT7String, editT8String, editT9String, editT10String,
             editT11String, editT12String, editT13String, editT14String, editT15String, editT16String, editT17String, editT18String, editT19String, editT20String;
 
